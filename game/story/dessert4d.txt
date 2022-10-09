@@ -1,0 +1,51 @@
+LyRs mondja: Wollaris mester! 
+– szuszogta a robot felhevült rendszerrel.
+A hűtő berendezés alig bírta visszahűteni a heves keresésben túlfűtött belső alkatrészeit.
+Az idős mester furcsállva fordult a robot felé.
+Wollaris mester mondja: Mi a gond, LyRs?
+
+LyRs mondja: A vizet, amit elloptak, megmérgezték!
+LyRs mondja: Egyik látnokond megvizsgálta... nos, szájjal a nedves talajt, ahova ez a mérgezett víz ki lett öntve és nekiment az idegrendszerének!
+LyRs mondja: Segítenie kell, vagy megtámadja a többi látnokondot.
+LyRs mondja: Vagy, még rosszabb, megmérgezi őket is!
+
+Az öreg bölcs szemei nagyra nyíltak.
+Wollaris mester mondja: Nincs vesztegetnivaló időnk akkor, LyRs fiam!
+Wollaris mester mondja: Vezess oda, de tüstént!
+Wollaris mester mondja: Groda, te pedig hozd az ellenszert: talán még megmenthetjük.
+
+Így, hárman a patikussal kiegészülve indultak neki a visszafele vezető úton.
+Szerencsére LyRs térképkészítő egysége jól működött ez esetben, így pontosan tudta, merre vezesse a két, idősebb látnokondot.
+Szerencsére, ahogy odaértek, még nem volt túl késő... a tömegnek, legalábbis.
+Ugyanis a mérgezett, elfajult egyednek márcsak vérben nyugalomban fekvő tetemére értek vissza.
+Látnokondok mondja: Nem tudtuk visszatartani, mester...
+Látnokondok mondja: Vagy megöljük, vagy minket öl vagy mérgez meg.
+
+Wollaris mélyet lélegzett, szomorúság suhant át ráncos arcán.  
+Wollaris mester mondja: Megértem. A kolónia érdekeit kell néznünk, eleve nagyon kevesen vagyunk...
+LyRs mondja: Sajnálom, hogy nem tudtam segíteni 
+– jelentette ki LyRs letörten, látószenzorait a csendesen fekvő, elfajzott tetemen tartva.
+
+Wollaris mester ráncos mancsa barátságosan simult a robot ütött-kopott fémtestére. 
+Wollaris mester mondja: Dehogynem, te jöttél értem, ahogy csak tudtál.
+Wollaris mester mondja: Viszont szívesebben kezdek bele nyomozásba azok után, akik ezt az aljas cselekedetet kitervelték, mintsem ásatok tömegsírt.
+
+A robot nem szólt semmit.
+Igaza volt az idős bölcsnek, inkább egy áldozza fel magát mindenkiért: csakhogy, ha már van tapasztalatod a gyászban, egyet sem szeretnél elveszíteni.
+
+Szerencsére az ezek után következő helyreállítási munkálatok könnyen elterelték LyRs érzelmi központjának negatív kisugárzását.
+Beletelt egy egész napba is, mire minden a helyére került, a gyűjtők elindultak vízgyűjtő körútjukra a járatrendszer sűrűjébe,
+illetve egy nyomozócsapat felállt és munkának látott a mérgezés kitervelőit kinyomozni.
+LyRs arra eszmélt fel, hogy amennyire lehetett egy ilyen megdöbbentő eset után, de visszaállt a rend,
+így neki nem volt több maradása ezen a felettébb mozgalmas bolygón.
+Wollaris mester kísérte el a csapóajtóig, ahol be is jött nemrég, nehéz búcsút véve a segítőkész robottól.
+
+Wollaris mester mondja: LyRs, fiam...
+Rövidebb kutakodás után egy aprócska, ezüst szobrocskát húzott elő: egy szívet ábrázolt. 
+Wollaris mester mondja: Egy ilyen vén szatyor, mint én soha sem fogom tudni eléggé meghálálni, amit értünk tettél.
+Wollaris mester mondja: Nem beszélve arról, hogy milyen bunkó módon bántak veled a fajtársaim.
+Wollaris mester mondja: Azonban a lelkiismeretem nem hagyja, hogy bármiféle hála-ajándék nélkül engedjek utadra.
+Wollaris mester mondja: Szeretném, ha elfogadnád tőlem ezt a kis szobrocskát: a bátorságot szimbolizálja, amiben te nem szenvedsz hiányt.
+//!Döntési pont: Elviszed az ezüst szobrot magaddal?
+//!Döntési pont: igen: dessert5a.txt
+//!Döntési pont: nem: dessert5b.txt

@@ -1,0 +1,27 @@
+//!Döntési pont: kutato2:
+LyRs mondja: Megyek a vízkutatókkal 
+Végül is mindegy, melyik csapattal ment, mindegyikben ellenezték a jelenlétét.
+Annyiban gondolta jobbnak, hogy ha elárasztja őket netán valahogy az ellopott vízkészlet,
+kiborul vagy hasonló katasztrófa történik, akkor legalább ő, a vízhatlan borításával talán fog tudni segíteni megtalálni a kiutat,
+megmentve ezzel a látnokondokat a fulladástól – s talán ezzel együtt elnyerve a bizalmukat.
+//Lapoz
+
+Mint ahogy arra számított, itt sem volt sokkal izgalmasabb a terep.
+A sötét alagutakat még dötétebbek váltották fel, LyRs csak az éjjellátó szenzoraival volt képes tovább haladni.
+//*Feladat: Aktivált az éjjel látódat. //ejjellato
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//*Aktiválja az éjjellátóját LyRs
+Felfedezőútjuk első szakaszának vége fele, mikor is az egyik látnokond felfedezett egy kisebb pocsolyát a poros talajban,
+körülötte vizes földdel, már-már olyan szinten be kellette indítani éjjellátó szenzorait, hogy félt, idő előtt lemerül az akkumulátora.
+//Lapoz
+
+Fiatal Látnokondok mondja: Errefele jártak... 
+– vizsgálta meg a nedves talajt, mancsát a vizes földhöz érintve.
+Megszaglászta, majd mielőtt szájához érintette volna, hogy megnézze, tényleg víz-e, LyRs elkapta a karját.
+LyRs mondja: Biztos, hogy jó ötlet megkóstolgatni idegen eredetű folyadékot? Lehet akár csapda is!
+A látnokond kikapta karját a robot fém markából, folytatva makacsul, amit előbb elkezdett.
+LyRs áramköreiben ismét fellángolt a rossz előérzet. 
+//!Döntési pont: Hagyod a Látnokondot vizsgálódni(vizsgalat1) vagy beavatkozol a saját műszereiddel(vizsgalat2)? 
+//!Döntési pont: vizsgalat1: dessert3d.txt
+//!Döntési pont: vizsgalat2: dessert3c.txt
+
