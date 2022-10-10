@@ -1,0 +1,2 @@
+D:\Users\nagyb\Source\Repos\Sample-Test1\Sample-Test1\x64\Debug\Sample-Test1.vcxproj.CopyComplete
+D:\GitHub\mosze-semester-project-lonelyloners\probatesz_tesztek\probateszt1\Sample-Test1\Sample-Test1\x64\Debug\Sample-Test1.vcxproj.CopyComplete
