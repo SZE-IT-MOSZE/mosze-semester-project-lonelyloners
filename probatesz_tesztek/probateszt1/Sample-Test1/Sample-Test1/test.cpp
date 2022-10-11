@@ -6,16 +6,18 @@ TEST(Bpos, izeteszt) {
   std::cout << "\nNEXT TEST\n\n";
 }
 TEST(Bpos2, ize2teszt) {
-	bool d = false;
+	bool d = true
+		;//ezt átirni más tesztekre
 	bool **c = new bool*[big];
 	for (int i = 0; i < big; i++) {
 		c[i] = new bool[big];
 	}
-	int g = 3;
-	ize2(g, g, c, d);
+	int a = 5;//változtatható MAX big (big=5)
+	int b = 5;//változtatható MAX big (big=5)
+	ize2(a, b, c, d);
 	for (int i = 0; i < big; i++) {
 		for (int j = 0; j < big; j++) {
-			if ((i <= g) && (j <= g)) {
+			if ((i < a) && (j < b)) {
 				EXPECT_EQ((c[i][j]), d);
 				EXPECT_TRUE(true);
 			}
