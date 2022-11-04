@@ -44,7 +44,7 @@ Keiko mondjav: Az erdőnél van egy kisebb ösvény, amely mentén gupra bogyók
 
 LyRs mondja: Bízhatsz bennem!
 
-Feladat mondja: Menj be az erdőnél lévő ösvényen és szedd le az érett, piros gupra bogyókat!
+Feladat: Menj be az erdőnél lévő ösvényen és szedd le az érett, piros gupra bogyókat!
 
 //LyRs elmegy arra, megjelenik a bogyó-bokrokkal teli ösvény
 
