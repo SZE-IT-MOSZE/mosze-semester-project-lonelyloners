@@ -47,6 +47,10 @@ int menu(RenderWindow menuWindow)
     SDL_Texture* mnuBckGround = menuWindow.loadTexture("res/gfx/Menu/menu_hatter.png");
     Entity bckground(V2F(0, 0), mnuBckGround);
     
+    // szöveg háttér betöltése
+    SDL_Texture* textBckGround = menuWindow.loadTexture("res/gfx/Dessert_Map1/both.png");
+    Entity txtbckground(V2F(384, 0), textBckGround);
+
     // nagy új játék gomb
     SDL_Texture* newGameButton = menuWindow.loadTexture("res/gfx/Menu/menu_alap_nagy_ujjatek.png");
     Entity nGameB(V2F(30 /* * getR() */, 20 /* * getR() */), newGameButton);
@@ -235,6 +239,7 @@ int menu(RenderWindow menuWindow)
         }
         // gombok megjelenítése
         menuWindow.render(bckground);  
+        menuWindow.render(txtbckground);  
         menuWindow.render(nGameB);
         menuWindow.render(lgGameB);
         menuWindow.render(hlpGameB);

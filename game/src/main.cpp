@@ -6,6 +6,7 @@
 #include <string.h>
 #include <sdl/SDL.h>
 #include <sdl/SDL_image.h>
+#include <sdl/SDL_ttf.h>
 
 #include "headers/RenderPlanets.h"
 #include "headers/Planet1.h"
@@ -23,8 +24,18 @@
  */
 int main(int argc, char* argv[])
 {
+    if (TTF_Init() == -1)
+    {
+        std::cout << "TTF Init hiba: " << SDL_GetError();
+    }
+
+    if (SDL_Init(SDL_INIT_EVERYTHING) == -1)
+    {
+        std::cout << "SDL Init hiba: " << SDL_GetError();
+    }
+
     // ablak létrehozása
-    RenderWindow game("LonelyLoners - LyRs kalandjai v0.1", 384 /* * getRRes() */, 384 /* * getRRes() */);
+    RenderWindow game("LonelyLoners - LyRs kalandjai v0.1", 768 /* * getRRes() */, 384 /* * getRRes() */);
     // menü futtatása és menüpont számának elmentése
     int choice = menu(game);
     // renderer "takarítása"
@@ -76,6 +87,10 @@ int main(int argc, char* argv[])
         // első térkép hátterének betöltése
         SDL_Texture* background = game.loadTexture("res/gfx/Dessert_Map1/dessert_map1_alapmap.png");
         Entity pl(V2F(0, 0), background);
+        // szöveg háttér betöltése
+        SDL_Texture* textBckGround = game.loadTexture("res/gfx/Dessert_Map1/both.png");
+        Entity txtbckground(V2F(384, 0), textBckGround);
+
         // összes logikai változó a gombnyomásokhoz
         bool gameRunning = true;
         bool attack = false;
@@ -184,7 +199,7 @@ int main(int argc, char* argv[])
             
             const float alpha = accum / timeStep;          
             // először a háttér kirajzolása
-            game.render(pl);
+            game.render(pl);          
             // felfele gomb megnyomva?
             if (fel)
             {
@@ -269,8 +284,11 @@ int main(int argc, char* argv[])
                     game.update(l, lyrsIdleL, lyrsIdleL.size(), 32, 32, 0);
                 }
             }
-            // felhők renderelés és ütközések ellenőrzése és lekezelése
+            // felhők renderelése és ütközések ellenőrzése és lekezelése
             planetR = renderPlanet(game, planet1, planetR, l);
+            // szöveg háttér
+            game.render(txtbckground);
+            game.renderText();
             // rendererbe tötött elemek képernyőre helyezése
             game.display();
         }

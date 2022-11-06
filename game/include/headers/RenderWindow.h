@@ -21,6 +21,8 @@ class RenderWindow
         void update(Entity& p_entity, std::vector<std::pair<int, int>> spritepos, int frames, int w, int h, int offset);
         void display();
         
+        void renderText();
+
         void up(Entity& p_entity);        
         void down(Entity& p_entity);
         void left(Entity& p_entity);   
