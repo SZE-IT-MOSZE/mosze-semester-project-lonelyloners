@@ -4,6 +4,13 @@
 
 namespace utils
 {
+    /**
+     * \brief Eltelt idő.
+     * 
+     * A futás kezdete óta eltelt időt számolja ki, és adja vissza.
+     * 
+     * \return Eltelt idő.
+     */    
     inline float hireTimeInSeconds()
     {
         float t = SDL_GetTicks();
