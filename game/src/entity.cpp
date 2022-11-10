@@ -9,30 +9,6 @@
 
 #include "headers/Entity.h"
 
-// int getRES()
-// {
-//     int i = 0;
-//     int RES = 1;
-//     std::string line;
-//     std::ifstream set;
-//     set.open("user.settings");
-//     if (set.is_open())
-//     {
-//         while(getline(set, line))
-//         {
-//             i++;
-//             if (i = 1)
-//             {
-//                 RES = std::stoi(line);
-//             } 
-//         }
-//         set.close();
-//     }
-//     
-//     else std::cout << "A beallítások fajl serult vagy nem letezik" << std::endl; 
-// 
-//     return RES;
-// }
 /**
  * \brief Létrehoz egy Entity-t.
  * 
@@ -48,8 +24,8 @@ Entity::Entity(V2F p_pos, SDL_Texture*  p_tex) : posi(p_pos), tex(p_tex)
     // téglalap létrehozása
     currentFrame.x = 0;
     currentFrame.y = 0;
-    currentFrame.w = 384 /* * resolution */;
-    currentFrame.h = 384 /* * resolution */;
+    currentFrame.w = 384;
+    currentFrame.h = 384;
 }
 /**
  * \brief Beállítja egy Entity méretét.
@@ -64,8 +40,8 @@ void Entity::setSize(int w, int h)
 {
     // int resolution = getRES();
     // Entity méretének beállítás kapott paraméterek alapján
-    currentFrame.w = w /* * resolution */;
-    currentFrame.h = h /* * resolution */;    
+    currentFrame.w = w;
+    currentFrame.h = h;   
 }
 /**
  * \brief Beállítja egy Entity pozícióját.
@@ -78,8 +54,8 @@ void Entity::setSize(int w, int h)
 void Entity::setPosi(int x, int y)
 {
     // Entity pozíciójának beállítása
-    posi.x = currentFrame.x += x;
-    posi.y = currentFrame.y += y; 
+    posi.x = ( currentFrame.x += x );
+    posi.y = ( currentFrame.y += y );
 }
 /**
  * \brief Visszaadja az Entity textúráját.

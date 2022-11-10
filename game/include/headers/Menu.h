@@ -41,6 +41,12 @@ int menu(RenderWindow menuWindow)
 {
     int selectednumber;
     bool menu = true;
+    std::string input;
+    int c,i=0;
+    char str[100];
+    
+    // betűtípus betöltése
+    TTF_Font* fnt = TTF_OpenFont("font/TheFountainOfWishesRegular-OVxw4.ttf", 18);  
 
     SDL_Texture* newGame = nullptr;
     // háttér betöltése
@@ -239,15 +245,16 @@ int menu(RenderWindow menuWindow)
         }
         // gombok megjelenítése
         menuWindow.render(bckground);  
-        menuWindow.render(txtbckground);  
+        menuWindow.render(txtbckground); 
+        menuWindow.renderText("story/bevezeto.txt", fnt);
         menuWindow.render(nGameB);
         menuWindow.render(lgGameB);
         menuWindow.render(hlpGameB);
         menuWindow.render(setGameB);  
         menuWindow.render(eGameB);  
         menuWindow.display();
-       
     }
+
 
     return selectednumber;
 }

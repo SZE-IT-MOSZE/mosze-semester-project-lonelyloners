@@ -28,7 +28,8 @@ int main(int argc, char* argv[])
     {
         std::cout << "TTF Init hiba: " << SDL_GetError();
     }
-
+    // betűtípus betöltése
+    TTF_Font* fnt = TTF_OpenFont("font/TheFountainOfWishesRegular-OVxw4.ttf", 18);  
     if (SDL_Init(SDL_INIT_EVERYTHING) == -1)
     {
         std::cout << "SDL Init hiba: " << SDL_GetError();
@@ -288,13 +289,14 @@ int main(int argc, char* argv[])
             planetR = renderPlanet(game, planet1, planetR, l);
             // szöveg háttér
             game.render(txtbckground);
-            game.renderText();
+            game.renderText("story/bevezeto.txt", fnt);
             // rendererbe tötött elemek képernyőre helyezése
             game.display();
         }
         // ablak törlése      
         game.cleanUp();
         // program bezárása
+        TTF_Quit();
         SDL_Quit();
     }
     // kilépés gomb 

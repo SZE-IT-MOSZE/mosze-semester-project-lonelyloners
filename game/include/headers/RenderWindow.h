@@ -21,7 +21,7 @@ class RenderWindow
         void update(Entity& p_entity, std::vector<std::pair<int, int>> spritepos, int frames, int w, int h, int offset);
         void display();
         
-        void renderText();
+        const char* renderText(const char* path, TTF_Font* Sans);
 
         void up(Entity& p_entity);        
         void down(Entity& p_entity);
