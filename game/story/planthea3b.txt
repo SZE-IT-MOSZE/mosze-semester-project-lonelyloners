@@ -1,4 +1,5 @@
-LyRs mondja: Mi vesztenivalóm származik abból, ha követem, merről is jött?
+LyRs mondja: Mi vesztenivalóm 
+származik abból, ha követem, merről is jött?
 
 Ezzel a robot a medve-lény után eredt.
 
@@ -6,13 +7,20 @@ Feladat: Menj a medve-lény után!
 
 //Követjük, amerről jött. Háttér váltása egy tisztásra, ahol több medve lesz látható egyszerre. A medvék között pedig egy ember.
 
-A robot jól gondolta, több is létezett ezen lényekből.
+A robot jól gondolta, több 
+is létezett ezen lényekből.
 
-Az viszont meglepte, hogy nem csak "úgy" hátrahagyták őket, hanem ott volt velük egy ember is. Egy hús-vér ember, ráadásul egy női egyed. 
+Az viszont meglepte, hogy nem csak 
+"úgy" hátrahagyták őket, hanem ott 
+volt velük egy ember is. Egy hús-vér ember, 
+ráadásul egy női egyed. 
 
-Hosszú, barna haja volt, valamivel eltérő barna szemekkel. Éppen a medvékhez beszélt.
+Hosszú, barna haja volt, valamivel 
+eltérő barna szemekkel. Éppen a 
+medvékhez beszélt.
 
-Igen, egy ember. LyRs áramkörei csak úgy izzottak a boldogságtól.
+Igen, egy ember. LyRs áramkörei 
+csak úgy izzottak a boldogságtól.
 
 Úgy döntött, óvatosan megközelíti a kétlábút.
 
@@ -22,71 +30,139 @@ Feladat: Sétálj oda az emberhez!
 
 LyRs mondja: Üdvözlet! Remélem, nem zavarom.
 
-Ismeretlen embernő mondja: Szia! Dehogy is, éppen várok a többiekre. Tegezz ám nyugodtan, nem vagyok olyan vén csotrogány. Juniperus vagyok egyébként, az Aeden bolygóról. Benned kit tisztelhetek? Olyan tisztán beszéled a nyelvünket, biztos van valami közöd az emberekhez.
+Ismeretlen embernő mondja: Szia! 
+Dehogy is, éppen várok a többiekre. 
+Tegezz ám nyugodtan, nem vagyok 
+olyan vén csotrogány. Juniperus 
+vagyok egyébként, az Aeden bolygóról. 
+Benned kit tisztelhetek? Olyan tisztán 
+beszéled a nyelvünket, biztos van 
+valami közöd az emberekhez.
 
-LyRs mondja: Köszönöm a kedvességed. És igen, nem kis közöm van az emberekhez: ők tervetek! Még az egykori Földön.
+LyRs mondja: Köszönöm a kedvességed. 
+És igen, nem kis közöm van az emberekhez: 
+ők tervetek! Még az egykori Földön.
 
-Juniperus mondja: Komolyan? Hiszen ez szuper hír! Pont egy hozzád hasonló robotra van szükségünk.
+Juniperus mondja: Komolyan? Hiszen 
+ez szuper hír! Pont egy hozzád hasonló 
+robotra van szükségünk.
 
 LyRs mondja: Miben segíthetek?
 
-Mielőtt a nő megszólalhatott volna, egy hatalmas magasságnak örvendező fiatalember jelent meg a tisztás egyik szélén. Odasétált hozzájuk, átvéve a válaszadás lehetőségét Juniperustól.
+Mielőtt a nő megszólalhatott volna, 
+egy hatalmas magasságnak örvendező 
+fiatalember jelent meg a tisztás 
+egyik szélén. Odasétált hozzájuk, 
+átvéve a válaszadás lehetőségét Juniperustól.
 
-Ismeretlen emberhím mondja: Át szeretnénk szállítani az itthagyott medvéket a bolygónkra és kellene egy-két biológiai információ az egykori földi medvék viselkedési szokásiról. Remélem, nem gond, hogy átvettem a szót, Juni.
+Ismeretlen emberhím mondja: Át szeretnénk 
+szállítani az itthagyott medvéket a 
+bolygónkra és kellene egy-két biológiai 
+információ az egykori földi medvék 
+viselkedési szokásiról. Remélem, nem gond, 
+hogy átvettem a szót, Juni.
 
 Juniperus mondja: Dehogy. Csak nyugodtan, Dorian.
 
 Dorian mondja: Köszönöm. Tudnál nekünk segíteni, robot?
 
-LyRs mondja: Mi sem természetesebb. Egyébként LyRs a nevem. LyRs az egykori Földről.
+LyRs mondja: Mi sem természetesebb. 
+Egyébként LyRs a nevem. LyRs az egykori Földről.
 
-Dorian mondja: Tiszteletem, LyRs. Az én nevemet már úgyis hallottad, ne fecséreljük formalitásokra a drága időnket. 
+Dorian mondja: Tiszteletem, LyRs. 
+Az én nevemet már úgyis hallottad, 
+ne fecséreljük formalitásokra a drága időnket. 
+Arra lenne szükségem, hogy a medvéknek 
+milyen típusú környezetre van szükségük
+pontosan a normális életvitelhez. 
+Olyan szinten, hogy szeretnénk, 
+hogy az Aedenen majd szaporodjanak is. 
+Ugyanis itt igen megtelepedtek és a példányok, 
+amelyeket a Valentinus és Blasius 
+hoztak nem hajlandóak elfogadni 
+az új helyüket az Aedenen. 
+Pedig emlékeim szerint ugyanolyan 
+körülményeket teremtettünk nekik, 
+mint anno a Földön.
 
-Dorian mondja: Arra lenne szükségem, hogy a medvéknek milyen típusú környezetre van szükségük pontosan a normális életvitelhez. Olyan szinten, hogy szeretnénk, hogy az Aedenen majd szaporodjanak is. 
-
-Dorian mondja: Ugyanis itt igen megtelepedtek és a példányok, amelyeket a Valentinus és Blasius hoztak nem hajlandóak elfogadni az új helyüket az Aedenen. 
-
-Dorian mondja: Pedig emlékeim szerint ugyanolyan körülményeket teremtettünk nekik, mint anno a Földön.
-
-Juniperus mondja: Fogadjunk, hogy a hőmérséklet lesz az. Mondtam a srácoknak, hogy nem jegesmedvékről van szó, normális barna medvékről. Megfagynak az új helyükön kb.
+Juniperus mondja: Fogadjunk, 
+hogy a hőmérséklet lesz az. Mondtam 
+a srácoknak, hogy nem jegesmedvékről 
+van szó, normális barna medvékről. 
+Megfagynak az új helyükön kb.
 
 Feladat: Menj oda az egyik medvéhez, hogy elindítsd az analizálást!
 
 //Mindegy, melyikhez megy oda.
 
-LyRs: Azt írja, hogy ezek egytől egyik barna medvék. Alkalmazkodik élőhelyéhez, legyen az félsivatag, magashegység vagy tundra. Leginkább azonban a domb- és hegyvidékeken található meg. Ideális hőmérséklete élőhelyüknek 10-15 Celsius fok.
+LyRs: Azt írja, hogy ezek egytől egyik 
+barna medvék. Alkalmazkodik élőhelyéhez, 
+legyen az félsivatag, magashegység vagy tundra. 
+Leginkább azonban a domb- és 
+hegyvidékeken található meg. Ideális 
+hőmérséklete élőhelyüknek 10-15 Celsius fok.
 
-Juniperus mondja: Hah! Tudtam én. Nem 2-3, mint ahogy arra Nicolaus esküdözött!
+Juniperus mondja: Hah! Tudtam én. 
+Nem 2-3, mint ahogy arra Nicolaus esküdözött!
 
-Dorian mondja: Jó, ez esetben igazad van. Ezek szerint növelni kell a hőmérsékletet. Mostmár csak azt kell kitalálni, hogy mivel is fogjuk ezt megtenni.
+Dorian mondja: Jó, ez esetben igazad van. 
+Ezek szerint növelni kell a hőmérsékletet. 
+Mostmár csak azt kell kitalálni, 
+hogy mivel is fogjuk ezt megtenni.
 
-Juniperus mondja: Valamiféle tartó kellene, ami elemeli a hideg talajtól a hőmérsékletszabályozót. De ez majd ráér az Aeden bolygón, a szállítóhajó úgyis fűtött. LyRs, van kedved velünk jönni?
+Juniperus mondja: Valamiféle tartó kellene, 
+ami elemeli a hideg talajtól a 
+hőmérsékletszabályozót. De ez majd ráér az 
+Aeden bolygón, a szállítóhajó úgyis fűtött. 
+LyRs, van kedved velünk jönni?
 
-A robotnak zavar támadt az áramkörében meglepettségében. Nem is volt kérdés, hogy csatlakozik hozzájuk.
+A robotnak zavar támadt az áramkörében 
+meglepettségében. Nem is volt kérdés, 
+hogy csatlakozik hozzájuk.
 
-LyRs mondja: Még szép! Csak előtte had vigyem vissza ezt a kosár bogyót Keiko-nak.
+LyRs mondja: Még szép! Csak előtte had 
+vigyem vissza ezt a kosár bogyót Keiko-nak.
 
-Dorian mondja: Csak nyugodtan. Ide gyere utána vissza és indulunk is! Addig betereljük a medvéket a hajóba.
+Dorian mondja: Csak nyugodtan. 
+Ide gyere utána vissza és indulunk is! 
+Addig betereljük a medvéket a hajóba.
 
-Feladat: Vidd el Keiko-nak a gupra bogyókat! Kövesd az utat, amerről jöttél!
+Feladat: Vidd el Keiko-nak a gupra bogyókat! 
+Kövesd az utat, amerről jöttél!
 
 //Elviszi, odaér Keiko-hoz.
 
-Keiko mondja: Köszönöm szépen a hatalmas segítséget, LyRs barátom! Ezzel sokaáig elleszünk.
+Keiko mondja: Köszönöm szépen a 
+hatalmas segítséget, LyRs barátom! 
+Ezzel sokáig elleszünk.
 
-LyRs mondja: Szíves-örömest! Most azonban sietnem kell vissza, hatalmas dolog történt, képzeld.
+LyRs mondja: Szíves-örömest! Most 
+azonban sietnem kell vissza, 
+hatalmas dolog történt, képzeld.
 
-Keiko mondja: Na, csupa fül vagyok, mi történt? Csak nem egy medve támadt meg?
+Keiko mondja: Na, csupa fül vagyok, 
+mi történt? Csak nem egy 
+medve támadt meg?
 
-LyRs mondja: Meg megtámadt egy, de szerencsére túléltem. A nagy dolog az, hogy összetalálkoztam emberekkel! Kutatókkal, akik a medvékkel foglalatoskodnak. El akarják szállítani az Aedenre őket, így végre nyugtotok lesz.
+LyRs mondja: Meg megtámadt egy, 
+de szerencsére túléltem. A nagy 
+dolog az, hogy összetalálkoztam 
+emberekkel! Kutatókkal, akik a 
+medvékkel foglalatoskodnak. El 
+akarják szállítani az Aedenre őket, 
+így végre nyugtotok lesz.
 
 Keiko mondja: Csak nem Juniperus meg Dorian az?
 
 LyRs mondja: De-de! Ismered őket?
 
-Keiko mondja: Igencsak jó cimboráim! Sokszor találkoztam már velük itt. Merre vannak?
+Keiko mondja: Igencsak jó cimboráim! 
+Sokszor találkoztam már velük itt. 
+Merre vannak?
 
-LyRs mondja: Ahol a gupra bogyókat gyűjtöttem, tovább kellett menni egy tisztás fele. Ott parkol valahol a hajójuk is.
+LyRs mondja: Ahol a gupra bogyókat gyűjtöttem, 
+tovább kellett menni egy tisztás fele. 
+Ott parkol valahol a hajójuk is.
 
 Keiko mondja: Szuper! Mond meg nekik légyszi, hogy várjanak meg, viszek egy kis elemózsiát.
 
@@ -94,30 +170,46 @@ Feladat: Menj vissza a kutatókhoz azon az úton, amin jöttél!
 
 //Visszamegy. Ugyanaz a tisztás, csak medve nélkül, egy nagy űrhajóval, előtte kint csak Dorian áll.
 
-Dorian mondja: Vissza is tértél, szuper. Gyors voltál. Indulhatunk?
+Dorian mondja: Vissza is tértél, 
+szuper. Gyors voltál. Indulhatunk?
 
-LyRs mondja: Tudunk várni egy kicsit? Keiko szeretne hozni nektek egy kis ajándékot.
+LyRs mondja: Tudunk várni egy kicsit?
+Keiko szeretne hozni nektek egy kis ajándékot.
 
 Dorian mondja: Persze, nem probléma.
 
 //Keiko besétál arról, ahonnan LyRs is jött. Átnyújt egy kis barna zsákocskát, amit Dorian átvesz.
 
-Keiko mondja: Egy kis útravaló. Csakhogy több okotok legyen gyakrabban ellátogatni ide.
+Keiko mondja: Egy kis útravaló. 
+Csakhogy több okotok legyen 
+gyakrabban ellátogatni ide.
 
-Dorian mondja: Köszönjünk, Keiko. Hidd el, amint meglesz a medvés projekt és otthon érzik magukat, gyakrabban jövünk és egyenest a falvatokba.
+Dorian mondja: Köszönjünk, Keiko. 
+Hidd el, amint meglesz a medvés projekt 
+és otthon érzik magukat, gyakrabban jövünk 
+és egyenest a falvatokba.
 
-Keiko mondja: Szuper, reméltem is. LyRs, neked is kötelező visszanézni néha-néha.
+Keiko mondja: Szuper, reméltem is. 
+LyRs, neked is kötelező visszanézni néha-néha.
 
 LyRs mondja: Igenis, Keiko kapitány!
 
-Keiko mondja: Na, de nem tartalak fel titeket. Jó utat és sok szerencsét, barátaim!
+Keiko mondja: Na, de nem tartalak fel titeket. 
+Jó utat és sok szerencsét, barátaim!
 
-LyRs mondja: Köszönök mindent, Keiko! Hamarosan találkozunk!
+LyRs mondja: Köszönök mindent, Keiko! 
+Hamarosan találkozunk!
 
-Dorian mondja: Köszönjük, Keiko! Mihamarabbi viszontlátásra!
+Dorian mondja: Köszönjük, Keiko! 
+Mihamarabbi viszontlátásra!
 
-A robot és a kutató ezzel csatlakozott Juniperushoz és a hajó legénységéhez, akik amint bezárult az ajtó, el is emelkedtek a tisztás talajától, elhagyva a végtelenül kedves Planthea bolygót, száguldva az új hazafele.
+A robot és a kutató ezzel csatlakozott 
+Juniperushoz és a hajó legénységéhez, 
+akik amint bezárult az ajtó, el is 
+emelkedtek a tisztás talajától, 
+elhagyva a végtelenül kedves 
+Planthea bolygót, száguldva az új hazafele.
 
 Avagy az Aeden bolygó fele.
 
-//Planthea vége ezen az ágon.
+//Ezután következik: aeden1b.txt

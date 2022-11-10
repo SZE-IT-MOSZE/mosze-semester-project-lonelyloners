@@ -1,19 +1,51 @@
-Hiába a kifinomult eszközök, hiába a tűpontos programozás, LyRs gyengének bizonyult a brutális, medveszerű bestia ellen.
+Hiába a kifinomult eszközök, hiába a 
+tűpontos programozás, LyRs gyengének 
+bizonyult a brutális, medveszerű bestia ellen.
 
-Érezte, hogy pillanatok választják el attól a ponttól, hogy rendszere túlmelegszik olyannyira, hogy hűtőberendezése is képtelen lenne a visszahűtésre. Cselekednie kellett, ha nem akarta a vesztét egy végre kedvesnek tűnő bolygón, valahol a világűr sűrűjében.
+Érezte, hogy pillanatok választják el attól
+a ponttól, hogy rendszere túlmelegszik 
+olyannyira, hogy hűtőberendezése is képtelen 
+lenne a visszahűtésre. Cselekednie kellett, 
+ha nem akarta a vesztét egy végre kedvesnek 
+tűnő bolygón, valahol a világűr sűrűjében.
 
-Így hát a robot alkalmazta azt, amelyet oly sokszor ellesett az embergyerekektől. A kegyelemért könyörgést, avagy a mozdulatlanul az erősebb előtt való kiterülést: mintha halottnak tettetné magát.
+Így hát a robot alkalmazta azt, amelyet 
+oly sokszor ellesett az embergyerekektől. 
+A kegyelemért könyörgést, avagy a mozdulatlanul
+az erősebb előtt való kiterülést: mintha 
+holtan terült volna el a földön.
 
-S láss csodát, mintha működött is volna a terv. A medve-lény lassacskán mintha lenyugodott volna, nem hűbörgött tovább. Csupán megfigyelte, megszagolgatta LyRs felhevült, fém testét, majd egy szusszanással sarkon fordult és visszaandalgott arrafele, amerről eredetileg érkezett.
+S láss csodát, mintha működött is volna a terv. 
+A medve-lény lassacskán mintha lenyugodott 
+volna, nem hűbörgött tovább. 
+Csupán megfigyelte, megszagolgatta LyRs 
+felhevült, fém testét, majd egy szusszanással 
+sarkon fordult és visszaandalgott arrafele, 
+amerről eredetileg érkezett.
 
-A robot a biztonság kedvéért várt még pár percet, aztán tápászkodott fel. Leporolta magát, összeszedte az elgurult bogyókat, majd befejezte elkezdett feladatát.
+A robot a biztonság kedvéért várt még pár percet, 
+aztán tápászkodott fel. Leporolta magát, 
+összeszedte az elgurult bogyókat, majd 
+befejezte elkezdett feladatát.
 
-Feladat: Szüreteld le a maradék gupra bogyót is a bokrokról!
+Feladat: Szüreteld le a maradék 
+gupra bogyót is a bokrokról!
 
 //Amint kész, jön a következő párbeszéd.
 
-LyRs-t azonban nem hagyta nyugodni a dolog. A medve-szerű lény túlságosan is hasonlított azokra a medvékre, amellyekkel még anno a Földön találkozott. Ilyen szintű hasonlóságra, hogy egy ilyen faj ennyire távol ugyanilyen tulajdonságokkal fejlődjön ki pedig az esélyek igencsak csekélyek voltak.
+LyRs-t azonban nem hagyta nyugodni a dolog. 
+A medve-szerű lény túlságosan is hasonlított 
+azokra a medvékre, amellyekkel még anno a 
+Földön találkozott. Ilyen szintű hasonlóságra, 
+hogy egy ilyen faj ennyire távol ugyanilyen 
+tulajdonságokkal fejlődjön ki pedig az 
+esélyek igencsak csekélyek voltak.
 
-A robot elgondolkozott. Utána menjen a lénynek, kiderítve, hogy honnan szabadult, tényleg Plantheáról származik vagy sem?
+A robot elgondolkozott. Utána menjen a lénynek, 
+kiderítve, hogy honnan szabadult, 
+tényleg Plantheáról származik vagy sem?
 
 Írd be válaszod - igen / nem:
+
+//Ha igen, a következő txt: planthea3b.txt
+//Ha nem, a következő txt: planthea3a.txt
