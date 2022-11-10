@@ -1,11 +1,11 @@
 A harmadik bolygó, amelyen LyRs űrközi
 utazása során felbukkant, egy buja, 
 zöld növényzettel benőtt, aprócska bolygó volt.
-/--------------------------------------------
+*
 Kissé olyan volt, mint az egykori Föld 
 dzsungelei. Sűrűn nőtt fák rengetege, 
 alatta a sötét homály csendjével.
-/--------------------------------------------
+*
 Robotunk már akkor tudta, hogy itt élettel 
 telibb ökoszisztéma várja, mint a sivatagos 
 De”s”sert vagy a jeges Glacies bolygón. 
@@ -13,93 +13,93 @@ Ez már onnan is látszott, hogy egy kis
 falucska szélén sikerült földet érnie, 
 ahol még meg sem ijedtek az űrből érkezett, 
 mesterséges lénytől.
-
+*
 Ismeretlen lény mondja: Üdvözlet, fémes barátom! 
 Mi járatban a mi kis szeretett Plantheánkon?
-
+*
 Újabb információ, amit a robot mélyen elraktározott magában.
-
+*
 LyRs mondja: Üdv! LyRs vagyok, 
 az egykori Föld lakója. Most 
 amolyan felfedező úton vagyok.
 Általában be szoktam segíteni a 
 helyieknek, mindig van valami teendő. 
 Itt segíthetek esetleg valamiben?
-
+*
 Ismeretlen lény mondja: Még szép! 
 Nálunk mindig van tennivaló, 
 amiben elkel a segítség.
-
+*
 LyRs mondja: Szuper! Mit kellene tennem?
-
+*
 Ismeretlen mondja: Leginkább most a 
 farönkök cipelésében kellene segédkezni, 
 LyRs barátom. Kövess, mutatom az utat. 
 Be is mutatlak a többi Lycantnak. 
 Egyébként én Keiko vagyok, ha bármi kellene, 
 hozzám nyugodtan fordulhatsz.
-
+*
 LyRs mondja: Rendben, köszönöm, Keiko!
-
+*
 Feladat: Kövesd Keiko-t!
-
+*
 A Lycantok kis faluja kellemes 
 aurát árasztott. A dolgos farkaslények 
 közül mindenki tette a dolgát, éppen 
 készülődtek a hidegebb időszakra: 
 gyűjtögettek, raktároztak.
-
+*
 LyRs-t is ebben kérték meg, hogy segítsen nekik. 
 Keiko egy jól megpakolt fakupachoz vezette a 
 falutól nem messzi erdő szélénél, ahol már 
 várták az elhordandó, vaskos farönkök.
-
+*
 Keiko mondja: Ezeket kellene ahhoz a magas, 
 malomszerű épülethez vinni. Amint kész vagy, 
 keress meg a faluban.
-
+*
 LyRs mondja: Rendben!
-
+*
 Feladat: Hord el a fakupacokat az említett helyre!
-
+*
 //Megcsinálja, visszatér Keikohoz
-
+*
 Keiko mondja: Szép munka, LyRs! 
 Ezzel már rengeteget segítettél nekünk. 
 Mit szólnál még egy kisebb, könnyedebb feladathoz?
-
+*
 LyRs mondja: Én mindenre vevő vagyok. 
 Mit kellene csinálnom?
-
+*
 Keiko mondja: Az erdőnél van egy kisebb ösvény, 
 amely mentén gupra bogyók vannak elszórva. 
 Ezek pirosas, kerek bogyók, fontos tápanyagforrás. 
 Ebből kellene annyit szedni, amennyit csak tudsz.
-
+*
 LyRs mondja: Bízhatsz bennem!
-
+*
 Feladat mondja: Menj be az erdőnél lévő
 ösvényen és szedd le az érett, 
 piros gupra bogyókat!
-
+*
 //LyRs elmegy arra, megjelenik a bogyó-bokrokkal teli ösvény
-
+*
 Robotunknak szerencsére nem kellett sokat
 keveregnie, mire megtalálta a furcsa 
 nevezetű bogyók ösvényét. A bokrok úgy 
 sorakoztak a poros, földes út két oldalán, 
 roskadásig tele gupra bogyókkal.
-
+*
 LyRs egyszerre nyugodott meg
 és húzta ki magát büszkén. 
 Na, ha ezt mind összeszedi, 
 Keiko még a végén kitüntetést ad neki!
-
+*
 //Elkezdi szedni. Összeszed kettőt, mire morgás hallatszódik.
-
+*
 A fák közül egy medveszerű lény 
 bukkant fel váratlanul. Hangos 
 morgással, nem tétovázva azonnal 
 a robotnak vetette magát.
-
+*
 //Harc
