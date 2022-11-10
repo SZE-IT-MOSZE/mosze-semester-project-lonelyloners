@@ -1,89 +1,154 @@
-#Map: Megjelenik a Des"s"ert bolygó felszíne.
-LyRs mondja: Szóval ez lenne a híres-neves Des”s”ert bolygó 
-– mormogta magában LyRs, ahogy mechanikus lábaival megtette az első lépést a számára vadidegen planétán.
-Mint minden, a robot számára ismeretlen helyen, LyRs itt is felmérte a terepet csúcstechnológiás érzékelőivel.
-Mind szenzorai szerint, mind saját „bőrén” tapasztalta, hogy a gravitáció szülőbolygójáéhoz hasonló.
-Ahogy haladt előre, az is tiszta lett számára, hogy a bolygón csakis a sivatagos, száraz éghajlat lelhető fel, az égen a kegyetlenül tűző Nappal.
-//Lapoz.
+//Megjelenik a Des"s"ert bolygó felszíne.
 
-Már-már arra a következtetésre jutott, hogy a meleg miatt az élet nem igazán telepedett meg, hiába adott az éltető levegő.
-Tápanyagokból mikroszemcse méretű akadt csak, folyadékból szintúgy.
-Kevésen múlott, hogy a robot aktiválja rakétáit, másik bolygón kutatva az életet, mikor is fémlába beakadt valamibe.
-//*Feladat: Fedezd fel a bolygót. Keresd meg azt a valamit amiben Lyrs lába megakadhatott.
------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//*Megtalálta a csapóajtót:
-//Megvizsgál -->Betölt a tiszta csapóajtó
+LyRs mondja: Szóval ez lenne a híres-neves 
+Des”s”ert bolygó.
+
+Mint minden, a robot számára ismeretlen 
+helyen, LyRs itt is felmérte a terepet 
+csúcstechnológiás érzékelőivel.
+
+Mind szenzorai szerint, mind saját 
+„bőrén” tapasztalta, hogy a gravitáció 
+szülőbolygójáéhoz hasonló. Ahogy haladt 
+előre, az is tiszta lett számára, 
+hogy a bolygón csakis a sivatagos, 
+száraz éghajlat lelhető fel, az égen 
+a kegyetlenül tűző Nappal.
+
+Már-már arra a következtetésre jutott, 
+hogy a meleg miatt az élet nem igazán 
+telepedett meg, hiába adott az éltető levegő.
+
+Tápanyagokból mikroszemcse méretű akadt csak, 
+folyadékból szintúgy. Kevésen múlott, hogy a 
+robot aktiválja rakétáit, másik bolygón 
+kutatva az életet, mikor is fémlába beakadt 
+valamibe.
+
+Feladat: Fedezd fel a bolygót. Keresd meg azt a
+valamit, amiben LyRs lába megakadhatott. Használd a 
+MEGVIZSGAL parancsot.
+
+//Megtalálta a csapóajtót. Betölt a tiszta csapóajtó.
+
 LyRs fém lába egy vaskos csapóajtóban akadt meg.
-A robot meglepetten kezdte cibálni, azonban a vastag fém nem kívánt megmozdulni.
-//*Feladat: Aktiváld a lézeredet. Használd a *** parancsot. (harcok esetén még szükséged lehet rá)
------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//*Aktíválja a lézerét.
-//**  -->Betölti a betört ajtót 
-LyRs becélozta az acélozott anyagot, majd egy laza mozdulattal akkora lyukat égetett bele, amekkorán bőven át tudott bújni.
+A robot meglepetten kezdte cibálni, azonban a vastag 
+fém nem kívánt megmozdulni.
+
+Feladat: Aktiváld a lézeredet. Használd a TAMADAS 
+parancsot az ajtó betöréséhez!
+
+//Aktiválja a lézerét. Betölti a betört ajtót.
+
+LyRs becélozta az acélozott anyagot, 
+majd egy laza mozdulattal akkora lyukat 
+égetett bele, amekkorán bőven át tudott bújni.
+
 Amit pedig odabent talált, zavart okozott áramköreiben...
 
-#Map: Megjelenik az alsó világ.
-//Lapoz.
-A föld alatt, LyRs legnagyobb meglepetésére az élet egy elég elcsúfult formájával nézett szembe. 
-Mivel kint az égető hőség miatt érző lény nem volt képes megmaradni, így az idők során a Des”s”ert bolygó lakosai a vastag homokréteg alatti,
+//Megjelenik az alsó világ map.
+
+A föld alatt, LyRs legnagyobb meglepetésére 
+az élet egy elég elcsúfult formájával nézett szembe. 
+Mivel kint az égető hőség miatt érző lény nem volt 
+képes megmaradni, így az idők során a Des”s”ert 
+bolygó lakosai a vastag homokréteg alatti,
 kiterjedt barlangrendszerek járataiba húzódtak vissza.
-Csakhogy, mivel odabent legfőképp a teljes homály és sötétség uralkodott, kénytelenek voltak alkalmazkodni hozzá:
-eleve furcsa külsejük egy földi vakondéhoz hasonló kinézetet öltött.
-Szemeik alkalmazkodtak a sötéthez, érzékszerveik kiélesedtek.
-Legfőképp szaglásukra, tapintásukra hagyatkoztak, meg a tudatra, amelyben a járatok szinte térképpé olvadtak össze a fejükben.
+
+Csakhogy, mivel odabent legfőképp a teljes 
+homály és sötétség uralkodott, kénytelenek 
+voltak alkalmazkodni hozzá: eleve furcsa 
+külsejük egy földi vakondéhoz hasonló 
+kinézetet öltött. Szemeik alkalmazkodtak 
+a sötéthez, érzékszerveik kiélesedtek.
+Legfőképp szaglásukra, tapintásukra 
+hagyatkoztak, meg a tudatra, 
+amelyben a járatok szinte 
+térképpé olvadtak össze a fejükben.
 Álmukban is eltaláltak egyik pontból a másikba.
-//*Feladat: Fedezd fel az "Alsó világot".
------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//*Találkozás az első Látnokonddal:
+
+Feladat: Fedezd fel az "Alsó világot". Járkálj körbe, 
+az eldobott tárgyaknál pedig használd a MEGVIZSGAL parancsot!
+
+>> Add meg következő lépésed parancsát: //Itt lesz cin vagy getline
+
+//Találkozás az első Látnokonddal:
 
 Öreg Ismeretlen mondja: Régen járt itt más faj az én fajtámon kívül.
-– szólalt meg a csodálkozó LyRs mellett egy reszelős, öreges hang.
-A robot kissé megriadva pillantott le a vakondszerű lényre.
-Fele akkora volt, mint egy ember, hanghasználata is kissé eltért. 
-LyRs mondja: A Földről sajnos nem is fog senki egyhamar.
+
+A robot kissé megriadva pillantott le 
+a vakondszerű lényre. Fele akkora volt,
+mint egy ember, hanghasználata is kissé eltért. 
+
+LyRs mondja: A Földről sajnos nem 
+is fog senki egyhamar.
+
 A vakondszerű lény vastag szemöldöke egybeszaladt.
-Öreg Ismeretlen mondja: Ezt hogy érted, drága barátom? 
-Öreg Ismeretlen mondja: Amikor legutoljára, 2040-ben idelátogattak az ottaniak, még minden rendben volt. 
-Öreg Ismeretlen mondja: Leszámítva a globális felmelegedést persze...
-//Lapozz
 
-LyRs bánatosan felsóhajtott szeretett bolygója emlékére.
-Az áramkörei sajogtak az égető űrtől, amit megalkotói hagytak maguk után.
-Mielőtt azonban a robot beavathatta volna a bölcs, idős lényt, apró mancsok szorgos toporgására lett figyelmes éles hallószenzoraival.
-Iránytűjével be is lőtte a forrás lehetséges irányát, előkészülve bárminemű harcra.
-//*Feladat: Készülj fel egy támadás kivédésére. Használd a *** parancsot. (harcok esetén még szükséged lehet rá)
------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//*Beírja a parancsot.
-A támadók,a barátságos, idős lény fajtársai voltak, vicsorogva és sziszegve landoltak a poros földön LyRs mellett.
-Hála a robot pontos érzékelőinek, könnyen kikerülte a rá mért ütéseket.
-Az idős öreg meglepettsége dühvé alakult át. 
-Öreg Ismeretlen mondja: Mi a fészkes fenéért támadtatok rá a vendégünkre, Látnokondok?
+Öreg Ismeretlen mondja: Ezt hogy érted, 
+drága barátom? Amikor legutoljára, 
+2040-ben idelátogattak az ottaniak, még 
+minden rendben volt. Leszámítva a globális 
+felmelegedést persze...
+
+LyRs bánatosan felsóhajtott szeretett 
+bolygója emlékére. Az áramkörei sajogtak 
+az égető űrtől, amit megalkotói hagytak 
+maguk után.
+
+Mielőtt azonban a robot beavathatta volna 
+a bölcs, idős lényt, apró mancsok szorgos 
+toporgására lett figyelmes éles hallószenzoraival.
+Iránytűjével be is lőtte a forrás lehetséges irányát, 
+előkészülve bárminemű harcra.
+
+Feladat: Készülj fel egy támadásra.
+Használd a TAMADAS parancsot. Harc közben 
+az UTES parancs begépelésével tudsz harcolni.
+
+//Parancsbeolvasás. Csak a TAMADAS parancs fogadható el, addig a sztori sem enged tovább menni.
+
+>> Add meg következő lépésed parancsát: //Itt lesz cin vagy getline
+
+A támadók, a barátságos, idős lény fajtársai voltak, 
+vicsorogva és sziszegve landoltak a poros földön 
+LyRs mellett. Hála a robot pontos érzékelőinek, 
+könnyen kikerülte a rá mért ütéseket. Az idős öreg 
+meglepettsége dühvé alakult át. 
+
+Öreg Ismeretlen mondja: Mi a fészkes fenéért 
+támadtatok rá a vendégünkre, Látnokondok?
+
 LyRs elraktározta magában a fajmegnevezést.
+
 Fiatal Látnokondok mondják:Ismeretlen volt a szaga, Mester...
-Öreg Látnokondok mondja: És ez egyértelmű okot ad arra, hogy ész nélkül lerohanjátok?
+
+Öreg Látnokondok mondja: És ez egyértelmű 
+okot ad arra, hogy ész nélkül lerohanjátok?
+
 A fiatalabb látnokondok összehúzták magukat szégyenükben.
-//Lapoz.
 
-Fiatal Látnokondok mondják: Elnézést, Mester
-Fiatal Látnokondok mondják: Reggel betörtek a raktárba és elloptak 1-2 dolgot...
-Fiatal Látnokondok mondják: Idegen szagokat találtunk és nem akartunk kockáztatni még egy betörést.
-Az öreg mintha megenyhült volna a magyarázat hallatán.
+Fiatal Látnokondok mondják: Elnézést, Mester! 
+Reggel betörtek a raktárba és elloptak 
+1-2 dolgot... Idegen szagokat találtunk 
+és nem akartunk kockáztatni még egy betörést.
+
+Az öreg mintha megenyhült volna 
+a magyarázat hallatán.
+
 Öreg Látnokondok mondja: Miket loptak el?
-//Lapoz.
 
-Fiatal Látnokondok mondják: Leginkább a víz és élelemkészletünket apasztották meg – jelentette ki baljósan a fiatal, mancsait tördelve.
-Fiatal Látnokondok mondják: Sürgősen vissza kell szereznünk őket, mert jön a még melegebb időszak, az alatt nem fogunk tudni raktározni.
-Fiatal Látnokondok mondják: Viszont külön csapatokat kell kiküldeni a vízért és az élelemért is, mert mindegyik nagyon nehezen beszerezhető.
-//!Döntési pont: Segítesz a Látnokondoknak -igen/-nem
-//!Döntési pont: Igen:
-LyRs mondja: Én tudok segíteni, ha kellene egy segítő kéz.
-Öreg Látnokondok mondja: Ezer hála és köszönet, fiatalember... 
-– egy egész Atlasz-hegységnyi gond gördült le az öreg szívéről. 
-//!Döntési pont: Nem:
-.
-.(Valahogy rá kell vezetni arra a játékost hogy igenre nyomjon. Itt éreztetnénk, hogy nem feltétlenül biztos hogy minden a döntése alapján akar működni. )
-.
-.
-//!Döntési pont: Melyik csapatban szeretnél lenni? Az élelemkutatók(kutato1) vagy a vízkutatók(kutato2) csapatában?
-//!Döntési pont: kutato1: dessert2a.txt
-//!Döntési pont: kutato2: dessert2b.txt
+Fiatal Látnokondok mondják: Leginkább a víz 
+és élelemkészletünket apasztották meg – jelentette 
+ki baljósan a fiatal, mancsait tördelve. Sürgősen 
+vissza kell szereznünk őket, mert jön a még 
+melegebb időszak, az alatt nem fogunk tudni 
+raktározni. Viszont külön csapatokat kell 
+kiküldeni a vízért és az élelemért is, 
+mert mindegyik nagyon nehezen beszerezhető.
+
+Melyik csapatban szeretnél lenni? Az élelemkutatók(kutato1)
+vagy a vízkutatók(kutato2) csapatában? - kutato1 / kutato2:
+
+//Ha a kutato1-t gépeli be: dessert2a.txt
+//Ha a kutato2-t: dessert2b.txt
