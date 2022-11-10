@@ -12,6 +12,8 @@
 #include "headers/Planet1.h"
 #include "headers/Menu.h"
 #include "headers/Entity.h"
+#include "headers/Router.h"
+#include "headers/Command.h"
 
 /**
  * \brief Fő függvény.
@@ -91,6 +93,8 @@ int main(int argc, char* argv[])
         // szöveg háttér betöltése
         SDL_Texture* textBckGround = game.loadTexture("res/gfx/Dessert_Map1/both.png");
         Entity txtbckground(V2F(384, 0), textBckGround);
+        // parancs választó deklarálása
+        Router r = Router(l);
 
         // összes logikai változó a gombnyomásokhoz
         bool gameRunning = true;
@@ -106,6 +110,8 @@ int main(int argc, char* argv[])
         const float timeStep = 0.01f;
         float accum = 0.0f;
         float cTime = utils::hireTimeInSeconds();
+        std::string command;
+
         // main game loop
         while(gameRunning)
         {
@@ -133,77 +139,27 @@ int main(int argc, char* argv[])
                     {   
                         switch(event.key.keysym.sym)
                         {
-                            // felfele gomb nyomásának ellenőrzése 
-                            case SDLK_UP:
-                                // std::cout << "FEL! lenyomva" << std::endl;
-                                fel = true;
+                            case SDLK_RETURN:
+                                Command c = Command(command);
+                                c.make();
+                                r.route(c.getCommand(), c.getItem());
                                 break;
-                            // lefele gomb nyomásának ellenőrzése 
-                            case SDLK_DOWN:
-                                // std::cout << "LE! lenyomva" << std::endl;
-                                le = true;
-                                break;
-                            // balra gomb nyomásának ellenőrzése 
-                            case SDLK_LEFT:
-                                // std::cout << "BALRA! lenyomva" << std::endl;
-                                balra = true;
-                                break;
-                            // jobbra gomb nyomásának ellenőrzése 
-                            case SDLK_RIGHT: 
-                                // std::cout << "JOBBRA! lenyomva" << std::endl;
-                                jobbra = true;
-                                break;
-                            // szóköz gomb nyomásának ellenőrzése 
-                            case SDLK_SPACE:
-                                attack = true;
-                                // std::cout << "SZOKOZ! lenyomva" << std::endl;
-                                break;
-                            default:;
-                        }
-                    }
-                    // gomb felengedések kezelése
-                    if(event.type == SDL_KEYUP)
-                    {   
-                        switch(event.key.keysym.sym)
-                        {
-                            // felfele gomb elengedésének ellenőrzése 
-                            case SDLK_UP:
-                                // std::cout << "FEL! elengedve" << std::endl; 
-                                fel = false;
-                                break;
-                            // lefele gomb elengedésének ellenőrzése 
-                            case SDLK_DOWN:
-                                // std::cout << "LE! elengedve" << std::endl;
-                                le = false;
-                                break;
-                            // balra gomb elengedésének ellenőrzése 
-                            case SDLK_LEFT:
-                                // std::cout << "BALRA! elengedve" << std::endl;
-                                balra = false;
-                                break;
-                            // jobbra gomb elengedésének ellenőrzése 
-                            case SDLK_RIGHT: 
-                                // std::cout << "JOBBRA! elengedve" << std::endl;
-                                jobbra = false;
-                                break;
-                            // szóköz gomb elengedésének ellenőrzése 
-                            case SDLK_SPACE:
-                                attack = false; 
-                                // std::cout << "SZOKOZ! elengedve" << std::endl;
-                                break;
-                            default:;
                         }
                     }
                 }
                 accum -= timeStep;
             }
-            
+
             const float alpha = accum / timeStep;          
             // először a háttér kirajzolása
             game.render(pl);          
             // felfele gomb megnyomva?
             if (fel)
             {
+                if (l.getPos().getX() >= l.getTargetX())
+                {
+                    fel = false;
+                }   
                 // LyRs mozgatása fel
                 game.up(l);
                 // jobbra gomb volt utoljára lenyomva?
@@ -221,6 +177,10 @@ int main(int argc, char* argv[])
             // lefele gomb megnyomva?
             if (le)
             {
+                if (l.getPos().getX() <= l.getTargetX())
+                {
+                    le = false;
+                } 
                 // LyRs mozgatása le
                 game.down(l);
                 // jobbra gomb volt utoljára lenyomva?
@@ -238,6 +198,10 @@ int main(int argc, char* argv[])
             // balra gomb megnyomva?
             if (balra)
             {
+                if (l.getPos().getY() <= l.getTargetY())
+                {
+                    balra = false;
+                } 
                 // LyRs mozgatása balra
                 game.left(l);
                     // LyRs balra mozog animáció következő kockája
@@ -248,6 +212,10 @@ int main(int argc, char* argv[])
             // jobbra gomb megnyomva?
             if (jobbra)
             {
+                if (l.getPos().getY() >= l.getTargetY())
+                {
+                    jobbra = false;
+                } 
                 // LyRs mozgatása jobbra
                 game.right(l);
                 // LyRs jobbra mozog animáció következő kockája
@@ -292,9 +260,12 @@ int main(int argc, char* argv[])
             game.renderText("story/bevezeto.txt", fnt);
             // rendererbe tötött elemek képernyőre helyezése
             game.display();
+            // TODO:
+            // delete c;
         }
         // ablak törlése      
         game.cleanUp();
+        game.clear();
         // program bezárása
         TTF_Quit();
         SDL_Quit();

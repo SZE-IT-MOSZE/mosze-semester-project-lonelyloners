@@ -16,12 +16,29 @@ public:
     SDL_Texture* getTex();
 
     SDL_Rect getCurrentFrame();
+    
     void setSize(int w, int h);
     void setPosi(int x, int y);
+    
+    void setTarget(int direct, int distance);
+
+    int getDirection()
+    {
+        return d;
+    }
+    int getTargetX()
+    {
+        return x;
+    }
+    int getTargetY()
+    {
+        return y;
+    }
 
 private:
     V2F posi;
     SDL_Rect currentFrame;
     SDL_Texture* tex;
+    int d, x, y;
 };
 

@@ -82,4 +82,39 @@ SDL_Rect Entity::getCurrentFrame()
     // Entity SDL_Rect változójának visszaadása
     return currentFrame;
 }
+/**
+ * \brief Megadja a cél pozíciót.
+ * 
+ * Megadott irány és távolság alapján beállítja
+ * az elérni kívánt koordinátákat.
+ * 
+ */
+void Entity::setTarget(int dir, int dist)
+{
+    // megadott irány eltárolása
+    this -> d = dir;
+    V2F p;
+    p = this -> getPos(); 
+
+    switch(dir)
+    {
+        case 1:
+            // fel
+            this -> x = p.getX();
+            this -> y = p.getY() - (dist * 32);  
+        case 2:
+            // jobbra
+            this -> x = p.getX() + (dist * 32);
+            this -> y = p.getY();  
+        case 3:
+            // le
+            this -> x = p.getX();
+            this -> y = p.getY() + (dist * 32);
+        case 4: 
+            // balra
+            this -> x = p.getX() - (dist * 32);
+            this -> y = p.getY();
+    }
+}
+
 
