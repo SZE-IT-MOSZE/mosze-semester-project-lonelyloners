@@ -1,1 +1,43 @@
+Üdvözlünk játékunk súgójában!
 
+Irányítás: A játék során parancsok beírásával lehet 
+különféle akciókat létrehajtani. A játék 
+elején, minden parancs legelső használatánál 
+magyarázat lesz biztosítva arról, hogy az 
+adott parancs mire lesz képes. Ezek után a 
+program várni fog arra, hogy a felhasználó
+megadjon neki a parancsot, itt viszont magyarázat
+nélkül.
+
+Ezek a parancsok a következők:
+
+FEL / ELORE – Egy lépésnyi felfele, illetve 
+előre haladás. A mozgási irány ugyanaz, a 
+nézetváltás miatt lett bevezetve mindegyik parancs. 
+
+LE / HATRA – Egy lépésnyi lefele, illetve 
+hátrafele haladás. A mozgási irány 
+ugyanaz, a nézetváltás miatt 
+lett bevezetve mindegyik parancs.
+
+BELEP – Map következő részének betöltése. 
+Ez a parancs használható például ajtóknál, 
+ahol belépünk egy belső(bb) térbe.
+
+BESZEL //?
+
+FELVESZ – Tárgy eszköztárba (inventory-ba)
+való felvétele.
+
+HASZNAL – Eszköztárban (inventory-ban) 
+fellelhető eszköz használata. A következő 
+módon kell begépelni egy adott tárgyat, 
+például egy almát (ez "alma" néven 
+szerepel az eszköztárunkban): 
+HASZNAL ALMA
+
+TARGYAK – Eszköztár (inventory) kilistázása.
+TAMAD – Támadás elindítása.
+UTES – Már támadás közbeni ellentámadás.
+LAPOZ – Következő bekezdés betöltése.
+SEGITSEG – Súgó betöltése.
