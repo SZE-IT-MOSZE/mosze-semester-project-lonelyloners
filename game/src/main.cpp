@@ -38,7 +38,7 @@ int main(int argc, char* argv[])
     }
 
     // ablak létrehozása
-    RenderWindow game("LonelyLoners - LyRs kalandjai v0.1", 768 /* * getRRes() */, 384 /* * getRRes() */);
+    RenderWindow game("LonelyLoners - LyRs kalandjai v0.1", 768 /* * getRRes() */, 484 /* * getRRes() */);
     // menü futtatása és menüpont számának elmentése
     int choice = menu(game);
     // renderer "takarítása"
@@ -93,6 +93,12 @@ int main(int argc, char* argv[])
         // szöveg háttér betöltése
         SDL_Texture* textBckGround = game.loadTexture("res/gfx/Dessert_Map1/both.png");
         Entity txtbckground(V2F(384, 0), textBckGround);
+        // beviteli mező háttere
+        SDL_Texture* inputTextBckGround = game.loadTexture("res/gfx/Dessert_Map1/both.png");
+        Entity inptxtbckground(V2F(0, 384), textBckGround);
+        SDL_Color color{0, 0, 0, 0};
+        SDL_Surface* temp = TTF_RenderText_Solid(fnt, "", color);
+        SDL_Rect pos{384, 20, temp -> w, temp -> h};
         // parancs választó deklarálása
         Router r = Router(l);
 
@@ -111,6 +117,8 @@ int main(int argc, char* argv[])
         float accum = 0.0f;
         float cTime = utils::hireTimeInSeconds();
         std::string command;
+
+        SDL_StartTextInput();
 
         // main game loop
         while(gameRunning)
@@ -133,6 +141,21 @@ int main(int argc, char* argv[])
                     if (event.type == SDL_QUIT)
                     {
                         gameRunning = false;
+                    }
+                    if (event.type = SDL_TEXTINPUT)
+                    {
+                        command += event.text.text;
+                        if (inputTextBckGround)
+                        {
+                            SDL_DestroyTexture(inputTextBckGround);
+                        }
+                        temp = TTF_RenderText_Solid(fnt, command.c_str(), color);
+                        if (temp)
+                        {
+                            inputTextBckGround = SDL_CreateTextureFromSurface(game.getRenderer(), temp);
+                            pos.w = temp -> w;
+                            pos.h = temp -> h;
+                        }
                     }
                     // gomb lenyomások kezelése
                     if(event.type == SDL_KEYDOWN)
@@ -268,6 +291,7 @@ int main(int argc, char* argv[])
         game.clear();
         // program bezárása
         TTF_Quit();
+        SDL_StopTextInput();
         SDL_Quit();
     }
     // kilépés gomb 
