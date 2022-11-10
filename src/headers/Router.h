@@ -7,6 +7,7 @@ class Router {
         Player p;
 
         void move(std::string cm, std::string it);
+        void help();
 
     public:
         Router(Player p);

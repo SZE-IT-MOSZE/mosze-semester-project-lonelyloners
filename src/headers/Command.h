@@ -4,7 +4,7 @@
 class Command {
     private:
         std::string input;
-        std::vector<std::string> commands = {"FEL", "LE", "JOBBRA", "BALRA", "ELORE", "HATRA"};
+        std::vector<std::string> commands = {"FEL", "LE", "JOBBRA", "BALRA", "ELORE", "HATRA", "SEGITSEG", "HELP"};
         std::vector<std::string> items {"1", "2", "3", "4", "5"};
         std::string command;
         std::string item;
