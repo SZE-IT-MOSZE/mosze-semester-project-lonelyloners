@@ -16,9 +16,37 @@ public:
 
     }
 
+    /**
+    * \brief Kiírja az adott elem koordinátáit.
+    *
+    * Egy betöltött kép pozícióját kaphatjuk meg vele.
+    * 
+    */
     void print()
     {
-        std::cout << x << ", " << y << std::endl;
+        std::cout << "V2F (x, y): " << x << ", " << y << std::endl;
+    }
+    /**
+    * \brief Visszaadja az X koordinátát.
+    *
+    * Egy betöltött kép X koordinátáját kaphatjuk meg vele.
+    * 
+    * \return X koordináta.
+    */
+    int getX()
+    {
+        return x;
+    }
+    /**
+    * \brief Visszaadja az Y koordinátát.
+    *
+    * Egy betöltött kép Y koordinátáját kaphatjuk meg vele.
+    * 
+    * \return Y koordináta.
+    */
+    int getY()
+    {
+        return y;
     }
 
     float x, y;
