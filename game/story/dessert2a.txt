@@ -1,38 +1,86 @@
-//!Döntési pont: kutato1:
-LyRs mondja: Legyen az élelmiszerkutatás. 
-– döntött LyRs az egyes csapat mellett, odaszegülve a közben kettévált látnokond sereg egyik csapatához.
-A lények nem fogadták valami kitörő lelkesedéssel, mégsem mertek hangosan bosszankodni mesterük előtt.
-Az idős mester, akiről kiderült, Wollaris a neve, elégedetten csapta össze szottyadt mancsait.
-Wollaris mondja:  Remek! Akkor mindenki útjára, nem érünk rá egész nap lazsálni!
-Ezzel meg is indult a kis csapat a raktárak azon részéhez, ahol az élelmiszerrel felszerelt tárolók sorakoztak.
-//*Feladat: Kövesd a Látnokondokat. Fedezd fel az éléskamrát.
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//*Odaérsz a kamrához.
-Járatról járatra mentek a vaksötétben, ahol LyRs is csak a legélesebb éjjellátó lencséinek hála nem ment neki az egyre szűkülő, poros földfalaknak.
-Hosszas kóválygást követően a szűkös járat lassan tágulni kezdett, szépen, lépésenként.
-Nemsokára pedig eléjük tárult a katonás rendbe szedett élelmiszer kamra, ami igencsak megcsappant állapotában volt.
-Tisztán látszódott a rendezett sorok és oszlopok labirintusában, hogy honnan is hiányzik az ellopott készlet.
-//*Feladat: Nézz szét a kirabolt kamrában. /korulnez
------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//*Talál itt valamit ami még a késsőbbiekben jó lesz!
-
-LyRs hosszabb-rövidebb gondolkodást követően, látva, hogy szemmel látható nyomok nincsenek, mikroszkopikus lencséihez folyamodott.
-Azokon keresztül tisztán látszottak a nyomok a poros földben: valamiféle aprócska jármű nyomait vélte felfedezni a földön.
-//Lapoz
-//*Feladat: Vizsgáld meg a nyomokat haszáld a korulnez parancsot.
------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-LyRs mondja: Hé, azt hiszem, találtam valamit! 
-– intett oda a többi látnokondnak a robot. Nem voltak valami lelkesek a felfedezést illetően. 
-
-Egyvalaki vakkantott oda neki, egy emberi években mérve olyan 40-50 körüli hím egyed. 
-Látnokondok mondja: Mégis mit találtál azzal a mini-lencsével, bádogember, hangyaürüléket?
-Kitörő röhögés fogadta a hím egyed megjegyzését. 
-LyRs hálát adott, hogy nem volt annyira érzékeny, mint egykori embertársai.
-Apja, az egykori tudós már rég lekevert volna nekik egyet.
-//Lapoz
-
-Mindez persze nem tartotta vissza a robotot attól, hogy ne álljon ki véleménye mellett, hogy az a nyom pedig célra vezető lehet.
-Erősen elgondolkozott, hogy otthagyja az undok látnokondokat és maga dolgozzon tovább az ügyön.
-//!Döntési pont: Követed a nyomokat(kovet), vagy maradsz a többiekkel(marad)?
-//!Döntési pont: kovet: dessert3a.txt
-//!Döntési pont: marad: dessert3b.txt
+LyRs mondja: Legyen az élelmiszerkutatás.
+*
+A robot végül az egyes csapat mellett 
+döntött, odaszegülve a közben kettévált 
+látnokond sereg egyik csapatához.
+*
+A lények nem fogadták valami kitörő 
+lelkesedéssel, mégsem mertek hangosan 
+bosszankodni mesterük előtt.
+*
+Az idős mester, akiről kiderült,
+Wollaris a neve, elégedetten csapta
+össze szottyadt mancsait.
+*
+Wollaris mondja:  Remek! Akkor 
+mindenki útjára, nem érünk rá 
+egész nap lazsálni!
+*
+Ezzel meg is indult a kis csapat 
+a raktárak azon részéhez, ahol az 
+élelmiszerrel felszerelt tárolók 
+sorakoztak.
+*
+//Látnokondok elmennek az élelmiszeres kamra fele (animáció?)
+Feladat: Kövesd a Látnokondokat. Mozgáshoz 
+használd az ELORE és a HATRA parancsokat!
+*
+//Odaérünk a kamrához.
+Járatról járatra mentek a vaksötétben, 
+ahol LyRs is csak a legélesebb éjjellátó 
+lencséinek hála nem ment neki az egyre
+szűkülő, poros földfalaknak.
+*
+Hosszas kóválygást követően a 
+szűkös járat lassan tágulni 
+kezdett, szépen, lépésenként.
+Nemsokára pedig eléjük tárult 
+a katonás rendbe szedett élelmiszer 
+kamra, ami igencsak megcsappant 
+állapotában volt.
+*
+Tisztán látszódott a rendezett 
+sorok és oszlopok labirintusában, 
+hogy honnan is hiányzik az ellopott készlet.
+*
+LyRs hosszabb-rövidebb gondolkodást 
+követően, látva, hogy szemmel látható 
+nyomok nincsenek, mikroszkopikus lencséihez 
+folyamodott. Azokon keresztül tisztán 
+látszottak a nyomok a poros földben: 
+valamiféle aprócska jármű nyomait vélte 
+felfedezni a földön.
+*
+LyRs mondja: Hé, azt hiszem, 
+találtam valamit! 
+*
+A robot odaintett oda a többi 
+látnokondnak. Nem voltak valami 
+lelkesek a felfedezést illetően. 
+*
+Egyvalaki vakkantott oda neki, egy 
+emberi években mérve olyan 40-50 
+körüli hím egyed.
+*
+Látnokondok hím mondja: Mégis mit találtál 
+azzal a mini-lencsével, bádogember,
+hangyaürüléket?
+*
+Kitörő röhögés fogadta a hím egyed 
+megjegyzését. LyRs hálát adott, hogy 
+nem volt annyira érzékeny, mint egykori 
+embertársai. Apja, az egykori tudós már 
+rég lekevert volna nekik egyet.
+*
+Mindez persze nem tartotta vissza a 
+robotot attól, hogy ne álljon ki 
+véleménye mellett, hogy az a nyom 
+pedig célra vezető lehet. Erősen 
+elgondolkozott, hogy otthagyja az 
+undok látnokondokat és maga 
+dolgozzon tovább az ügyön.
+*
+Követed a nyomokat(kovet), vagy maradsz a többiekkel(marad)?
+*
+//Ha kovet: dessert3a.txt
+//Ha marad: dessert3b.txt
