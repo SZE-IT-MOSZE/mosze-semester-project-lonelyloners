@@ -35,6 +35,7 @@ bool Command::validate(std::string cm) {
 }
 
 void Command::make() {
+    std::cout << input << std::endl;
     if(this->validate(this->input)) {
         int space_pos = this->input.find(" ", 0);
         this->command = this->input.substr(0, space_pos);

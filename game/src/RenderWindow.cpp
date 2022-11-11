@@ -1,5 +1,5 @@
 #include <sdl/SDL.h>
-#include <SDL_Main.h> 
+#include <sdl/SDL_Main.h> 
 #include <sdl/SDL_image.h>
 #include <sdl/SDL_ttf.h>
 #include <fstream>
@@ -13,7 +13,7 @@
  * \brief Létrehozza az ablakot.
  * 
  * Megadott méretek, cím alapján pontosan a képernyő közepére létrehoz egy
- * GPU gyorsított ablakot.
+ * GPU gyorsított ablakot.s
  * 
  * \param p_title Az ablak címsorába kerülő szöveg.
  * \param p_w Az ablak szélessége.
@@ -249,7 +249,7 @@ SDL_Renderer* RenderWindow::getRenderer()
  * 
  * Paraméterként kapott szöveget jeleníti meg a képernyőn.
  * 
- * \return A renderer.
+ * \return A következő txt.
  */
 const char* RenderWindow::renderText(const char* path, TTF_Font* Sans)
 {
@@ -290,4 +290,38 @@ const char* RenderWindow::renderText(const char* path, TTF_Font* Sans)
         i++;
     }
     
+}
+/**
+ * \brief A bekért szöveg képernyőre íratása.
+ * 
+ * Paraméterként kapott, billentyűről beolvasott
+ * szöveget jeleníti meg a képernyőn.
+ * 
+ */
+void RenderWindow::renderInputText(std::string inputText, TTF_Font* Sans)
+{  
+    SDL_Color wht = {255, 255, 255};
+
+    SDL_Surface* surfaceMessage = TTF_RenderText_Solid(Sans, inputText.c_str(),  wht); 
+
+    // std::cout << c << std::endl;
+
+    SDL_Texture* Message = SDL_CreateTextureFromSurface(renderer, surfaceMessage);
+
+    // létrehoz egy téglalapot
+    SDL_Rect Message_rect;
+    // beállítja a téglalap x koordinátáját  
+    Message_rect.x = 50;    
+    // beállítja a téglalap x koordinátáját
+    Message_rect.y = 404;    
+    // beállítja a téglalap szélességét
+    Message_rect.w = 12 * inputText.length();
+    // beállítja a téglalap magasságát   
+    Message_rect.h = 36;    
+
+    SDL_RenderCopy(renderer, Message, NULL, &Message_rect);
+
+    // memória felszabadítása
+    SDL_FreeSurface(surfaceMessage);
+    SDL_DestroyTexture(Message);    
 }

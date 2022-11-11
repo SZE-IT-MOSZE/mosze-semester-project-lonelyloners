@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string.h>
 #include <sdl/SDL.h>
-#include <SDL_Main.h> 
+#include <sdl/SDL_Main.h> 
 #include <sdl/SDL_image.h>
 #include <iostream>
 #include <fstream> 

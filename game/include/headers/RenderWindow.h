@@ -28,6 +28,8 @@ class RenderWindow
         void left(Entity& p_entity);   
         void right(Entity& p_entity);   
         
+        void renderInputText(std::string inputText, TTF_Font* Sans);
+
         SDL_Renderer* getRenderer();
         SDL_Window* getWindow();
 

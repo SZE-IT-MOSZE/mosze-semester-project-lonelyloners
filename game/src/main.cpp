@@ -1,4 +1,4 @@
-#define SDL_MAIN_HANDLED
+﻿#define SDL_MAIN_HANDLED
 
 #include <fstream>
 #include <iostream>
@@ -26,19 +26,20 @@
  */
 int main(int argc, char* argv[])
 {
-    if (TTF_Init() == -1)
-    {
-        std::cout << "TTF Init hiba: " << SDL_GetError();
-    }
-    // betűtípus betöltése
-    TTF_Font* fnt = TTF_OpenFont("font/TheFountainOfWishesRegular-OVxw4.ttf", 18);  
+    // SDL inicializálása
     if (SDL_Init(SDL_INIT_EVERYTHING) == -1)
     {
         std::cout << "SDL Init hiba: " << SDL_GetError();
     }
-
+    
+    if (TTF_Init() == -1)
+    {
+        std::cout << "TTF Init hiba: " << SDL_GetError();
+    }
     // ablak létrehozása
     RenderWindow game("LonelyLoners - LyRs kalandjai v0.1", 768 /* * getRRes() */, 484 /* * getRRes() */);
+    // betűtípus betöltése
+    TTF_Font* fnt = TTF_OpenFont("font/TheFountainOfWishesRegular-OVxw4.ttf", 18);  
     // menü futtatása és menüpont számának elmentése
     int choice = menu(game);
     // renderer "takarítása"
@@ -86,7 +87,7 @@ int main(int argc, char* argv[])
         planetR = setPlanet1Pos();
         // LyRs összes animációját tartalmazó sprite sheet betöltése
         SDL_Texture* lyrsAnim = game.loadTexture("res/gfx/Animations/lyrs_sprite_sheet.png");
-        Entity l(V2F(0, 0), lyrsAnim);           
+        Entity l(V2F(64, 0), lyrsAnim);           
         // első térkép hátterének betöltése
         SDL_Texture* background = game.loadTexture("res/gfx/Dessert_Map1/dessert_map1_alapmap.png");
         Entity pl(V2F(0, 0), background);
@@ -94,11 +95,8 @@ int main(int argc, char* argv[])
         SDL_Texture* textBckGround = game.loadTexture("res/gfx/Dessert_Map1/both.png");
         Entity txtbckground(V2F(384, 0), textBckGround);
         // beviteli mező háttere
-        SDL_Texture* inputTextBckGround = game.loadTexture("res/gfx/Dessert_Map1/both.png");
-        Entity inptxtbckground(V2F(0, 384), textBckGround);
-        SDL_Color color{0, 0, 0, 0};
-        SDL_Surface* temp = TTF_RenderText_Solid(fnt, "", color);
-        SDL_Rect pos{384, 20, temp -> w, temp -> h};
+        SDL_Texture* inputTextBckGround = game.loadTexture("res/gfx/Objects/blck_bckgrnd.png");
+        Entity inptxtbckground(V2F(0, 384), inputTextBckGround);
         // parancs választó deklarálása
         Router r = Router(l);
 
@@ -116,7 +114,10 @@ int main(int argc, char* argv[])
         const float timeStep = 0.01f;
         float accum = 0.0f;
         float cTime = utils::hireTimeInSeconds();
+        
         std::string command;
+
+        std::string commandMod;
 
         SDL_StartTextInput();
 
@@ -133,41 +134,36 @@ int main(int argc, char* argv[])
             accum += fTime;
             // fps limitálása
             while(accum >= timeStep)
-            {
+            {   
                 // események vezérlése
                 while (SDL_PollEvent(&event))
                 {
-                    // kilépés gomb lekezelése 
-                    if (event.type == SDL_QUIT)
+                    switch(event.type)
                     {
-                        gameRunning = false;
-                    }
-                    if (event.type = SDL_TEXTINPUT)
-                    {
-                        command += event.text.text;
-                        if (inputTextBckGround)
-                        {
-                            SDL_DestroyTexture(inputTextBckGround);
-                        }
-                        temp = TTF_RenderText_Solid(fnt, command.c_str(), color);
-                        if (temp)
-                        {
-                            inputTextBckGround = SDL_CreateTextureFromSurface(game.getRenderer(), temp);
-                            pos.w = temp -> w;
-                            pos.h = temp -> h;
-                        }
-                    }
-                    // gomb lenyomások kezelése
-                    if(event.type == SDL_KEYDOWN)
-                    {   
-                        switch(event.key.keysym.sym)
-                        {
-                            case SDLK_RETURN:
-                                Command c = Command(command);
-                                c.make();
-                                r.route(c.getCommand(), c.getItem());
-                                break;
-                        }
+                        // kilépés gomb lekezelése 
+                        case SDL_QUIT:
+                            gameRunning = false;
+                            break;
+                        
+                        // gomb lenyomások kezelése
+                        case SDL_TEXTINPUT:
+                            command += event.text.text;
+                        
+                        case SDL_KEYDOWN:
+                            switch(event.key.keysym.sym)
+                            {
+                                case SDLK_BACKSPACE:
+                                    command = command.substr(0, command.size()-1);
+                                    std::cout << command << std::endl;
+                                    break;
+
+                                case SDLK_RETURN:
+                                    Command c = Command(command);
+                                    c.make();
+                                    r.route(c.getCommand(), c.getItem());
+                                    command = "";
+                        
+                            }
                     }
                 }
                 accum -= timeStep;
@@ -278,6 +274,8 @@ int main(int argc, char* argv[])
             }
             // felhők renderelése és ütközések ellenőrzése és lekezelése
             planetR = renderPlanet(game, planet1, planetR, l);
+            game.render(inptxtbckground);
+            game.renderInputText(command, fnt);
             // szöveg háttér
             game.render(txtbckground);
             game.renderText("story/bevezeto.txt", fnt);
@@ -286,12 +284,12 @@ int main(int argc, char* argv[])
             // TODO:
             // delete c;
         }
-        // ablak törlése      
+        // ablak törlése
         game.cleanUp();
         game.clear();
         // program bezárása
-        TTF_Quit();
         SDL_StopTextInput();
+        TTF_Quit();
         SDL_Quit();
     }
     // kilépés gomb 
