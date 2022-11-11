@@ -1,18 +1,13 @@
 FEL / ELORE
 LE / HATRA
-KORULNEZ
 BELEP //másik map erre fog betölteni
-MASZIK
-BESZEL / KOSZON
+BESZEL //?
 FELVESZ
-KINYIT
 OLVAS //tekercseknél
 HASZNAL
-MOZGAT
 MEGVIZSGAL
 TARGYAK / INVENTORY
 TAMAD //támadás elindítása
 UTES //már támadás közben ellentámadás parancsa
 LAPOZ //következő bekezdés betöltése * karakterig
 SEGITSEG //behozza a segitseg.txt-t
-DONT
