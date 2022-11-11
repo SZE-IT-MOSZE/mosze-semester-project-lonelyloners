@@ -1,36 +1,77 @@
-Az emberiség sosem gondolta, hogy eljut a kihalás szélére.
-Bátran folytatta környezetszennyező, figyelmetlen életmódját.
-Az óceánok és a földek azonban csak-csak teltek szeméttel, csak-csak pusztultak időről időre, kiszorítva a Föld összes élőlényét.
-//Lapoz.
-
+Az emberiség sosem gondolta, 
+hogy eljut a kihalás szélére.
+Bátran folytatta környezetszennyező, 
+figyelmetlen életmódját.
+*
+Az óceánok és a földek azonban 
+csak-csak teltek szeméttel, csak-csak 
+pusztultak időről időre, kiszorítva 
+a Föld összes élőlényét.
+*
 Először a gyengébbek hullottak el.
-Növények, melyek nem bírták a bolygó mocsoktól nehéz levegőjét.
-Őket követték a növényevők, kisebbtől a nagyobb fele haladva.
-Utánuk pedig nem sokkal tünedeztek el a ragadozók, napról-napra, szemmel látható ritmusban.
-//Lapoz.
-
+Növények, melyek nem bírták a bolygó 
+mocsoktól nehéz levegőjét.
+*
+Őket követték a növényevők, 
+kisebbtől a nagyobb fele haladva.
+Utánuk pedig nem sokkal tünedeztek 
+el a ragadozók, napról-napra, 
+szemmel látható ritmusban.
+*
 Utoljára maradtak az emberek...
-Föld alatti, hipermodern bunkereket építettek.
-Mesterséges módon előállított élelmen éltek, a vizet csak hosszas bíbelődéssel tudták előállítani, s az így megszerzett készlet is egy-kettőre kifogyott.
-A betegségek pedig így is, a szorosra zárt ajtók mögé is bejutottak, kegyetlen ütemben tizedelve az amúgy is megfogyatkozott emberiséget.
-//Lapoz.
-
-Végül ketten maradtak: Lonely, egy fiatal tudósnő és szeretett párja, Loners, aki szintén a tudós szakma elismert emberének számított.
+Föld alatti, hipermodern bunkereket 
+építettek. Mesterséges módon előállított 
+élelmen éltek, a vizet csak hosszas 
+bíbelődéssel tudták előállítani, s az így 
+megszerzett készlet is egy-kettőre kifogyott.
+*
+A betegségek pedig így is, a szorosra 
+zárt ajtók mögé is bejutottak, kegyetlen 
+ütemben tizedelve az amúgy is 
+megfogyatkozott emberiséget.
+*
+Végül ketten maradtak: Lonely, egy fiatal 
+tudósnő és szeretett párja, Loners, 
+aki szintén a tudós szakma elismert 
+emberének számított.
+*
 Sokáig nem tudták eldönteni, hogyan tovább...
-Ketten maradtak, így az utódnemzéssel nem tudták volna megoldani az emberiség kihalását 
-– egyébként sem akarták gyermekeiket egy elfajult, pusztulásra ítélt bolygóra a világra hozni.
-Szenvedés lett volna mind a kisdednek, mind a szülőknek a túlélés, hiszen az idő és az élhető terület szinte teljesen elfogyott.
-//Lapoz.
-
-Így döntöttek amellett, hogy befejezik az Informatikai részleg csúcsteljesítményének számító robotot, LyRs-t, mint közös gyermeküket.
-A robot a csúcstechnológia legfejlettebb eszközeivel lett felszerelve, készen mindenféle szituációra – legyen békés kommunikáció vagy heves harc.
+*
+Ketten maradtak, így az utódnemzéssel 
+nem tudták volna megoldani az emberiség 
+kihalását. Egyébként sem akarták 
+gyermekeiket egy elfajult, pusztulásra 
+ítélt bolygóra a világra hozni. 
+Nem beszélve arról, hogy Lonely 
+terméletlensége is közrejátszott.
+Szenvedés lett volna mind a kisdednek,
+mind a szülőknek a túlélés, hiszen az 
+idő és az élhető terület szinte 
+teljesen elfogyott.
+*
+Így döntöttek amellett, hogy befejezik 
+az Informatikai részleg csúcsteljesítményének 
+számító robotot, LyRs-t, mint közös gyermeküket.
+*
+A robot a csúcstechnológia legfejlettebb 
+eszközeivel lett felszerelve, készen 
+mindenféle szituációra – legyen békés 
+kommunikáció vagy heves harc.
+*
 Egész életüket LyRs-re szentelték.
-Észre sem vették, ahogy elröpültek az évek, évtizedek.
-Arra lettek csak figyelmesek, ahogy LyRs egyre okosabb és okosabb lett, ők pedig egyre és egyre lassabbak, idősebbek, fáradtabbak.
-//Lapoz.
-
-Egy nap pedig egyek lettek hamuvá porladt embertársaikkal.
-Utolsó kívánságuk szerint LyRs hamvaikat az egykori Csendes-óceánba dobta, búcsút véve tőlük,
-majd elhagyta az egykor Föld névre keresztelt bolygó maradványait, hogy új otthonra találjon...
-
-//A játék kezdetet.
+Észre sem vették, ahogy elröpültek az 
+évek, évtizedek. Arra lettek csak 
+figyelmesek, ahogy LyRs egyre okosabb 
+és okosabb lett, ők pedig egyre és 
+egyre lassabbak, idősebbek, fáradtabbak.
+*
+Egy nap pedig egyek lettek hamuvá 
+porladt embertársaikkal.
+*
+Utolsó kívánságuk szerint LyRs hamvaikat 
+az egykori Csendes-óceánba dobta, búcsút 
+véve tőlük, majd elhagyta az egykor
+Föld névre keresztelt bolygó maradványait, 
+hogy új otthonra találjon.
+*
+//Ezután következik: dessert1.txt
