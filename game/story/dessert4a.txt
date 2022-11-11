@@ -3,7 +3,9 @@ LyRs hosszas gondolkodás után
 Mi veszteni valója származhat belőle? 
 Plusz Wollaris ennyit megérdemel.
 Ő viselkedett vele a legnormálisabban 
-mind közül. Mihelyst visszatért az 
+mind közül. 
+*
+Mihelyst visszatért az 
 élet a rendes kerékvágásba a Látnokondok 
 népes kolóniájába, a robot nehéz búcsút 
 vett Wollaris mestertől. Kicsit az alkotóira 
@@ -11,16 +13,16 @@ emlékeztette az idős bölcs, ami annyira
 kellemes emlékeket ébresztett benne, 
 hogy nagy-nehezen vette csak rá magát a 
 búcsúzásra.
-
+*
 Megígérte a mesternek, hogy ha erre jár, 
 mindenképp beugrik hozzá, lecsekkolni, 
 hogy minden rendben megy-e ezen a sivatagos, 
 kietlen vidéken.
-
+*
 Pillanatokkal később LyRs már az egyre 
 ritkuló levegőt szelte, rakétáinak erős 
 tüze felforrósítva maga körül az egyébként 
 is izzó légréteget, majd az azt követő 
 atmoszférát – legvégül pedig az űr végtelen sötétjét.
-
+*
 //Ezután következik: glacies1.txt
