@@ -3,6 +3,7 @@ okozni a számára egyetlen kedves
 látnokondnak. Elfogadta az ezüst 
 szobrocskát, eltéve biztonságba 
 egyik beépített tároló rekeszébe.
+*
 Mihelyst pedig az értékes kincs 
 biztonságban hevert, elzárva az űr 
 kegyetlen hatásaitól, a robot egy 
@@ -11,5 +12,5 @@ rakétáit, elemelkedve a Des"s"ert
 bolygó sivatagos felszínéről,
 egyenesen a végtelen űrbe, hogy 
 folytassa felfedezőútját...
-
+*
 //Ezután következik: glacies1.txt

@@ -1,54 +1,60 @@
 LyRs strapabíró fémlemezei itt-ott 
-behorpadtak, szenzorai pedig újrahangolásra szorultak: viszont győzött.
-
+behorpadtak, szenzorai pedig 
+újrahangolásra szorultak: viszont győzött.
+*
 Ez volt a fontos.
-
+*
 Nem beszélve arról, hogy így alkotóinak 
 is be tudta bizonyítani, hogy a védelmi 
 rendszere is tökéletesen lett elkészítve, 
 mint a robot minden más része.
-
+*
 Hiába próbálták elkapni a harcba be 
 nem szállt ürge-lényeket, hogy szembenézhessenek 
 a büntetéssel, ami kijárt nekik, gyorsabbak 
 voltak a látnokondoknál, LyRs pedig nem tudott 
 volna annyi fele teljesíteni.
-
+*
 Fontosabbnak mérte fel azt, hogy a mogorva 
 vakondszerű-lényeket mentse egypár elillant 
 ürge-féleségnél.
-
+*
 Legalább a vizes flaskákat nem vitték magukkal.
-Igaz, eléggé megapasztották a készletet az itt-ott 
-kilötyköléssel, de mégis maradt belőle annyi, 
-hogy ameddig újra nem töltik a látnokondok,
-nem halnak szomjan ezekben a fülledt, sötét 
-barlangokban és járatokban.
-
+Igaz, eléggé megapasztották a készletet 
+az itt-ott kilötyköléssel, de mégis maradt 
+belőle annyi, hogy ameddig újra nem töltik 
+a látnokondok, nem halnak szomjan ezekben 
+a fülledt, sötét barlangokban és járatokban.
+*
 Mihelyst minden megmaradt flaska visszakerült 
-eredeti helyére, illetve a megsérült látnokondok 
-ellátásra kerültek, a robotnak eljött a szívszaggató 
-búcsúzás ideje. Nem is maguk a látnokondok fognak
-neki hiányozni: kifejezetten egyikük fogta meg 
-nagyon, egykori alkotóira emlékeztetve 
+eredeti helyére, illetve a megsérült 
+látnokondok ellátásra kerültek, a robotnak 
+eljött a szívszaggató búcsúzás ideje. Nem 
+is maguk a látnokondok fognak neki hiányozni: 
+kifejezetten egyikük fogta meg nagyon, 
+egykori alkotóira emlékeztetve 
 bölcsességével, megfontoltságával és 
 végtelen kedvességével.
-
+*
 Wollaris mester mondja: LyRs, fiam...
-
+*
 Rövidebb kutakodás után egy aprócska, 
-ezüst szobrocskát húzott elő: egy szívet ábrázolt.
-
-Wollaris mester mondja: Egy ilyen vén szatyor, 
-mint én soha sem fogom tudni eléggé meghálálni, 
-amit értünk tettél. Nem beszélve arról, hogy 
-milyen bunkó módon bántak veled a fajtársaim. 
-Azonban a lelkiismeretem nem hagyja, hogy 
-bármiféle hála-ajándék nélkül engedjek utadra. 
-Szeretném, ha elfogadnád tőlem ezt a kis 
-szobrocskát: a bátorságot szimbolizálja, 
-amiben te nem szenvedsz hiányt.
-
-Elviszed az ezüst szobrot magaddal? - igen / nem:
-//He elviszi: dessert5a.txt
+ezüst szobrocskát húzott elő: egy 
+szívet ábrázolt.
+*
+Wollaris mester mondja: Egy ilyen vén 
+szatyor, mint én soha sem fogom tudni 
+eléggé meghálálni, amit értünk tettél.
+Nem beszélve arról, hogy milyen bunkó
+módon bántak veled a fajtársaim. 
+Azonban a lelkiismeretem nem hagyja, 
+hogy bármiféle hála-ajándék nélkül 
+engedjek utadra. Szeretném, ha elfogadnád 
+tőlem ezt a kis szobrocskát: a bátorságot 
+szimbolizálja, amiben te nem 
+szenvedsz hiányt.
+*
+Elviszed az ezüst szobrot 
+magaddal? - igen / nem
+//He elviszi: dessert5a.txt +inventory-ban megjelenik: SZOBOR
 //Ha nem: dessert5b.txt

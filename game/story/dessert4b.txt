@@ -1,35 +1,40 @@
 LyRs hosszas gondolkodás után úgy 
 döntött, nem viszi el a kulcsot.
-
+*
 Hiába sugározott érzelmi központja 
 keserű szomorúságot Wollaris mester miatt,
 látva, hogy az idős bölcs mennyire 
 elszomorodott a döntése miatt, 
 a robot végül nemet mondott.
-
+*
 Túlságosan is rossz emlékek fűzték 
 a Látnokond faj fele. Nem hiányzott 
 egy tárgy, ami rájuk emlékeztette volna.
+*
 Mihelyst visszatért az élet a rendes 
 kerékvágásba a Látnokondok népes 
 kolóniájába, a robot nehéz búcsút 
-vett Wollaris mestertől.
-Kicsit az alkotóira emlékeztette 
+vett Wollaris mestertől. Kicsit 
+az alkotóira emlékeztette 
 az idős bölcs, ami annyira kellemes 
 emlékeket ébresztett benne, hogy 
 nagy-nehezen vette csak rá magát 
 a búcsúzásra. Nem beszélve az 
-elutasított kérésről. Vigasztalásul 
+elutasított kérésről. 
+*
+Vigasztalásul 
 megígérte a mesternek, hogy ha 
 erre jár, mindenképp beugrik hozzá, 
 lecsekkolni, hogy minden 
 rendben megy-e ezen a sivatagos, 
-kietlen vidéken. Pillanatokkal később 
+kietlen vidéken. 
+*
+Pillanatokkal később 
 LyRs már az egyre ritkuló 
 levegőt szelte, rakétáinak erős tüze 
 felforrósítva maga körül az egyébként 
 is izzó légréteget, majd az azt követő 
 atmoszférát – legvégül pedig az űr 
 végtelen sötétjét.
-
+*
 //Ezután következik: glacies1.txt

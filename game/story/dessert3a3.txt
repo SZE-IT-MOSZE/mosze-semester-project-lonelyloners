@@ -1,0 +1,31 @@
+//Segítettél visszacipelni 3 ládát.
+LyRs elégedetten, büszkén felszegett 
+fejjel segédkezett ezek után visszapakolni 
+az ellopott élelmiszeres ládákat, 
+illetve elhurcolni a fogjul ejtett 
+hangya-lényeket az idős bölcs elé.
+Ő volt a vezetőjük, mint az utólag 
+kiderült: LyRs-nek hatalmas szerencséje 
+volt, hogy vele találkozott a bolygóra 
+kerülésekor elsőként. Nem is lehetett 
+volna hálásabb, mégis, hálája jeléül 
+még a mester volt az, aki megajándékozta 
+LyRs-t egy üvegcse homokkal szuvenírként.
+*
+Wollaris mondja: LyRs, barátom...
+*
+Ráncos mancsaiban egy aranyozott kulcs 
+jelent meg, nyelénél színes, kirakott kövekkel.
+Értékesnek tűnt.
+*
+Wollaris mondja: LyRs, drága barátom... 
+sokmindennel vénségemben nem tudok 
+szolgálni neked sajnos. Azonban van 
+ez a kulcs, amely igen sokat ér 
+nekem. Még egykor egy barátomtól 
+kaptam a Glacies bolygóról. 
+*
+Elfogadod a kulcsot(elfogad) vagy vissza utasítod(elutasit)? - elfogad / elutasit
+*
+//Ha elfogad, ez a következő: dessert4a.txt
+//Ha elutasít, ez a következő: dessert4b.txt
