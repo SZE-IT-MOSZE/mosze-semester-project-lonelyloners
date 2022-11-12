@@ -87,7 +87,8 @@ int main(int argc, char* argv[])
         planetR = setPlanet1Pos();
         // LyRs összes animációját tartalmazó sprite sheet betöltése
         SDL_Texture* lyrsAnim = game.loadTexture("res/gfx/Animations/lyrs_sprite_sheet.png");
-        Entity l(V2F(64, 0), lyrsAnim);           
+        Entity l(V2F(64, 0), lyrsAnim);
+        l.setPosi(64, 0);
         // első térkép hátterének betöltése
         SDL_Texture* background = game.loadTexture("res/gfx/Dessert_Map1/dessert_map1_alapmap.png");
         Entity pl(V2F(0, 0), background);
@@ -144,29 +145,49 @@ int main(int argc, char* argv[])
                         case SDL_QUIT:
                             gameRunning = false;
                             break;
-                        
-                        // gomb lenyomások kezelése
+                        // szövegbevitel kezelése
                         case SDL_TEXTINPUT:
                             command += event.text.text;
-                        
+                        // gomb lenyomások kezelése                        
                         case SDL_KEYDOWN:
                             switch(event.key.keysym.sym)
                             {
                                 case SDLK_BACKSPACE:
                                     command = command.substr(0, command.size()-1);
-                                    std::cout << command << std::endl;
                                     break;
-
                                 case SDLK_RETURN:
                                     Command c = Command(command);
                                     c.make();
                                     r.route(c.getCommand(), c.getItem());
                                     command = "";
-                        
                             }
                     }
                 }
                 accum -= timeStep;
+            }
+            // irányok beállítása
+            switch (l.getDirection())
+            {
+                case 0:
+                    break;
+                case 1:
+                    // fel
+                    fel = true;
+                    break;
+                case 2:
+                    // jobbra
+                    jobbra = true;
+                    break;     
+                case 3:
+                    // le
+                    le = true;
+                    break;
+                case 4: 
+                    // balra
+                    balra = true;
+                    break;
+                default:
+                    break;
             }
 
             const float alpha = accum / timeStep;          
@@ -178,6 +199,9 @@ int main(int argc, char* argv[])
                 if (l.getPos().getX() >= l.getTargetX())
                 {
                     fel = false;
+                    // irány 0-ra állítása, hogy következő tick esetén ne állítsa megint az irányt
+                    l.setDirZero();
+
                 }   
                 // LyRs mozgatása fel
                 game.up(l);
@@ -199,6 +223,8 @@ int main(int argc, char* argv[])
                 if (l.getPos().getX() <= l.getTargetX())
                 {
                     le = false;
+                    // irány 0-ra állítása, hogy következő tick esetén ne állítsa megint az irányt
+                    l.setDirZero();
                 } 
                 // LyRs mozgatása le
                 game.down(l);
@@ -220,6 +246,8 @@ int main(int argc, char* argv[])
                 if (l.getPos().getY() <= l.getTargetY())
                 {
                     balra = false;
+                    // irány 0-ra állítása, hogy következő tick esetén ne állítsa megint az irányt
+                    l.setDirZero();
                 } 
                 // LyRs mozgatása balra
                 game.left(l);
@@ -234,6 +262,7 @@ int main(int argc, char* argv[])
                 if (l.getPos().getY() >= l.getTargetY())
                 {
                     jobbra = false;
+                    l.setDirZero();
                 } 
                 // LyRs mozgatása jobbra
                 game.right(l);

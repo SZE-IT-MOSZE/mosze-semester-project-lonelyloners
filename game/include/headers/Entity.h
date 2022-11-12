@@ -26,6 +26,10 @@ public:
     {
         return d;
     }
+    void setDirZero()
+    {
+        d = 0;
+    }
     int getTargetX()
     {
         return x;

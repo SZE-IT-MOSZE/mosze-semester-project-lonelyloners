@@ -33,7 +33,7 @@ public:
     * 
     * \return X koordináta.
     */
-    int getX()
+    float getX()
     {
         return x;
     }
@@ -44,7 +44,7 @@ public:
     * 
     * \return Y koordináta.
     */
-    int getY()
+    float getY()
     {
         return y;
     }

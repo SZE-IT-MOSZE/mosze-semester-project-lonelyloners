@@ -301,7 +301,7 @@ const char* RenderWindow::renderText(const char* path, TTF_Font* Sans)
 void RenderWindow::renderInputText(std::string inputText, TTF_Font* Sans)
 {  
     SDL_Color wht = {255, 255, 255};
-
+    inputText = ">> " + inputText;
     SDL_Surface* surfaceMessage = TTF_RenderText_Solid(Sans, inputText.c_str(),  wht); 
 
     // std::cout << c << std::endl;
@@ -313,7 +313,7 @@ void RenderWindow::renderInputText(std::string inputText, TTF_Font* Sans)
     // beállítja a téglalap x koordinátáját  
     Message_rect.x = 50;    
     // beállítja a téglalap x koordinátáját
-    Message_rect.y = 404;    
+    Message_rect.y = 416;    
     // beállítja a téglalap szélességét
     Message_rect.w = 12 * inputText.length();
     // beállítja a téglalap magasságát   
