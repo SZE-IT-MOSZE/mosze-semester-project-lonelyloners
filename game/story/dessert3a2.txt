@@ -151,3 +151,4 @@ Adott tárgy használatára a
 következő parancsot alkalmazhatod: 
 HASZNAL ESZKOZNEVE
 *
+//Feladat után következik: dessert3a3.txt
