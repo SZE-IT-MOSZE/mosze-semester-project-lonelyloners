@@ -29,8 +29,9 @@ LyRs beismerte – szigorúan csakis magának –,
 hogy lehet, ezúttal túlságosan rosszul 
 döntött a szoftvere az esetleges kimenetel 
 megjövendölése során. Nem tagadta, hiszen 
-senki sem lehet tökéletes, ami őt is 
-magába foglalta, hiába volt csúcstechnológiás robot.
+senki sem lehet tökéletes, ami őt 
+is magába foglalta, hiába volt 
+csúcstechnológiás robot.
 *
 Már-már beletörődött a tévedésébe, tovább 
 keresve esetleges nyomokat, amivel tovább 
