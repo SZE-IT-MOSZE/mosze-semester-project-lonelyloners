@@ -6,12 +6,9 @@
 
 class Router {
     private:
-        Entity* p;
-
-        void move(std::string cm, std::string it);
+        void move(std::string cm, std::string it, Entity& ent);
         void help();
 
     public:
-        Router(Entity& p);
-        void route(std::string command, std::string item);
+        void route(std::string command, std::string item, Entity& ent);
 };

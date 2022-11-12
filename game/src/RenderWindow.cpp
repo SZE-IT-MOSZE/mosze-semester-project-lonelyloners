@@ -1,5 +1,5 @@
 #include <sdl/SDL.h>
-#include <SDL_Main.h> 
+#include <sdl/SDL_Main.h> 
 #include <sdl/SDL_image.h>
 #include <sdl/SDL_ttf.h>
 #include <fstream>
@@ -13,7 +13,7 @@
  * \brief Létrehozza az ablakot.
  * 
  * Megadott méretek, cím alapján pontosan a képernyő közepére létrehoz egy
- * GPU gyorsított ablakot.
+ * GPU gyorsított ablakot.s
  * 
  * \param p_title Az ablak címsorába kerülő szöveg.
  * \param p_w Az ablak szélessége.
@@ -35,7 +35,7 @@ RenderWindow::RenderWindow (const char* p_title, int p_w, int p_h) : window(NULL
     }
     // GPU gyorsított renderer létrehozása
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
-            
+    pg = 0;
 }
 /**
  * \brief Kép betöltése.
@@ -200,8 +200,8 @@ void RenderWindow::render(Entity& p_entity)
     src.h = p_entity.getCurrentFrame().h;
     // cél téglalap beállítása
     SDL_Rect dst;
-    dst.x = p_entity.getPos().x;
-    dst.y = p_entity.getPos().y;
+    dst.x = p_entity.getPos().getX();
+    dst.y = p_entity.getPos().getY();
     dst.w = p_entity.getCurrentFrame().w;
     dst.h = p_entity.getCurrentFrame().h;
     // rendererbe másolás
@@ -249,7 +249,7 @@ SDL_Renderer* RenderWindow::getRenderer()
  * 
  * Paraméterként kapott szöveget jeleníti meg a képernyőn.
  * 
- * \return A renderer.
+ * \return A következő txt.
  */
 const char* RenderWindow::renderText(const char* path, TTF_Font* Sans)
 {
@@ -257,28 +257,31 @@ const char* RenderWindow::renderText(const char* path, TTF_Font* Sans)
     std::ifstream ifs(path);
     std::string line;
     const char * c;
-    int i = 0;
+    int i = 0, asterisk = 0; 
 
     SDL_Color blck = {0, 0, 0};
 
     while(std::getline(ifs, line))
     {
+        if (line == "*")
+        {
+            std::cout << pg << std::endl;
+            pg++;            
+        }
         // std::string const *charrá konvertálása
         c = line.c_str();
-        SDL_Surface* surfaceMessage = TTF_RenderText_Solid(Sans, c, blck); 
-
-        // std::cout << c << std::endl;
+        SDL_Surface* surfaceMessage = TTF_RenderUTF8_Blended(Sans, c, blck); 
 
         SDL_Texture* Message = SDL_CreateTextureFromSurface(renderer, surfaceMessage);
 
         // létrehoz egy téglalapot
         SDL_Rect Message_rect;
         // beállítja a téglalap x koordinátáját  
-        Message_rect.x = 464;    
+        Message_rect.x = 450;    
         // beállítja a téglalap x koordinátáját
-        Message_rect.y = 32 + (20 * i);    
+        Message_rect.y = 30 + (20 * i);    
         // beállítja a téglalap szélességét
-        Message_rect.w = 240;
+        Message_rect.w = 6 * line.length();
         // beállítja a téglalap magasságát   
         Message_rect.h = 18;    
 
@@ -287,7 +290,45 @@ const char* RenderWindow::renderText(const char* path, TTF_Font* Sans)
         // memória felszabadítása
         SDL_FreeSurface(surfaceMessage);
         SDL_DestroyTexture(Message);
+    
         i++;
     }
     
+}
+/**
+ * \brief A bekért szöveg képernyőre íratása.
+ * 
+ * Paraméterként kapott, billentyűről beolvasott
+ * szöveget jeleníti meg a képernyőn.
+ * 
+ */
+void RenderWindow::renderInputText(std::string inputText, TTF_Font* Sans)
+{  
+    const char * c;
+
+    SDL_Color wht = {255, 255, 255};
+    inputText = ">> " + inputText;
+
+    c = inputText.c_str();
+
+    SDL_Surface* surfaceMessage = TTF_RenderUTF8_Blended(Sans, c, wht); 
+
+    SDL_Texture* Message = SDL_CreateTextureFromSurface(renderer, surfaceMessage);
+
+    // létrehoz egy téglalapot
+    SDL_Rect Message_rect;
+    // beállítja a téglalap x koordinátáját  
+    Message_rect.x = 50;    
+    // beállítja a téglalap x koordinátáját
+    Message_rect.y = 416;    
+    // beállítja a téglalap szélességét
+    Message_rect.w = 12 * inputText.length();
+    // beállítja a téglalap magasságát   
+    Message_rect.h = 36;    
+
+    SDL_RenderCopy(renderer, Message, NULL, &Message_rect);
+
+    // memória felszabadítása
+    SDL_FreeSurface(surfaceMessage);
+    SDL_DestroyTexture(Message);    
 }

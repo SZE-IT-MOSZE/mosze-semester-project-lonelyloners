@@ -46,7 +46,7 @@ int menu(RenderWindow menuWindow)
     char str[100];
     
     // betűtípus betöltése
-    TTF_Font* fnt = TTF_OpenFont("font/TheFountainOfWishesRegular-OVxw4.ttf", 18);  
+    TTF_Font* fnt = TTF_OpenFont("font/PatrickHand-Regular.ttf", 18);  
 
     SDL_Texture* newGame = nullptr;
     // háttér betöltése

@@ -28,6 +28,8 @@ class RenderWindow
         void left(Entity& p_entity);   
         void right(Entity& p_entity);   
         
+        void renderInputText(std::string inputText, TTF_Font* Sans);
+
         SDL_Renderer* getRenderer();
         SDL_Window* getWindow();
 
@@ -36,6 +38,5 @@ class RenderWindow
         SDL_Renderer* renderer;
         
         const char* p_title;
-        int p_w;
-        int p_h;
+        int p_w, p_h, pg;
 };
