@@ -37,9 +37,9 @@ int main(int argc, char* argv[])
         std::cout << "TTF Init hiba: " << SDL_GetError();
     }
     // ablak létrehozása
-    RenderWindow game("LonelyLoners - LyRs kalandjai v0.1", 768 /* * getRRes() */, 484 /* * getRRes() */);
+    RenderWindow game("LonelyLoners - LyRs kalandjai v0.2", 768 /* * getRRes() */, 484 /* * getRRes() */);
     // betűtípus betöltése
-    TTF_Font* fnt = TTF_OpenFont("font/TheFountainOfWishesRegular-OVxw4.ttf", 18);  
+    TTF_Font* fnt = TTF_OpenFont("font/PatrickHand-Regular.ttf", 18);  
     // menü futtatása és menüpont számának elmentése
     int choice = menu(game);
     // renderer "takarítása"

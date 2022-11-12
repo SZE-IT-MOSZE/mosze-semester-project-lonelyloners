@@ -38,6 +38,5 @@ class RenderWindow
         SDL_Renderer* renderer;
         
         const char* p_title;
-        int p_w;
-        int p_h;
+        int p_w, p_h, pg;
 };
