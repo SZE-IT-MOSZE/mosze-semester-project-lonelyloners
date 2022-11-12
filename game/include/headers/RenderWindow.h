@@ -30,6 +30,8 @@ class RenderWindow
         
         void renderInputText(std::string inputText, TTF_Font* Sans);
 
+        void nextPage() { pg++; };
+
         SDL_Renderer* getRenderer();
         SDL_Window* getWindow();
 

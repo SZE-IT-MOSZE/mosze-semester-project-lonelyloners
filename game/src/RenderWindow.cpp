@@ -35,7 +35,7 @@ RenderWindow::RenderWindow (const char* p_title, int p_w, int p_h) : window(NULL
     }
     // GPU gyorsított renderer létrehozása
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
-    pg = 0;
+    pg = 1;
 }
 /**
  * \brief Kép betöltése.
@@ -257,43 +257,48 @@ const char* RenderWindow::renderText(const char* path, TTF_Font* Sans)
     std::ifstream ifs(path);
     std::string line;
     const char * c;
-    int i = 0, asterisk = 0; 
+    int i = 0, asterisk = 0, alline = 0; 
 
     SDL_Color blck = {0, 0, 0};
 
     while(std::getline(ifs, line))
     {
+        alline++;
+        if (pg > asterisk && (pg - 1) == asterisk && line.substr(0, 2) != "//" && line != "*")
+        { 
+            // std::string const *charrá konvertálása
+            c = line.c_str();
+            SDL_Surface* surfaceMessage = TTF_RenderUTF8_Blended(Sans, c, blck); 
+
+            SDL_Texture* Message = SDL_CreateTextureFromSurface(renderer, surfaceMessage);
+
+            // létrehoz egy téglalapot
+            SDL_Rect Message_rect;
+            // beállítja a téglalap x koordinátáját  
+            Message_rect.x = 450;    
+            // beállítja a téglalap x koordinátáját
+            Message_rect.y = 30 + (20 * i);    
+            // beállítja a téglalap szélességét
+            Message_rect.w = 6 * line.length();
+            // beállítja a téglalap magasságát   
+            Message_rect.h = 18;    
+
+            SDL_RenderCopy(renderer, Message, NULL, &Message_rect);
+
+            // memória felszabadítása
+            SDL_FreeSurface(surfaceMessage);
+            SDL_DestroyTexture(Message);
+            i++;
+        }
         if (line == "*")
         {
-            std::cout << pg << std::endl;
-            pg++;            
+            asterisk++;            
         }
-        // std::string const *charrá konvertálása
-        c = line.c_str();
-        SDL_Surface* surfaceMessage = TTF_RenderUTF8_Blended(Sans, c, blck); 
-
-        SDL_Texture* Message = SDL_CreateTextureFromSurface(renderer, surfaceMessage);
-
-        // létrehoz egy téglalapot
-        SDL_Rect Message_rect;
-        // beállítja a téglalap x koordinátáját  
-        Message_rect.x = 450;    
-        // beállítja a téglalap x koordinátáját
-        Message_rect.y = 30 + (20 * i);    
-        // beállítja a téglalap szélességét
-        Message_rect.w = 6 * line.length();
-        // beállítja a téglalap magasságát   
-        Message_rect.h = 18;    
-
-        SDL_RenderCopy(renderer, Message, NULL, &Message_rect);
-
-        // memória felszabadítása
-        SDL_FreeSurface(surfaceMessage);
-        SDL_DestroyTexture(Message);
-    
-        i++;
     }
-    
+    if (alline < pg)
+    {
+        pg = 1;
+    }
 }
 /**
  * \brief A bekért szöveg képernyőre íratása.

@@ -11,4 +11,4 @@ A játéknak több kimenetele van, attól
 függően, hogyan alakítod LyRs útját.     
 Az általános parancsok listáját a 
 segitseg szó begépelésével tudod előhozni.
->> Érthető volt a magyarázat? - igen / nem:
+*

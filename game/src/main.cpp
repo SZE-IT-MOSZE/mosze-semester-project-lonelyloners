@@ -158,6 +158,10 @@ int main(int argc, char* argv[])
                                     Command c = Command(command);
                                     c.make();
                                     r.route(c.getCommand(), c.getItem(), l);
+                                    if (command == "LAPOZZ")
+                                    {
+                                        game.nextPage();
+                                    }
                                     command = "";
                             }
                     }
@@ -189,6 +193,7 @@ int main(int argc, char* argv[])
                 default:
                     break;
             }
+            
             // először a háttér kirajzolása
             game.render(pl);          
             // felfele gomb megnyomva?
@@ -304,7 +309,7 @@ int main(int argc, char* argv[])
             game.renderInputText(command, fnt);
             // szöveg háttér
             game.render(txtbckground);
-            game.renderText("story/bevezeto.txt", fnt);
+            game.renderText("story/dessert1.1.txt", fnt);
             // rendererbe tötött elemek képernyőre helyezése
             game.display();
             // TODO:
