@@ -3,7 +3,7 @@
 
 #include <iostream> //törölhető
 
-Router::Router(Entity& ent) : p(ent)  
+Router::Router(Entity ent) : p(ent)  
 {
 }
 

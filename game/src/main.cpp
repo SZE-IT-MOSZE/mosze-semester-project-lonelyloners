@@ -99,8 +99,7 @@ int main(int argc, char* argv[])
         SDL_Texture* inputTextBckGround = game.loadTexture("res/gfx/Objects/blck_bckgrnd.png");
         Entity inptxtbckground(V2F(0, 384), inputTextBckGround);
         // parancs választó deklarálása
-        Entity& temp = l;
-        Router r = Router(temp);
+        Router r = Router(l);
 
         // összes logikai változó a gombnyomásokhoz
         bool gameRunning = true;
@@ -118,8 +117,6 @@ int main(int argc, char* argv[])
         float cTime = utils::hireTimeInSeconds();
         
         std::string command;
-
-        std::string commandMod;
 
         SDL_StartTextInput();
 
@@ -149,6 +146,7 @@ int main(int argc, char* argv[])
                         // szövegbevitel kezelése
                         case SDL_TEXTINPUT:
                             command += event.text.text;
+                            break;
                         // gomb lenyomások kezelése                        
                         case SDL_KEYDOWN:
                             switch(event.key.keysym.sym)
@@ -168,34 +166,30 @@ int main(int argc, char* argv[])
             }           
             const float alpha = accum / timeStep;          
             
-            std::cout << " d " << l.getDirection() << std::endl;
-
-
+            if (l.getDirection() != 0)
+            {
+                std::cout << " d " << l.getDirection() << std::endl;
+            }
             // irányok beállítása
             switch (l.getDirection())
             {
                 case 0:
-                    std::cout << " KECSKE V0001 0 " << std::endl;
                     break;
                 case 1:
                     // fel
                     fel = true;
-                    std::cout << " KECSKE V0001 1 " << std::endl;
                     break;
                 case 2:
                     // jobbra
                     jobbra = true;
-                    std::cout << " KECSKE V0001 2 " << std::endl;
                     break;     
                 case 3:
                     // le
                     le = true;
-                    std::cout << " KECSKE V0001 3 " << std::endl;
                     break;
                 case 4: 
                     // balra
                     balra = true;
-                    std::cout << " KECSKE V0001 4 " << std::endl;
                     break;
                 default:
                     break;
@@ -210,7 +204,6 @@ int main(int argc, char* argv[])
                     fel = false;
                     // irány 0-ra állítása, hogy következő tick esetén ne állítsa megint az irányt
                     l.setDirZero();
-
                 }   
                 // LyRs mozgatása fel
                 game.up(l);

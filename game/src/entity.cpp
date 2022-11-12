@@ -26,6 +26,8 @@ Entity::Entity(V2F p_pos, SDL_Texture*  p_tex) : posi(p_pos), tex(p_tex)
     currentFrame.y = 0;
     currentFrame.w = 384;
     currentFrame.h = 384;
+    // számok lenullázása 
+    d = x = y = 0;
 }
 /**
  * \brief Beállítja egy Entity méretét.
@@ -92,32 +94,30 @@ SDL_Rect Entity::getCurrentFrame()
 void Entity::setTarget(int dir, int dist)
 {
     // megadott irány eltárolása
-    this -> d = dir;
+    d = dir;
 
-    V2F p;
-    p = this -> getPos(); 
     // cél koordináták meghatározása és eltárolása
     switch(dir)
     {
         case 1:
             // fel
-            this -> x = p.getX();
-            this -> y = p.getY() - (dist * 32);
+            x = posi.getX();
+            y = posi.getY() - (dist * 32);
             break; 
         case 2:
             // jobbra
-            this -> x = p.getX() + (dist * 32);
-            this -> y = p.getY();
+            x = posi.getX() + (dist * 32);
+            y = posi.getY();
             break;  
         case 3:
             // le
-            this -> x = p.getX();
-            this -> y = p.getY() + (dist * 32);
+            x = posi.getX();
+            y = posi.getY() + (dist * 32);
             break;
         case 4: 
             // balra
-            this -> x = p.getX() - (dist * 32);
-            this -> y = p.getY();
+            x = posi.getX() - (dist * 32);
+            y = posi.getY();
             break;
     }
 }

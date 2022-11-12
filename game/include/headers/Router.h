@@ -12,6 +12,6 @@ class Router {
         void help();
 
     public:
-        Router(Entity& ent);
+        Router(Entity ent);
         void route(std::string command, std::string item);
 };
