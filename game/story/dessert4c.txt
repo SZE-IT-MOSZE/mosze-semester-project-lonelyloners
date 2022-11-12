@@ -27,18 +27,20 @@ a látnokondok, nem halnak szomjan ezekben
 a fülledt, sötét barlangokban és járatokban.
 *
 Mihelyst minden megmaradt flaska visszakerült 
-eredeti helyére, illetve a megsérült látnokondok 
-ellátásra kerültek, a robotnak eljött a szívszaggató 
-búcsúzás ideje. Nem is maguk a látnokondok fognak
-neki hiányozni: kifejezetten egyikük fogta meg 
-nagyon, egykori alkotóira emlékeztetve 
+eredeti helyére, illetve a megsérült 
+látnokondok ellátásra kerültek, a robotnak 
+eljött a szívszaggató búcsúzás ideje. Nem 
+is maguk a látnokondok fognak neki hiányozni: 
+kifejezetten egyikük fogta meg nagyon, 
+egykori alkotóira emlékeztetve 
 bölcsességével, megfontoltságával és 
 végtelen kedvességével.
 *
 Wollaris mester mondja: LyRs, fiam...
 *
 Rövidebb kutakodás után egy aprócska, 
-ezüst szobrocskát húzott elő: egy szívet ábrázolt.
+ezüst szobrocskát húzott elő: egy 
+szívet ábrázolt.
 *
 Wollaris mester mondja: Egy ilyen vén 
 szatyor, mint én soha sem fogom tudni 
@@ -52,6 +54,7 @@ tőlem ezt a kis szobrocskát: a bátorságot
 szimbolizálja, amiben te nem 
 szenvedsz hiányt.
 *
-Elviszed az ezüst szobrot magaddal? - igen / nem:
+Elviszed az ezüst szobrot 
+magaddal? - igen / nem
 //He elviszi: dessert5a.txt +inventory-ban megjelenik: SZOBOR
 //Ha nem: dessert5b.txt
