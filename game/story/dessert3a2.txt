@@ -1,25 +1,3 @@
-LyRs úgy döntött, követi a nyomokat. 
-*
-Számára semmi rossz nem származhat abból, 
-ha körbeszaglászik kicsit egymaga.
-*
-Sőt, akár végtelen tudásszomját is 
-csillapíthatja néhány olyan információval, 
-amit a látnokondok nem voltak hajlandóak 
-megosztani vele. Undok egy népség, az biztos.
-*
-Talán a vaksötét tette őket ilyenné, 
-gondolta LyRs... Akármi is állt a 
-dolog mögött, nem ők lesznek a számára 
-legkedvesebb élőlények, akikkal valaha 
-találkozott az embereken kívül.
-*
-LyRs tehát csendben, hogy ne keltsen 
-feltűnést, tovalépdelt, figyelmét 
-szigorúan a mikroszkopikus lencsére fordítva.
-*
-Feladat: Kövesd a nyomokat a járatokon át!
-*
 //LyRs odaér az ellopott ételekhez.
 Változatos méretű járatokon át vezetett 
 az út, amerre az aprócska nyomok kanyarogtak.
@@ -124,7 +102,9 @@ A hangya-lények teljesen lesokkolódtak,
 sokuk még el is dobta az aktuálisan 
 kezükben tartott tárgyat.
 *
-LyRs mondja: Ne merjetek még egy ujjal sem hozzányúlni a látnokondok élelmiszer-készletéhez!
+LyRs mondja: Ne merjetek még egy ujjal 
+sem hozzányúlni a látnokondok 
+élelmiszer-készletéhez!
 *
 A robot elváltoztatott hangon 
 figyelmeztette az ízeltlábúakat, 
@@ -171,34 +151,4 @@ Adott tárgy használatára a
 következő parancsot alkalmazhatod: 
 HASZNAL ESZKOZNEVE
 *
-//Segítettél visszacipelni 3 ládát.
-LyRs elégedetten, büszkén felszegett 
-fejjel segédkezett ezek után visszapakolni 
-az ellopott élelmiszeres ládákat, 
-illetve elhurcolni a fogjul ejtett 
-hangya-lényeket az idős bölcs elé.
-Ő volt a vezetőjük, mint az utólag 
-kiderült: LyRs-nek hatalmas szerencséje 
-volt, hogy vele találkozott a bolygóra 
-kerülésekor elsőként. Nem is lehetett 
-volna hálásabb, mégis, hálája jeléül 
-még a mester volt az, aki megajándékozta 
-LyRs-t egy üvegcse homokkal szuvenírként.
-*
-Wollaris mondja: LyRs, barátom...
-*
-Ráncos mancsaiban egy aranyozott kulcs 
-jelent meg, nyelénél színes, kirakott kövekkel.
-Értékesnek tűnt.
-*
-Wollaris mondja: LyRs, drága barátom... 
-sokmindennel vénségemben nem tudok 
-szolgálni neked sajnos. Azonban van 
-ez a kulcs, amely igen sokat ér 
-nekem. Még egykor egy barátomtól 
-kaptam a Glacies bolygóról. 
-*
-Elfogadod a kulcsot(elfogad) vagy vissza utasítod(elutasit)? - elfogad / elutasit
-*
-//Ha elfogad, ez a következő: dessert4a.txt
-//Ha elutasít, ez a következő: dessert4b.txt
+//Feladat után következik: dessert3a3.txt
