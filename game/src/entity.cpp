@@ -93,27 +93,32 @@ void Entity::setTarget(int dir, int dist)
 {
     // megadott irány eltárolása
     this -> d = dir;
+
     V2F p;
     p = this -> getPos(); 
-
+    // cél koordináták meghatározása és eltárolása
     switch(dir)
     {
         case 1:
             // fel
             this -> x = p.getX();
-            this -> y = p.getY() - (dist * 32);  
+            this -> y = p.getY() - (dist * 32);
+            break; 
         case 2:
             // jobbra
             this -> x = p.getX() + (dist * 32);
-            this -> y = p.getY();  
+            this -> y = p.getY();
+            break;  
         case 3:
             // le
             this -> x = p.getX();
             this -> y = p.getY() + (dist * 32);
+            break;
         case 4: 
             // balra
             this -> x = p.getX() - (dist * 32);
             this -> y = p.getY();
+            break;
     }
 }
 

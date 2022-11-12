@@ -99,7 +99,8 @@ int main(int argc, char* argv[])
         SDL_Texture* inputTextBckGround = game.loadTexture("res/gfx/Objects/blck_bckgrnd.png");
         Entity inptxtbckground(V2F(0, 384), inputTextBckGround);
         // parancs választó deklarálása
-        Router r = Router(l);
+        Entity& temp = l;
+        Router r = Router(temp);
 
         // összes logikai változó a gombnyomásokhoz
         bool gameRunning = true;
@@ -164,38 +165,46 @@ int main(int argc, char* argv[])
                     }
                 }
                 accum -= timeStep;
-            }
+            }           
+            const float alpha = accum / timeStep;          
+            
+            std::cout << " d " << l.getDirection() << std::endl;
+
+
             // irányok beállítása
             switch (l.getDirection())
             {
                 case 0:
+                    std::cout << " KECSKE V0001 0 " << std::endl;
                     break;
                 case 1:
                     // fel
                     fel = true;
+                    std::cout << " KECSKE V0001 1 " << std::endl;
                     break;
                 case 2:
                     // jobbra
                     jobbra = true;
+                    std::cout << " KECSKE V0001 2 " << std::endl;
                     break;     
                 case 3:
                     // le
                     le = true;
+                    std::cout << " KECSKE V0001 3 " << std::endl;
                     break;
                 case 4: 
                     // balra
                     balra = true;
+                    std::cout << " KECSKE V0001 4 " << std::endl;
                     break;
                 default:
                     break;
             }
-
-            const float alpha = accum / timeStep;          
             // először a háttér kirajzolása
             game.render(pl);          
             // felfele gomb megnyomva?
             if (fel)
-            {
+            {                
                 if (l.getPos().getX() >= l.getTargetX())
                 {
                     fel = false;
@@ -259,6 +268,8 @@ int main(int argc, char* argv[])
             // jobbra gomb megnyomva?
             if (jobbra)
             {
+                std::cout << " l.getPos().getY() " << l.getPos().getY() << " l.getTargetY() " << l.getTargetY() << std::endl;
+
                 if (l.getPos().getY() >= l.getTargetY())
                 {
                     jobbra = false;

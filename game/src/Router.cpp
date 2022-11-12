@@ -3,8 +3,8 @@
 
 #include <iostream> //törölhető
 
-Router::Router(Entity& p) {
-    this -> p = &p;
+Router::Router(Entity& ent) : p(ent)  
+{
 }
 
 void Router::route(std::string cm, std::string it) {
@@ -24,15 +24,15 @@ void Router::move(std::string cm, std::string it) {
     int dist = std::stoi(it);
 
     if(cm == "FEL" || cm == "ELORE") {
-        p -> setTarget(1, dist);
+        p.setTarget(1, dist);
     }
     else if(cm == "JOBBRA") {
-        p -> setTarget(2, dist);
+        p.setTarget(2, dist);
     }
     else if(cm == "LE" || cm == "HATRA") {
-        p -> setTarget(3, dist);
+        p.setTarget(3, dist);
     }
     else if(cm == "BALRA") {
-        p -> setTarget(4, dist);
+        p.setTarget(4, dist);
     }
 }
