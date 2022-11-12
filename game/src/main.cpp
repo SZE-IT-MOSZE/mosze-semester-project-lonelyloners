@@ -99,7 +99,7 @@ int main(int argc, char* argv[])
         SDL_Texture* inputTextBckGround = game.loadTexture("res/gfx/Objects/blck_bckgrnd.png");
         Entity inptxtbckground(V2F(0, 384), inputTextBckGround);
         // parancs választó deklarálása
-        Router r = Router(l);
+        Router r = Router();
 
         // összes logikai változó a gombnyomásokhoz
         bool gameRunning = true;
@@ -115,9 +115,9 @@ int main(int argc, char* argv[])
         const float timeStep = 0.01f;
         float accum = 0.0f;
         float cTime = utils::hireTimeInSeconds();
-        
+        // input text 
         std::string command;
-
+       
         SDL_StartTextInput();
 
         // main game loop
@@ -157,7 +157,7 @@ int main(int argc, char* argv[])
                                 case SDLK_RETURN:
                                     Command c = Command(command);
                                     c.make();
-                                    r.route(c.getCommand(), c.getItem());
+                                    r.route(c.getCommand(), c.getItem(), l);
                                     command = "";
                             }
                     }
@@ -165,11 +165,6 @@ int main(int argc, char* argv[])
                 accum -= timeStep;
             }           
             const float alpha = accum / timeStep;          
-            
-            if (l.getDirection() != 0)
-            {
-                std::cout << " d " << l.getDirection() << std::endl;
-            }
             // irányok beállítása
             switch (l.getDirection())
             {
@@ -199,7 +194,7 @@ int main(int argc, char* argv[])
             // felfele gomb megnyomva?
             if (fel)
             {                
-                if (l.getPos().getX() >= l.getTargetX())
+                if (l.getPos().getY() <= l.getTargetY())
                 {
                     fel = false;
                     // irány 0-ra állítása, hogy következő tick esetén ne állítsa megint az irányt
@@ -222,7 +217,7 @@ int main(int argc, char* argv[])
             // lefele gomb megnyomva?
             if (le)
             {
-                if (l.getPos().getX() <= l.getTargetX())
+                if (l.getPos().getY() >= l.getTargetY())
                 {
                     le = false;
                     // irány 0-ra állítása, hogy következő tick esetén ne állítsa megint az irányt
@@ -245,7 +240,7 @@ int main(int argc, char* argv[])
             // balra gomb megnyomva?
             if (balra)
             {
-                if (l.getPos().getY() <= l.getTargetY())
+                if (l.getPos().getX() <= l.getTargetX())
                 {
                     balra = false;
                     // irány 0-ra állítása, hogy következő tick esetén ne állítsa megint az irányt
@@ -253,7 +248,7 @@ int main(int argc, char* argv[])
                 } 
                 // LyRs mozgatása balra
                 game.left(l);
-                    // LyRs balra mozog animáció következő kockája
+                // LyRs balra mozog animáció következő kockája
                 game.update(l, lyrsMoveL, lyrsMoveL.size(), 32, 32, 0);
                 // összes animáció balra néz
                 flip = false;
@@ -261,9 +256,7 @@ int main(int argc, char* argv[])
             // jobbra gomb megnyomva?
             if (jobbra)
             {
-                std::cout << " l.getPos().getY() " << l.getPos().getY() << " l.getTargetY() " << l.getTargetY() << std::endl;
-
-                if (l.getPos().getY() >= l.getTargetY())
+                if (l.getPos().getX() >= l.getTargetX())
                 {
                     jobbra = false;
                     l.setDirZero();

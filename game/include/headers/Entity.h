@@ -9,10 +9,7 @@ class Entity
 {
 public:
     Entity(V2F p_pos, SDL_Texture* p_tex);
-    V2F& getPos()
-    {
-        return posi;
-    }
+    V2F& getPos() { return posi; }
     SDL_Texture* getTex();
 
     SDL_Rect getCurrentFrame();
@@ -22,22 +19,10 @@ public:
     
     void setTarget(int direct, int distance);
 
-    int getDirection()
-    {
-        return d;
-    }
-    void setDirZero()
-    {
-        d = 0;
-    }
-    int getTargetX()
-    {
-        return x;
-    }
-    int getTargetY()
-    {
-        return y;
-    }
+    void setDirZero()   { d = 0;    }
+    int getDirection()  { return d; }
+    int getTargetX()    { return x; }
+    int getTargetY()    { return y; }
 
 private:
     V2F posi;

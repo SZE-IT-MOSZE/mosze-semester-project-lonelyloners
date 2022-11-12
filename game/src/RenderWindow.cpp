@@ -200,8 +200,8 @@ void RenderWindow::render(Entity& p_entity)
     src.h = p_entity.getCurrentFrame().h;
     // cél téglalap beállítása
     SDL_Rect dst;
-    dst.x = p_entity.getPos().x;
-    dst.y = p_entity.getPos().y;
+    dst.x = p_entity.getPos().getX();
+    dst.y = p_entity.getPos().getY();
     dst.w = p_entity.getCurrentFrame().w;
     dst.h = p_entity.getCurrentFrame().h;
     // rendererbe másolás
@@ -267,8 +267,6 @@ const char* RenderWindow::renderText(const char* path, TTF_Font* Sans)
         c = line.c_str();
         SDL_Surface* surfaceMessage = TTF_RenderText_Solid(Sans, c, blck); 
 
-        // std::cout << c << std::endl;
-
         SDL_Texture* Message = SDL_CreateTextureFromSurface(renderer, surfaceMessage);
 
         // létrehoz egy téglalapot
@@ -303,8 +301,6 @@ void RenderWindow::renderInputText(std::string inputText, TTF_Font* Sans)
     SDL_Color wht = {255, 255, 255};
     inputText = ">> " + inputText;
     SDL_Surface* surfaceMessage = TTF_RenderText_Solid(Sans, inputText.c_str(),  wht); 
-
-    // std::cout << c << std::endl;
 
     SDL_Texture* Message = SDL_CreateTextureFromSurface(renderer, surfaceMessage);
 
