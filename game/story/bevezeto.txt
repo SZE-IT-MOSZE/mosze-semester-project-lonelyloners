@@ -1,20 +1,15 @@
-Üdvözöllek a LonelyLoners nevű, 
-szöveges kalandjátékunkban!
-*
-A kaland során végigkísérheted 
-szupermodern robot főhősünk útját, 
-ahogy az elpusztult Földet elhagyva 
-más bolygókat fedez fel.
-*
-Útja során döntések elé kerülsz 
-majd, ahol megadott parancsok 
-segítségével alakíthatod tovább 
-a történet alakulását.
-*
-A játéknak több kimenetele van, 
-attól függően, hogyan alakítod LyRs útját.
-*
-Az általános parancsok listáját a 
-"segitseg" szó begépelésével tudod előhozni.
-*
->> Érthető volt a magyarázat? - igen / nem:
+Üdvözöllek a LonelyLoners nevű, szöveges 
+kalandjátékunkban! 
+A kaland során végigkísérheted szupermo-
+dern robot főhősünk útját, ahogy az el-
+pusztult Földet elhagyva más bolygókat
+fedez fel.
+Útja során döntések elé kerülsz majd,
+ahol megadott parancsok segítségével
+alakíthatod tovább a történet alaku-
+lását.
+A játéknak több kimenetele van, attól
+függően, hogyan alakítod LyRs útját.
+Az általános parancsok listáját a
+segitseg szó begépelésével tudod előhoz-
+ni.
