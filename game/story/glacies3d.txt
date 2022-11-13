@@ -29,3 +29,4 @@ Kétfele mehetett: jobbra, egy fényesebb,
 illetve balra, tovább a sötétségbe.
 *
 >> Merre tovább? – jobbra / balra:
+//Amelyiket választjuk, annak a mapjára vált a háttér
