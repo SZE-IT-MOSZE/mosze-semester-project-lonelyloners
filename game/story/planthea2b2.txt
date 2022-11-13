@@ -1,0 +1,17 @@
+//Amint kész, jön a következő párbeszéd.
+LyRs-t azonban nem hagyta nyugodni a dolog.
+A medve-szerű lény túlságosan is hasonlított
+azokra a medvékre, amellyekkel még anno a
+Földön találkozott. Ilyen szintű hasonlóságra,
+hogy egy ilyen faj ennyire távol ugyanilyen
+tulajdonságokkal fejlődjön ki pedig az
+esélyek igencsak csekélyek voltak.
+*
+A robot elgondolkozott. Utána menjen a lénynek,
+kiderítve, hogy honnan szabadult,
+tényleg Plantheáról származik vagy sem?
+*
+Írd be válaszod - igen / nem:
+*
+//Ha igen, a következő txt: planthea3b1.txt
+//Ha nem, a következő txt: planthea3a1.txt
