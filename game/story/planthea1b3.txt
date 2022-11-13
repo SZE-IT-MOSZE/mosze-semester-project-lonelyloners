@@ -1,0 +1,22 @@
+//Megcsinálja, visszatér Keikohoz
+*
+Keiko mondja: Szép munka, LyRs! 
+Ezzel már rengeteget segítettél nekünk. 
+Mit szólnál még egy kisebb, könnyedebb feladathoz?
+*
+LyRs mondja: Én mindenre vevő vagyok. 
+Mit kellene csinálnom?
+*
+Keiko mondja: Az erdőnél van egy kisebb ösvény, 
+amely mentén gupra bogyók vannak elszórva. 
+Ezek pirosas, kerek bogyók, fontos tápanyagforrás. 
+Ebből kellene annyit szedni, amennyit csak tudsz.
+*
+LyRs mondja: Bízhatsz bennem!
+*
+Feladat mondja: Menj be az erdőnél lévő
+ösvényen és szedd le az érett, 
+piros gupra bogyókat! Használd a 
+FELVESZ parancsot a bokrok mellett!
+*
+//Feladat elvégzése után következik: planthea1b4.txt
