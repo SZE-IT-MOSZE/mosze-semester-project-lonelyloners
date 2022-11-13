@@ -1,0 +1,8 @@
+LyRs mondja: Mi vesztenivalóm 
+származik abból, ha követem, merről is jött?
+*
+Ezzel a robot a medve-lény után eredt.
+*
+Feladat: Menj a medve-lény után!
+*
+//Feladat elvégzése után következik: planthea3b2.txt
