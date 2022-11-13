@@ -1,27 +1,27 @@
-LyRs végezetül balra vette az irányt, 
-remélve, hogy a valószínűség-számító 
+LyRs végezetül balra vette az irányt,
+remélve, hogy a valószínűség-számító
 egysége jól kalkulált.
 *
-Ment, ment, mind hiába. Minden csupa 
-jég volt, rideg és néhol nyálkás. 
-Semmi jele bármiféle tárgynak vagy 
-életformának. Csupán a meglazult 
-barlangfalaktól, barlangtetőtől 
-tartott, ami néhol vészesen 
+Ment, ment, mind hiába. Minden csupa
+jég volt, rideg és néhol nyálkás.
+Semmi jele bármiféle tárgynak vagy
+életformának. Csupán a meglazult
+barlangfalaktól, barlangtetőtől
+tartott, ami néhol vészesen
 kilazult állapotában volt.
 *
-Nem sokkal a vége előtt, egy zsákutcához 
-érve, mikor már annak a határán volt, 
-hogy visszafordul, meg is történt vele 
-a baj. Akkumulátorát olyannyira 
-roncsolta a csontig hatoló hideg, 
+Nem sokkal a vége előtt, egy zsákutcához
+érve, mikor már annak a határán volt,
+hogy visszafordul, meg is történt vele
+a baj. Akkumulátorát olyannyira
+roncsolta a csontig hatoló hideg,
 hogy figyelő szenzorainak nem
-tudott elég energiát biztosítani. 
+tudott elég energiát biztosítani.
 *
-Túl későn küldtek figyelmeztető jelet 
-az irányító egységnek: a robotot 
-betemette a kőkemény jégdarabokkal 
-teli hó, teljesen tönkretéve LyRs 
+Túl későn küldtek figyelmeztető jelet
+az irányító egységnek: a robotot
+betemette a kőkemény jégdarabokkal
+teli hó, teljesen tönkretéve LyRs
 mesterséges szervezetét.
 *
 //Sztori vége ezen az ágon - game over!! game_over.png betöltése, majd vissza a menübe!
