@@ -1,0 +1,68 @@
+//Odamegy.
+*
+LyRs mondja: Üdvözlet! Remélem, nem zavarom.
+*
+Ismeretlen embernő mondja: Szia!
+Dehogy is, éppen várok a többiekre.
+Tegezz ám nyugodtan, nem vagyok
+olyan vén csotrogány. Juniperus
+vagyok egyébként, az Aeden bolygóról.
+Benned kit tisztelhetek? Olyan tisztán
+beszéled a nyelvünket, biztos van
+valami közöd az emberekhez.
+*
+LyRs mondja: Köszönöm a kedvességed.
+És igen, nem kis közöm van az emberekhez:
+ők tervetek! Még az egykori Földön.
+*
+Juniperus mondja: Komolyan? Hiszen
+ez szuper hír! Pont egy hozzád hasonló
+robotra van szükségünk.
+*
+LyRs mondja: Miben segíthetek?
+*
+Mielőtt a nő megszólalhatott volna,
+egy hatalmas magasságnak örvendező
+fiatalember jelent meg a tisztás
+egyik szélén. Odasétált hozzájuk,
+átvéve a válaszadás lehetőségét Juniperustól.
+*
+Ismeretlen emberhím mondja: Át szeretnénk
+szállítani az itthagyott medvéket a
+bolygónkra és kellene egy-két biológiai
+információ az egykori földi medvék
+viselkedési szokásiról. Remélem, nem gond,
+hogy átvettem a szót, Juni.
+*
+Juniperus mondja: Dehogy. Csak nyugodtan, Dorian.
+*
+Dorian mondja: Köszönöm. Tudnál nekünk segíteni, robot?
+*
+LyRs mondja: Mi sem természetesebb.
+Egyébként LyRs a nevem. LyRs az egykori Földről.
+*
+Dorian mondja: Tiszteletem, LyRs.
+Az én nevemet már úgyis hallottad,
+ne fecséreljük formalitásokra a drága időnket.
+Arra lenne szükségem, hogy a medvéknek
+milyen típusú környezetre van szükségük
+pontosan a normális életvitelhez.
+Olyan szinten, hogy szeretnénk,
+hogy az Aedenen majd szaporodjanak is.
+Ugyanis itt igen megtelepedtek és a példányok,
+amelyeket a Valentinus és Blasius
+hoztak nem hajlandóak elfogadni
+az új helyüket az Aedenen.
+Pedig emlékeim szerint ugyanolyan
+körülményeket teremtettünk nekik,
+mint anno a Földön.
+*
+Juniperus mondja: Fogadjunk,
+hogy a hőmérséklet lesz az. Mondtam
+a srácoknak, hogy nem jegesmedvékről
+van szó, normális barna medvékről.
+Megfagynak az új helyükön kb.
+*
+Feladat: Menj oda az egyik medvéhez, hogy elindítsd az analizálást!
+*
+//Feladat elvégzése után következik: planthea3b4.txt

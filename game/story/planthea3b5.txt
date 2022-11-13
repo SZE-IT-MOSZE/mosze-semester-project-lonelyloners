@@ -1,0 +1,39 @@
+//Elviszi, odaér Keiko-hoz.
+*
+Keiko mondja: Köszönöm szépen a
+hatalmas segítséget, LyRs barátom!
+Ezzel sokáig elleszünk.
+*
+LyRs mondja: Szíves-örömest! Most
+azonban sietnem kell vissza,
+hatalmas dolog történt, képzeld.
+*
+Keiko mondja: Na, csupa fül vagyok,
+mi történt? Csak nem egy
+medve támadt meg?
+*
+LyRs mondja: Meg megtámadt egy,
+de szerencsére túléltem. A nagy
+dolog az, hogy összetalálkoztam
+emberekkel! Kutatókkal, akik a
+medvékkel foglalatoskodnak. El
+akarják szállítani az Aedenre őket,
+így végre nyugtotok lesz.
+*
+Keiko mondja: Csak nem Juniperus meg Dorian az?
+*
+LyRs mondja: De-de! Ismered őket?
+*
+Keiko mondja: Igencsak jó cimboráim!
+Sokszor találkoztam már velük itt.
+Merre vannak?
+*
+LyRs mondja: Ahol a gupra bogyókat gyűjtöttem,
+tovább kellett menni egy tisztás fele.
+Ott parkol valahol a hajójuk is.
+*
+Keiko mondja: Szuper! Mond meg nekik légyszi, hogy várjanak meg, viszek egy kis elemózsiát.
+*
+Feladat: Menj vissza a kutatókhoz azon az úton, amin jöttél!
+*
+//Feladat elvégzése után a következő: planthea3b6.txt
