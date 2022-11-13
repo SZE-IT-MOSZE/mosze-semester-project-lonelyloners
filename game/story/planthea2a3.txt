@@ -1,0 +1,74 @@
+//Könyvtár bejáratánál ismét háttérváltás, ezúttal megint a könyvtár előtti falurészlet. Keiko-hoz érve előjön a párbeszéd.
+*
+Keiko mondja: Sikerült valamire jutni?
+*
+LyRs mondja: De még mennyire! Jól
+kalkuláltam, az én földi embereimről
+van szó. Tudnál esetleg útmutatást adni,
+hogy az Aeden bolygót merre találom?
+*
+Keiko mondja: Persze! Az Aeden itt van nem
+messze, második bolygó-szomszédunk innen
+keletre nézve az égbolton.
+*
+A robot bólintva konstatálta a hallottakat.
+Szenzorait a mutatott irányba élesítette.
+Ránagyított a mutatott irányba. Boldogan
+állapította meg, hogy arrafele tényleg
+található valamiféle Föld-szerű bolygó.
+*
+LyRs mondja: Látom is, igen. Tehát az
+lesz az új úticélom, ahova ideje is elindulnom.
+Nem késlekedhetek az új otthonomból.
+*
+Keiko mondja: Igazad is van, barátom.
+Mindig jó, ha van hova hazamenni.
+Ha összetalálkoznál netán néhány barátommal,
+add át az üzenetemet nekik, kérlek.
+*
+LyRs mondja: Természetesen. Kik
+lennének azok és mit adjak át nekik?
+*
+Keiko mondja: Öten vannak.
+Négy hím és egy nőstény egyed:
+neveik Valentinus, Dorianus, Nicolaus,
+Blasius és Juniperus. Üzenem, hogy
+tartoznak még nekem egy pakli olyan
+magyar kártyával, vagy hogyan is
+nevezték azt a játékot, amellyel
+itt múlatták az időt. Illetve
+hozhatnának olyan madártej-löttyöt
+is egy nagy adaggal.
+*
+A robot csippanással raktározta el
+az átadandó üzenetet, beidőzítve,
+hogy amint találkozik ezen emberekkel,
+átadja nekik az üzenetet.
+*
+Emellett felkészítette fémtestét
+az űrutazásra, betáplálva agyi
+navigáló-egységébe az új úticélt.
+Szinte kicsattant az örömtől,
+pedig az érzelmek nem voltak a robotok erősségei.
+*
+Elindulás előtt hálája jeléül átölelte a
+Lycantot, ahogy azt más lényektől
+elleste, mint a hála kifejezésére használt
+gesztust. Nem számított arra, hogy a szőrös,
+farkasszerű lény egyszerre, boldogan
+viszonozza a gesztust.
+*
+Keiko mondja: Téged is várlak vissza,
+LyRs barátom! Lehetőleg mihamarabb!
+*
+LyRs mondja: Jövök, amint tudok!
+Köszönök mindent!
+*
+Ezzel a robot beizzította előkészített
+rakétáit, majd tűzcsóvák közepette
+elemelkedett a talajtól, el a magasba,
+heves integetéssel búcsúzva a Lycantok
+végtelenül kedves népétől, Planthea
+kiváló lakosaitól.
+*
+//Ezután következik: aeden1b.txt
