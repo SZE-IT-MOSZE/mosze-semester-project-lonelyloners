@@ -1,26 +1,26 @@
-Ha lehetséges lett volna, LyRs-ben meghűlt 
-volna a vér. Nem találta sehol sem a Wollaris 
-mester által felajánlott aranykulcsot, 
+Ha lehetséges lett volna, LyRs-ben meghűlt
+volna a vér. Nem találta sehol sem a Wollaris
+mester által felajánlott aranykulcsot,
 mindegyik rekesze teljesen üres volt.
 *
-Útközben eshettek ki, hagyhatta el 
-őket a végtelen űrben. Elég hozzá 
+Útközben eshettek ki, hagyhatta el
+őket a végtelen űrben. Elég hozzá
 egy kevésbé jól megszorított zár.
 *
-Dederik király mondja: Tudod is 
+Dederik király mondja: Tudod is
 ezt valahogyan bizonyítani, bádoglény?
 *
-LyRs megingatta a fejét. Beépített 
-vészhelyzetjelzői hiába sipítoztak 
-már a lehető legelviselhetetlenebb 
-magasságban, nem tudott szabadulni. 
+LyRs megingatta a fejét. Beépített
+vészhelyzetjelzői hiába sipítoztak
+már a lehető legelviselhetetlenebb
+magasságban, nem tudott szabadulni.
 *
-Az odomárok túlságosan is erősek 
-voltak hozzá képest. Sőt, mi több, 
-ez a hang csak tovább idegesítette 
-őket olyannyira, hogy a végén maga 
-Dederik király erőteljes karcsapása 
-hallgattata el a sipítozó robotot... 
+Az odomárok túlságosan is erősek
+voltak hozzá képest. Sőt, mi több,
+ez a hang csak tovább idegesítette
+őket olyannyira, hogy a végén maga
+Dederik király erőteljes karcsapása
+hallgattata el a sipítozó robotot...
 mindörökre.
 *
 //Játék vége ezen az ágon - game over!! game_over.png betöltése, majd visszatérés menübe!
