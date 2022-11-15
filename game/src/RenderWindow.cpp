@@ -35,7 +35,7 @@ RenderWindow::RenderWindow (const char* p_title, int p_w, int p_h) : window(NULL
     }
     // GPU gyorsított renderer létrehozása
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
-    pg = 1;
+    pg = frms = 1;
 }
 /**
  * \brief Kép betöltése.
@@ -106,8 +106,11 @@ void RenderWindow::clear()
  * \brief Animáció következő képkockája.
  * 
  * A sprite sheet-ből vágja ki és jeleníti meg a következő képet egy int párokat tartalmazó vektor segítségével.
- * Az program kezdete óta eltelt idő 100-ad részét figyelembe véve vágja ki a megadott pozíció, magasság és
- * szélesség alapján a következő képkockát, majd rendererbe másolja.  
+ * Az program kezdete óta eltelt időt figyelembe véve 100ms időközönként sprite sheeten való pozíció és szélesség 
+ * alapján jeleníti meg a következő képkockát, majd rendererbe másolja. Az ff változó azért szükséges, mert pl.
+ * támadás animáció esetén nem az első képkocától játszaná le az animációt. Ezért megvárjuk, amíg az eltelt idő
+ * alapján számolt képkocka szám elérje ismét az egyet, majd ekkor kezdjük el az animációt. Amennyiben elérte a
+ * képkockák száma az animációk képkockájának számát, visszaad egy hamis értéket, ami jelzi az animáció végét.
  * 
  * \param p_entity Ez tartalmazza a sprite sheetet.
  * \param spritepos A megjelenítendő animáció képkocka pozícióit tárolja.
@@ -115,14 +118,32 @@ void RenderWindow::clear()
  * \param w A megjelenítendő képkocka szélessége.
  * \param h A megjelenítendő képkocka magassága.
  * \param offset Ha el kéne tolni az x tengely mentén.
+ * \param ff .
  */
-void RenderWindow::update(Entity& p_entity, std::vector<std::pair<int, int>> spritepos, int frames, int w, int h, int offset)
-{
+bool RenderWindow::update(Entity& p_entity, std::vector<std::pair<int, int>> spritepos, int frames, int w, int h, int offset, bool ff)
+{   
     SDL_Rect src;
-    // megfelelő képkocka kivágása
-    int t = (SDL_GetTicks()/100) % frames;
-    src.x = spritepos[t].first;
-    src.y = spritepos[t].second;
+
+    int t = (SDL_GetTicks() / 100) % frames;
+    
+    if (t == frms)
+    {
+        frms++;
+    }
+
+    if (ff)
+    {
+        // megfelelő képkocka kivágása
+        src.x = spritepos[t].first;
+        src.y = spritepos[t].second;
+    }
+    else
+    {
+        // megfelelő képkocka kivágása
+        src.x = spritepos[frms].first;
+        src.y = spritepos[frms].second;
+    }
+
     // téglalap méreteinek beállítása
     src.h = h /* * getRRes() */;
     src.w = w /* * getRRes() */;
@@ -134,6 +155,16 @@ void RenderWindow::update(Entity& p_entity, std::vector<std::pair<int, int>> spr
     dst.h = h;
     // rendererbe másolás
     SDL_RenderCopy(renderer, p_entity.getTex(), &src, &dst);
+
+    if ( frms == frames - 1 )
+    {
+        frms = 1;
+        return false;
+    }
+    else
+    {
+        return true;
+    }
 }
 /**
  * \brief Egy Entity felfele mozgatása.

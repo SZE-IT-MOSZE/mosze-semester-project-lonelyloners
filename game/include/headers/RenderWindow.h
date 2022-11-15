@@ -18,7 +18,7 @@ class RenderWindow
         void cleanUp();
         void clear();
         void render(Entity& p_entity);
-        void update(Entity& p_entity, std::vector<std::pair<int, int>> spritepos, int frames, int w, int h, int offset);
+        bool update(Entity& p_entity, std::vector<std::pair<int, int>> spritepos, int frames, int w, int h, int offset, bool ff);
         void display();
         
         const char* renderText(const char* path, TTF_Font* Sans);
@@ -40,5 +40,5 @@ class RenderWindow
         SDL_Renderer* renderer;
         
         const char* p_title;
-        int p_w, p_h, pg;
+        int p_w, p_h, pg, frms;
 };

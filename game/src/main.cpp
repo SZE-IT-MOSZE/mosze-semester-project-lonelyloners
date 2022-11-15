@@ -161,6 +161,10 @@ int main(int argc, char* argv[])
                                     if (command == "LAPOZZ")
                                     {
                                         game.nextPage();
+                                    }      
+                                    if (command == "TAMADAS")
+                                    {
+                                        attack = true;
                                     }
                                     command = "";
                             }
@@ -196,8 +200,26 @@ int main(int argc, char* argv[])
             
             // először a háttér kirajzolása
             game.render(pl);          
+            if (!fel && !le && !balra && !jobbra && !attack)
+            {
+                // jobbra gomb volt utoljára lenyomva?
+                if (flip)
+                {
+                    // LyRs jobbra néző üresjárati animáció következő kockája
+                    game.update(l, lyrsIdleR, lyrsIdleR.size(), 32, 32, 0, true);
+                }
+                else
+                {
+                    // LyRs balra néző üresjárati animáció következő kockája
+                    game.update(l, lyrsIdleL, lyrsIdleL.size(), 32, 32, 0, true);
+                }
+                // if (l.getPos().getX() != l.getTargetX() || l.getPos().getY() != l.getTargetY())
+                // {
+                //     l.setPosi(l.getPos().getX(), l.getPos().getY());
+                // } 
+            }
             // felfele gomb megnyomva?
-            if (fel)
+            if (fel && !attack)
             {                
                 if (l.getPos().getY() <= l.getTargetY())
                 {
@@ -211,16 +233,16 @@ int main(int argc, char* argv[])
                 if (flip)
                 {
                     // LyRs jobbra mozog animáció következő kockája
-                    game.update(l, lyrsMoveR, lyrsMoveR.size(), 32, 32, 0);
+                    game.update(l, lyrsMoveR, lyrsMoveR.size(), 32, 32, 0, true);
                 }
                 else
                 {
                     // LyRs balra mozog animáció következő kockája
-                    game.update(l, lyrsMoveL, lyrsMoveL.size(), 32, 32, 0);
+                    game.update(l, lyrsMoveL, lyrsMoveL.size(), 32, 32, 0, true);
                 }
             }
             // lefele gomb megnyomva?
-            if (le)
+            if (le && !attack)
             {
                 if (l.getPos().getY() >= l.getTargetY())
                 {
@@ -234,16 +256,16 @@ int main(int argc, char* argv[])
                 if (flip)
                 {
                     // LyRs jobbra mozog animáció következő kockája
-                    game.update(l, lyrsMoveR, lyrsMoveR.size(), 32, 32, 0);
+                    game.update(l, lyrsMoveR, lyrsMoveR.size(), 32, 32, 0, true);
                 }
                 else
                 {
                     // LyRs balra mozog animáció következő kockája
-                    game.update(l, lyrsMoveL, lyrsMoveL.size(), 32, 32, 0);
+                    game.update(l, lyrsMoveL, lyrsMoveL.size(), 32, 32, 0, true);
                 }
             }
             // balra gomb megnyomva?
-            if (balra)
+            if (balra && !attack)
             {
                 if (l.getPos().getX() <= l.getTargetX())
                 {
@@ -254,12 +276,12 @@ int main(int argc, char* argv[])
                 // LyRs mozgatása balra
                 game.left(l);
                 // LyRs balra mozog animáció következő kockája
-                game.update(l, lyrsMoveL, lyrsMoveL.size(), 32, 32, 0);
+                game.update(l, lyrsMoveL, lyrsMoveL.size(), 32, 32, 0, true);
                 // összes animáció balra néz
                 flip = false;
             }
             // jobbra gomb megnyomva?
-            if (jobbra)
+            if (jobbra && !attack)
             {
                 if (l.getPos().getX() >= l.getTargetX())
                 {
@@ -269,7 +291,7 @@ int main(int argc, char* argv[])
                 // LyRs mozgatása jobbra
                 game.right(l);
                 // LyRs jobbra mozog animáció következő kockája
-                game.update(l, lyrsMoveR, lyrsMoveR.size(), 32, 32, 0);
+                game.update(l, lyrsMoveR, lyrsMoveR.size(), 32, 32, 0, true);
                 // összes animáció jobbra néz
                 flip = true;
             }
@@ -280,27 +302,12 @@ int main(int argc, char* argv[])
                 if (flip)
                 {
                     // LyRs jobbra támad animáció következő kockája
-                    game.update(l, lyrsLaserR, lyrsLaserR.size(), 64, 32, 0);               
+                    attack = game.update(l, lyrsLaserR, lyrsLaserR.size(), 64, 32, 0, false);               
                 }
                 else
                 {
                     // LyRs balra támad animáció következő kockája
-                    game.update(l, lyrsLaserL, lyrsLaserL.size(), 64, 32, 32);               
-                }
-            }
-
-            if (!fel && !le && !balra && !jobbra && !attack)
-            {
-                // check if the right button was the last pressed not the left
-                if (flip)
-                {
-                    // LyRs jobbra néző üresjárati animáció következő kockája
-                    game.update(l, lyrsIdleR, lyrsIdleR.size(), 32, 32, 0);
-                }
-                else
-                {
-                    // LyRs balra néző üresjárati animáció következő kockája
-                    game.update(l, lyrsIdleL, lyrsIdleL.size(), 32, 32, 0);
+                    attack = game.update(l, lyrsLaserL, lyrsLaserL.size(), 64, 32, 32, false);               
                 }
             }
             // felhők renderelése és ütközések ellenőrzése és lekezelése
