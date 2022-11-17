@@ -1,8 +1,10 @@
 #pragma once
 
 #include <iostream>
+#include <vector>
 #include <sdl/SDL.h>
 #include <sdl/SDL_image.h>
+#include <sdl/SDL_ttf.h>
 
 #include "headers/Entity.h"
 

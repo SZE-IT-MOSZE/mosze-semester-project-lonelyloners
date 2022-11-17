@@ -3,6 +3,7 @@
 #include <string>
 
 #include "headers/Entity.h"
+#include "headers/RenderWindow.h"
 
 class Router {
     private:
@@ -11,5 +12,5 @@ class Router {
         void next_page(RenderWindow& rw);
 
     public:
-        void route(std::string command, std::string item, Entity& ent);
+        void route(std::string command, std::string item, Entity& ent, RenderWindow& rw);
 };

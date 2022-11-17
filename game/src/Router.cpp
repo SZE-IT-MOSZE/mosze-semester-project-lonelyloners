@@ -35,7 +35,7 @@ void Router::route(std::string cm, std::string it, Entity& ent, RenderWindow& rw
  */
 
 void Router::next_page(RenderWindow& rw) {
-    rw->nextPage();
+    rw.nextPage();
 }
 
 /**
