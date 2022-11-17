@@ -7,16 +7,17 @@ helyen, LyRs itt is felmérte a terepet
 csúcstechnológiás érzékelőivel.
 *
 Mind szenzorai szerint, mind saját 
-„bőrén” tapasztalta, hogy a gravitáció 
-szülőbolygójáéhoz hasonló. Ahogy haladt 
-előre, az is tiszta lett számára, 
+„bőrén” tapasztalta, hogy a gravitá-
+ció szülőbolygójáéhoz hasonló. Ahogy
+haladt előre, az is tiszta lett számára, 
 hogy a bolygón csakis a sivatagos, 
 száraz éghajlat lelhető fel, az égen 
 a kegyetlenül tűző Nappal.
 *
 Már-már arra a következtetésre jutott, 
 hogy a meleg miatt az élet nem igazán 
-telepedett meg, hiába adott az éltető levegő.
+telepedett meg, hiába adott az éltető
+levegő.
 *
 Tápanyagokból mikroszemcse méretű akadt 
 csak, folyadékból szintúgy. Kevésen
@@ -27,10 +28,10 @@ valamibe.
 *
 LyRs fém lába egy vaskos csapóajtóban 
 akadt meg. A robot meglepetten kezdte 
-cibálni, azonban a vastag 
-fém nem kívánt megmozdulni.
+cibálni, azonban a vastag fém nem
+kívánt megmozdulni.
 *
-Feladat: Aktiváld a lézeredet. Használd a TAMADAS 
-parancsot az ajtó betöréséhez!
+Feladat: Aktiváld a lézeredet. Használd a
+TAMADAS parancsot az ajtó betöréséhez!
 *
 //Feladat elvégzése után következik: dessert1.2.txt

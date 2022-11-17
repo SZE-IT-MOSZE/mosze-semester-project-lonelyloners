@@ -3,15 +3,14 @@
 #include <string>
 
 #include "headers/Entity.h"
+#include "headers/RenderWindow.h"
 
 class Router {
     private:
-        Entity* p;
-
-        void move(std::string cm, std::string it);
+        void move(std::string cm, std::string it, Entity& ent);
         void help();
+        void next_page(RenderWindow& rw);
 
     public:
-        Router(Entity& p);
-        void route(std::string command, std::string item);
+        void route(std::string command, std::string item, Entity& ent, RenderWindow& rw);
 };

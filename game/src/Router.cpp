@@ -1,38 +1,77 @@
 #include "headers/Player.h"
 #include "headers/Router.h"
 
-#include <iostream> //törölhető
+#include <iostream>
 
-Router::Router(Entity& p) {
-    this -> p = &p;
-}
+/**
+ * \brief Parancsot végrehajtó függvény meghívása.
+ * 
+ * A parancs alapján meghívja a parancsnak megfelelő függvényt a megfelelő paraméterekkel.
+ * 
+ * \param cm A parancs szövegkódja.
+ * \param it A tárgy szövegkódja.
+ * \param ent Egy Entity objektum, amelyet a mozgás parancsok használnak.
+ * \param rw Egy RenderWindow objektum, amely a kiíró parancsok használatához kell.
+ */
 
-void Router::route(std::string cm, std::string it) {
+void Router::route(std::string cm, std::string it, Entity& ent, RenderWindow& rw) {
     if(cm == "FEL" || cm == "LE" || cm == "JOBBRA" || cm == "BALRA" || cm == "ELORE" || cm == "HATRA") {
-        this->move(cm, it);
+        this->move(cm, it, ent);
     }
     else if(cm == "HELP" || cm == "SEGITSEG") {
         this->help();
     }
+    else if(cm == "LAPOZ") {
+        this->next_page(rw);
+    }
 }
+
+/**
+ * \brief Lapozó parancs.
+ * 
+ * Meghívja a RenderWindow lapozáshoz szükséges függvényét.
+ * 
+ * \param rw Egy RenderWindow objektum, amely nextPage() függvénye meghívható.
+ */
+
+void Router::next_page(RenderWindow& rw) {
+    rw.nextPage();
+}
+
+/**
+ * \brief Segítség kiírása.
+ * 
+ * Kiírja az engedélyezett parancsok listáját.
+ * 
+ */
 
 void Router::help() {
     std::cout << "Engedelyezett parancsok:" << std::endl;
 }
 
-void Router::move(std::string cm, std::string it) {
+/**
+ * \brief Játékos mozgatását végzi.
+ * 
+ * A játékost mozgató parancsok alapján átad két paramétert egy entitás objektumnak, amely azt a pozíciót határozza meg, ahova a játékos lépni szeretne.
+ * 
+ * \param cm A parancs szövegkódja.
+ * \param it A tárgy szövegkódja.
+ * \param ent Egy Entity objektum, amelyet a mozgás parancsok használnak.
+ */
+
+void Router::move(std::string cm, std::string it, Entity& ent) {
     int dist = std::stoi(it);
 
     if(cm == "FEL" || cm == "ELORE") {
-        p -> setTarget(1, dist);
+        ent.setTarget(1, dist);
     }
     else if(cm == "JOBBRA") {
-        p -> setTarget(2, dist);
+        ent.setTarget(2, dist);
     }
     else if(cm == "LE" || cm == "HATRA") {
-        p -> setTarget(3, dist);
+        ent.setTarget(3, dist);
     }
     else if(cm == "BALRA") {
-        p -> setTarget(4, dist);
+        ent.setTarget(4, dist);
     }
 }
