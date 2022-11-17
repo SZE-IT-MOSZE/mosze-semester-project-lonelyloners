@@ -157,7 +157,11 @@ int main(int argc, char* argv[])
                                 case SDLK_RETURN:
                                     Command c = Command(command);
                                     c.make();
-                                    r.route(c.getCommand(), c.getItem(), l, game);
+                                    r.route(c.getCommand(), c.getItem(), l);
+                                     if (command == "LAPOZZ")
+                                    {
+                                        game.nextPage();
+                                    }
                                     if (command == "TAMADAS")
                                     {
                                         attack = true;
