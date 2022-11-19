@@ -39,7 +39,7 @@ int menu(RenderWindow menuWindow)
     nGameB.setSize(125,65);
 
     // nagy új játék gomb lenyomott
-    SDL_Texture* newGameButtonDown = menuWindow.loadTexture("res/gfx/c/menu_alap_nagy_benyomott_ujjatek.png");
+    SDL_Texture* newGameButtonDown = menuWindow.loadTexture("res/gfx/Menu/menu_alap_nagy_benyomott_ujjatek.png");
     Entity nGameBD(V2F(30 /* * getR() */, 20 /* * getR() */), newGameButtonDown);
     nGameBD.setSize(125,65);
 
