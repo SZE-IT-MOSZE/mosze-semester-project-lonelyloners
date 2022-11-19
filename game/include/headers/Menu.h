@@ -24,15 +24,6 @@ int menu(RenderWindow menuWindow)
     // betűtípus betöltése
     TTF_Font* fnt = TTF_OpenFont("font/PatrickHand-Regular.ttf", 18);  
 
-    // egész számokból álló párokból álló vektorok definiálása
-    std::vector<std::pair<int, int>> newGameBtnDwn;
-    std::vector<std::pair<int, int>> newGameBtnUp;
-    // új játék gomb animációjához szükséges vektorok
-    // felengedett            
-    newGameBtnUp  = { {   0, 0} };
-    // lenyomott 
-    newGameBtnDwn = { { 125, 0} };
-
     SDL_Texture* newGame = nullptr;
     // háttér betöltése
     SDL_Texture* mnuBckGround = menuWindow.loadTexture("res/gfx/Menu/menu_hatter.png");
@@ -43,9 +34,14 @@ int menu(RenderWindow menuWindow)
     Entity txtbckground(V2F(384, 0), textBckGround);
 
     // nagy új játék gomb
-    SDL_Texture* newGameButton = menuWindow.loadTexture("res/gfx/menu_alap_nagy_ujjatek.png");
+    SDL_Texture* newGameButton = menuWindow.loadTexture("res/gfx/Menu/menu_alap_nagy_ujjatek.png");
     Entity nGameB(V2F(30, 20), newGameButton);
     nGameB.setSize(125,65);
+
+    // nagy új játék gomb lenyomott
+    SDL_Texture* newGameButtonDown = menuWindow.loadTexture("res/gfx/c/menu_alap_nagy_benyomott_ujjatek.png");
+    Entity nGameBD(V2F(30 /* * getR() */, 20 /* * getR() */), newGameButtonDown);
+    nGameBD.setSize(125,65);
 
     // betöltés gomb
     SDL_Texture* loadGameButton = menuWindow.loadTexture("res/gfx/Menu/menu_alap_betoltes.png");
@@ -181,13 +177,15 @@ int menu(RenderWindow menuWindow)
         }
 
         const float alpha = accum / timeStep;       
-
         if ( nGameDown )
         {
-            menuWindow.update(nGameB, newGameBtnDwn, newGameBtnDwn.size(), 125, 65, 0, true);
+            menuWindow.render(nGameBD);
+            selectednumber = 1;
+            menuWindow.display();
+            SDL_Delay(500);
+            menuRunning = false;
         }
-
-        if (lgGameDown)
+        else if (lgGameDown)
         {
             menuWindow.render(lgGameBD);
             selectednumber = 2;

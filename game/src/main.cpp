@@ -87,7 +87,7 @@ int main(int argc, char* argv[])
         // LyRs összes animációját tartalmazó sprite sheet betöltése
         SDL_Texture* lyrsAnim = game.loadTexture("res/gfx/Animations/lyrs_sprite_sheet.png");
         Entity l(V2F(64, 0), lyrsAnim);
-        l.setPosi(64, 0);
+        l.setPosi(64 * game.getRES(), 0);
         // első térkép hátterének betöltése
         SDL_Texture* background = game.loadTexture("res/gfx/Dessert_Map1/dessert_map1_alapmap.png");
         Entity pl(V2F(0, 0), background);
