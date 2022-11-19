@@ -8,12 +8,11 @@
 #include <sdl/SDL_image.h>
 #include <sdl/SDL_ttf.h>
 
+#include "headers/Router.h"
+#include "headers/Command.h"
 #include "headers/RenderPlanets.h"
 #include "headers/Planet1.h"
 #include "headers/Menu.h"
-#include "headers/Entity.h"
-#include "headers/Router.h"
-#include "headers/Command.h"
 
 /**
  * \brief Fő függvény.
@@ -158,10 +157,6 @@ int main(int argc, char* argv[])
                                     Command c = Command(command);
                                     c.make();
                                     r.route(c.getCommand(), c.getItem(), l, game);
-                                    if (command == "TAMADAS")
-                                    {
-                                        attack = true;
-                                    }
                                     command = "";
                             }
                     }
@@ -190,6 +185,8 @@ int main(int argc, char* argv[])
                     // balra
                     balra = true;
                     break;
+                case 5:
+                    attack = true;
                 default:
                     break;
             }
@@ -283,7 +280,7 @@ int main(int argc, char* argv[])
                 {
                     jobbra = false;
                     l.setDirZero();
-                } 
+                }
                 // LyRs mozgatása jobbra
                 game.right(l);
                 // LyRs jobbra mozog animáció következő kockája

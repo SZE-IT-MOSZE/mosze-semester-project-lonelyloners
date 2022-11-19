@@ -10,37 +10,40 @@
 
 class RenderWindow
 {
-    public:
+public:
 
-        RenderWindow(const char* p_title, int p_w, int p_h);
-        SDL_Texture* loadTexture(const char* p_filePAth);
-        
-        int getRefreshRate();
+    RenderWindow(const char* p_title, int p_w, int p_h);
+    SDL_Texture* loadTexture(const char* p_filePAth);
+    
+    int getRefreshRate();
 
-        void cleanUp();
-        void clear();
-        void render(Entity& p_entity);
-        bool update(Entity& p_entity, std::vector<std::pair<int, int>> spritepos, int frames, int w, int h, int offset, bool ff);
-        void display();
-        
-        const char* renderText(const char* path, TTF_Font* Sans);
+    void cleanUp();
+    void clear();
+    void render(Entity& p_entity);
+    bool update(Entity& p_entity, std::vector<std::pair<int, int>> spritepos, int frames, int w, int h, int offset, bool ff);
+    void display();
+    
+    const char* renderText(const char* path, TTF_Font* Sans);
 
-        void up(Entity& p_entity);        
-        void down(Entity& p_entity);
-        void left(Entity& p_entity);   
-        void right(Entity& p_entity);   
-        
-        void renderInputText(std::string inputText, TTF_Font* Sans);
+    void up(Entity& p_entity);        
+    void down(Entity& p_entity);
+    void left(Entity& p_entity);   
+    void right(Entity& p_entity);   
+    
+    void renderInputText(std::string inputText, TTF_Font* Sans);
 
-        void nextPage() { pg++; };
+    void nextPage() { pg++; };
 
-        SDL_Renderer* getRenderer();
-        SDL_Window* getWindow();
+    int getRES();
 
-    private:
-        SDL_Window* window;
-        SDL_Renderer* renderer;
-        
-        const char* p_title;
-        int p_w, p_h, pg, frms;
+    SDL_Renderer* getRenderer();
+    SDL_Window* getWindow();
+
+private:
+
+    SDL_Window* window;
+    SDL_Renderer* renderer;
+    
+    const char* p_title;
+    int p_w, p_h, pg, frms;
 };

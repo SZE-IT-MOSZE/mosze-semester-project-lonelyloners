@@ -3,30 +3,6 @@
 #include "headers/RenderWindow.h"
 #include "headers/Utils.h"
 
-// int getR()
-// {
-//     int i = 0;
-//     int RES = 1;
-//     std::string line;
-//     std::ifstream set;
-//     set.open("user.settings");
-//     if (set.is_open())
-//     {
-//         while(getline(set, line))
-//         {
-//             i++;
-//             if (i = 1)
-//             {
-//                 RES = std::stoi(line);
-//             } 
-//         }
-//         set.close();
-//     }
-//     
-//     else std::cout << "A beallítások fajl serult vagy nem letezik" << std::endl; 
-// 
-//     return RES;
-// }
 /**
  * \brief Menü megjelenítése.
  *
@@ -44,9 +20,18 @@ int menu(RenderWindow menuWindow)
     std::string input;
     int c,i=0;
     char str[100];
-    
+    int res = menuWindow.getRES();
     // betűtípus betöltése
     TTF_Font* fnt = TTF_OpenFont("font/PatrickHand-Regular.ttf", 18);  
+
+    // egész számokból álló párokból álló vektorok definiálása
+    std::vector<std::pair<int, int>> newGameBtnDwn;
+    std::vector<std::pair<int, int>> newGameBtnUp;
+    // új játék gomb animációjához szükséges vektorok
+    // felengedett            
+    newGameBtnUp  = { {   0, 0} };
+    // lenyomott 
+    newGameBtnDwn = { { 125, 0} };
 
     SDL_Texture* newGame = nullptr;
     // háttér betöltése
@@ -58,53 +43,48 @@ int menu(RenderWindow menuWindow)
     Entity txtbckground(V2F(384, 0), textBckGround);
 
     // nagy új játék gomb
-    SDL_Texture* newGameButton = menuWindow.loadTexture("res/gfx/Menu/menu_alap_nagy_ujjatek.png");
-    Entity nGameB(V2F(30 /* * getR() */, 20 /* * getR() */), newGameButton);
+    SDL_Texture* newGameButton = menuWindow.loadTexture("res/gfx/menu_alap_nagy_ujjatek.png");
+    Entity nGameB(V2F(30, 20), newGameButton);
     nGameB.setSize(125,65);
-
-    // nagy új játék gomb lenyomott
-    SDL_Texture* newGameButtonDown = menuWindow.loadTexture("res/gfx/Menu/menu_alap_nagy_benyomott_ujjatek.png");
-    Entity nGameBD(V2F(30 /* * getR() */, 20 /* * getR() */), newGameButtonDown);
-    nGameBD.setSize(125,65);
 
     // betöltés gomb
     SDL_Texture* loadGameButton = menuWindow.loadTexture("res/gfx/Menu/menu_alap_betoltes.png");
-    Entity lgGameB(V2F(35 /* * getR() */, 116 /* * getR() */), loadGameButton);
+    Entity lgGameB(V2F(35, 116), loadGameButton);
     lgGameB.setSize(95,43);
 
     // betöltés gomb lenyomott
     SDL_Texture* loadGameButtonDown = menuWindow.loadTexture("res/gfx/Menu/menu_alap_benyomott_betoltes.png");
-    Entity lgGameBD(V2F(35 /* * getR() */, 116 /* * getR() */), loadGameButtonDown);
+    Entity lgGameBD(V2F(35, 116), loadGameButtonDown);
     lgGameBD.setSize(95,43);
 
     // segítség gomb    
     SDL_Texture* helpGameButton = menuWindow.loadTexture("res/gfx/Menu/menu_alap_segitseg.png");
-    Entity hlpGameB(V2F(35 /* * getR() */, 189 /* * getR() */), helpGameButton);
+    Entity hlpGameB(V2F(35, 189), helpGameButton);
     hlpGameB.setSize(95,43);
 
     // segítség gomb lenyomott
     SDL_Texture* helpGameButtonDown = menuWindow.loadTexture("res/gfx/Menu/menu_alap_benyomott_segitseg.png");
-    Entity hlpGameBD(V2F(35 /* * getR() */, 189 /* * getR() */), helpGameButtonDown);
+    Entity hlpGameBD(V2F(35, 189), helpGameButtonDown);
     hlpGameBD.setSize(95,43);
 
     // beállítások gomb
     SDL_Texture* setGameButton = menuWindow.loadTexture("res/gfx/Menu/menu_alap_beallitas.png");
-    Entity setGameB(V2F(385 /* * getR() */ - 35 /* * getR() */ - 95 /* * getR() */, 116 /* * getR() */), setGameButton);
+    Entity setGameB(V2F(385 - 35 - 95, 116), setGameButton);
     setGameB.setSize(95,43);
 
     // beállítások gomb lenyomott
     SDL_Texture* setGameButtonDown = menuWindow.loadTexture("res/gfx/Menu/menu_alap_benyomott_beallitas.png");
-    Entity setGameBD(V2F(384 /* * getR() */ - 35 /* * getR() */ - 95 /* * getR() */, 116 /* * getR() */), setGameButtonDown);
+    Entity setGameBD(V2F(384 - 35 - 95, 116), setGameButtonDown);
     setGameBD.setSize(95,43);
 
     // kilépés gomb
     SDL_Texture* exitGameButton = menuWindow.loadTexture("res/gfx/Menu/menu_alap_kilepes.png");
-    Entity eGameB(V2F(385 /* * getR() */ - 35 /* * getR() */ - 95 /* * getR() */, 189 /* * getR() */), exitGameButton);
+    Entity eGameB(V2F(385 - 35 - 95, 189), exitGameButton);
     eGameB.setSize(95,43);
 
     // kilépés gomb lenyomott
     SDL_Texture* exitGameButtonDown = menuWindow.loadTexture("res/gfx/Menu/menu_alap_benyomott_kilepes.png");
-    Entity eGameBD(V2F(384 /* * getR() */ - 35 /* * getR() */ - 95 /* * getR() */, 189 /* * getR() */), exitGameButtonDown);
+    Entity eGameBD(V2F(384 - 35 - 95, 189), exitGameButtonDown);
     eGameBD.setSize(95,43);
     // fő ciklus változó
     bool menuRunning = true;
@@ -133,7 +113,7 @@ int menu(RenderWindow menuWindow)
         bool lgGameDown = false;
         bool hlpGameDown = false;
         bool setGameDown = false;
-
+       
         while(accum >= timeStep)
         {
             // események vezérlése
@@ -145,50 +125,50 @@ int menu(RenderWindow menuWindow)
                     {
                         // új játék gomb lenyomásának ellenőrzése
                         if (event.button.button = SDL_BUTTON_LEFT
-                        and event.button.x > 30 /* * getR() */
-                        and event.button.x < 30 /* * getR() */ + 125 /* * getR() */
-                        and event.button.y > 20 /* * getR() */ 
-                        and event.button.y < (20 + 65) /* * getR() */
+                        and event.button.x > 30 * res
+                        and event.button.x < 30 * res + 125 * res
+                        and event.button.y > 20 * res 
+                        and event.button.y < (20 + 65) * res
                         ) 
                         {
                             nGameDown = true;
                         }
                         // betöltés gomb lenyomásának ellenőrzése
                         else if (event.button.button = SDL_BUTTON_LEFT
-                        and event.button.x > 35 /* * getR() */ 
-                        and event.button.x < 35 /* * getR() */ + 95 /* * getR() */  
-                        and event.button.y > 116 /* * getR() */ 
-                        and event.button.y < 116 /* * getR() */ + 35 /* * getR() */
+                        and event.button.x > 35 * res
+                        and event.button.x < 35 * res + 95 * res
+                        and event.button.y > 116 * res 
+                        and event.button.y < 116 * res + 35 * res
                         ) 
                         {
                             lgGameDown = true;
                         }
                         // segítség gomb lenyomásának ellenőrzése
                         else if (event.button.button = SDL_BUTTON_LEFT
-                        and event.button.x > 35 /* * getR() */ 
-                        and event.button.x < 35 /* * getR() */ + 95 /* * getR() */  
-                        and event.button.y > 189 /* * getR() */ 
-                        and event.button.y < 189 /* * getR() */ + 35 /* * getR() */
+                        and event.button.x > 35 * res 
+                        and event.button.x < 35 * res + 95 /* * getR() */  
+                        and event.button.y > 189 * res  
+                        and event.button.y < 189 * res + 35 /* * getR() */
                         ) 
                         {
                             hlpGameDown = true;
                         }   
                         // beállítások gomb lenyomásának ellenőrzése
                         else if (event.button.button = SDL_BUTTON_LEFT
-                        and event.button.x > 384 /* * getR() */ - 35 /* * getR() */ - 95 /* * getR() */ 
-                        and event.button.x < 384 /* * getR() */ - 35 /* * getR() */
-                        and event.button.y > 116 /* * getR() */ 
-                        and event.button.y < 116 /* * getR() */ + 35 /* * getR() */
+                        and event.button.x > 384 * res - 35 * res - 95 * res
+                        and event.button.x < 384 * res - 35 * res
+                        and event.button.y > 116 * res 
+                        and event.button.y < 116 * res + 35 * res
                         ) 
                         {
                             setGameDown = true;
                         }
                         // kilépés gomb lenyomásának ellenőrzése
                         else if (event.button.button = SDL_BUTTON_LEFT
-                        and event.button.x > 384 /* * getR() */ - 35 /* * getR() */ - 95 /* * getR() */ 
-                        and event.button.x < 384 /* * getR() */ - 35 /* * getR() */
-                        and event.button.y > 189 /* * getR() */ 
-                        and event.button.y < 189 /* * getR() */ + 35 /* * getR() */
+                        and event.button.x > 384 * res - 35 * res - 95 * res
+                        and event.button.x < 384 * res - 35 * res
+                        and event.button.y > 189 * res 
+                        and event.button.y < 189 * res + 35 * res
                         ) 
                         {
                             eGameDown = true;
@@ -202,16 +182,12 @@ int menu(RenderWindow menuWindow)
 
         const float alpha = accum / timeStep;       
 
-        if (nGameDown)
+        if ( nGameDown )
         {
-            menuWindow.render(nGameBD);
-            selectednumber = 1;
-            menuWindow.display();
-            SDL_Delay(500);
-            menuRunning = false;
+            menuWindow.update(nGameB, newGameBtnDwn, newGameBtnDwn.size(), 125, 65, 0, true);
         }
 
-        else if (lgGameDown)
+        if (lgGameDown)
         {
             menuWindow.render(lgGameBD);
             selectednumber = 2;

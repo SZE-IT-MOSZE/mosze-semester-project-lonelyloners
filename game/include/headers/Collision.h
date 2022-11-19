@@ -4,6 +4,7 @@
 
 #include "headers/Entity.h"
 #include "headers/RenderWindow.h"
+
 /**
  * \brief Ellenőrzi, hogy két entity ütközik-e.
  *

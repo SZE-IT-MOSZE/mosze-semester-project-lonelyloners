@@ -1,4 +1,5 @@
 #pragma once
+
 #include <iostream>
 #include <stdio.h>
 #include <vector>
@@ -28,8 +29,8 @@ std::vector<Entity> LoadPlanet1(RenderWindow planet1)
         switch(z)
         {
             case 0:
-                i = -55 /* * getR() */;
-                y = 45 /* * getR() */;
+                i = -55;
+                y = 45;
                 {
                     SDL_Texture* cloud0 = planet1.loadTexture("res/gfx/Dessert_Map1/dessert_map1_felho.png");
                     Entity cl0(V2F(i, y), cloud0);
@@ -37,8 +38,8 @@ std::vector<Entity> LoadPlanet1(RenderWindow planet1)
                     resEntities.push_back(cl0);
                 }
             case 1:
-                i = 135 /* * getR() */;
-                y = 65 /* * getR() */;             
+                i = 135;
+                y = 65;             
                 {
                     SDL_Texture* cloud1 = planet1.loadTexture("res/gfx/Dessert_Map1/dessert_map1_felho.png");
                     Entity cl1(V2F(i, y), cloud1);           
@@ -46,8 +47,8 @@ std::vector<Entity> LoadPlanet1(RenderWindow planet1)
                     resEntities.push_back(cl1);
                 }
             case 2:
-                i = 110 /* * getR() */;
-                y = 160 /* * getR() */;             
+                i = 110;
+                y = 160;             
                 {
                     SDL_Texture* cloud2 = planet1.loadTexture("res/gfx/Dessert_Map1/dessert_map1_felho.png");
                     Entity cl2(V2F(i, y), cloud2);           
@@ -55,8 +56,8 @@ std::vector<Entity> LoadPlanet1(RenderWindow planet1)
                     resEntities.push_back(cl2);
                 }
             case 3:
-                i = -60 /* * getR() */;
-                y = 220 /* * getR() */;  
+                i = -60;
+                y = 220;  
                 {           
                     SDL_Texture* cloud3 = planet1.loadTexture("res/gfx/Dessert_Map1/dessert_map1_felho.png");
                     Entity cl3(V2F(i, y), cloud3);           
@@ -64,8 +65,8 @@ std::vector<Entity> LoadPlanet1(RenderWindow planet1)
                     resEntities.push_back(cl3);
                 }
             case 4:
-                i = 50 /* * getR() */;
-                y = 250 /* * getR() */;  
+                i = 50;
+                y = 250;  
                 {           
                     SDL_Texture* cloud4 = planet1.loadTexture("res/gfx/Dessert_Map1/dessert_map1_felho.png");
                     Entity cl4(V2F(i, y), cloud4);           
@@ -73,8 +74,8 @@ std::vector<Entity> LoadPlanet1(RenderWindow planet1)
                     resEntities.push_back(cl4);
                 }
             case 5:
-                i = 220 /* * getR() */;
-                y = 5 /* * getR() */;  
+                i = 220;
+                y = 5;  
                 {           
                     SDL_Texture* cloud5 = planet1.loadTexture("res/gfx/Dessert_Map1/dessert_map1_felho.png");
                     Entity cl5(V2F(i, y), cloud5);           
@@ -82,8 +83,8 @@ std::vector<Entity> LoadPlanet1(RenderWindow planet1)
                     resEntities.push_back(cl5);
                 }
             case 6:
-                i = 250 /* * getR() */;
-                y = 120 /* * getR() */;  
+                i = 250;
+                y = 120;  
                 {           
                     SDL_Texture* cloud6 = planet1.loadTexture("res/gfx/Dessert_Map1/dessert_map1_felho.png");
                     Entity cl6(V2F(i, y), cloud6);           
@@ -91,8 +92,8 @@ std::vector<Entity> LoadPlanet1(RenderWindow planet1)
                     resEntities.push_back(cl6);
                 }
             case 7:
-                i = 160 /* * getR() */;
-                y = 270 /* * getR() */;  
+                i = 160;
+                y = 270;  
                 {           
                     SDL_Texture* cloud7 = planet1.loadTexture("res/gfx/Dessert_Map1/dessert_map1_felho.png");
                     Entity cl7(V2F(i, y), cloud7);           
@@ -100,8 +101,8 @@ std::vector<Entity> LoadPlanet1(RenderWindow planet1)
                     resEntities.push_back(cl7);
                 }
             case 8:
-                i = 230 /* * getR() */;
-                y = 310 /* * getR() */;  
+                i = 230;
+                y = 310;  
                 {           
                     SDL_Texture* cloud8 = planet1.loadTexture("res/gfx/Dessert_Map1/dessert_map1_felho.png");
                     Entity cl8(V2F(i, y), cloud8);           

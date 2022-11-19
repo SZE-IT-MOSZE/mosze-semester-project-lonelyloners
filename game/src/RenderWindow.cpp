@@ -8,7 +8,43 @@
 #include <string>
 
 #include "headers/RenderWindow.h"
-#include "headers/Entity.h"
+
+/**
+* \brief A felbontás szorzó kiovasása.
+*
+* A felbontás egy szorzó segítségével van állítva, 
+* ez egy fájlban van tárolva, és ezt olvassa ki ez a függvény.   
+* 
+* \return Egész szaám, amivel meg kell szorozni a méreteket.
+*/
+int RenderWindow::getRES()
+{
+    int i = 0;
+    int RES = 1;
+    std::string line;
+    std::ifstream set;
+    // beállítások fájl megnyitása
+    set.open("user.settings");
+    if (set.is_open())
+    {
+        while(getline(set, line))
+        {
+            i++;
+            // felbontás szorzó az első sorban van tárolva 
+            if (i = 1)
+            {
+                // a visszaadandó változóbva olvassuk az első sort
+                RES = std::stoi(line);
+            } 
+        }
+        set.close();
+    }
+    // hibakezelés, ha a fájl nem látezne
+    else std::cout << "A beallítások fajl serult vagy nem letezik" << std::endl; 
+    // szorzó visszaadása
+    return RES;
+}
+
 /**
  * \brief Létrehozza az ablakot.
  * 
@@ -22,7 +58,7 @@
 RenderWindow::RenderWindow (const char* p_title, int p_w, int p_h) : window(NULL), renderer(NULL)
 {
     // ablak létrehozása 
-    window = SDL_CreateWindow(p_title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, p_w, p_h, SDL_WINDOW_SHOWN);
+    window = SDL_CreateWindow(p_title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, p_w * getRES(), p_h * getRES(), SDL_WINDOW_SHOWN);
     // ablak ikon beállytása
     SDL_Surface *surface;
     surface = IMG_Load("res/gfx/Characters/lyrs_jobb.png");
@@ -145,14 +181,14 @@ bool RenderWindow::update(Entity& p_entity, std::vector<std::pair<int, int>> spr
     }
 
     // téglalap méreteinek beállítása
-    src.h = h /* * getRRes() */;
-    src.w = w /* * getRRes() */;
+    src.h = h;
+    src.w = w;
     // cél téglalap beállítása
     SDL_Rect dst;
     dst.x = (p_entity.getPos().x - offset);
     dst.y = p_entity.getPos().y;
-    dst.w = w;
-    dst.h = h;
+    dst.w = w * getRES();
+    dst.h = h * getRES();
     // rendererbe másolás
     SDL_RenderCopy(renderer, p_entity.getTex(), &src, &dst);
 
@@ -176,7 +212,7 @@ bool RenderWindow::update(Entity& p_entity, std::vector<std::pair<int, int>> spr
 void RenderWindow::up(Entity& p_entity)
 {
     // Entity 1 pixellel felfele mozgatása 
-    p_entity.setPosi(0, -1);
+    p_entity.setPosi(0, -1 * getRES());
 }
 /**
  * \brief Egy Entity lefele mozgatása.
@@ -188,7 +224,7 @@ void RenderWindow::up(Entity& p_entity)
 void RenderWindow::down(Entity& p_entity)
 {
     // Entity 1 pixellel lefele mozgatása 
-    p_entity.setPosi(0, 1);
+    p_entity.setPosi(0, 1 * getRES());
 }
 /**
  * \brief Egy Entity balra mozgatása.
@@ -200,7 +236,7 @@ void RenderWindow::down(Entity& p_entity)
 void RenderWindow::left(Entity& p_entity)
 {
     // Entity 1 pixellel balra mozgatása 
-    p_entity.setPosi(-1, 0);
+    p_entity.setPosi(-1 * getRES(), 0);
 }
 /**
  * \brief Egy Entity jobbra mozgatása.
@@ -212,7 +248,7 @@ void RenderWindow::left(Entity& p_entity)
 void RenderWindow::right(Entity& p_entity)
 {
     // Entity 1 pixellel jobbra mozgatása 
-    p_entity.setPosi(1, 0);
+    p_entity.setPosi(1 * getRES(), 0);
 }
 /**
  * \brief Egy Entity megjelenítése.
@@ -231,10 +267,10 @@ void RenderWindow::render(Entity& p_entity)
     src.h = p_entity.getCurrentFrame().h;
     // cél téglalap beállítása
     SDL_Rect dst;
-    dst.x = p_entity.getPos().getX();
-    dst.y = p_entity.getPos().getY();
-    dst.w = p_entity.getCurrentFrame().w;
-    dst.h = p_entity.getCurrentFrame().h;
+    dst.x = p_entity.getPos().getX() * getRES();
+    dst.y = p_entity.getPos().getY() * getRES();
+    dst.w = p_entity.getCurrentFrame().w * getRES();
+    dst.h = p_entity.getCurrentFrame().h * getRES();
     // rendererbe másolás
     SDL_RenderCopy(renderer, p_entity.getTex(), &src, &dst);
 }
@@ -306,13 +342,13 @@ const char* RenderWindow::renderText(const char* path, TTF_Font* Sans)
             // létrehoz egy téglalapot
             SDL_Rect Message_rect;
             // beállítja a téglalap x koordinátáját  
-            Message_rect.x = 450;    
+            Message_rect.x = 450 * getRES();;    
             // beállítja a téglalap x koordinátáját
-            Message_rect.y = 30 + (20 * i);    
+            Message_rect.y = 30 * getRES() + (20 * i) * getRES();;    
             // beállítja a téglalap szélességét
-            Message_rect.w = 6 * line.length();
+            Message_rect.w = 6 * line.length() * getRES();;
             // beállítja a téglalap magasságát   
-            Message_rect.h = 18;    
+            Message_rect.h = 18 * getRES();;    
 
             SDL_RenderCopy(renderer, Message, NULL, &Message_rect);
 
@@ -354,13 +390,13 @@ void RenderWindow::renderInputText(std::string inputText, TTF_Font* Sans)
     // létrehoz egy téglalapot
     SDL_Rect Message_rect;
     // beállítja a téglalap x koordinátáját  
-    Message_rect.x = 50;    
+    Message_rect.x = 50 * getRES();    
     // beállítja a téglalap x koordinátáját
-    Message_rect.y = 416;    
+    Message_rect.y = 416 * getRES();    
     // beállítja a téglalap szélességét
-    Message_rect.w = 12 * inputText.length();
-    // beállítja a téglalap magasságát   
-    Message_rect.h = 36;    
+    Message_rect.w = 12 * inputText.length() * getRES();
+    // beállítja a téglalap magasságát
+    Message_rect.h = 36 * getRES();    
 
     SDL_RenderCopy(renderer, Message, NULL, &Message_rect);
 

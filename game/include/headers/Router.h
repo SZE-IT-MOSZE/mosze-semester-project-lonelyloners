@@ -2,7 +2,6 @@
 
 #include <string>
 
-#include "headers/Entity.h"
 #include "headers/RenderWindow.h"
 
 class Router {
