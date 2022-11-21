@@ -1,0 +1,24 @@
+//Megérkezik LyRs a vaskupachoz
+A hatalmas halomnyi vas- és 
+acél tényleg kupacban állt, 
+ahogy azt Warren is mesélte.
+*
+Ahogy az is igaz volt, hogy
+a nehéz darabok között nem
+más keringett, mint a
+híres-neves vaskutya. Beletelt
+egy kis időbe, mire észrevette
+az őt addigra alaposan kielemző
+robotot: amikor megtette, akkor
+azonban olyan hévvel vicsorgott
+LyRs felé, hogy a robot nem tudta
+tűrtőztetni magát.
+*
+Egybegyűjtötte minden csepp
+dühét, minden csepp
+csalódottságát és szomorúságát, 
+így támadva rá a torz szüleményre.
+*
+//Harc.
+//Ha LyRs győz: nosoria3a.txt
+//Ha LyRs veszt: nosoria3b.txt
