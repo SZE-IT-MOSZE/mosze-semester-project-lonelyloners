@@ -5,4 +5,4 @@ Ezzel a robot a medve-lény után eredt.
 *
 Feladat: Menj a medve-lény után!
 *
-//Feladat elvégzése után következik: planthea3b2.txt
+//planthea3b2.txt

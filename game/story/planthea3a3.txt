@@ -31,4 +31,4 @@ Sietve távozott a könyvtárból Keiko-hoz.
 *
 Feladat: Hagyd el a könyvtárat és beszélj Keiko-val!
 *
-//Feladat elvégzése után következik: planthea3a4.txt
+//planthea3a4.txt
