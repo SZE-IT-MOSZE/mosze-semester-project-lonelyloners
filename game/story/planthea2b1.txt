@@ -31,4 +31,4 @@ befejezte elkezdett feladatát.
 Feladat: Szüreteld le a maradék
 gupra bogyót is a bokrokról!
 *
-//Feladat elvégzése után következik: planthea2b2.txt
+//planthea2b2.txt
