@@ -19,4 +19,4 @@ Feladat mondja: Menj be az erdőnél lévő
 piros gupra bogyókat! Használd a 
 FELVESZ parancsot a bokrok mellett!
 *
-//Feladat elvégzése után következik: planthea1b4.txt
+//planthea1b4.txt
