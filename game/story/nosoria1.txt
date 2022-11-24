@@ -30,9 +30,9 @@ hullámokat sugárzott az agyi
 központ felé. Erősen elgondolkozott
 rajta, hogy kisegítse az ártatlan
 kis lényt vagy tovább álljon.
-
-Kisegíted a kismalacot vagy 
-továbbállsz? - kisegitem / elmegyek
-
-//Ha kisegítem: nosoria2a.txt
-//Ha továbbmegy: nosoria2b.txt
+*
+Kisegíted a kismalacot (DONT A)
+vagy továbbállsz (DONT B)?
+*
+//nosoria2a.txt
+//nosoria2b.txt
