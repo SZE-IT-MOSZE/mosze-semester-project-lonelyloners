@@ -24,4 +24,4 @@ betemette a kőkemény jégdarabokkal
 teli hó, teljesen tönkretéve LyRs
 mesterséges szervezetét.
 *
-//Sztori vége ezen az ágon - game over!! game_over.png betöltése, majd vissza a menübe!
+//game_over.png
