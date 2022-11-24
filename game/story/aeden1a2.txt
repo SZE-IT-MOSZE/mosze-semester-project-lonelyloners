@@ -60,4 +60,4 @@ kunyhó az enyém.
 Feladat: Kövesd Nicolaus-t a nyitott ajtós,
 legszélső kunyhóhoz!
 *
-//Feladat elvégzése után: aeden1a3.txt
+//aeden1a3.txt
