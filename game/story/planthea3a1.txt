@@ -10,4 +10,4 @@ gupra bogyókat. Rövid úton, amerről
 Feladat: Vidd vissza Keiko-nak a 
 bogyókkal teli kosarat!
 *
-//Feladat elvégzése után következik: planthea3a2.txt
+//planthea3a2.txt
