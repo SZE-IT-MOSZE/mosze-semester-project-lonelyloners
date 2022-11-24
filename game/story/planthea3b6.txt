@@ -42,4 +42,4 @@ Planthea bolygót, száguldva az új hazafele.
 *
 Avagy az Aeden bolygó fele.
 *
-//Ezután következik: aeden1b.txt
+//aeden1b.txt
