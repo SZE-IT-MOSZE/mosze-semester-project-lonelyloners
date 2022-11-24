@@ -25,4 +25,4 @@ végig Warren mellett maradt,
 segédkezve a Spinosának,
 egészen az idők végezetéig.
 *
-//Sztori vége ezen az ágon. Good ending screen?
+//good_ending.png

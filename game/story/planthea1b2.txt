@@ -18,4 +18,4 @@ LyRs mondja: Rendben!
 Feladat: Hord el a fakupacokat az említett 
 helyre! Használd a FELVESZ parancsot!
 *
-//Feladat elvégzése után következik: planthea1b3.txt
+//planthea1b3.txt
