@@ -62,4 +62,4 @@ Hozdd ide vissza nekem és neked is esek!
 Feladat: Hozdd el Nicolausnak a
 szerszámosládát a kunyhó mögül!
 *
-//Feladat elvégzése után következik: aeden1a4.txt
+//aeden1a4.txt
