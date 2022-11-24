@@ -11,13 +11,10 @@ LyRs egyszerre nyugodott meg
 Na, ha ezt mind összeszedi,
 Keiko még a végén kitüntetést ad neki!
 *
-//Elkezdi szedni. Összeszed kettőt, mire morgás hallatszódik.
-*
 A fák közül egy medveszerű lény
 bukkant fel váratlanul. Hangos
 morgással, nem tétovázva azonnal
-a robotnak vetette magát.
+a robotnak vetette magát. (TAMADAS)
 *
-//Harc!
-//Ha győz: planthea2a.txt
-//Ha NEM győz: planthea2b.txt
+//planthea2a.txt
+//planthea2b.txt

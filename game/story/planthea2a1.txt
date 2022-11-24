@@ -85,4 +85,4 @@ Gyere, megmutatom, merre találod a könyvtárat.
 *
 Feladat: Kövesd Keiko-t a könyvtárhoz!
 *
-//Feladat elvégzése után következik: planthea2a2.txt
+//planthea2a2.txt

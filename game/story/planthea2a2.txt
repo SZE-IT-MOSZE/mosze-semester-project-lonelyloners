@@ -29,4 +29,4 @@ távozott a könyvtárból Keiko-hoz.
 *
 Feladat: Hagyd el a könyvtárat és beszélj Keiko-val!
 *
-//Feladat elvégzése után következik: planthea2a3.txt
+//planthea2a3.txt
