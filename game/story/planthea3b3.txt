@@ -1,4 +1,3 @@
-//Odamegy.
 *
 LyRs mondja: Üdvözlet! Remélem, nem zavarom.
 *
@@ -65,4 +64,4 @@ Megfagynak az új helyükön kb.
 *
 Feladat: Menj oda az egyik medvéhez, hogy elindítsd az analizálást!
 *
-//Feladat elvégzése után következik: planthea3b4.txt
+//planthea3b4.txt
