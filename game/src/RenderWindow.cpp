@@ -162,7 +162,7 @@ bool RenderWindow::update(Entity& p_entity, std::vector<std::pair<int, int>> spr
 
     int t = (SDL_GetTicks() / 100) % frames;
     
-    if (t == frms)
+    if (t == frms && !ff)
     {
         frms++;
     }

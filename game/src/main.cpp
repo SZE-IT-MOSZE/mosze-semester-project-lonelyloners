@@ -53,7 +53,8 @@ int main(int argc, char* argv[])
         std::vector<std::pair<int, int>> lyrsMoveL;
         std::vector<std::pair<int, int>> lyrsLaserR;
         std::vector<std::pair<int, int>> lyrsLaserL;
-        
+        std::vector<std::pair<int, int>> doorCrack;
+
         // LyRs üresjárati animációjának a piozíciói
         // jobb            
         lyrsIdleR       = { { 0,   0}, {64,   0}, {128,   0}, {192,   0} };
@@ -77,7 +78,10 @@ int main(int argc, char* argv[])
                             { 0, 288}, {64, 288}, {128, 288}, {192, 288}, {256, 288} , 
                             { 0, 320}, {64, 320}, {128, 320}, {192, 320}, {256, 320} ,
                             { 0, 352}, {64, 352}, {128, 352}, {192, 352}, {256, 352} };
-                          
+        // ajtó betörés animáció
+        doorCrack       = { {  0,  0}, { 35,  0}, {70,    0}, {105,   0}, {140,   0},
+                            {175,  0}, {210,  0}, {245,   0}, {280,   0}, {315,   0} };
+
         // Entity vector létrehozása
         std::vector<Entity> planet1 = {};
         planet1 = LoadPlanet1(game);
@@ -97,6 +101,19 @@ int main(int argc, char* argv[])
         // beviteli mező háttere
         SDL_Texture* inputTextBckGround = game.loadTexture("res/gfx/Objects/blck_bckgrnd.png");
         Entity inptxtbckground(V2F(0, 384), inputTextBckGround);
+        // ajtó
+        SDL_Texture* door = game.loadTexture("res/gfx/Dessert_Map1/dessert_map1_betor0.png");
+        Entity dooor(V2F(306, 384 - 17), door);
+        dooor.setSize(18,17);
+        // ajtó betörés közben 
+        SDL_Texture* bdoor = game.loadTexture("res/gfx/Dessert_Map1/dessert_map1_betor.png");
+        Entity bdooor(V2F(298, 384-17), bdoor);
+        bdooor.setSize(35, 20);
+        // ajtó betört 
+        SDL_Texture* cdoor = game.loadTexture("res/gfx/Dessert_Map1/dessert_map1_betor3.png");
+        Entity cdooor(V2F(298, 384-17), cdoor);
+        cdooor.setSize(35, 20);
+
         // parancs választó deklarálása
         Router r = Router();
 
@@ -108,6 +125,8 @@ int main(int argc, char* argv[])
         bool jobbra = false;
         bool balra = false;
         bool flip = true;
+        bool crack = false;
+        bool endOfCrack = true;
         // esemény létrehozása
         SDL_Event event;
         // FPS limitációhoz szükséges változók
@@ -156,7 +175,23 @@ int main(int argc, char* argv[])
                                 case SDLK_RETURN:
                                     Command c = Command(command);
                                     c.make();
-                                    r.route(c.getCommand(), c.getItem(), l, game);
+                                    r.route(c.getCommand(), c.getItem(), l);
+                                    if (command == "LAPOZZ")
+                                    {
+                                        game.nextPage();
+                                    }
+                                    if (command == "TAMADAS")
+                                    {
+                                        attack = true;
+                                    }
+                                    if (command == "POSI")
+                                    {
+                                        std::cout << " CURRENT POSITION: " << l.getPos().getY() << " \t " << l.getPos().getX() << std::endl;
+                                    }
+                                    if (command == "TARGET")
+                                    {
+                                        std::cout << " TARGET COORDINATE: " << l.getTargetY() << " \t " << l.getTargetX() << std::endl;
+                                    }
                                     command = "";
                             }
                     }
@@ -192,7 +227,10 @@ int main(int argc, char* argv[])
             }
             
             // először a háttér kirajzolása
-            game.render(pl);          
+            game.render(pl);
+            // ajtók kirenderelése
+            game.render(dooor);
+          
             if (!fel && !le && !balra && !jobbra && !attack)
             {
                 // jobbra gomb volt utoljára lenyomva?
@@ -240,11 +278,18 @@ int main(int argc, char* argv[])
                 if (l.getPos().getY() >= l.getTargetY())
                 {
                     le = false;
+                    if ((l.getPos().getY() != l.getTargetY()))
+                    {
+                        l.setPosi(l.getPos().getX(), l.getTargetY());
+                    }
                     // irány 0-ra állítása, hogy következő tick esetén ne állítsa megint az irányt
                     l.setDirZero();
-                } 
+                }
+                else
+                {
                 // LyRs mozgatása le
                 game.down(l);
+                }
                 // jobbra gomb volt utoljára lenyomva?
                 if (flip)
                 {
@@ -265,9 +310,12 @@ int main(int argc, char* argv[])
                     balra = false;
                     // irány 0-ra állítása, hogy következő tick esetén ne állítsa megint az irányt
                     l.setDirZero();
-                } 
-                // LyRs mozgatása balra
-                game.left(l);
+                }
+                else
+                {
+                    // LyRs mozgatása balra
+                    game.left(l);
+                }
                 // LyRs balra mozog animáció következő kockája
                 game.update(l, lyrsMoveL, lyrsMoveL.size(), 32, 32, 0, true);
                 // összes animáció balra néz
@@ -281,8 +329,11 @@ int main(int argc, char* argv[])
                     jobbra = false;
                     l.setDirZero();
                 }
-                // LyRs mozgatása jobbra
-                game.right(l);
+                else
+                {
+                    // LyRs mozgatása jobbra
+                    game.right(l);
+                }
                 // LyRs jobbra mozog animáció következő kockája
                 game.update(l, lyrsMoveR, lyrsMoveR.size(), 32, 32, 0, true);
                 // összes animáció jobbra néz
@@ -303,6 +354,19 @@ int main(int argc, char* argv[])
                     attack = game.update(l, lyrsLaserL, lyrsLaserL.size(), 64, 32, 32, false);               
                 }
             }
+            if (l.getPos().getY() == 352 && l.getPos().getX() == 288 && attack)
+            {
+                crack = true;
+            }
+            if (crack && !attack) 
+            {
+                crack = game.update(bdooor, doorCrack, doorCrack.size(), 35, 20, 0, false);
+            }       
+            else
+            {
+                game.render(cdooor);
+            }    
+
             // felhők renderelése és ütközések ellenőrzése és lekezelése
             planetR = renderPlanet(game, planet1, planetR, l);
             game.render(inptxtbckground);
