@@ -36,4 +36,4 @@ Keiko mondja: Szuper! Mond meg nekik légyszi, hogy várjanak meg, viszek egy ki
 *
 Feladat: Menj vissza a kutatókhoz azon az úton, amin jöttél!
 *
-//Feladat elvégzése után a következő: planthea3b6.txt
+//planthea3b6.txt
