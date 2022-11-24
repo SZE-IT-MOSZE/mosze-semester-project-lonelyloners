@@ -26,4 +26,4 @@ amikor Keikoék látogatóba jöttek.
 Avagy tette a dolgát, mint egy közösségi
 lény: nem volt már többé lonely loner.
 *
-//Játék vége ezen az ágon.
+//game_over.png
