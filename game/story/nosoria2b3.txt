@@ -17,8 +17,8 @@ tűrtőztetni magát.
 Egybegyűjtötte minden csepp
 dühét, minden csepp
 csalódottságát és szomorúságát, 
-így támadva rá a torz szüleményre.
+így támadva rá a torz szüleményre. 
+(TAMADAS)
 *
-//Harc.
-//Ha LyRs győz: nosoria3a.txt
-//Ha LyRs veszt: nosoria3b.txt
+//nosoria3a.txt
+//nosoria3b.txt
