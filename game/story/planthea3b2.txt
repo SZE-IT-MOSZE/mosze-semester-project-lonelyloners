@@ -1,4 +1,3 @@
-//Követjük, amerről jött. Háttér váltása egy tisztásra, ahol több medve lesz látható egyszerre. A medvék között pedig egy ember.
 *
 A robot jól gondolta, több
 is létezett ezen lényekből.
@@ -19,4 +18,4 @@ csak úgy izzottak a boldogságtól.
 *
 Feladat: Sétálj oda az emberhez!
 *
-//Feladat elvégzése után következik: planthea3b3.txt
+//planthea3b3.txt
