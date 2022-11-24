@@ -15,4 +15,4 @@ el a fénypont fele.
 *
 Feladat: Sétálj el a "fénypont" felé!
 *
-//Következő: nosoria2b2.txt
+//nosoria2b2.txt
