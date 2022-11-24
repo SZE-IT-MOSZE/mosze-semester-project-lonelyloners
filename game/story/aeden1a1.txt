@@ -32,4 +32,4 @@ A második Földet.
 *
 Feladat: Menj oda az emberekhez!
 *
-//Feladat elvégzése után következik: aeden1a2.txt
+//aeden1a2.txt
