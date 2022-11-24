@@ -17,4 +17,4 @@ legkedvesebb emlékeit, ismerőseit
 hagyta, hogy a vasevő ragadozó
 darabjaira szedje: „Sajnálom”
 *
-//Sztori vége. Következő: game_over.png
+//game_over.png
