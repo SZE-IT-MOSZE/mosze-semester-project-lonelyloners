@@ -35,4 +35,4 @@ Addig betereljük a medvéket a hajóba.
 Feladat: Vidd el Keiko-nak a gupra bogyókat!
 Kövesd az utat, amerről jöttél!
 *
-//Feladat elvégzése után a következő: planthea3b5.txt
+//planthea3b5.txt
