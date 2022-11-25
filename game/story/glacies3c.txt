@@ -24,4 +24,8 @@ meglazultabbnak tűnő hókupacra,
 amit még a vihar sem fagyasztott
 kemény, jeges halommá.
 *
->> Kiásod a kapucot? – igen / nem:
+Kiásod a kapucot (DONT A) vagy
+sem (DONT B)?
+*
+//glacies4e.txt
+//glacies4f.txt
