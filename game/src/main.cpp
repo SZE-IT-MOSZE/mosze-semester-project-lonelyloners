@@ -79,25 +79,27 @@ int main(int argc, char* argv[])
                             { 0, 320}, {64, 320}, {128, 320}, {192, 320}, {256, 320} ,
                             { 0, 352}, {64, 352}, {128, 352}, {192, 352}, {256, 352} };
 
-        // Entity vector létrehozása
-        std::vector<Entity> planet1 = {};
-        planet1 = LoadPlanet1(game);
-        // logikai változókat tartalmazó vektor definiálása
-        std::vector<bool> planetR = {};
-        planetR = setPlanet1Pos();
+        
         // LyRs összes animációját tartalmazó sprite sheet betöltése
         SDL_Texture* lyrsAnim = game.loadTexture("res/gfx/Animations/lyrs_sprite_sheet.png");
         Entity l(V2F(64, 0), lyrsAnim);
         l.setPosi(64 * game.getRES(), 0);
-        // első térkép hátterének betöltése
-        SDL_Texture* background = game.loadTexture("res/gfx/Dessert_Map1/dessert_map1_alapmap.png");
-        Entity pl(V2F(0, 0), background);
         // szöveg háttér betöltése
         SDL_Texture* textBckGround = game.loadTexture("res/gfx/Dessert_Map1/both.png");
         Entity txtbckground(V2F(384, 0), textBckGround);
         // beviteli mező háttere
         SDL_Texture* inputTextBckGround = game.loadTexture("res/gfx/Objects/blck_bckgrnd.png");
         Entity inptxtbckground(V2F(0, 384), inputTextBckGround);
+
+        // Entity vector létrehozása
+        std::vector<Entity> planet1 = {};
+        planet1 = LoadPlanet1(game);
+        // logikai változókat tartalmazó vektor definiálása
+        std::vector<bool> planetR = {};
+        planetR = setPlanet1Pos();
+        // első térkép hátterének betöltése
+        SDL_Texture* background = game.loadTexture("res/gfx/Dessert_Map1/dessert_map1_alapmap.png");
+        Entity pl(V2F(0, 0), background);
         // ajtó
         SDL_Texture* door = game.loadTexture("res/gfx/Dessert_Map1/dessert_map1_betor0.png");
         Entity dooor(V2F(306, 384 - 17), door);
@@ -372,6 +374,7 @@ int main(int argc, char* argv[])
                 }
                 if ((l.getPos().getY() == 352 && l.getPos().getX() == 288) || (l.getPos().getY() == 352 && l.getPos().getX() == 320))
                 {
+                    // game.nextTxt(true);
                     crack = true;
                 }
             }
@@ -381,7 +384,7 @@ int main(int argc, char* argv[])
             game.renderInputText(command, fnt);
             // szöveg háttér
             game.render(txtbckground);
-            game.renderText("story/dessert1.1.txt", fnt);
+            game.renderText("story/bevezeto.txt", fnt);
             // rendererbe tötött elemek képernyőre helyezése
             game.display();
             // TODO:

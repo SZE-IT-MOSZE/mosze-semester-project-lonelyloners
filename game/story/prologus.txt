@@ -74,4 +74,4 @@ véve tőlük, majd elhagyta az egykor
 Föld névre keresztelt bolygó maradványait, 
 hogy új otthonra találjon.
 *
-//Ezután következik: dessert1.txt
+//dessert1.1.txt

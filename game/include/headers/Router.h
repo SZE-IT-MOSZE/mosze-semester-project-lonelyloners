@@ -11,5 +11,5 @@ class Router {
         void next_page(RenderWindow& rw);
 
     public:
-        void route(std::string command, std::string item, Entity& ent, RenderWindow& rw);
+        void route(std::string command, std::string item, Entity& ent);
 };

@@ -12,3 +12,4 @@ függően, hogyan alakítod LyRs útját.
 Az általános parancsok listáját a 
 segitseg szó begépelésével tudod előhozni.
 *
+//prologus.txt

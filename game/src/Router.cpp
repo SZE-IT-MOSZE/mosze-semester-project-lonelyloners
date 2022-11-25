@@ -1,7 +1,7 @@
 #include "headers/Player.h"
 #include "headers/Router.h"
 
-#include <iostream>
+#include <iostream> //törölhető
 
 /**
  * \brief Parancsot végrehajtó függvény meghívása.
@@ -14,41 +14,23 @@
  * \param rw Egy RenderWindow objektum, amely a kiíró parancsok használatához kell.
  */
 
-void Router::route(std::string cm, std::string it, Entity& ent, RenderWindow& rw) {
+void Router::route(std::string cm, std::string it, Entity& ent) {
     if(cm == "FEL" || cm == "LE" || cm == "JOBBRA" || cm == "BALRA" || cm == "ELORE" || cm == "HATRA") {
         this->move(cm, it, ent);
     }
     else if(cm == "HELP" || cm == "SEGITSEG") {
         this->help();
     }
-    else if(cm == "LAPOZ") {
-        this->next_page(rw);
-    }
 }
-
-/**
- * \brief Lapozó parancs.
- * 
- * Meghívja a RenderWindow lapozáshoz szükséges függvényét.
- * 
- * \param rw Egy RenderWindow objektum, amely nextPage() függvénye meghívható.
- */
-
-void Router::next_page(RenderWindow& rw) {
-    rw.nextPage();
-}
-
 /**
  * \brief Segítség kiírása.
  * 
  * Kiírja az engedélyezett parancsok listáját.
  * 
  */
-
 void Router::help() {
     std::cout << "Engedelyezett parancsok:" << std::endl;
 }
-
 /**
  * \brief Játékos mozgatását végzi.
  * 
@@ -58,7 +40,6 @@ void Router::help() {
  * \param it A tárgy szövegkódja.
  * \param ent Egy Entity objektum, amelyet a mozgás parancsok használnak.
  */
-
 void Router::move(std::string cm, std::string it, Entity& ent) {
     int dist = std::stoi(it);
 

@@ -71,7 +71,10 @@ RenderWindow::RenderWindow (const char* p_title, int p_w, int p_h) : window(NULL
     }
     // GPU gyorsított renderer létrehozása
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+    // oldal és képkockák száma alapból 1 legyen 
     pg = frms = 1;
+    // első txt, többit kiolvassa
+    curr_txt = "story/bevezeto.txt";
 }
 /**
  * \brief Kép betöltése.
@@ -318,10 +321,9 @@ SDL_Renderer* RenderWindow::getRenderer()
  * 
  * \return A következő txt.
  */
-const char* RenderWindow::renderText(const char* path, TTF_Font* Sans)
+const char* RenderWindow::renderText(TTF_Font* Sans)
 {
-   
-    std::ifstream ifs(path);
+    std::ifstream ifs(curr_txt);
     std::string line;
     const char * c;
     int i = 0, asterisk = 0, alline = 0; 
@@ -336,7 +338,7 @@ const char* RenderWindow::renderText(const char* path, TTF_Font* Sans)
             // std::string const *charrá konvertálása
             c = line.c_str();
             SDL_Surface* surfaceMessage = TTF_RenderUTF8_Blended(Sans, c, blck); 
-
+            
             SDL_Texture* Message = SDL_CreateTextureFromSurface(renderer, surfaceMessage);
 
             // létrehoz egy téglalapot
@@ -362,7 +364,7 @@ const char* RenderWindow::renderText(const char* path, TTF_Font* Sans)
             asterisk++;            
         }
     }
-    if (alline < pg)
+    if (asterisk < pg)
     {
         pg = 1;
     }
@@ -376,7 +378,7 @@ const char* RenderWindow::renderText(const char* path, TTF_Font* Sans)
  */
 void RenderWindow::renderInputText(std::string inputText, TTF_Font* Sans)
 {  
-    const char * c;
+    const char* c;
 
     SDL_Color wht = {255, 255, 255};
     inputText = ">> " + inputText;
@@ -403,4 +405,82 @@ void RenderWindow::renderInputText(std::string inputText, TTF_Font* Sans)
     // memória felszabadítása
     SDL_FreeSurface(surfaceMessage);
     SDL_DestroyTexture(Message);    
+}
+/**
+ * \brief A következő txt meghatározása.
+ * 
+ * Paraméterként kapott, játékos inputján
+ * alapján határozza meg a következő szövegfájlt.
+ * 
+ *  * \param c Ez tartalmazza a döntést.
+ */
+
+void RenderWindow::nextTxt(bool c)
+{
+    std::fstream set;
+    std::string line;
+    std::vector<std::string> lines;
+    const char * s;
+    int i = 0, asterisk = 0, alline = 0; 
+
+    // a user sttings fájl második sorának növelése eggyel
+    set.open("user.settings");
+    
+    if (set.fail())
+    {
+        std::cout << "A beallítások fajl serult vagy nem letezik" << std::endl;
+    }
+    
+    while (getline(set, line))
+    {
+        lines.push_back(line);
+    }
+    set.close();
+        
+    std::ofstream write_file;
+
+    write_file.open("user.settings");
+
+    if (write_file.fail())
+    {
+        std::cout << "A beallítások fajl serult vagy nem letezik" << std::endl;
+    }
+
+    for (int i = 0; i < lines.size(); i++)
+    {
+        if (i != 1)
+        write_file << lines[i] << std::endl;
+        else 
+        write_file << std::to_string( std::stoi(lines[i]) + 1) << std::endl; 
+    }
+
+    write_file.close();
+
+    std::ifstream ifs(curr_txt);
+
+    while(std::getline(ifs, line))
+    {
+        alline++;
+    }
+    i = 0;
+    while(std::getline(ifs, line))
+    {
+        i++;
+        if (c)
+        {
+            if (i == alline - 1)
+            {
+                curr_txt = line.substr(2, line.length());
+            }
+        }
+        else
+        {
+            if (i == alline)
+            {
+                curr_txt = line.substr(2, line.length());
+            }
+        }
+    }
+
+    std::cout << "curr_txt " << curr_txt << std::endl;
 }

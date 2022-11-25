@@ -228,7 +228,5 @@ int menu(RenderWindow menuWindow)
         menuWindow.render(eGameB);  
         menuWindow.display();
     }
-
-
     return selectednumber;
 }

@@ -23,7 +23,7 @@ public:
     bool update(Entity& p_entity, std::vector<std::pair<int, int>> spritepos, int frames, int w, int h, int offset, bool ff);
     void display();
     
-    const char* renderText(const char* path, TTF_Font* Sans);
+    const char* renderText(TTF_Font* Sans);
 
     void up(Entity& p_entity);        
     void down(Entity& p_entity);
@@ -33,6 +33,7 @@ public:
     void renderInputText(std::string inputText, TTF_Font* Sans);
 
     void nextPage() { pg++; };
+    // void nextTxt(bool c);
 
     int getRES();
 
@@ -45,5 +46,6 @@ private:
     SDL_Renderer* renderer;
     
     const char* p_title;
+    std::string curr_txt;
     int p_w, p_h, pg, frms;
 };
