@@ -23,4 +23,4 @@ Dederik király erőteljes karcsapása
 hallgattata el a sipítozó robotot...
 mindörökre.
 *
-//Játék vége ezen az ágon - game over!! game_over.png betöltése, majd visszatérés menübe!
+//game_over.png
