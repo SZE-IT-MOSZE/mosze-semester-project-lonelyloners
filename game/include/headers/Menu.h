@@ -220,7 +220,7 @@ int menu(RenderWindow menuWindow)
         // gombok megjelenítése
         menuWindow.render(bckground);  
         menuWindow.render(txtbckground); 
-        menuWindow.renderText("story/bevezeto.txt", fnt);
+        menuWindow.renderText(fnt);
         menuWindow.render(nGameB);
         menuWindow.render(lgGameB);
         menuWindow.render(hlpGameB);

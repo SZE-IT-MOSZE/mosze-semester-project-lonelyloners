@@ -384,7 +384,7 @@ int main(int argc, char* argv[])
             game.renderInputText(command, fnt);
             // szöveg háttér
             game.render(txtbckground);
-            game.renderText("story/bevezeto.txt", fnt);
+            game.renderText(fnt);
             // rendererbe tötött elemek képernyőre helyezése
             game.display();
             // TODO:

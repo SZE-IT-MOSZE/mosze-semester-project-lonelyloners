@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include <string>
 #include <vector>
 #include <sdl/SDL.h>
 #include <sdl/SDL_image.h>
@@ -31,7 +32,7 @@ public:
     void right(Entity& p_entity);   
     
     void renderInputText(std::string inputText, TTF_Font* Sans);
-
+    void nextTxt(bool c);
     void nextPage() { pg++; };
     // void nextTxt(bool c);
 
