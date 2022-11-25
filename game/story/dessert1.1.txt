@@ -33,4 +33,4 @@ fém nem kívánt megmozdulni.
 Feladat: Aktiváld a lézeredet. Használd a TAMADAS 
 parancsot az ajtó betöréséhez!
 *
-//Feladat elvégzése után következik: dessert1.2.txt
+//dessert1.2.txt
