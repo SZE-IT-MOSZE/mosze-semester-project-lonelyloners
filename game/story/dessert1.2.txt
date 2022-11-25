@@ -8,4 +8,4 @@ Feladat: Használd a BELEP parancsot,
 hogy belépj a csapóajtón! A későbbiekben 
 bárhova be szeretnél menni, ezzel a paranccsal teheted meg.
 *
-//Feladat elvégzése után következik: dessert1.3.txt
+//dessert1.3.txt

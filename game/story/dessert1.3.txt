@@ -31,4 +31,4 @@ való kommunikációhoz használd
 közvetlenül mellettük a BESZEL 
 parancsot!
 *
-//Feladat elvégzése után következik: dessert1.4.txt
+//dessert1.4.txt
