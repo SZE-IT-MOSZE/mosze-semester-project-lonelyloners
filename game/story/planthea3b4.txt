@@ -1,0 +1,38 @@
+//Mindegy, melyikhez megy oda.
+*
+LyRs: Azt írja, hogy ezek egytől egyik
+barna medvék. Alkalmazkodik élőhelyéhez,
+legyen az félsivatag, magashegység vagy tundra.
+Leginkább azonban a domb- és
+hegyvidékeken található meg. Ideális
+hőmérséklete élőhelyüknek 10-15 Celsius fok.
+*
+Juniperus mondja: Hah! Tudtam én.
+Nem 2-3, mint ahogy arra Nicolaus esküdözött!
+*
+Dorian mondja: Jó, ez esetben igazad van.
+Ezek szerint növelni kell a hőmérsékletet.
+Mostmár csak azt kell kitalálni,
+hogy mivel is fogjuk ezt megtenni.
+*
+Juniperus mondja: Valamiféle tartó kellene,
+ami elemeli a hideg talajtól a
+hőmérsékletszabályozót. De ez majd ráér az
+Aeden bolygón, a szállítóhajó úgyis fűtött.
+LyRs, van kedved velünk jönni?
+*
+A robotnak zavar támadt az áramkörében
+meglepettségében. Nem is volt kérdés,
+hogy csatlakozik hozzájuk.
+*
+LyRs mondja: Még szép! Csak előtte had
+vigyem vissza ezt a kosár bogyót Keiko-nak.
+*
+Dorian mondja: Csak nyugodtan.
+Ide gyere utána vissza és indulunk is!
+Addig betereljük a medvéket a hajóba.
+*
+Feladat: Vidd el Keiko-nak a gupra bogyókat!
+Kövesd az utat, amerről jöttél!
+*
+//planthea3b5.txt

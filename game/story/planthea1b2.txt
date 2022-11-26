@@ -1,0 +1,21 @@
+A Lycantok kis faluja kellemes
+aurát árasztott. A dolgos farkaslények
+közül mindenki tette a dolgát, éppen
+készülődtek a hidegebb időszakra:
+gyűjtögettek, raktároztak.
+*
+LyRs-t is ebben kérték meg, hogy segítsen nekik.
+Keiko egy jól megpakolt fakupachoz vezette a
+falutól nem messzi erdő szélénél, ahol már
+várták az elhordandó, vaskos farönkök.
+*
+Keiko mondja: Ezeket kellene ahhoz a magas,
+malomszerű épülethez vinni. Amint kész vagy,
+keress meg a faluban.
+*
+LyRs mondja: Rendben!
+*
+Feladat: Hord el a fakupacokat az említett 
+helyre! Használd a FELVESZ parancsot!
+*
+//planthea1b3.txt

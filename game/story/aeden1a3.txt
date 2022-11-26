@@ -1,0 +1,65 @@
+//Odamegy. Következő háttér: kunyhó belseje, szélén egy kis elkerített résszel, ahol a kisbaba van. Nem messze tőle áll Nicolaus felesége.
+A kunyhóban kellemes meleg uralkodott,
+ahogy a robot belépett annak belsejébe.
+Oldalt a kandalló ropogása árasztott
+megnyugtató hangulatot, míg nem messze
+tőle egy elkerített részen az emlegetett
+emberbaba gügyögése töltötte be a
+fa viskó levegőjét.
+*
+Nicolaus mondja: Nos, LyRs, hadd
+mutassam be a kisfiamat, Adamus-t
+és a feleségemet, Flaviát. Drágáim,
+ő itt LyRs, egy nagyon udvarias,
+még az egykori Földről származó robot.
+*
+A kis Adamus vígan gügyögött egyet,
+ezzel üdvözölve a robotot.
+*
+Flavia mondja: Szia LyRs! Igazi veterán
+lehetsz akkor, velünk együtt. Hogyan
+leltél rá az Aedenre egyébként?
+*
+LyRs mondja: Szép napot. Valami olyasmi,
+igen. A Plantheán segédkeztem egy Lycantnak,
+Keikonak és megtámadott egy medve,
+amelyet költözködés közben hagytatok hátra.
+Egyszerűen nem hagyott nyugodni,
+hogy ennyire hasonlítanak az egykori
+Föld medvéihez, muszáj volt utána járnom.
+Keiko és néhány ősi tekercs segítségével
+pedig tájékozódtam róla, hogy jók a
+megérzésnek nevezett impulzusaim.
+Tényleg létezik egy második otthon, az
+emberek pedig nem halltak ki.
+*
+Flavia mondja: Kalandos utat jártál
+be akkor! Nem fáradtál bele a kutakodásba?
+*
+LyRs mondja: Hazudnék, ha azt mondanám,
+hogy nem. Az akkumulátorjaimat alternatív
+módon igyekeztem visszatornászni, karban
+pedig egyáltalán nem tudtam magam tartani.
+Jól esne egy szervíz és egy-két helyen
+némi javítás.
+*
+Nicolaus mondja: Azt meghiszem. Mit szólnál
+egy teljeskörű karbantartáshoz, miután
+végeztem a peluscserével?
+*
+LyRs egyszerre felvillanyozódott.
+*
+LyRs mondja: Az szuper lenne! Nekem viszont
+van egy még szuperebb ötletem. Előkeresem
+addig a karbantartáshoz szükséges holmikat,
+ameddig intézed az apai teendőidet.
+*
+Nicolaus mondja: Megegyeztünk! Csupán az
+univerzális ládikámra van szükség,
+amelyet a kunyhó mögött fogsz megtalálni.
+Hozdd ide vissza nekem és neked is esek!
+*
+Feladat: Hozdd el Nicolausnak a
+szerszámosládát a kunyhó mögül!
+*
+//aeden1a4.txt

@@ -1,0 +1,34 @@
+//Követjük Keiko-t a könyvtárhoz, aki bemegy a könyvtár nekünk nyitva hagyott ajtaján. Következő jelenetnél egy kisebb könyvtárt láthatunk.
+Keiko mondja: Hát itt is lennénk.
+A listákat összetekert papiruszokba
+írtuk, majd szalaggal kötöttük körbe.
+Azokat érdemes átkutatni. Ha végeztél,
+keress meg a könyvtár kijárata előtt.
+A tekercseket az OLVAS paranccsal tudod
+megvizsgálni!
+*
+//Keiko kisétál. Megjelenik a könyvtári polcokon elszórva 4 tekercs, amik körül fehéres vonal világít. Ezekhez oda kell sétálnunk, meg fog jelenni a következő kérdés, amire parancsot kell beírnunk: Megnézed a tekercset? igen / nem. Ha nem, továbbra is járkálhatunk a könyvtárban, de ameddig a tekercses feladattal nem végeztünk, nem hagyhatjuk el a termet. Mindegy, milyen sorrendben nézzük meg a tekercseket, a harmadik lesz a nyerő. Amint megnézünk egy tekercset, az eltűnik, plusz a harmadik tekercs után is eltűnik az utolsó. Az első két tekercs ezt adja "válaszként": Nem megfelelő tekercs! Keress tovább!
+*
+//Az utolsó tekercsnél:
+LyRs mondja: Aha! Meg is vagyunk!
+Lássuk csak, mit ír a tekercs.
+*
+"...Dredar felderítőkapitány jelentése
+szerint a furcsa, kétlábú szereztek
+valamiféle exobolygó fele tartanak,
+amely az Aeden nevet viseli.
+Úgy hivatkoznak rá, hogy egy úgynevezett
+"Föld" nevezetű bolygóhoz hasonló
+tulajdonságokkal rendelkezik:
+élelemforrás, víznyelőhely,
+oxigén és légkör van.
+Ennél nem kell több"
+*
+A robot diadalittasan helyezte vissza
+a tekercset, miután elraktározta annak
+tartalmát hosszútávú memóriájába.
+Sietve távozott a könyvtárból Keiko-hoz.
+*
+Feladat: Hagyd el a könyvtárat és beszélj Keiko-val!
+*
+//planthea3a4.txt

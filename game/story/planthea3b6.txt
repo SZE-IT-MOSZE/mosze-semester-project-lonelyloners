@@ -1,0 +1,45 @@
+//Visszamegy. Ugyanaz a tisztás, csak medve nélkül, egy nagy űrhajóval, előtte kint csak Dorian áll.
+*
+Dorian mondja: Vissza is tértél,
+szuper. Gyors voltál. Indulhatunk?
+*
+LyRs mondja: Tudunk várni egy kicsit?
+Keiko szeretne hozni nektek egy kis ajándékot.
+*
+Dorian mondja: Persze, nem probléma.
+*
+//Keiko besétál arról, ahonnan LyRs is jött. Átnyújt egy kis barna zsákocskát, amit Dorian átvesz.
+*
+Keiko mondja: Egy kis útravaló.
+Csakhogy több okotok legyen
+gyakrabban ellátogatni ide.
+*
+Dorian mondja: Köszönjünk, Keiko.
+Hidd el, amint meglesz a medvés projekt
+és otthon érzik magukat, gyakrabban jövünk
+és egyenest a falvatokba.
+*
+Keiko mondja: Szuper, reméltem is.
+LyRs, neked is kötelező visszanézni néha-néha.
+*
+LyRs mondja: Igenis, Keiko kapitány!
+*
+Keiko mondja: Na, de nem tartalak fel titeket.
+Jó utat és sok szerencsét, barátaim!
+*
+LyRs mondja: Köszönök mindent, Keiko!
+Hamarosan találkozunk!
+*
+Dorian mondja: Köszönjük, Keiko!
+Mihamarabbi viszontlátásra!
+*
+A robot és a kutató ezzel csatlakozott
+Juniperushoz és a hajó legénységéhez,
+akik amint bezárult az ajtó, el is
+emelkedtek a tisztás talajától,
+elhagyva a végtelenül kedves
+Planthea bolygót, száguldva az új hazafele.
+*
+Avagy az Aeden bolygó fele.
+*
+//aeden1b.txt
