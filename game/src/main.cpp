@@ -57,9 +57,8 @@ int main(int argc, char* argv[])
         next = dessert1(game, fnt);
 
         game.nextTxt(next);
-        game.nextTxt(next);
 
-        next = dessert2(game, fnt);
+        next = dessert2(game, fnt, next);
 
         game.nextTxt(next);
 

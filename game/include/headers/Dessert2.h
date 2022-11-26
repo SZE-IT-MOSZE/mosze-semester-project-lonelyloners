@@ -12,8 +12,10 @@
 #include "headers/Router.h"
 #include "headers/Planet1.h"
    
-bool dessert2(RenderWindow game, TTF_Font* fnt)
+bool dessert2(RenderWindow game, TTF_Font* fnt, bool next)
 {  
+    game.nextTxt(next);
+
     // egész számokból álló párokból álló vektorok definiálása
     std::vector<std::pair<int, int>> lyrsIdleR;
     std::vector<std::pair<int, int>> lyrsIdleL;
