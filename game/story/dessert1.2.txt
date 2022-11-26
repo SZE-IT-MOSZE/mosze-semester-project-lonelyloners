@@ -1,11 +1,12 @@
 //Aktiválja a lézerét. Betölti a betört ajtót.
-*
 LyRs becélozta az acélozott anyagot, 
 majd egy laza mozdulattal akkora lyukat 
-égetett bele, amekkorán bőven át tudott bújni.
+égetett bele, amekkorán bőven át 
+tudott bújni.
 *
 Feladat: Használd a BELEP parancsot, 
 hogy belépj a csapóajtón! A későbbiekben 
-bárhova be szeretnél menni, ezzel a paranccsal teheted meg.
+bárhova be szeretnél menni, ezzel a 
+paranccsal teheted meg.
 *
 //dessert1.3.txt

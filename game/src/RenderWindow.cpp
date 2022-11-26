@@ -31,7 +31,7 @@ int RenderWindow::getRES()
         {
             i++;
             // felbontás szorzó az első sorban van tárolva 
-            if (i = 1)
+            if (i == 1)
             {
                 // a visszaadandó változóbva olvassuk az első sort
                 RES = std::stoi(line);
@@ -321,13 +321,12 @@ SDL_Renderer* RenderWindow::getRenderer()
  * 
  * \return A következő txt.
  */
-const char* RenderWindow::renderText(TTF_Font* Sans)
+bool RenderWindow::renderText(TTF_Font* Sans)
 {
     std::ifstream ifs(curr_txt);
     std::string line;
     const char * c;
     int i = 0, asterisk = 0, alline = 0; 
-
     SDL_Color blck = {0, 0, 0};
 
     while(std::getline(ifs, line))
@@ -344,13 +343,13 @@ const char* RenderWindow::renderText(TTF_Font* Sans)
             // létrehoz egy téglalapot
             SDL_Rect Message_rect;
             // beállítja a téglalap x koordinátáját  
-            Message_rect.x = 450 * getRES();;    
+            Message_rect.x = 450 * getRES();
             // beállítja a téglalap x koordinátáját
-            Message_rect.y = 30 * getRES() + (20 * i) * getRES();;    
+            Message_rect.y = 30 * getRES() + (20 * i) * getRES();
             // beállítja a téglalap szélességét
-            Message_rect.w = 6 * line.length() * getRES();;
+            Message_rect.w = 6 * line.length() * getRES();
             // beállítja a téglalap magasságát   
-            Message_rect.h = 18 * getRES();;    
+            Message_rect.h = 18 * getRES();
 
             SDL_RenderCopy(renderer, Message, NULL, &Message_rect);
 
@@ -367,7 +366,14 @@ const char* RenderWindow::renderText(TTF_Font* Sans)
     if (asterisk < pg)
     {
         pg = 1;
+        asterisk = 0;
+        return false;
     }
+    else
+    {
+        return true;
+    }
+    ifs.close();
 }
 /**
  * \brief A bekért szöveg képernyőre íratása.
@@ -462,18 +468,22 @@ void RenderWindow::nextTxt(bool c)
     {
         alline++;
     }
+    ifs.close();
+
+    std::ifstream ttt(curr_txt);
     i = 0;
-    while(std::getline(ifs, line))
+    while(std::getline(ttt, line))
     {
         i++;
         if (c)
         {
             if (i == alline - 1)
             {
+
                 curr_txt = line.substr(2, line.length());
             }
         }
-        else
+        else if (!c)
         {
             if (i == alline)
             {
@@ -482,5 +492,8 @@ void RenderWindow::nextTxt(bool c)
         }
     }
 
+    curr_txt = "story/" + curr_txt;
     std::cout << "curr_txt " << curr_txt << std::endl;
+
+    ttt.close();
 }

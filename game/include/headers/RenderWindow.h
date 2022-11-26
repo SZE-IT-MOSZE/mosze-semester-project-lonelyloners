@@ -24,7 +24,7 @@ public:
     bool update(Entity& p_entity, std::vector<std::pair<int, int>> spritepos, int frames, int w, int h, int offset, bool ff);
     void display();
     
-    const char* renderText(TTF_Font* Sans);
+    bool renderText(TTF_Font* Sans);
 
     void up(Entity& p_entity);        
     void down(Entity& p_entity);
@@ -34,7 +34,6 @@ public:
     void renderInputText(std::string inputText, TTF_Font* Sans);
     void nextTxt(bool c);
     void nextPage() { pg++; };
-    // void nextTxt(bool c);
 
     int getRES();
 

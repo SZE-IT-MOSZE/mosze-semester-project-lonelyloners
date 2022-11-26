@@ -1,14 +1,17 @@
 //A játkos beírja a BELEP parancsot. Megjelenik az alsó világ map.
-Amit a robot odabent talált, zavart okozott áramköreiben.
+Amit a robot odabent talált, 
+zavart okozott áramköreiben.
 *
-A föld alatt, LyRs legnagyobb meglepetésére 
-az élet egy elég elcsúfult formájával nézett 
-szembe. Mivel kint az égető hőség miatt 
-érző lény nem volt képes megmaradni, 
-így az idők során a Des”s”ert 
-bolygó lakosai a vastag homokréteg alatti,
-kiterjedt barlangrendszerek járataiba 
-húzódtak vissza.
+A föld alatt, LyRs legnagyobb
+meglepetésére az élet egy elég 
+elcsúfult formájával nézett 
+szembe. Mivel kint az égető hőség 
+miatt érző lény nem volt képes
+megmaradni, így az idők során a 
+Des”s”ert bolygó lakosai a vastag
+homokréteg alatti, kiterjedt 
+barlangrendszerek járataiba húzódtak
+vissza.
 *
 Csakhogy, mivel odabent legfőképp 
 a teljes homály és sötétség uralkodott, 

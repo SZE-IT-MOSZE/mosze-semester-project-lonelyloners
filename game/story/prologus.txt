@@ -20,10 +20,11 @@ szemmel látható ritmusban.
 *
 Utoljára maradtak az emberek...
 Föld alatti, hipermodern bunkereket 
-építettek. Mesterséges módon előállított 
-élelmen éltek, a vizet csak hosszas 
-bíbelődéssel tudták előállítani, s az így 
-megszerzett készlet is egy-kettőre kifogyott.
+építettek. Mesterséges módon elő-
+állított élelmen éltek, a vizet 
+csak hosszas bíbelődéssel tudták
+előállítani, s az így megszerzett 
+készlet is egy-kettőre kifogyott.
 *
 A betegségek pedig így is, a szorosra 
 zárt ajtók mögé is bejutottak, kegyetlen 
@@ -35,7 +36,8 @@ tudósnő és szeretett párja, Loners,
 aki szintén a tudós szakma elismert 
 emberének számított.
 *
-Sokáig nem tudták eldönteni, hogyan tovább...
+Sokáig nem tudták eldönteni, hogyan
+tovább...
 *
 Ketten maradtak, így az utódnemzéssel 
 nem tudták volna megoldani az emberiség 
@@ -43,15 +45,16 @@ kihalását. Egyébként sem akarták
 gyermekeiket egy elfajult, pusztulásra 
 ítélt bolygóra a világra hozni. 
 Nem beszélve arról, hogy Lonely 
-terméletlensége is közrejátszott.
+terméKetlensége is közrejátszott.
 Szenvedés lett volna mind a kisdednek,
 mind a szülőknek a túlélés, hiszen az 
 idő és az élhető terület szinte 
 teljesen elfogyott.
 *
 Így döntöttek amellett, hogy befejezik 
-az Informatikai részleg csúcsteljesítményének 
-számító robotot, LyRs-t, mint közös gyermeküket.
+az Informatikai részleg csúcsteljesítmé-
+nyének számító robotot, LyRs-t, mint
+közös gyermeküket.
 *
 A robot a csúcstechnológia legfejlettebb 
 eszközeivel lett felszerelve, készen 
@@ -71,7 +74,7 @@ porladt embertársaikkal.
 Utolsó kívánságuk szerint LyRs hamvaikat 
 az egykori Csendes-óceánba dobta, búcsút 
 véve tőlük, majd elhagyta az egykor
-Föld névre keresztelt bolygó maradványait, 
-hogy új otthonra találjon.
+Föld névre keresztelt bolygó maradványa-
+it, hogy új otthonra találjon.
 *
 //dessert1.1.txt
