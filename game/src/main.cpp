@@ -50,7 +50,8 @@ int main(int argc, char* argv[])
     if (choice == 1)
     {
         bool next;
-        next = prolog(game, fnt);
+        
+        game = prolog(game, fnt);
 
         game.nextTxt(next);
 
@@ -58,7 +59,7 @@ int main(int argc, char* argv[])
 
         game.nextTxt(next);
 
-        next = dessert2(game, fnt, next);
+        game = dessert2(game, fnt, next);
 
         game.nextTxt(next);
 

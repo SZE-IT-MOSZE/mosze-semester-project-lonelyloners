@@ -12,10 +12,10 @@
  * a következő döntési ágat.
  * 
  * \param menuWindow az ablak, amire megjelenítjük a menüt.
- * \return Egy igaz/hamis ami a következő ágat jelöli.
+ * \return menuWindow ami a következő ágat jelöli.
  */
 
-bool prolog(RenderWindow game, TTF_Font* fnt)
+RenderWindow prolog(RenderWindow game, TTF_Font* fnt)
 {   
     // fekete háttér prologus 
     SDL_Texture* prolog = game.loadTexture("res/gfx/Dessert_Map1/dessert_map1_betor3.png");
@@ -146,5 +146,5 @@ bool prolog(RenderWindow game, TTF_Font* fnt)
     // memória felszabadítása
     SDL_FreeSurface(title);
     SDL_DestroyTexture(Message);
-    return false;
+    return game;
 }

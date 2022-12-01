@@ -12,7 +12,7 @@
 #include "headers/Router.h"
 #include "headers/Planet1.h"
    
-bool dessert2(RenderWindow game, TTF_Font* fnt, bool next)
+RenderWindow dessert2(RenderWindow game, TTF_Font* fnt, bool next)
 {  
     game.nextTxt(next);
 
@@ -326,5 +326,5 @@ bool dessert2(RenderWindow game, TTF_Font* fnt, bool next)
         // TODO:
         // delete c; 
     }
-    return false;
+    return game;
 }
