@@ -54,7 +54,7 @@ bool prolog(RenderWindow game, TTF_Font* fnt)
 
     SDL_Color blck = {255, 255, 255};
 
-    SDL_Surface* title = TTF_RenderUTF8_Blended(fnt, "POROLOGUS", blck); 
+    SDL_Surface* title = TTF_RenderUTF8_Blended(fnt, "PROLOGUS", blck); 
         
     SDL_Texture* Message = SDL_CreateTextureFromSurface(game.getRenderer(), title);
 
