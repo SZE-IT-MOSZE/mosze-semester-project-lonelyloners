@@ -25,3 +25,4 @@ sorakoztak.
 Feladat: Kövesd a Látnokondokat. Mozgáshoz 
 használd az ELORE és a HATRA parancsokat!
 *
+//dessert2a2.txt

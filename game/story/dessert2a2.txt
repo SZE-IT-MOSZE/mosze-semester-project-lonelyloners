@@ -53,7 +53,8 @@ elgondolkozott, hogy otthagyja az
 undok látnokondokat és maga 
 dolgozzon tovább az ügyön.
 *
-Követed a nyomokat(kovet), vagy maradsz a többiekkel(marad)?
+Követed a nyomokat (DONT A), vagy maradsz a
+többiekkel (DONT B)?
 *
-//Ha kovet: dessert3a.txt
-//Ha marad: dessert3b.txt
+//dessert3a.txt
+//dessert3b.txt

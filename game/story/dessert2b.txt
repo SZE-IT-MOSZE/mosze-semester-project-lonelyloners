@@ -53,9 +53,9 @@ makacsul, amit előbb elkezdett.
 LyRs áramköreiben ismét fellángolt 
 a rossz előérzet.
 *
-Hagyod a Látnokondot vizsgálódni(vizsgalat1) 
-vagy beavatkozol a saját műszereiddel(vizsgalat2)?
-- vizsgalat1 / vizsgalat2
+Hagyod a Látnokondot vizsgálódni
+(DONT A) vagy beavatkozol a saját
+műszereiddel (DONT B)?
 *
-//Ha vizsgalat1: dessert3d.txt
-//Ha vizsgalat2: dessert3c.txt
+//dessert3d.txt
+//dessert3c.txt
