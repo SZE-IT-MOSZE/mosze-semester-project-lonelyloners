@@ -107,7 +107,8 @@ szimbolizálja, amiben te nem szenvedsz
 hiányt.
 *
 Elviszed az ezüst szobrot
-magaddal? - igen / nem:
+magaddal? Igen (DONT A)
+vagy nem (DONT B)?
 *
-//Ha elviszi magával: dessert5a.txt +inventory-ban megjelenik: SZOBOR
-//Ha nem: dessert5b.txt
+//dessert5a.txt
+//dessert5b.txt

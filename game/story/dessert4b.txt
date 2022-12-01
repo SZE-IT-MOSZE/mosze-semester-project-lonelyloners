@@ -37,4 +37,4 @@ is izzó légréteget, majd az azt követő
 atmoszférát – legvégül pedig az űr
 végtelen sötétjét.
 *
-//Ezután következik: glacies1.txt
+//glacies1.txt

@@ -84,7 +84,8 @@ Szeretném, ha elfogadnád tőlem ezt a kis
 szobrocskát: a bátorságot szimbolizálja,
 amiben te nem szenvedsz hiányt.
 *
-Elviszed az ezüst szobrot magaddal? - igen / nem:
+Elviszed az ezüst szobrot magaddal?
+Igen (DONT A) vagy nem (DONT B)?
 *
-//Ha elviszed magaddal: dessert5a.txt +inventoryba bekerül: SZOBOR
-//Ha NEM viszed el magaddal: dessert5b.txt
+//dessert5a.txt
+//dessert5b.txt
