@@ -135,7 +135,8 @@ sötét járatai jutottak eszébe. Talán ez
 a gondolat, esetleg egy megérzés sugallta
 neki: nézzen be a barlangba.
 *
->> Benézel a barlangba? - igen / nem:
+Benézel a barlangba? Igen (DONT A)
+vagy nem (DONT B)?
 *
-//Ha benéz a barlangba: glacies3d.txt
-//Ha nem néz be: glacies3c.txt
+//glacies3d.txt
+//glacies3c.txt
