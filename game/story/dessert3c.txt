@@ -113,5 +113,4 @@ Feladat: Győzd le az ürgéket! Harc elkezdéséhez
 használd a TAMADAS parancsot! Harc közbeni
 támadáshoz használd az UTES parancsot!
 *
-//Ha győz: dessert4c.txt
-//Ha NEM győz: dessert2b.txt-hez vissza
+//dessert4c.txt

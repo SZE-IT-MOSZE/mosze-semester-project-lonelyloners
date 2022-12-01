@@ -25,7 +25,8 @@ ez a kulcs, amely igen sokat ér
 nekem. Még egykor egy barátomtól 
 kaptam a Glacies bolygóról. 
 *
-Elfogadod a kulcsot(elfogad) vagy vissza utasítod(elutasit)? - elfogad / elutasit
+Elfogadod a kulcsot (DONT A) vagy
+vissza utasítod (DONT B)?
 *
-//Ha elfogad, ez a következő: dessert4a.txt
-//Ha elutasít, ez a következő: dessert4b.txt
+//dessert4a.txt
+//dessert4b.txt

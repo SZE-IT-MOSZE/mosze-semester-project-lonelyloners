@@ -70,6 +70,5 @@ tudsz támadni.
 Ellenkező esetben pedig, ha nem
 kívánsz harcolni, keresd meg a mestert!
 *
-//Ha a harcot választja ÉS győz: dessert4e.txt
-//Ha a harcot választja ÉS NEM győz: dessert3d.txt (ide dobja vissza)
-//Ha elmegy a mesterért: dessert4d.txt
+//dessert4e.txt
+//dessert4d.txt
