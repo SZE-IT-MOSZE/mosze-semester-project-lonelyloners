@@ -480,37 +480,38 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
                         start = true;
                         b = true;
                     }
-                    if (start)
+                }
+                if (start)
+                {
+                    if (latnok1Ea.getPos().getX() < 128)
                     {
-                        if (latnok1Ea.getPos().getX() < 128)
-                        {
-                            game.right(latnok1Ea);
-                            game.update(latnok1Ea, latnokMoveR, latnokMoveR.size(), 32, 32, 0, true);
-                        }
-                        else 
-                        {                        
-                            game.update(latnok1E, latnokIdleR, latnokIdleR.size(), 32, 32, 0, true);
-                        }
-                        if (latnok2Ea.getPos().getX() < 96)
-                        {
-                            game.right(latnok2Ea);
-                            game.update(latnok2Ea, latnokMoveR, latnokMoveR.size(), 32, 32, 0, true);
-                        }
-                        else
-                        {                        
-                            game.update(latnok2E, latnokIdleR, latnokIdleR.size(), 32, 32, 0, true);
-                        }
-                        if (latnok3Ea.getPos().getX() < 64)
-                        {
-                            game.right(latnok3Ea);
-                            game.update(latnok3Ea, latnokMoveR, latnokMoveR.size(), 32, 32, 0, true);
-                        }
-                        else
-                        {                        
-                            game.update(latnok3E, latnokIdleR, latnokIdleR.size(), 32, 32, 0, true);
-                        }
+                        game.right(latnok1Ea);
+                        game.update(latnok1Ea, latnokMoveR, latnokMoveR.size(), 32, 32, 0, true);
+                    }
+                    else 
+                    {                        
+                        game.update(latnok1E, latnokIdleR, latnokIdleR.size(), 32, 32, 0, true);
+                    }
+                    if (latnok2Ea.getPos().getX() < 96)
+                    {
+                        game.right(latnok2Ea);
+                        game.update(latnok2Ea, latnokMoveR, latnokMoveR.size(), 32, 32, 0, true);
+                    }
+                    else
+                    {                        
+                        game.update(latnok2E, latnokIdleR, latnokIdleR.size(), 32, 32, 0, true);
+                    }
+                    if (latnok3Ea.getPos().getX() < 64)
+                    {
+                        game.right(latnok3Ea);
+                        game.update(latnok3Ea, latnokMoveR, latnokMoveR.size(), 32, 32, 0, true);
+                    }
+                    else
+                    {                        
+                        game.update(latnok3E, latnokIdleR, latnokIdleR.size(), 32, 32, 0, true);
                     }
                 }
+
                     
 
             //case 1:
