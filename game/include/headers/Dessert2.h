@@ -93,12 +93,32 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
     SDL_Texture* latnok5 = game.loadTexture("res/gfx/Animations/dessert_latnokondok5_idle.png");
     SDL_Texture* latnok6 = game.loadTexture("res/gfx/Animations/dessert_latnokondok6_idle.png");
     
-    Entity latnok1E(V2F(0, 0), latnok1);
-    Entity latnok2E(V2F(0, 0), latnok2);
-    Entity latnok3E(V2F(0, 0), latnok3);
+    SDL_Texture* latnok1a = game.loadTexture("res/gfx/Animations/dessert_latnokondok1_anim.png");
+    SDL_Texture* latnok2a = game.loadTexture("res/gfx/Animations/dessert_latnokondok2_anim.png");
+    SDL_Texture* latnok3a = game.loadTexture("res/gfx/Animations/dessert_latnokondok3_anim.png");
+    SDL_Texture* latnok4a = game.loadTexture("res/gfx/Animations/dessert_latnokondok4_anim.png");
+    SDL_Texture* latnok5a = game.loadTexture("res/gfx/Animations/dessert_latnokondok5_anim.png");
+    SDL_Texture* latnok6a = game.loadTexture("res/gfx/Animations/dessert_latnokondok6_anim.png");
+
+    Entity latnok1E(V2F(64, 96), latnok1);
+    Entity latnok2E(V2F(96, 96), latnok2);
+    Entity latnok3E(V2F(128, 96), latnok3);
     Entity latnok4E(V2F(0, 0), latnok4);
-    Entity latnok5E(V2F(0, 0), latnok5);
-    Entity latnok6E(V2F(0, 0), latnok6);
+    Entity latnok5E(V2F(192, 96), latnok5);
+    Entity latnok6E(V2F(96, 352), latnok6);
+    
+    Entity latnok1Ea(V2F(-32, 96), latnok1a);
+    Entity latnok2Ea(V2F(-64, 96), latnok2a);
+    Entity latnok3Ea(V2F(-96, 96), latnok3a);
+    Entity latnok4Ea(V2F(0, 0), latnok4a);
+    Entity latnok5Ea(V2F(192, 96), latnok5a);
+    Entity latnok6Ea(V2F(96, 352), latnok6a);
+
+    latnok1Ea.setPosi(-32, 96);
+    latnok2Ea.setPosi(-64, 96);
+    latnok3Ea.setPosi(-96, 96);
+
+
     // térbeli kövek
     SDL_Texture* rocks = game.loadTexture("res/gfx/Dessert_Map2/dessert_map2_rocks.png");
     Entity rocksEntity(V2F(0, 0), rocks);
@@ -116,7 +136,11 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
     bool flip = false;
     bool beszel = false;
     bool belep = false;
-    bool  next = false;
+    bool next = false;
+    bool a = false;
+    bool b = false;
+    bool start = false;
+
     // esemény létrehozása
     SDL_Event event;
     // FPS limitációhoz szükséges változók
@@ -440,6 +464,60 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
         {
             gameRunning = false;
         }
+        switch (game.getMap())  {
+            case 0:
+                game.update(latnok5E, latnokIdleL, latnokIdleL.size(), 32, 32, 0, true);
+                game.update(latnok6E, latnokIdleR, latnokIdleL.size(), 32, 32, 0, true);
+                if (l.getPos().getX() == 160 && l.getPos().getY() == 96 && beszel)
+                {
+                    if (!a)
+                    {
+                        game.nextTxt(false);
+                        a = true;
+                    }
+                    if (game.getPage() == 7 && !b)
+                    {
+                        start = true;
+                        b = true;
+                    }
+                    if (start)
+                    {
+                        if (latnok1Ea.getPos().getX() < 128)
+                        {
+                            game.right(latnok1Ea);
+                            game.update(latnok1Ea, latnokMoveR, latnokMoveR.size(), 32, 32, 0, true);
+                        }
+                        else 
+                        {                        
+                            game.update(latnok1E, latnokIdleR, latnokIdleR.size(), 32, 32, 0, true);
+                        }
+                        if (latnok2Ea.getPos().getX() < 96)
+                        {
+                            game.right(latnok2Ea);
+                            game.update(latnok2Ea, latnokMoveR, latnokMoveR.size(), 32, 32, 0, true);
+                        }
+                        else
+                        {                        
+                            game.update(latnok2E, latnokIdleR, latnokIdleR.size(), 32, 32, 0, true);
+                        }
+                        if (latnok3Ea.getPos().getX() < 64)
+                        {
+                            game.right(latnok3Ea);
+                            game.update(latnok3Ea, latnokMoveR, latnokMoveR.size(), 32, 32, 0, true);
+                        }
+                        else
+                        {                        
+                            game.update(latnok3E, latnokIdleR, latnokIdleR.size(), 32, 32, 0, true);
+                        }
+                    }
+                }
+                    
+
+            //case 1:
+            //case 2:
+            //case 3:
+        }
+
         // terbeli kövek render
         game.updateMap(rocksEntity, map);
         game.render(inptxtbckground);

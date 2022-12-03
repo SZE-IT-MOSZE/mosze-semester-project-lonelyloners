@@ -355,6 +355,7 @@ RenderWindow dessert1(RenderWindow game, TTF_Font* fnt)
             if (!csakegyszer)
             {
                 game.nextTxt(false);
+                game.resetPage();
                 csakegyszer = true;
             }
         }

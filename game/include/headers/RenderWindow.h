@@ -34,6 +34,8 @@ public:
     void renderInputText(std::string inputText, TTF_Font* Sans);
     void nextTxt(bool c);
     void nextPage() { pg++; };
+    int getPage() { return pg; };
+    void resetPage() { pg = 1; };
 
     int getRES();
     int getMap();
