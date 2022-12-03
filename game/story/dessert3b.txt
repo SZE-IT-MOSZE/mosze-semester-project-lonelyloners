@@ -173,4 +173,4 @@ Nem sokkal később pedig, egy jókora
 puffanást követően már velük együtt
 szelte a végtelen mezők zöld fűtengerét.
 *
-//Játék vége - game over! Ezután betölteni: game_over.png
+//game_over.png

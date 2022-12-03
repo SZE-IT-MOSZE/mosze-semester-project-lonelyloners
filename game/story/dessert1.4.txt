@@ -68,8 +68,8 @@ raktározni. Viszont külön csapatokat kell
 kiküldeni a vízért és az élelemért is, 
 mert mindegyik nagyon nehezen beszerezhető.
 *
-Melyik csapatban szeretnél lenni? Az élelemkutatók(kutato1)
-vagy a vízkutatók(kutato2) csapatában? - kutato1 / kutato2:
+Melyik csapatban szeretnél lenni? Az élelemkutatók (DONT A)
+vagy a vízkutatók (DONT B) csapatában?
 *
-//Ha a kutato1-t gépeli be: dessert2a.txt
-//Ha a kutato2-t: dessert2b.txt
+//dessert2a.txt
+//dessert2b.txt

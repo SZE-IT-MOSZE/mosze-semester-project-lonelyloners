@@ -54,4 +54,4 @@ Miatta volt olyan égetően fontos az
 az ékkő! Mostmár azonban mindegy,
 segíts harcolni!
 *
-//Harc a szél-lény ellen. Ha győz: glacies5a.txt. Ha nem, vissza ide: glacies3c.txt
+//glacies5a.txt

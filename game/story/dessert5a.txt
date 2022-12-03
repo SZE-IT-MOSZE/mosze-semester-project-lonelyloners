@@ -13,4 +13,4 @@ bolygó sivatagos felszínéről,
 egyenesen a végtelen űrbe, hogy
 folytassa felfedezőútját...
 *
-//Ezután következik: glacies1.txt
+//glacies1.txt

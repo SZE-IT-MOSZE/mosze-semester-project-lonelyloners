@@ -61,5 +61,5 @@ elhozta-e magával.
 Kutakodni kezdett tárolórekeszeiben,
 reménykedve, hogy rábukkan az ereklyére.
 *
-//Ha nála van az aranykulcs: glacies4a.txt
-//Ha nincs: glacies4b.txt
+//glacies4a.txt
+//glacies4b.txt

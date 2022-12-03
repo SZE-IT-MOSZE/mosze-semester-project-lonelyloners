@@ -146,9 +146,8 @@ hogy nem holmi halandó élőlénnyel áll
 szembe a bunkó rozmár-lény, hanem egy okos,
 elpusztíthatatlan fém testű intelligenciával.
 *
->> Megtámadod a hímet vagy segítesz
-rajtuk? – tamadas / kisegitem
+Megtámadod a hímet (DONT A) vagy 
+segítesz rajtuk (DONT B)?
 *
-//Ha megtámadjuk ÉS győzünk: glacies3b.txt
-//Ha megtámadjuk ÉS NEM győzünk: glacies3a.txt
-//Ha kisegítjük: glacies2.txt
+//glacies3b.txt
+//glacies2.txt

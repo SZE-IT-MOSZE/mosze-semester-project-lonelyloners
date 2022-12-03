@@ -32,4 +32,4 @@ többet nem szeretne elkövetni.
 rakétáival a magasba emelkedve,
 elhagyva ezt a szintén barátságtalan bolygót.
 *
-//Ezután következik: nosoria1.txt
+//nosoria1.txt
