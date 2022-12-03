@@ -73,6 +73,7 @@ RenderWindow::RenderWindow (const char* p_title, int p_w, int p_h) : window(NULL
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
     // oldal és képkockák száma alapból 1 legyen 
     pg = frms = 1;
+    map = 0;
     // első txt, többit kiolvassa
     curr_txt = "story/bevezeto.txt";
 }
@@ -497,3 +498,39 @@ void RenderWindow::nextTxt(bool c)
 
     ttt.close();
 }
+
+int RenderWindow::getMap()
+{
+    return map;
+}
+
+void RenderWindow::setMap(int i)
+{
+    map = i;
+}
+
+void RenderWindow::mapReset()
+{
+    map = 0;
+}
+
+void RenderWindow::updateMap(Entity& p_entity, std::vector<std::pair<int, int>> spritepos)
+{   
+    SDL_Rect src;
+
+    // megfelelő képkocka kivágása
+    src.x = spritepos[map].first;
+    src.y = spritepos[map].second;
+    // téglalap méreteinek beállítása
+    src.h = 384;
+    src.w = 384;
+    // cél téglalap beállítása
+    SDL_Rect dst;
+    dst.x = 0;
+    dst.y = 0;
+    dst.w = 384 * getRES();
+    dst.h = 384 * getRES();
+    // rendererbe másolás
+    SDL_RenderCopy(renderer, p_entity.getTex(), &src, &dst);
+}
+

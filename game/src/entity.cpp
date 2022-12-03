@@ -99,26 +99,26 @@ void Entity::setTarget(int dir, int dist)
     // cél koordináták meghatározása és eltárolása
     switch(dir)
     {
-        case 1:
-            // fel
-            x = posi.getX();
-            y = posi.getY() - (dist * 32);
-            break; 
-        case 2:
-            // jobbra
-            x = posi.getX() + (dist * 32);
-            y = posi.getY();
-            break;  
-        case 3:
-            // le
-            x = posi.getX();
-            y = posi.getY() + (dist * 32);
-            break;
-        case 4: 
-            // balra
-            x = posi.getX() - (dist * 32);
-            y = posi.getY();
-            break;
+    case 1:
+        // fel
+        x = posi.getX();
+        y = posi.getY() - (dist * 32);
+        break; 
+    case 2:
+        // jobbra
+        x = posi.getX() + (dist * 32);
+        y = posi.getY();
+        break;  
+    case 3:
+        // le
+        x = posi.getX();
+        y = posi.getY() + (dist * 32);
+        break;
+    case 4: 
+        // balra
+        x = posi.getX() - (dist * 32);
+        y = posi.getY();
+        break;
     }
 }
 

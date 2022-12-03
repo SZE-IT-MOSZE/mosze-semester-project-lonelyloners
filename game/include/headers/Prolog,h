@@ -42,6 +42,7 @@ RenderWindow prolog(RenderWindow game, TTF_Font* fnt)
     bool le = false;
     bool jobbra = false;
     bool balra = false;
+    bool next = false;
 
     // esemény létrehozása
     SDL_Event event;
@@ -146,5 +147,6 @@ RenderWindow prolog(RenderWindow game, TTF_Font* fnt)
     // memória felszabadítása
     SDL_FreeSurface(title);
     SDL_DestroyTexture(Message);
+    game.nextTxt(next);
     return game;
 }

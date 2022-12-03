@@ -10,10 +10,11 @@
 #include <sdl/SDL_ttf.h>
 
 #include "headers/Router.h"
-#include "headers/Planet1.h"
    
-RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
+RenderWindow glacies(RenderWindow game, TTF_Font* fnt)
 {  
+    // első mapra állítás
+    game.mapReset();
     // egész számokból álló párokból álló vektorok definiálása
     std::vector<std::pair<int, int>> lyrsIdleR;
     std::vector<std::pair<int, int>> lyrsIdleL;
@@ -21,14 +22,9 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
     std::vector<std::pair<int, int>> lyrsMoveL;
     std::vector<std::pair<int, int>> lyrsLaserR;
     std::vector<std::pair<int, int>> lyrsLaserL;
+    std::vector<std::pair<int, int>> map;
 
-    std::vector<std::pair<int, int>> latnokIdleR;
-    std::vector<std::pair<int, int>> latnokIdleL;
-    std::vector<std::pair<int, int>> latnokMoveR;
-    std::vector<std::pair<int, int>> latnokMoveL;
-
-
-    // LyRs üresjárati animációjának a piozíciói
+    // LyRs üresjárati animációjának a pozíciói
     // jobb            
     lyrsIdleR       = { { 0,   0}, {64,   0}, {128,   0}, {192,   0} };
     // bal
@@ -52,51 +48,26 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
                         { 0, 320}, {64, 320}, {128, 320}, {192, 320}, {256, 320} ,
                         { 0, 352}, {64, 352}, {128, 352}, {192, 352}, {256, 352} };
 
-    // Látnokond üresjárati
-    // jobb
-    latnokIdleR = { { 0,   0}, {32,   0}};
-    // bal
-    latnokIdleL = { { 64,   0}, {96,  0}};
+    
+    // map
+    map             = { {  0,   0}, {384,   0},
+                        {  0, 384}, {384, 384}, {768, 384} };
 
-    // LyRs séta animációjának a piozíciói
-    // jobb
-    latnokMoveR = { {  0,   0}, { 32,   0}, { 64,   0}, { 96,  0},  {128,  0} };
-    // bal
-    latnokMoveL = { {160,   0}, {192,   0}, {224,   0}, {256,  0},  {288,  0} };
 
     // LyRs összes animációját tartalmazó sprite sheet betöltése
     SDL_Texture* lyrsAnim = game.loadTexture("res/gfx/Animations/lyrs_sprite_sheet.png");
-    Entity l(V2F(288, 0), lyrsAnim);
-    l.setPosi(288 * game.getRES(), 0);
+    Entity l(V2F(64, 96), lyrsAnim);
+    l.setPosi(64, 96);
     // szöveg háttér betöltése
     SDL_Texture* textBckGround = game.loadTexture("res/gfx/Dessert_Map1/both.png");
     Entity txtbckground(V2F(384, 0), textBckGround);
     // beviteli mező háttere
     SDL_Texture* inputTextBckGround = game.loadTexture("res/gfx/Objects/blck_bckgrnd.png");
     Entity inptxtbckground(V2F(0, 384), inputTextBckGround);
-    // logikai változókat tartalmazó vektor definiálása
-    std::vector<bool> planetR = {};
-    planetR = setPlanet1Pos();
-    // első térkép hátterének betöltése
-    SDL_Texture* background = game.loadTexture("res/gfx/Dessert_Map2/dessert_map2_alapmap.png");
+
+    // térkép hátterének betöltése
+    SDL_Texture* background = game.loadTexture("res/gfx/Glacies_map/Glacies_map.png");
     Entity pl(V2F(0, 0), background);
-    // látnokondokok betöltése
-    SDL_Texture* latnok1 = game.loadTexture("res/gfx/Animations/dessert_latnokondok1_idle.png");
-    SDL_Texture* latnok2 = game.loadTexture("res/gfx/Animations/dessert_latnokondok2_idle.png");
-    SDL_Texture* latnok3 = game.loadTexture("res/gfx/Animations/dessert_latnokondok3_idle.png");
-    SDL_Texture* latnok4 = game.loadTexture("res/gfx/Animations/dessert_latnokondok4_idle.png");
-    SDL_Texture* latnok5 = game.loadTexture("res/gfx/Animations/dessert_latnokondok5_idle.png");
-    SDL_Texture* latnok6 = game.loadTexture("res/gfx/Animations/dessert_latnokondok6_idle.png");
-    
-    Entity latnok1E(V2F(0, 0), latnok1);
-    Entity latnok2E(V2F(0, 0), latnok2);
-    Entity latnok3E(V2F(0, 0), latnok3);
-    Entity latnok4E(V2F(0, 0), latnok4);
-    Entity latnok5E(V2F(0, 0), latnok5);
-    Entity latnok6E(V2F(0, 0), latnok6);
-    // térbeli kövek
-    SDL_Texture* rocks = game.loadTexture("res/gfx/Dessert_Map2/dessert_map2_terbelikovek.png");
-    Entity rocksEntity(V2F(0, 100), rocks);
 
     // parancs választó deklarálása
     Router r = Router();
@@ -108,10 +79,11 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
     bool le = false;
     bool jobbra = false;
     bool balra = false;
-    bool flip = false;
-    bool beszel = false;
+    bool flip = true;
+    bool crack = false;
+    bool nxttxt = true;
+    bool rollMAP = false;
     bool belep = false;
-    bool  next = false;
     // esemény létrehozása
     SDL_Event event;
     // FPS limitációhoz szükséges változók
@@ -120,11 +92,9 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
     float cTime = utils::hireTimeInSeconds();
     // input text 
     std::string command;
-    
-    game.nextTxt(next);
 
     gameRunning = true;
-    // dessert1
+    // glacies
     while(gameRunning)
     {
         // képkockák számolása
@@ -155,47 +125,135 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
                     case SDL_KEYDOWN:
                         switch(event.key.keysym.sym)
                         {
-                        case SDLK_BACKSPACE:
-                            command = command.substr(0, command.size()-1);
-                            break;
-                        case SDLK_RETURN:
-                            if (!fel && !le && !balra && !jobbra && !attack)
-                            {
-                                Command c = Command(command);
-                                c.make();
-                                r.route(c.getCommand(), c.getItem(), l);
-                                if (command == "LAPOZZ")
+                            case SDLK_BACKSPACE:
+                                command = command.substr(0, command.size()-1);
+                                break;
+                            case SDLK_RETURN:
+                                if (!fel && !le && !balra && !jobbra && !attack)
                                 {
-                                    game.nextPage();
+                                    Command c = Command(command);
+                                    c.make();
+                                    r.route(c.getCommand(), c.getItem(), l);
+                                    if (command == "LAPOZZ")
+                                    {
+                                        game.nextPage();
+                                    }
+                                    if (command == "TAMADAS")
+                                    {
+                                        attack = true;
+                                    }
+                                    if (command == "POSI")
+                                    {
+                                        std::cout << " CURRENT POSITION: " << l.getPos().getY() << " \t " << l.getPos().getX() << std::endl;
+                                    }
+                                    if (command == "TARGET")
+                                    {
+                                        std::cout << " TARGET COORDINATE: " << l.getTargetY() << " \t " << l.getTargetX() << std::endl;
+                                    }
+                                    if (command == "BELEP")
+                                    {
+                                        belep = true;
+                                    }
+                                    command = "";
                                 }
-                                if (command == "TAMADAS")
-                                {
-                                    attack = true;
-                                }
-                                if (command == "POSI")
-                                {
-                                    std::cout << " CURRENT POSITION: " << l.getPos().getY() << " \t " << l.getPos().getX() << std::endl;
-                                }
-                                if (command == "TARGET")
-                                {
-                                    std::cout << " TARGET COORDINATE: " << l.getTargetY() << " \t " << l.getTargetX() << std::endl;
-                                }
-                                if (command == "BELEP")
-                                {
-                                    belep = true;
-                                }
-                                if (command == "BESZEL")
-                                {
-                                    beszel = true;
-                                }
-                                command = "";
-                            }
                         }
                 }
             }
             accum -= timeStep;
         }           
-        const float alpha = accum / timeStep;          
+        const float alpha = accum / timeStep;
+        // megfelelő map kirenderelése
+        if (game.getMap() == 0 && l.getPos().getY() == 32 && l.getPos().getX() >= 384)
+        {
+            // MAP 1 -> MAP 2
+            game.setMap(1);
+
+            l.setPosi(-416, 0);
+
+            l.setTarget(2, 1);
+        }
+        else if (game.getMap() == 1 && l.getPos().getY() == 32 && l.getPos().getX() <= -32)
+        {
+            // MAP 2 -> MAP 1
+            game.setMap(0);
+
+            l.setPosi(416, 0);
+
+            l.setTarget(4, 1);
+        }
+        else if (game.getMap() == 0 && l.getPos().getY() >= 384 && l.getPos().getX() == 32)
+        {
+            // MAP 1 -> MAP 3
+            game.setMap(2);
+
+            l.setPosi(0, -416);
+
+            l.setTarget(3, 1);
+        }
+        else if (game.getMap() == 2 && l.getPos().getY() <= -32 && l.getPos().getX() == 32)
+        {
+            // MAP 3 -> MAP 1
+            game.setMap(0);
+
+            l.setPosi(0, 416);
+
+            l.setTarget(1, 1);
+        }
+        else if (game.getMap() == 1 && l.getPos().getY() == 256 && l.getPos().getX() <= -32)
+        {
+            // MAP 2 -> MAP 1
+            game.setMap(0);
+
+            l.setPosi(416, 0);
+
+            l.setTarget(4, 1);
+        }
+        else if (game.getMap() == 0 && l.getPos().getY() == 256 && l.getPos().getX() >= 384)
+        {
+            // MAP 1 -> MAP 2
+            game.setMap(1);
+
+            l.setPosi(-416, 0);
+
+            l.setTarget(2, 1);
+        }        
+        else if (game.getMap() == 1 && l.getPos().getY()  >= 384 && l.getPos().getX() == 256)
+        {
+            // MAP 2 -> MAP 4
+            game.setMap(3);
+
+            l.setPosi(0, -416);
+
+            l.setTarget(3, 1);
+        }
+        else if (game.getMap() == 3 && l.getPos().getY() == -32 && l.getPos().getX() == 256)
+        {
+            // MAP 4 -> MAP 2
+            game.setMap(1);
+
+            l.setPosi(0, 416);
+
+            l.setTarget(1, 1);
+        }
+        else if (game.getMap() == 3 && l.getPos().getY() == 256 && l.getPos().getX() == 288 && belep)
+        {
+            // MAP 4 -> MAP 5
+            game.setMap(4);
+
+            l.setPosi(-288, -96);
+
+            belep = false;
+        }
+        else if (game.getMap() == 4 && l.getPos().getY() == 160 && l.getPos().getX() == 0 && belep)
+        {
+            // MAP 5 -> MAP 4
+            game.setMap(3);
+
+            l.setPosi(288, 96);
+
+            belep = false;
+        }
+
         // irányok beállítása
         switch (l.getDirection())
         {
@@ -224,7 +282,8 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
         }
         
         // először a háttér kirajzolása
-        game.render(pl);
+        game.updateMap(pl, map);
+
         if (!fel && !le && !balra && !jobbra && !attack)
         {
             // jobbra gomb volt utoljára lenyomva?
@@ -329,6 +388,7 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
             if (l.getPos().getX() >= l.getTargetX())
             {
                 jobbra = false;
+                // irány 0-ra állítása, hogy következő tick esetén ne állítsa megint az irányt
                 l.setDirZero();
             }
             else
@@ -355,13 +415,16 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
                 // LyRs balra támad animáció következő kockája
                 attack = game.update(l, lyrsLaserL, lyrsLaserL.size(), 64, 32, 32, false);
             }
+            if ((l.getPos().getY() == 352 && l.getPos().getX() == 288) || (l.getPos().getY() == 352 && l.getPos().getX() == 320))
+            {
+                crack = true;
+            }
         }
-        if (l.getPos().getY() == 256 && l.getPos().getX() == 32 && belep) 
+        if (crack && nxttxt)
         {
-            gameRunning = false;
+            game.nextTxt(false);
+            nxttxt = false;
         }
-        // terbeli kövek render
-        game.render(rocksEntity);
         game.render(inptxtbckground);
         game.renderInputText(command, fnt);
         // szöveg háttér
@@ -372,6 +435,6 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
         // TODO:
         // delete c; 
     }
-    game.nextTxt(next);
+    game.clear();
     return game;
 }

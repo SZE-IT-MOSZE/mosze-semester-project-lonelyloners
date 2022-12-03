@@ -15,6 +15,7 @@
 #include "headers/Prolog,h"
 #include "headers/Dessert1.h"
 #include "headers/Dessert2.h"
+#include "headers/Glacies.h"
 
 /**
  * \brief Fő függvény.
@@ -50,18 +51,14 @@ int main(int argc, char* argv[])
     if (choice == 1)
     {
         bool next;
-        
+
         game = prolog(game, fnt);
 
-        game.nextTxt(next);
+        game = dessert1(game, fnt);
 
-        next = dessert1(game, fnt);
+        game = dessert2(game, fnt);
 
-        game.nextTxt(next);
-
-        game = dessert2(game, fnt, next);
-
-        game.nextTxt(next);
+        game = glacies(game, fnt);
 
         // ablak törlése
         game.cleanUp();

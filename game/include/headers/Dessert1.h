@@ -12,7 +12,7 @@
 #include "headers/Router.h"
 #include "headers/Planet1.h"
    
-bool dessert1(RenderWindow game, TTF_Font* fnt)
+RenderWindow dessert1(RenderWindow game, TTF_Font* fnt)
 {  
     // egész számokból álló párokból álló vektorok definiálása
     std::vector<std::pair<int, int>> lyrsIdleR;
@@ -92,7 +92,8 @@ bool dessert1(RenderWindow game, TTF_Font* fnt)
     bool balra = false;
     bool flip = true;
     bool crack = false;
-    bool nxttxt = true;
+    bool nxttxt = false;
+    bool csakegyszer = false;
     // esemény létrehozása
     SDL_Event event;
     // FPS limitációhoz szükséges változók
@@ -134,37 +135,38 @@ bool dessert1(RenderWindow game, TTF_Font* fnt)
                     case SDL_KEYDOWN:
                         switch(event.key.keysym.sym)
                         {
-                            case SDLK_BACKSPACE:
-                                command = command.substr(0, command.size()-1);
-                                break;
-                            case SDLK_RETURN:
-                                if (!fel && !le && !balra && !jobbra && !attack)
+                        case SDLK_BACKSPACE:
+                            command = command.substr(0, command.size()-1);
+                            break;
+                        case SDLK_RETURN:
+                            if (!fel && !le && !balra && !jobbra && !attack)
+                            {
+                                Command c = Command(command);
+                                c.make();
+                                r.route(c.getCommand(), c.getItem(), l);
+                                if (command == "LAPOZZ")
                                 {
-                                    Command c = Command(command);
-                                    c.make();
-                                    r.route(c.getCommand(), c.getItem(), l);
-                                    if (command == "LAPOZZ")
-                                    {
-                                        game.nextPage();
-                                    }
-                                    if (command == "TAMADAS")
-                                    {
-                                        attack = true;
-                                    }
-                                    if (command == "POSI")
-                                    {
-                                        std::cout << " CURRENT POSITION: " << l.getPos().getY() << " \t " << l.getPos().getX() << std::endl;
-                                    }
-                                    if (command == "TARGET")
-                                    {
-                                        std::cout << " TARGET COORDINATE: " << l.getTargetY() << " \t " << l.getTargetX() << std::endl;
-                                    }
-                                    if (command == "BELEP")
-                                    {
-                                        gameRunning = false;
-                                    }
-                                    command = "";
+                                    game.nextPage();
                                 }
+                                if (command == "TAMADAS")
+                                {
+                                    attack = true;
+                                }
+                                if (command == "POSI")
+                                {
+                                    std::cout << " CURRENT POSITION: " << l.getPos().getY() << " \t " << l.getPos().getX() << std::endl;
+                                }
+                                if (command == "TARGET")
+                                {
+                                    std::cout << " TARGET COORDINATE: " << l.getTargetY() << " \t " << l.getTargetX() << std::endl;
+                                }
+                                if (command == "BELEP" && crack)
+                                {
+                                    gameRunning = false;
+                                }
+                                
+                                command = "";
+                            }
                         }
                 }
             }
@@ -174,28 +176,28 @@ bool dessert1(RenderWindow game, TTF_Font* fnt)
         // irányok beállítása
         switch (l.getDirection())
         {
-            case 0:
-                break;
-            case 1:
-                // fel
-                fel = true;
-                break;
-            case 2:
-                // jobbra
-                jobbra = true;
-                break;     
-            case 3:
-                // le
-                le = true;
-                break;
-            case 4: 
-                // balra
-                balra = true;
-                break;
-            case 5:
-                attack = true;
-            default:
-                break;
+        case 0:
+            break;
+        case 1:
+            // fel
+            fel = true;
+            break;
+        case 2:
+            // jobbra
+            jobbra = true;
+            break;     
+        case 3:
+            // le
+            le = true;
+            break;
+        case 4: 
+            // balra
+            balra = true;
+            break;
+        case 5:
+            attack = true;
+        default:
+            break;
         }
         
         // először a háttér kirajzolása
@@ -350,7 +352,11 @@ bool dessert1(RenderWindow game, TTF_Font* fnt)
         }
         if (crack && nxttxt)
         {
-            game.nextTxt(false);
+            if (!csakegyszer)
+            {
+                game.nextTxt(true);
+                csakegyszer = true;
+            }
             nxttxt = false;
         }
         // felhők renderelése és ütközések ellenőrzése és lekezelése
@@ -366,5 +372,6 @@ bool dessert1(RenderWindow game, TTF_Font* fnt)
         // delete c; 
     }
     game.clear();
-    return false;
+    game.nextTxt(nxttxt);
+    return game;
 }

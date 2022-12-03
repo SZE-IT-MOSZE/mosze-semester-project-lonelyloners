@@ -18,7 +18,7 @@ Az alábbi zip fájl tartalmának bemásolása szükséges a fordításhoz:
 https://drive.google.com/file/d/1E3tjyOdmOn36XGTJrVF_rOu7abiTcw0O/view?usp=sharing
 Ez tartalmazza a fordításhoz szükséges header fájlokat, betűtípust és a futtatáshoz szükséges dll-t.
 Mingw parancs a fordításhoz:
-mingw32-make -f MakeFile
+mingw32-make -f Makefile
 
 ## Videók a fejlesztés folyamata alatt
 https://youtu.be/CwNLm3udaaM
