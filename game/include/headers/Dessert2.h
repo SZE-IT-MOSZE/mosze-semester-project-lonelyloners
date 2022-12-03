@@ -27,6 +27,7 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
     std::vector<std::pair<int, int>> latnokMoveR;
     std::vector<std::pair<int, int>> latnokMoveL;
 
+    std::vector<std::pair<int, int>> map;
 
     // LyRs üresjárati animációjának a piozíciói
     // jobb            
@@ -64,10 +65,14 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
     // bal
     latnokMoveL = { {160,   0}, {192,   0}, {224,   0}, {256,  0},  {288,  0} };
 
+    // map
+    map             = { {  0,   0}, {384,   0},
+                        {  0, 384}, {384, 384}};
+
     // LyRs összes animációját tartalmazó sprite sheet betöltése
     SDL_Texture* lyrsAnim = game.loadTexture("res/gfx/Animations/lyrs_sprite_sheet.png");
-    Entity l(V2F(288, 0), lyrsAnim);
-    l.setPosi(288 * game.getRES(), 0);
+    Entity l(V2F(288, 32), lyrsAnim);
+    l.setPosi(288 * game.getRES(), 32 * game.getRES());
     // szöveg háttér betöltése
     SDL_Texture* textBckGround = game.loadTexture("res/gfx/Dessert_Map1/both.png");
     Entity txtbckground(V2F(384, 0), textBckGround);
@@ -78,7 +83,7 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
     std::vector<bool> planetR = {};
     planetR = setPlanet1Pos();
     // első térkép hátterének betöltése
-    SDL_Texture* background = game.loadTexture("res/gfx/Dessert_Map2/dessert_map2_alapmap.png");
+    SDL_Texture* background = game.loadTexture("res/gfx/Dessert_Map2/dessert_map2.png");
     Entity pl(V2F(0, 0), background);
     // látnokondokok betöltése
     SDL_Texture* latnok1 = game.loadTexture("res/gfx/Animations/dessert_latnokondok1_idle.png");
@@ -95,8 +100,8 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
     Entity latnok5E(V2F(0, 0), latnok5);
     Entity latnok6E(V2F(0, 0), latnok6);
     // térbeli kövek
-    SDL_Texture* rocks = game.loadTexture("res/gfx/Dessert_Map2/dessert_map2_terbelikovek.png");
-    Entity rocksEntity(V2F(0, 100), rocks);
+    SDL_Texture* rocks = game.loadTexture("res/gfx/Dessert_Map2/dessert_map2_rocks.png");
+    Entity rocksEntity(V2F(0, 0), rocks);
 
     // parancs választó deklarálása
     Router r = Router();
@@ -195,7 +200,82 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
             }
             accum -= timeStep;
         }           
-        const float alpha = accum / timeStep;          
+        const float alpha = accum / timeStep;    
+
+        // megfelelő map kirenderelése
+        if (game.getMap() == 0 && l.getPos().getY() == 320 && l.getPos().getX() >= 384)
+        {
+            // MAP 1 -> MAP 2
+            game.setMap(1);
+
+            l.setPosi(-416, 0);
+
+            l.setTarget(2, 1);
+        }
+        else if (game.getMap() == 1 && l.getPos().getY() == 320 && l.getPos().getX() <= -32)
+        {
+            // MAP 2 -> MAP 1
+            game.setMap(0);
+
+            l.setPosi(416, 0);
+
+            l.setTarget(4, 1);
+        }
+        else if (game.getMap() == 0 && l.getPos().getY()  >= 384 && l.getPos().getX() == 32)
+        {
+            // MAP 1 -> MAP 3
+            game.setMap(2);
+
+            l.setPosi(0, -416);
+
+            l.setTarget(3, 1);
+        }
+        else if (game.getMap() == 2 && l.getPos().getY() == -32 && l.getPos().getX() == 32)
+        {
+            // MAP 3 -> MAP 1
+            game.setMap(0);
+
+            l.setPosi(0, 416);
+
+            l.setTarget(1, 1);
+        }
+        else if (game.getMap() == 0 && l.getPos().getY()  >= 384 && l.getPos().getX() == 128)
+        {
+            // MAP 1 -> MAP 3
+            game.setMap(2);
+
+            l.setPosi(0, -416);
+
+            l.setTarget(3, 1);
+        }
+        else if (game.getMap() == 2 && l.getPos().getY() == -32 && l.getPos().getX() == 128)
+        {
+            // MAP 3 -> MAP 1
+            game.setMap(0);
+
+            l.setPosi(0, 416);
+
+            l.setTarget(1, 1);
+        }
+        else if (game.getMap() == 2 && l.getPos().getY() == 64 && l.getPos().getX() >= 384)
+        {
+            // MAP 3 -> MAP 4
+            game.setMap(3);
+
+            l.setPosi(-416, 0);
+
+            l.setTarget(2, 1);
+        }
+        else if (game.getMap() == 3 && l.getPos().getY() == 64 && l.getPos().getX() <= -32)
+        {
+            // MAP 4 -> MAP 3
+            game.setMap(2);
+
+            l.setPosi(416, 0);
+
+            l.setTarget(4, 1);
+        }
+
         // irányok beállítása
         switch (l.getDirection())
         {
@@ -222,9 +302,9 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
         default:
             break;
         }
-        
         // először a háttér kirajzolása
-        game.render(pl);
+        game.updateMap(pl, map);
+
         if (!fel && !le && !balra && !jobbra && !attack)
         {
             // jobbra gomb volt utoljára lenyomva?
@@ -361,7 +441,7 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
             gameRunning = false;
         }
         // terbeli kövek render
-        game.render(rocksEntity);
+        game.updateMap(rocksEntity, map);
         game.render(inptxtbckground);
         game.renderInputText(command, fnt);
         // szöveg háttér
@@ -372,6 +452,7 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
         // TODO:
         // delete c; 
     }
+    game.mapReset();
     game.nextTxt(next);
     return game;
 }

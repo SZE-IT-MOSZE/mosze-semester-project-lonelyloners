@@ -350,14 +350,13 @@ RenderWindow dessert1(RenderWindow game, TTF_Font* fnt)
                 crack = true;
             }
         }
-        if (crack && nxttxt)
+        if (crack)
         {
             if (!csakegyszer)
             {
-                game.nextTxt(true);
+                game.nextTxt(false);
                 csakegyszer = true;
             }
-            nxttxt = false;
         }
         // felhők renderelése és ütközések ellenőrzése és lekezelése
         planetR = renderPlanet(game, planet1, planetR, l);
@@ -372,6 +371,5 @@ RenderWindow dessert1(RenderWindow game, TTF_Font* fnt)
         // delete c; 
     }
     game.clear();
-    game.nextTxt(nxttxt);
     return game;
 }

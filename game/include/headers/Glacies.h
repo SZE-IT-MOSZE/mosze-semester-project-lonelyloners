@@ -435,6 +435,7 @@ RenderWindow glacies(RenderWindow game, TTF_Font* fnt)
         // TODO:
         // delete c; 
     }
+    game.mapReset();
     game.clear();
     return game;
 }
