@@ -10,7 +10,7 @@
 #include <sdl/SDL_ttf.h>
 
 #include "headers/Router.h"
-#include "headers/Planet1.h"
+#include "headers/LoadPlanet.h"
    
 RenderWindow dessert1(RenderWindow game, TTF_Font* fnt)
 {  
@@ -60,10 +60,11 @@ RenderWindow dessert1(RenderWindow game, TTF_Font* fnt)
 
     // Entity vector létrehozása
     std::vector<Entity> planet1 = {};
-    planet1 = LoadPlanet1(game);
+    planet1 = LoadPlanet(game, );
     // logikai változókat tartalmazó vektor definiálása
     std::vector<bool> planetR = {};
-    planetR = setPlanet1Pos();
+    planetR = setPlanetPos();
+
     // első térkép hátterének betöltése
     SDL_Texture* background = game.loadTexture("res/gfx/Dessert_Map1/dessert_map1_alapmap.png");
     Entity pl(V2F(0, 0), background);

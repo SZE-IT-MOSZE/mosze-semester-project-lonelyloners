@@ -22,10 +22,12 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
     std::vector<std::pair<int, int>> lyrsLaserR;
     std::vector<std::pair<int, int>> lyrsLaserL;
 
-    std::vector<std::pair<int, int>> latnokIdleR;
-    std::vector<std::pair<int, int>> latnokIdleL;
+    std::vector<std::pair<int, int>> npcIdleR;
+    std::vector<std::pair<int, int>> npcIdleL;
     std::vector<std::pair<int, int>> latnokMoveR;
     std::vector<std::pair<int, int>> latnokMoveL;
+    std::vector<std::pair<int, int>> antMoveR;
+    std::vector<std::pair<int, int>> antMoveL;
 
     std::vector<std::pair<int, int>> map;
 
@@ -55,15 +57,21 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
 
     // Látnokond üresjárati
     // jobb
-    latnokIdleR = { { 0,   0}, {32,   0}};
+    npcIdleR = { { 0,   0}, {32,   0}};
     // bal
-    latnokIdleL = { { 64,   0}, {96,  0}};
+    npcIdleL = { { 64,   0}, {96,  0}};
 
-    // LyRs séta animációjának a piozíciói
+    // látnokondokok séta animációjának a piozíciói
     // jobb
     latnokMoveR = { {  0,   0}, { 32,   0}, { 64,   0}, { 96,  0},  {128,  0} };
     // bal
     latnokMoveL = { {160,   0}, {192,   0}, {224,   0}, {256,  0},  {288,  0} };
+
+    // hangya séta animációjának a piozíciói
+    // jobb
+    antMoveR = { {  0,   0}, { 32,   0}, { 64,   0}, { 96,  0} };
+    // bal
+    antMoveL = { {128,  0}, {160,   0}, {192,   0}, {224,   0} };
 
     // map
     map             = { {  0,   0}, {384,   0},
@@ -99,17 +107,21 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
     SDL_Texture* latnok4a = game.loadTexture("res/gfx/Animations/dessert_latnokondok4_anim.png");
     SDL_Texture* latnok5a = game.loadTexture("res/gfx/Animations/dessert_latnokondok5_anim.png");
     SDL_Texture* latnok6a = game.loadTexture("res/gfx/Animations/dessert_latnokondok6_anim.png");
+    
+    SDL_Texture* chst = game.loadTexture("res/gfx/Dessert_Map2/dessert_map2_chest.png");
+    Entity chstE(V2F(224, 116), chst);
+    chstE.setSize(120, 50);
 
-    Entity latnok1E(V2F(64, 96), latnok1);
-    Entity latnok2E(V2F(96, 96), latnok2);
-    Entity latnok3E(V2F(128, 96), latnok3);
+    Entity latnok1E(V2F(0,0), latnok1);
+    Entity latnok2E(V2F(0,0), latnok2);
+    Entity latnok3E(V2F(0,0), latnok3);
     Entity latnok4E(V2F(0, 0), latnok4);
     Entity latnok5E(V2F(192, 96), latnok5);
     Entity latnok6E(V2F(96, 352), latnok6);
     
-    Entity latnok1Ea(V2F(-32, 96), latnok1a);
-    Entity latnok2Ea(V2F(-64, 96), latnok2a);
-    Entity latnok3Ea(V2F(-96, 96), latnok3a);
+    Entity latnok1Ea(V2F(0, 0), latnok1a);
+    Entity latnok2Ea(V2F(0, 0), latnok2a);
+    Entity latnok3Ea(V2F(0, 0), latnok3a);
     Entity latnok4Ea(V2F(0, 0), latnok4a);
     Entity latnok5Ea(V2F(192, 96), latnok5a);
     Entity latnok6Ea(V2F(96, 352), latnok6a);
@@ -117,11 +129,46 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
     latnok1Ea.setPosi(-32, 96);
     latnok2Ea.setPosi(-64, 96);
     latnok3Ea.setPosi(-96, 96);
+    
+    latnok1E.setPosi(64, 96);
+    latnok2E.setPosi(96, 96);
+    latnok3E.setPosi(128, 96);
 
+    SDL_Texture* antI1 = game.loadTexture("res/gfx/Animations/dessert_hangya_idle.png");
+    Entity antEI1(V2F(0,0), antI1);
+    antEI1.setPosi(192, 96);
+    
+    SDL_Texture* antI2 = game.loadTexture("res/gfx/Animations/dessert_hangya_idle.png");
+    Entity antEI2(V2F(0,0), antI2);
+    antEI2.setPosi(224, 96);
+
+    SDL_Texture* antI3 = game.loadTexture("res/gfx/Animations/dessert_hangya_idle.png");
+    Entity antEI3(V2F(0,0), antI3);
+    antEI3.setPosi(320, 96);
+
+    SDL_Texture* antA = game.loadTexture("res/gfx/Animations/dessert_hangya_seta.png");
+    Entity antEA(V2F(0,0), antA);
 
     // térbeli kövek
     SDL_Texture* rocks = game.loadTexture("res/gfx/Dessert_Map2/dessert_map2_rocks.png");
     Entity rocksEntity(V2F(0, 0), rocks);
+
+    // Entity vector létrehozása
+    std::vector<Entity> planet1 = {};
+    planet1 = LoadPlanet(game);
+    // logikai változókat tartalmazó vektorok definiálása
+    std::vector<bool> planetR1 = {};
+    planetR1 = setPlanetPos();
+
+    std::vector<bool> planetR2 = {};
+    planetR2 = setPlanet1Pos();
+
+    std::vector<bool> planetR3 = {};
+    planetR3 = setPlanet1Pos();
+
+    std::vector<bool> planetR4 = {};
+    planetR4 = setPlanet1Pos();
+
 
     // parancs választó deklarálása
     Router r = Router();
@@ -466,8 +513,8 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
         }
         switch (game.getMap())  {
             case 0:
-                game.update(latnok5E, latnokIdleL, latnokIdleL.size(), 32, 32, 0, true);
-                game.update(latnok6E, latnokIdleR, latnokIdleL.size(), 32, 32, 0, true);
+                game.update(latnok5E, npcIdleL, npcIdleL.size(), 32, 32, 0, true);
+                game.update(latnok6E, npcIdleR, npcIdleL.size(), 32, 32, 0, true);
                 if (l.getPos().getX() == 160 && l.getPos().getY() == 96 && beszel)
                 {
                     if (!a)
@@ -483,39 +530,47 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
                 }
                 if (start)
                 {
-                    if (latnok1Ea.getPos().getX() < 128)
+                    if (latnok1Ea.getPos().getX() < 65)
                     {
                         game.right(latnok1Ea);
                         game.update(latnok1Ea, latnokMoveR, latnokMoveR.size(), 32, 32, 0, true);
                     }
                     else 
                     {                        
-                        game.update(latnok1E, latnokIdleR, latnokIdleR.size(), 32, 32, 0, true);
+                        game.update(latnok1E, npcIdleR, npcIdleR.size(), 32, 32, 0, true);
                     }
-                    if (latnok2Ea.getPos().getX() < 96)
+                    if (latnok2Ea.getPos().getX() < 97)
                     {
                         game.right(latnok2Ea);
                         game.update(latnok2Ea, latnokMoveR, latnokMoveR.size(), 32, 32, 0, true);
                     }
                     else
                     {                        
-                        game.update(latnok2E, latnokIdleR, latnokIdleR.size(), 32, 32, 0, true);
+                        game.update(latnok2E, npcIdleR, npcIdleR.size(), 32, 32, 0, true);
                     }
-                    if (latnok3Ea.getPos().getX() < 64)
+                    if (latnok3Ea.getPos().getX() < 129)
                     {
                         game.right(latnok3Ea);
                         game.update(latnok3Ea, latnokMoveR, latnokMoveR.size(), 32, 32, 0, true);
                     }
                     else
                     {                        
-                        game.update(latnok3E, latnokIdleR, latnokIdleR.size(), 32, 32, 0, true);
+                        game.update(latnok3E, npcIdleR, npcIdleR.size(), 32, 32, 0, true);
                     }
                 }
+                break;
+            case 1:
+                
+                game.render(chstE);
 
-                    
+                game.update(antEI1, npcIdleR, npcIdleR.size(), 32, 32, 0, true);
+                game.update(antEI2, npcIdleR, npcIdleR.size(), 32, 32, 0, true);
+                game.update(antEI3, npcIdleL, npcIdleL.size(), 32, 32, 0, true);
 
-            //case 1:
-            //case 2:
+                break;
+            case 2:
+
+                break;
             //case 3:
         }
 
