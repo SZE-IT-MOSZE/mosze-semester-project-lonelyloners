@@ -22,7 +22,7 @@ int menu(RenderWindow menuWindow)
     char str[100];
     int res = menuWindow.getRES();
     // betűtípus betöltése
-    TTF_Font* fnt = TTF_OpenFont("font/PatrickHand-Regular.ttf", 18);  
+    TTF_Font* fnt = TTF_OpenFont("font/PatrickH&&-Regular.ttf", 18);  
 
     SDL_Texture* newGame = nullptr;
     // háttér betöltése
@@ -120,51 +120,51 @@ int menu(RenderWindow menuWindow)
                     case SDL_MOUSEBUTTONDOWN:
                     {
                         // új játék gomb lenyomásának ellenőrzése
-                        if (event.button.button = SDL_BUTTON_LEFT
-                        and event.button.x > 30 * res
-                        and event.button.x < 30 * res + 125 * res
-                        and event.button.y > 20 * res 
-                        and event.button.y < (20 + 65) * res
+                        if ((event.button.button = SDL_BUTTON_LEFT)
+                        && (event.button.x > 30 * res)
+                        && (event.button.x < 30 * res + 125 * res)
+                        && (event.button.y > 20 * res) 
+                        && event.button.y < (20 + 65) * res
                         ) 
                         {
                             nGameDown = true;
                         }
                         // betöltés gomb lenyomásának ellenőrzése
                         else if (event.button.button = SDL_BUTTON_LEFT
-                        and event.button.x > 35 * res
-                        and event.button.x < 35 * res + 95 * res
-                        and event.button.y > 116 * res 
-                        and event.button.y < 116 * res + 35 * res
+                        && event.button.x > 35 * res
+                        && event.button.x < 35 * res + 95 * res
+                        && event.button.y > 116 * res 
+                        && event.button.y < 116 * res + 35 * res
                         ) 
                         {
                             lgGameDown = true;
                         }
                         // segítség gomb lenyomásának ellenőrzése
                         else if (event.button.button = SDL_BUTTON_LEFT
-                        and event.button.x > 35 * res 
-                        and event.button.x < 35 * res + 95 /* * getR() */  
-                        and event.button.y > 189 * res  
-                        and event.button.y < 189 * res + 35 /* * getR() */
+                        && event.button.x > 35 * res 
+                        && event.button.x < 35 * res + 95 /* * getR() */  
+                        && event.button.y > 189 * res  
+                        && event.button.y < 189 * res + 35 /* * getR() */
                         ) 
                         {
                             hlpGameDown = true;
                         }   
                         // beállítások gomb lenyomásának ellenőrzése
                         else if (event.button.button = SDL_BUTTON_LEFT
-                        and event.button.x > 384 * res - 35 * res - 95 * res
-                        and event.button.x < 384 * res - 35 * res
-                        and event.button.y > 116 * res 
-                        and event.button.y < 116 * res + 35 * res
+                        && event.button.x > 384 * res - 35 * res - 95 * res
+                        && event.button.x < 384 * res - 35 * res
+                        && event.button.y > 116 * res 
+                        && event.button.y < 116 * res + 35 * res
                         ) 
                         {
                             setGameDown = true;
                         }
                         // kilépés gomb lenyomásának ellenőrzése
                         else if (event.button.button = SDL_BUTTON_LEFT
-                        and event.button.x > 384 * res - 35 * res - 95 * res
-                        and event.button.x < 384 * res - 35 * res
-                        and event.button.y > 189 * res 
-                        and event.button.y < 189 * res + 35 * res
+                        && event.button.x > 384 * res - 35 * res - 95 * res
+                        && event.button.x < 384 * res - 35 * res
+                        && event.button.y > 189 * res 
+                        && event.button.y < 189 * res + 35 * res
                         ) 
                         {
                             eGameDown = true;

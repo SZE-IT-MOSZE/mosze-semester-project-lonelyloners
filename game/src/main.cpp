@@ -4,9 +4,9 @@
 #include <iostream>
 #include <stdio.h>
 #include <string.h>
-#include <sdl/SDL.h>
+#include <sdl/SDL.h>      
 #include <sdl/SDL_image.h>
-#include <sdl/SDL_ttf.h>
+#include <sdl/SDL_ttf.h>  
 
 #include "headers/Router.h"
 #include "headers/Command.h"

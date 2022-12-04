@@ -8,7 +8,7 @@ Command::Command(std::string cm) {
 
 bool Command::validate(std::string cm) {
     bool check[2] = {false, false};
-    int space_pos = cm.find(" ", 0);
+    int space_pos = int(cm.find(" ", 0));
     std::string cma = cm.substr(0, space_pos);
     std::string it = cm.substr(space_pos+1, cm.length());
 
@@ -36,7 +36,7 @@ bool Command::validate(std::string cm) {
 
 void Command::make() {
     if(this->validate(this->input)) {
-        int space_pos = this->input.find(" ", 0);
+        int space_pos = int(this->input.find(" ", 0));
         this->command = this->input.substr(0, space_pos);
         this->item = this->input.substr(space_pos+1, this->input.length());
     }
