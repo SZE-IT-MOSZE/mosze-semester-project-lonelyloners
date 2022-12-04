@@ -1,5 +1,6 @@
 #pragma once
 
+#include <fstream>
 #include <stdio.h>
 
 #include "headers/Entity.h"

@@ -6,7 +6,6 @@
 #include <sdl/SDL.h>
 #include <sdl/SDL_image.h>
 
-#include "headers/Menu.h"
 /**
  * \brief Betölti a felhőket.
  *
@@ -212,5 +211,5 @@ std::vector<bool> setPlanetPos()
         toR.push_back(true);
     }
 
-    return toR;     
+    return toR;
 }
