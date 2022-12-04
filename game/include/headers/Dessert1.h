@@ -60,7 +60,7 @@ RenderWindow dessert1(RenderWindow game, TTF_Font* fnt)
 
     // Entity vector létrehozása
     std::vector<Entity> planet1 = {};
-    planet1 = LoadPlanet(game, );
+    planet1 = LoadPlanet(game, "res/gfx/Dessert_Map1/dessert_map1_felho.png");
     // logikai változókat tartalmazó vektor definiálása
     std::vector<bool> planetR = {};
     planetR = setPlanetPos();

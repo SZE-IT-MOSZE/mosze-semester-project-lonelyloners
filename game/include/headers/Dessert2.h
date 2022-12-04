@@ -10,7 +10,7 @@
 #include <sdl/SDL_ttf.h>
 
 #include "headers/Router.h"
-#include "headers/Planet1.h"
+#include "headers/LoadPlanet.h"
    
 RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
 {  
@@ -28,6 +28,10 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
     std::vector<std::pair<int, int>> latnokMoveL;
     std::vector<std::pair<int, int>> antMoveR;
     std::vector<std::pair<int, int>> antMoveL;
+    std::vector<std::pair<int, int>> urgeIdleL;
+    std::vector<std::pair<int, int>> urgeIdleR;
+    std::vector<std::pair<int, int>> urgeAttackL;
+    std::vector<std::pair<int, int>> urgeAttackR;
 
     std::vector<std::pair<int, int>> map;
 
@@ -61,17 +65,30 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
     // bal
     npcIdleL = { { 64,   0}, {96,  0}};
 
-    // látnokondokok séta animációjának a piozíciói
+    // látnokondokok séta animációjának a pozíciói
     // jobb
     latnokMoveR = { {  0,   0}, { 32,   0}, { 64,   0}, { 96,  0},  {128,  0} };
     // bal
     latnokMoveL = { {160,   0}, {192,   0}, {224,   0}, {256,  0},  {288,  0} };
 
-    // hangya séta animációjának a piozíciói
+    // hangya séta animációjának a pozíciói
     // jobb
     antMoveR = { {  0,   0}, { 32,   0}, { 64,   0}, { 96,  0} };
     // bal
     antMoveL = { {128,  0}, {160,   0}, {192,   0}, {224,   0} };
+
+    // urge séta üresjárati 
+    // jobb
+    urgeIdleR = { {  0,   0}, { 32,   0}, { 64,   0}, { 96,  0},  {128,  0},  {160,  0},  {192,  0},  {224,  0},  {256,  0},  {288,  0} };
+    // bal
+    urgeIdleL = { {320,   0}, {352,   0}, {384,   0}, {416,  0},  {448,  0},  {480,  0},  {512,  0},  {544,  0},  {576,  0},  {608,  0} };
+    
+    // urge támadás 
+    // jobb
+    urgeIdleR = { {  0,   0}, { 64,   0},  {128,  0}, {192,  0},  {256,  0},  {320,  0},  {384,  0},  {448,  0} };
+    // bal
+    urgeIdleL = { {512,   0}, {576,   0}, {640,   0}, {704,  0},  {768,  0},  {832,  0},  {896,  0},  {960,  0} };
+
 
     // map
     map             = { {  0,   0}, {384,   0},
@@ -87,9 +104,6 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
     // beviteli mező háttere
     SDL_Texture* inputTextBckGround = game.loadTexture("res/gfx/Objects/blck_bckgrnd.png");
     Entity inptxtbckground(V2F(0, 384), inputTextBckGround);
-    // logikai változókat tartalmazó vektor definiálása
-    std::vector<bool> planetR = {};
-    planetR = setPlanet1Pos();
     // első térkép hátterének betöltése
     SDL_Texture* background = game.loadTexture("res/gfx/Dessert_Map2/dessert_map2.png");
     Entity pl(V2F(0, 0), background);
@@ -148,6 +162,14 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
 
     SDL_Texture* antA = game.loadTexture("res/gfx/Animations/dessert_hangya_seta.png");
     Entity antEA(V2F(0,0), antA);
+    
+    // urge
+    SDL_Texture* urge1 = game.loadTexture("res/gfx/Animations/dessert_urge_idle.png");
+    Entity urgeE1(V2F(0,0), urge1);
+    urgeE1.setPosi(192, 320);
+    SDL_Texture* urge2 = game.loadTexture("res/gfx/Animations/dessert_urge_idle.png");
+    Entity urgeE2(V2F(0,0), urge2);
+    urgeE2.setPosi(224, 320);
 
     // térbeli kövek
     SDL_Texture* rocks = game.loadTexture("res/gfx/Dessert_Map2/dessert_map2_rocks.png");
@@ -155,19 +177,19 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
 
     // Entity vector létrehozása
     std::vector<Entity> planet1 = {};
-    planet1 = LoadPlanet(game);
+    planet1 = LoadPlanet(game, "res/gfx/Dessert_Map2/dessert_map2_felho.png");
     // logikai változókat tartalmazó vektorok definiálása
     std::vector<bool> planetR1 = {};
     planetR1 = setPlanetPos();
 
     std::vector<bool> planetR2 = {};
-    planetR2 = setPlanet1Pos();
+    planetR2 = setPlanetPos();
 
     std::vector<bool> planetR3 = {};
-    planetR3 = setPlanet1Pos();
+    planetR3 = setPlanetPos();
 
     std::vector<bool> planetR4 = {};
-    planetR4 = setPlanet1Pos();
+    planetR4 = setPlanetPos();
 
 
     // parancs választó deklarálása
@@ -558,6 +580,9 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
                         game.update(latnok3E, npcIdleR, npcIdleR.size(), 32, 32, 0, true);
                     }
                 }
+                // felhők renderelése és ütközések ellenőrzése és lekezelése
+                planetR1 = renderPlanet(game, planet1, planetR1, l);
+
                 break;
             case 1:
                 
@@ -566,9 +591,16 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
                 game.update(antEI1, npcIdleR, npcIdleR.size(), 32, 32, 0, true);
                 game.update(antEI2, npcIdleR, npcIdleR.size(), 32, 32, 0, true);
                 game.update(antEI3, npcIdleL, npcIdleL.size(), 32, 32, 0, true);
+                
+                // felhők renderelése és ütközések ellenőrzése és lekezelése
+                planetR2 = renderPlanet(game, planet1, planetR2, l);
 
                 break;
             case 2:
+
+                game.update(urgeE1, urgeIdleR, urgeIdleR.size(), 32, 32, 0, true);
+                game.update(urgeE2, urgeIdleR, urgeIdleR.size(), 32, 32, 0, true);
+
 
                 break;
             //case 3:
