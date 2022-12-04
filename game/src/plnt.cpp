@@ -548,28 +548,26 @@ void Plnt::dessert1()
         // irányok beállítása
         switch (l.getDirection())
         {
-        case 0:
-            break;
-        case 1:
-            // fel
-            fel = true;
-            break;
-        case 2:
-            // jobbra
-            jobbra = true;
-            break;     
-        case 3:
-            // le
-            le = true;
-            break;
-        case 4: 
-            // balra
-            balra = true;
-            break;
-        case 5:
-            attack = true;
-        default:
-            break;
+            case 0:
+                break;
+            case 1:
+                // fel
+                fel = true;
+                break;
+            case 2:
+                // jobbra
+                jobbra = true;
+                break;     
+            case 3:
+                // le
+                le = true;
+                break;
+            case 4: 
+                // balra
+                balra = true;
+                break;
+            default:
+                break;
         }
         
         // először a háttér kirajzolása

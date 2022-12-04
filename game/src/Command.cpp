@@ -92,8 +92,6 @@ bool Command::check_input(std::string input) {
     input = to_upper(input);
     input += " ";
 
-    std::cout << " 11111input " << input << std::endl;
-
     size_t last = 0;
     size_t next = 0;
     int no = 0;
@@ -103,13 +101,9 @@ bool Command::check_input(std::string input) {
     while ((next = input.find(" ", last)) != std::string::npos) {
         std::string token = input.substr(last, next-last);
 
-        std::cout << " 22222token " << token << std::endl;
-
-
         if(no == 0) {
             command = token;
         }
-        std::cout << " 33333command " << command << std::endl;
 
         if(no == 0 && !check_command(token)) {
             return false;
@@ -142,9 +136,6 @@ void Command::setCommand(std::string cm) {
 }
 
 void Command::make(std::string input) {
-    std::cout << " input " << input << std::endl;
-
-
     if(this->check_input(input)) {
         this -> setCommand(input);
         std::cout << "Jó parancs" << std::endl;
