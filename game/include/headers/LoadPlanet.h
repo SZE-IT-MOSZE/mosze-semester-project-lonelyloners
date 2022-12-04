@@ -127,6 +127,70 @@ std::vector<Entity> LoadPlanet(RenderWindow planet, const char* p)
                     cl10.setSize(154,84);
                     resEntities.push_back(cl10);
                 }
+            case 11:
+                i = -30;
+                y = 150;  
+                {           
+                    SDL_Texture* cloud11 = planet.loadTexture(p);
+                    Entity cl11(V2F(i, y), cloud11);           
+                    cl11.setSize(154,84);
+                    resEntities.push_back(cl11);
+                }
+            case 12:
+                i = 64;
+                y = 96;  
+                {           
+                    SDL_Texture* cloud12 = planet.loadTexture(p);
+                    Entity cl12(V2F(i, y), cloud12);           
+                    cl12.setSize(154,84);
+                    resEntities.push_back(cl12);
+                }
+            case 13:
+                i = -25;
+                y = -35;  
+                {           
+                    SDL_Texture* cloud13 = planet.loadTexture(p);
+                    Entity cl13(V2F(i, y), cloud13);           
+                    cl13.setSize(154,84);
+                    resEntities.push_back(cl13);
+                }
+            case 14:
+                i = 128;
+                y = -20;  
+                {           
+                    SDL_Texture* cloud14 = planet.loadTexture(p);
+                    Entity cl14(V2F(i, y), cloud14);           
+                    cl14.setSize(154,84);
+                    resEntities.push_back(cl14);
+                }
+            case 15:
+                i = 224;
+                y = 224;  
+                {           
+                    SDL_Texture* cloud15 = planet.loadTexture(p);
+                    Entity cl15(V2F(i, y), cloud15);           
+                    cl15.setSize(154,84);
+                    resEntities.push_back(cl15);
+                }
+            case 16:
+                i = -32;
+                y = 352;  
+                {           
+                    SDL_Texture* cloud16 = planet.loadTexture(p);
+                    Entity cl16(V2F(i, y), cloud16);           
+                    cl16.setSize(154,84);
+                    resEntities.push_back(cl16);
+                }
+            case 17:
+                i = -50;
+                y = 270;  
+                {           
+                    SDL_Texture* cloud17 = planet.loadTexture(p);
+                    Entity cl17(V2F(i, y), cloud17);           
+                    cl17.setSize(154,84);
+                    resEntities.push_back(cl17);
+                }
+
         } 
     }
 
@@ -143,7 +207,7 @@ std::vector<bool> setPlanetPos()
 {
     std::vector<bool> toR;
 
-    for(int i = 0; i < 12; i++)
+    for(int i = 0; i < 18; i++)
     {
         toR.push_back(true);
     }

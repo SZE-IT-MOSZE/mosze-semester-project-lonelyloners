@@ -32,6 +32,8 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
     std::vector<std::pair<int, int>> urgeIdleR;
     std::vector<std::pair<int, int>> urgeAttackL;
     std::vector<std::pair<int, int>> urgeAttackR;
+    std::vector<std::pair<int, int>> nagyonIdleR;
+    std::vector<std::pair<int, int>> nagyonIdleL;
 
     std::vector<std::pair<int, int>> map;
 
@@ -77,7 +79,7 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
     // bal
     antMoveL = { {128,  0}, {160,   0}, {192,   0}, {224,   0} };
 
-    // urge séta üresjárati 
+    // urge üresjárati 
     // jobb
     urgeIdleR = { {  0,   0}, { 32,   0}, { 64,   0}, { 96,  0},  {128,  0},  {160,  0},  {192,  0},  {224,  0},  {256,  0},  {288,  0} };
     // bal
@@ -85,10 +87,15 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
     
     // urge támadás 
     // jobb
-    urgeIdleR = { {  0,   0}, { 64,   0},  {128,  0}, {192,  0},  {256,  0},  {320,  0},  {384,  0},  {448,  0} };
+    urgeAttackR = { {  0,   0}, { 64,   0},  {128,  0}, {192,  0},  {256,  0},  {320,  0},  {384,  0},  {448,  0} };
     // bal
-    urgeIdleL = { {512,   0}, {576,   0}, {640,   0}, {704,  0},  {768,  0},  {832,  0},  {896,  0},  {960,  0} };
+    urgeAttackL = { {512,   0}, {576,   0}, {640,   0}, {704,  0},  {768,  0},  {832,  0},  {896,  0},  {960,  0} };
 
+    // NAGYON kígyó üresjárati 
+    // jobb
+    nagyonIdleR = { {  0,  0}, { 32,  0}, { 64,   0}, { 96,  0}, {128,  0}, {160,  0},  {192,  0},  {224,  0} };
+    // bal
+    nagyonIdleL = { {256,  0}, {288,  0}, {320,   0}, {352,  0}, {384,  0}, {416,  0},  {448,  0},  {480,  0} };
 
     // map
     map             = { {  0,   0}, {384,   0},
@@ -108,23 +115,32 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
     SDL_Texture* background = game.loadTexture("res/gfx/Dessert_Map2/dessert_map2.png");
     Entity pl(V2F(0, 0), background);
     // látnokondokok betöltése
-    SDL_Texture* latnok1 = game.loadTexture("res/gfx/Animations/dessert_latnokondok1_idle.png");
-    SDL_Texture* latnok2 = game.loadTexture("res/gfx/Animations/dessert_latnokondok2_idle.png");
-    SDL_Texture* latnok3 = game.loadTexture("res/gfx/Animations/dessert_latnokondok3_idle.png");
-    SDL_Texture* latnok4 = game.loadTexture("res/gfx/Animations/dessert_latnokondok4_idle.png");
-    SDL_Texture* latnok5 = game.loadTexture("res/gfx/Animations/dessert_latnokondok5_idle.png");
-    SDL_Texture* latnok6 = game.loadTexture("res/gfx/Animations/dessert_latnokondok6_idle.png");
-    
+    SDL_Texture* latnok1        = game.loadTexture("res/gfx/Animations/dessert_latnokondok1_idle.png");
+    SDL_Texture* latnok2        = game.loadTexture("res/gfx/Animations/dessert_latnokondok2_idle.png");
+    SDL_Texture* latnok3        = game.loadTexture("res/gfx/Animations/dessert_latnokondok3_idle.png");
+    SDL_Texture* latnok4        = game.loadTexture("res/gfx/Animations/dessert_latnokondok4_idle.png");
+    SDL_Texture* latnok5        = game.loadTexture("res/gfx/Animations/dessert_latnokondok5_idle.png");
+    SDL_Texture* latnok6        = game.loadTexture("res/gfx/Animations/dessert_latnokondok6_idle.png");
+    SDL_Texture* latnokMereg    = game.loadTexture("res/gfx/Animations/dessert_latnokondok_mergezett_idle.png");
+
     SDL_Texture* latnok1a = game.loadTexture("res/gfx/Animations/dessert_latnokondok1_anim.png");
     SDL_Texture* latnok2a = game.loadTexture("res/gfx/Animations/dessert_latnokondok2_anim.png");
     SDL_Texture* latnok3a = game.loadTexture("res/gfx/Animations/dessert_latnokondok3_anim.png");
     SDL_Texture* latnok4a = game.loadTexture("res/gfx/Animations/dessert_latnokondok4_anim.png");
     SDL_Texture* latnok5a = game.loadTexture("res/gfx/Animations/dessert_latnokondok5_anim.png");
     SDL_Texture* latnok6a = game.loadTexture("res/gfx/Animations/dessert_latnokondok6_anim.png");
-    
+
+    SDL_Texture* wtr = game.loadTexture("res/gfx/Dessert_Map2/dessert_map2_water.png");
+    Entity wtrE(V2F(272, 305), wtr);
+    wtrE.setSize(87, 60);
+    // ládák betöltése
     SDL_Texture* chst = game.loadTexture("res/gfx/Dessert_Map2/dessert_map2_chest.png");
     Entity chstE(V2F(224, 116), chst);
     chstE.setSize(120, 50);
+    
+    SDL_Texture* chst2 = game.loadTexture("res/gfx/Dessert_Map2/dessert_map2_chest.png");
+    Entity chst2E(V2F(234, 244), chst2);
+    chst2E.setSize(120, 50);
 
     Entity latnok1E(V2F(0,0), latnok1);
     Entity latnok2E(V2F(0,0), latnok2);
@@ -132,7 +148,8 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
     Entity latnok4E(V2F(0, 0), latnok4);
     Entity latnok5E(V2F(192, 96), latnok5);
     Entity latnok6E(V2F(96, 352), latnok6);
-    
+    Entity latnokMeregE(V2F(160, 128), latnokMereg);
+
     Entity latnok1Ea(V2F(0, 0), latnok1a);
     Entity latnok2Ea(V2F(0, 0), latnok2a);
     Entity latnok3Ea(V2F(0, 0), latnok3a);
@@ -147,19 +164,16 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
     latnok1E.setPosi(64, 96);
     latnok2E.setPosi(96, 96);
     latnok3E.setPosi(128, 96);
-
+    // hangyák betöltése
     SDL_Texture* antI1 = game.loadTexture("res/gfx/Animations/dessert_hangya_idle.png");
     Entity antEI1(V2F(0,0), antI1);
     antEI1.setPosi(192, 96);
-    
     SDL_Texture* antI2 = game.loadTexture("res/gfx/Animations/dessert_hangya_idle.png");
     Entity antEI2(V2F(0,0), antI2);
     antEI2.setPosi(224, 96);
-
     SDL_Texture* antI3 = game.loadTexture("res/gfx/Animations/dessert_hangya_idle.png");
     Entity antEI3(V2F(0,0), antI3);
     antEI3.setPosi(320, 96);
-
     SDL_Texture* antA = game.loadTexture("res/gfx/Animations/dessert_hangya_seta.png");
     Entity antEA(V2F(0,0), antA);
     
@@ -170,6 +184,28 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
     SDL_Texture* urge2 = game.loadTexture("res/gfx/Animations/dessert_urge_idle.png");
     Entity urgeE2(V2F(0,0), urge2);
     urgeE2.setPosi(224, 320);
+    
+    // sivatagi bogyeszok
+    SDL_Texture* bogyesz1 = game.loadTexture("res/gfx/Objects/dessert_map2_sivatagibogyo.png");
+    Entity bogyesz1E(V2F(232, 80), bogyesz1);
+    bogyesz1E.setSize(16, 16);
+    SDL_Texture* bogyesz2 = game.loadTexture("res/gfx/Objects/dessert_map2_sivatagibogyo.png");
+    Entity bogyesz2E(V2F(72, 48), bogyesz2);
+    bogyesz2E.setSize(16, 16);
+    SDL_Texture* bogyesz3 = game.loadTexture("res/gfx/Objects/dessert_map2_sivatagibogyo.png");
+    Entity bogyesz3E(V2F(168, 112), bogyesz3);
+    bogyesz3E.setSize(16, 16);
+    SDL_Texture* bogyesz4 = game.loadTexture("res/gfx/Objects/dessert_map2_sivatagibogyo.png");
+    Entity bogyesz4E(V2F(104, 176), bogyesz4);
+    bogyesz4E.setSize(16, 16);
+
+    // NAGYON kígyó betöltése 
+    SDL_Texture* jujjEzNagyonKigyo1 = game.loadTexture("res/gfx/Animations/dessert_kigyo_idle.png");
+    Entity jujjEzNagyonKigyoE1(V2F(0,0), jujjEzNagyonKigyo1);
+    jujjEzNagyonKigyoE1.setPosi(224, 288);
+    SDL_Texture* jujjEzNagyonKigyo2 = game.loadTexture("res/gfx/Animations/dessert_kigyo_idle.png");
+    Entity jujjEzNagyonKigyoE2(V2F(0,0), jujjEzNagyonKigyo2);
+    jujjEzNagyonKigyoE2.setPosi(320, 288);
 
     // térbeli kövek
     SDL_Texture* rocks = game.loadTexture("res/gfx/Dessert_Map2/dessert_map2_rocks.png");
@@ -580,8 +616,6 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
                         game.update(latnok3E, npcIdleR, npcIdleR.size(), 32, 32, 0, true);
                     }
                 }
-                // felhők renderelése és ütközések ellenőrzése és lekezelése
-                planetR1 = renderPlanet(game, planet1, planetR1, l);
 
                 break;
             case 1:
@@ -597,26 +631,60 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
 
                 break;
             case 2:
+                game.render(wtrE);
+                game.render(bogyesz1E);
 
-                game.update(urgeE1, urgeIdleR, urgeIdleR.size(), 32, 32, 0, true);
-                game.update(urgeE2, urgeIdleR, urgeIdleR.size(), 32, 32, 0, true);
-
-
+                game.update(urgeE1, urgeIdleL, urgeIdleL.size(), 32, 32, 0, true);
+                game.update(urgeE2, urgeIdleL, urgeIdleL.size(), 32, 32, 0, true);
+                game.update(latnokMeregE, npcIdleR, npcIdleR.size(), 32, 32, 0, true);
+                
                 break;
-            //case 3:
+            case 3:
+                game.render(chst2E);
+
+                game.render(bogyesz2E);
+                game.render(bogyesz3E);
+                game.render(bogyesz4E);
+
+                game.update(jujjEzNagyonKigyoE1, nagyonIdleR, nagyonIdleR.size(), 32, 32, 0, true);
+                game.update(jujjEzNagyonKigyoE2, nagyonIdleL, nagyonIdleL.size(), 32, 32, 0, true);
+                
+                break;
         }
 
         // terbeli kövek render
         game.updateMap(rocksEntity, map);
-        game.render(inptxtbckground);
-        game.renderInputText(command, fnt);
+
+        switch (game.getMap())  {
+            case 0:
+                // felhők renderelése és ütközések ellenőrzése és lekezelése
+                planetR1 = renderPlanet(game, planet1, planetR1, l);
+
+                break;
+            case 1:
+                // felhők renderelése és ütközések ellenőrzése és lekezelése
+                planetR2 = renderPlanet(game, planet1, planetR2, l);
+
+                break;
+            case 2:
+                // felhők renderelése és ütközések ellenőrzése és lekezelése
+                planetR3 = renderPlanet(game, planet1, planetR3, l);
+
+                break;
+            case 3:
+                // felhők renderelése és ütközések ellenőrzése és lekezelése
+                planetR4 = renderPlanet(game, planet1, planetR4, l);
+
+                break;
+        }
         // szöveg háttér
         game.render(txtbckground);
         game.renderText(fnt);
+        // input box
+        game.render(inptxtbckground);
+        game.renderInputText(command, fnt);
         // rendererbe tötött elemek képernyőre helyezése
         game.display();
-        // TODO:
-        // delete c; 
     }
     game.mapReset();
     game.nextTxt(next);

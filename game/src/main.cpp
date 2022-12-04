@@ -53,7 +53,7 @@ int main(int argc, char* argv[])
         bool next;
 
         game = prolog(game, fnt);
-
+        
         game = dessert1(game, fnt);
 
         game = dessert2(game, fnt);
