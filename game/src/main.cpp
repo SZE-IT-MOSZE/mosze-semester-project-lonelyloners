@@ -47,7 +47,7 @@ int main(int argc, char* argv[])
     if (choice == 1)
     {
 
-        g.prolog();
+        // g.prolog();
 
         g.dessert1();
 

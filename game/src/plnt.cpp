@@ -217,6 +217,10 @@ int Plnt::menu()
             SDL_Delay(500);
             menuRunning = false;
         }
+        if (hlpGameDown == true)
+        {
+            
+        }
         // gombok megjelenítése
         game.render(bckground);  
         game.render(txtbckground); 
@@ -292,6 +296,7 @@ void Plnt::prolog()
     Message_rect.h = 24;
 
     SDL_StartTextInput();
+    Command c = Command();
 
     // prologus
     while(gameRunning)
@@ -330,9 +335,9 @@ void Plnt::prolog()
                             case SDLK_RETURN:
                                 if (!fel && !le && !balra && !jobbra && !attack)
                                 {
-                                    Command c = Command(command);
-                                    c.make();
+                                    c.make(command);
                                     r.route(c.getCommand(), c.getItem(), l);
+                                    c.reset();
                                     if (command == "LAPOZZ")
                                     {
                                         game.nextPage();
@@ -466,6 +471,8 @@ void Plnt::dessert1()
     float cTime = utils::hireTimeInSeconds();
     // input text 
     std::string command;
+    
+    Command c = Command();
 
     gameRunning = true;
     // dessert1
@@ -505,17 +512,18 @@ void Plnt::dessert1()
                         case SDLK_RETURN:
                             if (!fel && !le && !balra && !jobbra && !attack)
                             {
-                                Command c = Command(command);
-                                c.make();
+                                c.make(command);
                                 r.route(c.getCommand(), c.getItem(), l);
-                                if (command == "LAPOZZ")
-                                {
-                                    game.nextPage();
-                                }
-                                if (command == "TAMADAS")
-                                {
-                                    attack = true;
-                                }
+                                c.reset();
+
+                                // if (command == "LAPOZZ")
+                                // {
+                                //     game.nextPage();
+                                // }
+                                // if (command == "TAMADAS")
+                                // {
+                                //     attack = true;
+                                // }
                                 if (command == "POSI")
                                 {
                                     std::cout << " CURRENT POSITION: " << l.getPos().getY() << " \t " << l.getPos().getX() << std::endl;
@@ -986,6 +994,8 @@ void Plnt::dessert2()
     
     game.nextTxt(next);
 
+    Command c = Command();
+
     gameRunning = true;
     // dessert1
     while(gameRunning)
@@ -1024,9 +1034,9 @@ void Plnt::dessert2()
                         case SDLK_RETURN:
                             if (!fel && !le && !balra && !jobbra && !attack)
                             {
-                                Command c = Command(command);
-                                c.make();
+                                c.make(command);
                                 r.route(c.getCommand(), c.getItem(), l);
+                                c.reset();
                                 if (command == "LAPOZZ")
                                 {
                                     game.nextPage();
@@ -1495,7 +1505,34 @@ void Plnt::glacies()
     // férfi odomár üresjárat
     SDL_Texture* odoM = game.loadTexture("res/gfx/Animations/glacies_odomar_man_idle.png");
     Entity odoME(V2F(96, 256), odoM);
+    // gyerek odomár üresjárat
+    SDL_Texture* odoK = game.loadTexture("res/gfx/Animations/glacies_odomar_kid_idle.png");
+    Entity odoKE(V2F(128, 256), odoK);
     
+    // őr odomár üresjárat 1
+    SDL_Texture* odoO1 = game.loadTexture("res/gfx/Animations/glacies_odomar_man_idle.png");
+    Entity odoO1E(V2F(96, 128), odoO1);
+    // őr odomár üresjárat 2
+    SDL_Texture* odoO2 = game.loadTexture("res/gfx/Animations/glacies_odomar_man_idle.png");
+    Entity odoO2E(V2F(96, 192), odoO2);
+    // őr odomár üresjárat 3
+    SDL_Texture* odoO3 = game.loadTexture("res/gfx/Animations/glacies_odomar_man_idle.png");
+    Entity odoO3E(V2F(160, 192), odoO3);
+    // őr odomár üresjárat 4
+    SDL_Texture* odoO4 = game.loadTexture("res/gfx/Animations/glacies_odomar_man_idle.png");
+    Entity odoO4E(V2F(160, 128), odoO4);
+    // őr odomár üresjárat 5
+    SDL_Texture* odoO5 = game.loadTexture("res/gfx/Animations/glacies_odomar_man_idle.png");
+    Entity odoO5E(V2F(224, 128), odoO5);
+    // őr odomár üresjárat 6
+    SDL_Texture* odoO6 = game.loadTexture("res/gfx/Animations/glacies_odomar_man_idle.png");
+    Entity odoO6E(V2F(224, 192), odoO6);
+
+    // odomár KIRÁLY üresjárat 6
+    SDL_Texture* odoKing = game.loadTexture("res/gfx/Animations/glacies_odomar_king_idle.png");
+    Entity odoKingE(V2F(320, 150), odoKing);
+
+
     // Entity vector létrehozása
     std::vector<Entity> planet1 = {};
     planet1 = LoadPlanet(game, "res/gfx/Glacies_map/galcies_felho.png");
@@ -1545,6 +1582,7 @@ void Plnt::glacies()
     float cTime = utils::hireTimeInSeconds();
     // input text 
     std::string command;
+    Command c = Command();
 
     gameRunning = true;
     // glacies
@@ -1584,9 +1622,9 @@ void Plnt::glacies()
                             case SDLK_RETURN:
                                 if (!fel && !le && !balra && !jobbra && !attack)
                                 {
-                                    Command c = Command(command);
-                                    c.make();
+                                    c.make(command);
                                     r.route(c.getCommand(), c.getItem(), l);
+                                    c.reset();
                                     if (command == "LAPOZZ")
                                     {
                                         game.nextPage();
@@ -1880,12 +1918,24 @@ void Plnt::glacies()
             case 1:
                 game.update(odoWE, npcIdleR, npcIdleR.size(), 32, 32, 0, true);
                 game.update(odoME, npcIdleL, npcIdleR.size(), 32, 32, 0, true);
-                
+                game.update(odoKE, npcIdleL, npcIdleR.size(), 32, 32, 0, true);
+
                 break;
             case 2:
                 
                 break;
             case 3:
+                break;
+            case 4:
+                game.update(odoO1E, npcIdleL, npcIdleR.size(), 32, 32, 0, true);
+                game.update(odoO2E, npcIdleL, npcIdleR.size(), 32, 32, 0, true);
+                game.update(odoO3E, npcIdleL, npcIdleR.size(), 32, 32, 0, true);
+                game.update(odoO4E, npcIdleL, npcIdleR.size(), 32, 32, 0, true);
+                game.update(odoO5E, npcIdleL, npcIdleR.size(), 32, 32, 0, true);
+                game.update(odoO6E, npcIdleL, npcIdleR.size(), 32, 32, 0, true);
+                game.update(odoKingE, npcIdleL, npcIdleR.size(), 32, 32, 0, true);
+
+
                 break;
         }
 
