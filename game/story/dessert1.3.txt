@@ -1,0 +1,37 @@
+//A játkos beírja a BELEP parancsot. Megjelenik az alsó világ map.
+Amit a robot odabent talált, 
+zavart okozott áramköreiben.
+*
+A föld alatt, LyRs legnagyobb
+meglepetésére az élet egy elég 
+elcsúfult formájával nézett 
+szembe. Mivel kint az égető hőség 
+miatt érző lény nem volt képes
+megmaradni, így az idők során a 
+Des”s”ert bolygó lakosai a vastag
+homokréteg alatti, kiterjedt 
+barlangrendszerek járataiba húzódtak
+vissza.
+*
+Csakhogy, mivel odabent legfőképp 
+a teljes homály és sötétség uralkodott, 
+kénytelenek voltak alkalmazkodni 
+hozzá: eleve furcsa külsejük egy 
+földi vakondéhoz hasonló kinézetet 
+öltött. Szemeik alkalmazkodtak 
+a sötéthez, érzékszerveik kiélesedtek.
+Legfőképp szaglásukra, tapintásukra 
+hagyatkoztak, meg a tudatra, 
+amelyben a járatok szinte 
+térképpé olvadtak össze a 
+fejükben. Álmukban is eltaláltak 
+egyik pontból a másikba.
+*
+Feladat: Fedezd fel az "Alsó világot"! 
+Járkálj körbe, használva az ELORE 
+és a HATRA parancsot! Más lényekkel
+való kommunikációhoz használd 
+közvetlenül mellettük a BESZEL 
+parancsot!
+*
+//dessert1.4.txt

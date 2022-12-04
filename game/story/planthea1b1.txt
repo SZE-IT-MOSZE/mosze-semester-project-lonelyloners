@@ -1,0 +1,48 @@
+A harmadik bolygó, amelyen LyRs űrközi
+utazása során felbukkant, egy buja, 
+zöld növényzettel benőtt, aprócska bolygó volt.
+*
+Kissé olyan volt, mint az egykori Föld 
+dzsungelei. Sűrűn nőtt fák rengetege, 
+alatta a sötét homály csendjével.
+*
+Robotunk már akkor tudta, hogy itt élettel 
+telibb ökoszisztéma várja, mint a sivatagos 
+De”s”sert vagy a jeges Glacies bolygón. 
+Ez már onnan is látszott, hogy egy kis 
+falucska szélén sikerült földet érnie, 
+ahol még meg sem ijedtek az űrből érkezett, 
+mesterséges lénytől.
+*
+Ismeretlen lény mondja: Üdvözlet, fémes 
+barátom! Mi járatban a mi kis 
+szeretett Plantheánkon?
+*
+Újabb információ, amit a robot mélyen 
+elraktározott magában.
+*
+LyRs mondja: Üdv! LyRs vagyok, 
+az egykori Föld lakója. Most 
+amolyan felfedező úton vagyok.
+Általában be szoktam segíteni a 
+helyieknek, mindig van valami teendő. 
+Itt segíthetek esetleg valamiben?
+*
+Ismeretlen lény mondja: Még szép! 
+Nálunk mindig van tennivaló, 
+amiben elkel a segítség.
+*
+LyRs mondja: Szuper! Mit kellene tennem?
+*
+Ismeretlen mondja: Leginkább most a 
+farönkök cipelésében kellene segédkezni, 
+LyRs barátom. Kövess, mutatom az utat. 
+Be is mutatlak a többi Lycantnak. 
+Egyébként én Keiko vagyok, ha bármi kellene, 
+hozzám nyugodtan fordulhatsz.
+*
+LyRs mondja: Rendben, köszönöm, Keiko!
+*
+Feladat: Kövesd Keiko-t!
+*
+//planthea1b2.txt

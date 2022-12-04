@@ -1,0 +1,37 @@
+//Megjelenik a Des"s"ert bolygó felszíne.
+LyRs mondja: Szóval ez lenne a híres-neves 
+Des”s”ert bolygó.
+*
+Mint minden, a robot számára ismeretlen 
+helyen, LyRs itt is felmérte a terepet 
+csúcstechnológiás érzékelőivel.
+*
+Mind szenzorai szerint, mind saját 
+„bőrén” tapasztalta, hogy a gravitá-
+ció szülőbolygójáéhoz hasonló. Ahogy
+haladt előre, az is tiszta lett számára, 
+hogy a bolygón csakis a sivatagos, 
+száraz éghajlat lelhető fel, az égen 
+a kegyetlenül tűző Nappal.
+*
+Már-már arra a következtetésre jutott, 
+hogy a meleg miatt az élet nem igazán 
+telepedett meg, hiába adott az éltető
+levegő.
+*
+Tápanyagokból mikroszemcse méretű akadt 
+csak, folyadékból szintúgy. Kevésen
+múlott, hogy a robot aktiválja 
+rakétáit, másik bolygón kutatva 
+az életet, mikor is fémlába beakadt 
+valamibe.
+*
+LyRs fém lába egy vaskos csapóajtóban 
+akadt meg. A robot meglepetten kezdte 
+cibálni, azonban a vastag fém nem
+kívánt megmozdulni.
+*
+Feladat: Aktiváld a lézeredet. Használd a
+TAMADAS parancsot az ajtó betöréséhez!
+*
+//dessert1.2.txt

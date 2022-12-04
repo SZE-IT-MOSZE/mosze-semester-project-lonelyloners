@@ -1,0 +1,60 @@
+//Odaérünk a kamrához.
+Járatról járatra mentek a vaksötétben, 
+ahol LyRs is csak a legélesebb éjjellátó 
+lencséinek hála nem ment neki az egyre
+szűkülő, poros földfalaknak.
+*
+Hosszas kóválygást követően a 
+szűkös járat lassan tágulni 
+kezdett, szépen, lépésenként.
+Nemsokára pedig eléjük tárult 
+a katonás rendbe szedett élelmiszer 
+kamra, ami igencsak megcsappant 
+állapotában volt.
+*
+Tisztán látszódott a rendezett 
+sorok és oszlopok labirintusában, 
+hogy honnan is hiányzik az ellopott készlet.
+*
+LyRs hosszabb-rövidebb gondolkodást 
+követően, látva, hogy szemmel látható 
+nyomok nincsenek, mikroszkopikus lencséihez 
+folyamodott. Azokon keresztül tisztán 
+látszottak a nyomok a poros földben: 
+valamiféle aprócska jármű nyomait vélte 
+felfedezni a földön.
+*
+LyRs mondja: Hé, azt hiszem, 
+találtam valamit! 
+*
+A robot odaintett oda a többi 
+látnokondnak. Nem voltak valami 
+lelkesek a felfedezést illetően. 
+*
+Egyvalaki vakkantott oda neki, egy 
+emberi években mérve olyan 40-50 
+körüli hím egyed.
+*
+Látnokondok hím mondja: Mégis mit találtál 
+azzal a mini-lencsével, bádogember,
+hangyaürüléket?
+*
+Kitörő röhögés fogadta a hím egyed 
+megjegyzését. LyRs hálát adott, hogy 
+nem volt annyira érzékeny, mint egykori 
+embertársai. Apja, az egykori tudós már 
+rég lekevert volna nekik egyet.
+*
+Mindez persze nem tartotta vissza a 
+robotot attól, hogy ne álljon ki 
+véleménye mellett, hogy az a nyom 
+pedig célra vezető lehet. Erősen 
+elgondolkozott, hogy otthagyja az 
+undok látnokondokat és maga 
+dolgozzon tovább az ügyön.
+*
+Követed a nyomokat (DONT A), vagy maradsz a
+többiekkel (DONT B)?
+*
+//dessert3a.txt
+//dessert3b.txt

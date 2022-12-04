@@ -1,0 +1,28 @@
+LyRs mondja: Legyen az élelmiszerkutatás.
+*
+A robot végül az egyes csapat mellett 
+döntött, odaszegülve a közben kettévált 
+látnokond sereg egyik csapatához.
+*
+A lények nem fogadták valami kitörő 
+lelkesedéssel, mégsem mertek hangosan 
+bosszankodni mesterük előtt.
+*
+Az idős mester, akiről kiderült,
+Wollaris a neve, elégedetten csapta
+össze szottyadt mancsait.
+*
+Wollaris mondja:  Remek! Akkor 
+mindenki útjára, nem érünk rá 
+egész nap lazsálni!
+*
+Ezzel meg is indult a kis csapat 
+a raktárak azon részéhez, ahol az 
+élelmiszerrel felszerelt tárolók 
+sorakoztak.
+*
+//Látnokondok elmennek az élelmiszeres kamra fele (animáció?)
+Feladat: Kövesd a Látnokondokat. Mozgáshoz 
+használd az ELORE és a HATRA parancsokat!
+*
+//dessert2a2.txt

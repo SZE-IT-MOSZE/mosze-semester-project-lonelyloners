@@ -1,0 +1,7 @@
+*exe
+*dll
+*zip
+lib/
+include/sdl/
+.vscode/
+*ttf
