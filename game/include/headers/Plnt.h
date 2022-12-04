@@ -5,6 +5,13 @@
 #include <sdl/SDL_image.h>
 #include <sdl/SDL_ttf.h>
 
+/**
+ * \brief Bolygókat tartalmazó osztály.
+ *
+ * Ebben az osztályban találhatók a bolygók
+ * megjelenítéséért felelős függvények.
+ * 
+ */
 class Plnt
 {
 public:

@@ -6,6 +6,16 @@
 
 #include "headers/Math.h"
 
+/**
+ * \brief A megjelenítendő elemeket tartalmazó osztály.
+ *
+ * Ebben az osztályban találhatók a képernyőn megjelenő
+ * elemek kezeléséért felelős függvények találhatók.
+ * Itt lehet megadni az egyes elemek pozícióit és különféle
+ * tulajdonságait.
+ * 
+ */
+
 class Entity
 {
 public:

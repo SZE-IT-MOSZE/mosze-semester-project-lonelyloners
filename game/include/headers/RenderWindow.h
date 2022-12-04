@@ -8,6 +8,15 @@
 #include <sdl/SDL_ttf.h>
 
 #include "headers/Entity.h"
+/**
+ * \brief A megjelenítésért felelős függvényeket tartalmazó osztály.
+ *
+ * Ebben az osztályban találhatók az Entityben létrehozott
+ * elemek elhelyezéséér felelős függvények.
+ * Továbbá a képernyőn megjelenő szöveg ebolvasásáért felelős
+ * függvények.
+ * 
+ */
 
 class RenderWindow
 {

@@ -10,11 +10,6 @@
 /**
  * \brief Menü megjelenítése.
  *
- * Egy képernyőt kap bemeti paraméterként, amire megjelenik a menü.
- * Visszatérési értékként egy integer szolgál, ami reprezentálja a 
- * megnyitásra szánt menüpontot.
- * 
- * \return Egy szám, ami a megnyomott menüpontot jelenti.
  */
 int Plnt::menu()
 {
@@ -240,12 +235,6 @@ int Plnt::menu()
 /**
  * \brief Prologus megjelenítése.
  *
- * Egy képernyőt kap bemeti paraméterként, amire megjelenik a prologus.
- * Visszatérési értékként egy logikai változó szolgál, ami reprezentálja a 
- * a következő döntési ágat.
- * 
- * \param menuWindow az ablak, amire megjelenítjük a menüt.
- * \return menuWindow ami a következő ágat jelöli.
  */
 void Plnt::prolog()
 {   
