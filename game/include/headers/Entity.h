@@ -1,7 +1,7 @@
 #pragma once
 
 #include <sdl/SDL.h>
-#include <SDL_Main.h> 
+#include <sdl/SDL_Main.h> 
 #include <sdl/SDL_image.h>
 
 #include "headers/Math.h"

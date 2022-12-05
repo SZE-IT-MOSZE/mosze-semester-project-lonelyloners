@@ -1,0 +1,18 @@
+# CMake generation dependency list for this directory.
+D:/GitHub/mosze-semester-project-lonelyloners/pch/googletest/googletest/CMakeLists.txt
+D:/GitHub/mosze-semester-project-lonelyloners/pch/googletest/googletest/cmake/Config.cmake.in
+D:/GitHub/mosze-semester-project-lonelyloners/pch/googletest/googletest/cmake/gtest.pc.in
+D:/GitHub/mosze-semester-project-lonelyloners/pch/googletest/googletest/cmake/gtest_main.pc.in
+D:/GitHub/mosze-semester-project-lonelyloners/pch/googletest/googletest/cmake/internal_utils.cmake
+D:/Program Files/CMake/share/cmake-3.25/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in
+D:/Program Files/CMake/share/cmake-3.25/Modules/CMakePackageConfigHelpers.cmake
+D:/Program Files/CMake/share/cmake-3.25/Modules/CheckCSourceCompiles.cmake
+D:/Program Files/CMake/share/cmake-3.25/Modules/CheckIncludeFile.cmake
+D:/Program Files/CMake/share/cmake-3.25/Modules/CheckLibraryExists.cmake
+D:/Program Files/CMake/share/cmake-3.25/Modules/FindPackageHandleStandardArgs.cmake
+D:/Program Files/CMake/share/cmake-3.25/Modules/FindPackageMessage.cmake
+D:/Program Files/CMake/share/cmake-3.25/Modules/FindPython.cmake
+D:/Program Files/CMake/share/cmake-3.25/Modules/FindPython/Support.cmake
+D:/Program Files/CMake/share/cmake-3.25/Modules/FindThreads.cmake
+D:/Program Files/CMake/share/cmake-3.25/Modules/Internal/CheckSourceCompiles.cmake
+D:/Program Files/CMake/share/cmake-3.25/Modules/WriteBasicConfigVersionFile.cmake
