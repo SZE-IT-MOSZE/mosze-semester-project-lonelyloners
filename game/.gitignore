@@ -1,6 +1,6 @@
-*exe
-*dll
-*zip
+*.exe
+*.dll
+*.zip
 build/
 lib/
 include/sdl/
