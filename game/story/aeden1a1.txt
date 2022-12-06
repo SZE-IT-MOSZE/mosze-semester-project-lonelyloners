@@ -30,6 +30,4 @@ Megtalálta őket. A második otthont.
 *
 A második Földet.
 *
-Feladat: Menj oda az emberekhez!
-*
-//aeden1a2.txt
+//good_ending.png

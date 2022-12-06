@@ -1,17 +1,11 @@
 # LonelyLoners: Magyar Sci-Fi RPG játék C++ nyelven.
-Leírás feltöltés alatt...
-
-## Game Map
-Feltöltés alatt...
+Történetünk szerint LyRs az árva robot elhagyja a kihalt Földet, hogy teljesítse alkotói utolsó kivánságát...
 
 ## Hogyan működik a játék
-Leírás feltöltés alatt...
+A játék command alapú, különböző parancsszavakkal lehet irányítani főszereplőnket.
 
 ## A játék célja
-Leírás feltöltés alatt...
-
-## Extrák
-Leírás feltöltés alatt...
+A játék célja, hogy saját döntéseinkkel befolyásoljuk LyRs döntéseit és így a játék történéseit. Vannak pozitív és negatív döntések, csupán rajtunk állnak hogy éppen melyiket válasszuk.
 
 ## Fordítás
 Az alábbi zip fájl tartalmának bemásolása szükséges a fordításhoz:<br>
