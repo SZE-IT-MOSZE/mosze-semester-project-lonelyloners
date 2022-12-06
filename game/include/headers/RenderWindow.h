@@ -63,4 +63,5 @@ private:
     const char* p_title;
     std::string curr_txt;
     int p_w, p_h, pg, frms, map;
+    std::vector<std::string> storyTextToRender;
 };

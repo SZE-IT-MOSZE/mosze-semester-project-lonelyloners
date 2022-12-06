@@ -324,13 +324,11 @@ SDL_Renderer* RenderWindow::getRenderer()
  */
 bool RenderWindow::renderText(TTF_Font* Sans)
 {
-    std::ifstream ifs(curr_txt);
-    std::string line;
-    const char * c;
     int i = 0, asterisk = 0, alline = 0; 
     SDL_Color blck = {0, 0, 0};
+    const char* c;
 
-    while(std::getline(ifs, line))
+    for (std::string line: storyTextToRender) 
     {
         alline++;
         if (pg > asterisk && (pg - 1) == asterisk && line.substr(0, 2) != "//" && line != "*")
@@ -358,6 +356,7 @@ bool RenderWindow::renderText(TTF_Font* Sans)
             SDL_FreeSurface(surfaceMessage);
             SDL_DestroyTexture(Message);
             i++;
+
         }
         if (line == "*")
         {
@@ -374,7 +373,6 @@ bool RenderWindow::renderText(TTF_Font* Sans)
     {
         return true;
     }
-    ifs.close();
 }
 /**
  * \brief A bekért szöveg képernyőre íratása.
@@ -469,6 +467,7 @@ void RenderWindow::nextTxt(bool c)
     {
         alline++;
     }
+
     ifs.close();
 
     std::ifstream ttt(curr_txt);
@@ -495,8 +494,18 @@ void RenderWindow::nextTxt(bool c)
 
     curr_txt = "story/" + curr_txt;
     std::cout << "curr_txt " << curr_txt << std::endl;
-
     ttt.close();
+    storyTextToRender.clear();
+    // az új txt sorainak betöltése egy vektorba
+    std::ifstream txt(curr_txt);
+
+    while(std::getline(txt, line))
+    {
+        storyTextToRender.push_back(line);
+    }
+    txt.close();
+
+
 }
 
 int RenderWindow::getMap()
