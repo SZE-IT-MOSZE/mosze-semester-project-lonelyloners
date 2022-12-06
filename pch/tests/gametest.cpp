@@ -174,10 +174,3 @@ class MockCommand : public Command
         MOCK_METHOD(bool,validate,(std::string command));
         MOCK_METHOD(std::string,getCommand,());
         MOCK_METHOD(std::string,getItem,());
-
-int main(int argc, char **argv) {
-  ::testing::InitGoogleTest(&argc, argv);
-    std::cin.get();
-	std::cin.get();
-  return RUN_ALL_TESTS();
-}
