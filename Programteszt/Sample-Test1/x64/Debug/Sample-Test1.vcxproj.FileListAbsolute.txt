@@ -1,6 +1,0 @@
-D:\GitHub\mosze-semester-project-lonelyloners\Programteszt\Sample-Test1\x64\Debug\Sample-Test1.vcxproj.CopyComplete
-D:\GitHub\mosze-semester-project-lonelyloners\Programteszt\Sample-Test1\x64\Debug\Sample-Test1.exe
-D:\GitHub\mosze-semester-project-lonelyloners\Programteszt\Sample-Test1\x64\Debug\gtestd.dll
-D:\GitHub\mosze-semester-project-lonelyloners\Programteszt\Sample-Test1\x64\Debug\gtest_maind.dll
-D:\GitHub\mosze-semester-project-lonelyloners\Programteszt\Sample-Test1\x64\Debug\gtestd.pdb
-D:\GitHub\mosze-semester-project-lonelyloners\Programteszt\Sample-Test1\x64\Debug\gtest_maind.pdb

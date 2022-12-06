@@ -9,9 +9,8 @@ game/lib/
 game/include/sdl/
 game/include/sdl_FULLOS/
 game/.vscode/
-pch/build/
-pch/build
 build/
+pch/build/
 pch/googletest/
 pch/.vscode/
 .vscode/
