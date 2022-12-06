@@ -39,7 +39,6 @@ int getRES()
     // szorzó visszaadása
     return RES;
 }
-
 /**
  * \brief Ellenőrzi, hogy két entity ütközik-e.
  *

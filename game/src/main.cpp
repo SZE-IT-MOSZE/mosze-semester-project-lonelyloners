@@ -47,7 +47,7 @@ int main(int argc, char* argv[])
     if (choice == 1)
     {
 
-        // g.prolog();
+        g.prolog();
 
         g.dessert1();
 
@@ -55,6 +55,8 @@ int main(int argc, char* argv[])
 
         g.glacies();
 
+        g.planthea();
+        
         // ablak törlése
         game.cleanUp();
         game.clear();

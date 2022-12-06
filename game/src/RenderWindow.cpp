@@ -75,7 +75,8 @@ RenderWindow::RenderWindow (const char* p_title, int p_w, int p_h) : window(NULL
     pg = frms = 1;
     map = 0;
     // első txt, többit kiolvassa
-    curr_txt = "story/bevezeto.txt";
+    curr_txt = "story/start.txt";
+    nextTxt(false);
 }
 /**
  * \brief Kép betöltése.
@@ -419,7 +420,6 @@ void RenderWindow::renderInputText(std::string inputText, TTF_Font* Sans)
  * 
  *  * \param c Ez tartalmazza a döntést.
  */
-
 void RenderWindow::nextTxt(bool c)
 {
     std::fstream set;
@@ -504,25 +504,49 @@ void RenderWindow::nextTxt(bool c)
         storyTextToRender.push_back(line);
     }
     txt.close();
-
-
 }
-
+/**
+ * \brief Térkép számánek visszaadása.
+ * 
+ * Visszaadja a térkép számát, ami alapján meghatározható a térkép.
+ * 
+ * \return A térkép száma.
+ */
 int RenderWindow::getMap()
 {
     return map;
 }
-
+/**
+ * \brief Megadott számú térkép beállítása.
+ * 
+ * Térkép váltása esetén a megadott számú térképet állítja be.
+ * 
+ * \param i Ez tartalmazza a térkép számát.
+ */
 void RenderWindow::setMap(int i)
 {
     map = i;
 }
-
+/**
+ * \brief Térkép alalapértelmezettre állítja.
+ * 
+ * Térkép váltása esetén az első térképre állítja a számlálót.
+ * 
+ */
 void RenderWindow::mapReset()
 {
     map = 0;
 }
-
+/**
+ * \brief Térkép megjelenítése.
+ * 
+ * Paraméterként kapott, nagy térkép, és a kivágandó részek koordinátái
+ * alapján a megfelelően beállított térkép száma alapján jeleníti meg a 
+ * térképet.
+ * 
+ * \param p_entity Ez tartalmazza a térképet.
+ * \param spritepos A nagy térkép egy részletének helye.
+ */
 void RenderWindow::updateMap(Entity& p_entity, std::vector<std::pair<int, int>> spritepos)
 {   
     SDL_Rect src;

@@ -15,15 +15,24 @@
 class Plnt
 {
 public:
-    Plnt(RenderWindow g, TTF_Font* f) : game(g), fnt(f) {};
+    Plnt(RenderWindow game, TTF_Font* fnt);
 
     int menu();
     void prolog();
     void dessert1();
     void dessert2();
     void glacies();
+    void planthea();
 
 private:
     RenderWindow game;
     TTF_Font* fnt;
+    // LyRs sprite sheet
+    std::vector<std::pair<int, int>> lyrsIdleR;
+    std::vector<std::pair<int, int>> lyrsIdleL;
+    std::vector<std::pair<int, int>> lyrsMoveR;
+    std::vector<std::pair<int, int>> lyrsMoveL;
+    std::vector<std::pair<int, int>> lyrsLaserR;
+    std::vector<std::pair<int, int>> lyrsLaserL;
+
 };
