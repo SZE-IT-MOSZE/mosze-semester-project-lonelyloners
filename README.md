@@ -14,19 +14,11 @@ Leírás feltöltés alatt...
 Leírás feltöltés alatt...
 
 ## Fordítás
-<<<<<<< HEAD
-Az alábbi zip fájl tartalmának bemásolása szükséges a fordításhoz:
-https://drive.google.com/file/d/1E3tjyOdmOn36XGTJrVF_rOu7abiTcw0O/view?usp=sharing
-Ez tartalmazza a fordításhoz szükséges header fájlokat, betűtípust és a futtatáshoz szükséges dll-t.
-Mingw parancs a fordításhoz:
-mingw32-make -f Makefile
-=======
 Az alábbi zip fájl tartalmának bemásolása szükséges a fordításhoz:<br>
 https://drive.google.com/file/d/1E3tjyOdmOn36XGTJrVF_rOu7abiTcw0O/view?usp=sharing<br>
 Ez tartalmazza a fordításhoz szükséges header fájlokat, betűtípust és a futtatáshoz szükséges dll-t.<br>
 Mingw parancs a fordításhoz:<br>
-mingw32-make -f MakeFile<br>
->>>>>>> 3ad2920d5cb49c0895bb5783f2ce3cbc6e6680f9
+mingw32-make -f Makefile<br>
 
 ## Videók a fejlesztés folyamata alatt
 https://youtu.be/CwNLm3udaaM<br>
