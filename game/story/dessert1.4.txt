@@ -68,8 +68,10 @@ raktározni. Viszont külön csapatokat kell
 kiküldeni a vízért és az élelemért is, 
 mert mindegyik nagyon nehezen beszerezhető.
 *
-Melyik csapatban szeretnél lenni? Az élelemkutatók (DONT A)
-vagy a vízkutatók (DONT B) csapatában?
+Melyik csapatban szeretnél lenni? 
+Az élelemkutatók  (DONT A)
+vagy a vízkutatók (DONT B)
+csapatában?
 *
-//dessert2a.txt
+//dessert2a1.txt
 //dessert2b.txt

@@ -28,7 +28,7 @@ public:
     
     void setSize(int w, int h);
     void setPosi(int x, int y);
-    
+    void setAbsPosi(int x, int y);
     void setTarget(int direct, int distance);
 
     void setDirZero()   { d = 0;    }

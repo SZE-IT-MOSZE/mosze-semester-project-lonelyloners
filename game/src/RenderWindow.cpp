@@ -479,7 +479,6 @@ void RenderWindow::nextTxt(bool c)
         {
             if (i == alline - 1)
             {
-
                 curr_txt = line.substr(2, line.length());
             }
         }
