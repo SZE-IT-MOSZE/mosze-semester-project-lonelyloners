@@ -950,6 +950,7 @@ void Plnt::dessert2()
     bool dontB = false;
     bool csakegyszer = false;
     bool kamraIndul = false;
+    bool d = false;
 
     // esemény létrehozása
     SDL_Event event;
@@ -1348,7 +1349,16 @@ void Plnt::dessert2()
                     }
                     else if (dontB)
                     {
-                        game.nextTxt(false);
+                        if (!csakegyszer)
+                        {
+                            game.nextTxt(false);
+                            csakegyszer = true;
+                        }
+                        if (game.getPage() == 7)
+                        {
+                            kamraIndul = true;     
+                        }   
+
                     }
                 }
                 if (kamraIndul)   
@@ -1542,8 +1552,18 @@ void Plnt::dessert2()
                             game.update(latnok3E, npcIdleL, npcIdleL.size(), 32, 32, 0, true);
                             break;
                     }
-
                 }
+
+                if (l.getPos().getY() == 256 && l.getPos().getX() == 224 && !d)
+                {
+                    game.nextTxt(false);
+                    game.resetPage();
+                    dontA = false;
+                    d = true;
+                }
+                if (l.getPos().getY() == 256 && l.getPos().getX() == 224 && !d)
+
+
 
                 break;
             case 1:
