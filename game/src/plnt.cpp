@@ -171,6 +171,7 @@ int Plnt::menu()
                             and event.button.y < 189 * res + 35 /* * getR() */
                             ) 
                             {
+                                game.nextPage();
                                 hlpGameDown = true;
                             }   
                             // beállítások gomb lenyomásának ellenőrzése
@@ -217,14 +218,14 @@ int Plnt::menu()
             SDL_Delay(500);
             menuRunning = false;
         }
-        else if (hlpGameDown)
-        {
-            game.render(hlpGameBD);
-            selectednumber = 3;
-            game.display();
-            SDL_Delay(500);
-            menuRunning = false;
-        }
+        //else if (hlpGameDown)
+        //{
+        //    game.render(hlpGameBD);
+        //    selectednumber = 3;
+        //    game.display();
+        //    SDL_Delay(500);
+        //    menuRunning = false;
+        //}
         else if (setGameDown)
         {
             game.render(setGameBD);
@@ -240,10 +241,6 @@ int Plnt::menu()
             game.display();
             SDL_Delay(500);
             menuRunning = false;
-        }
-        if (hlpGameDown == true)
-        {
-            
         }
         // gombok megjelenítése
         game.render(bckground);  
@@ -2678,7 +2675,6 @@ void Plnt::planthea()
                 game.render(wood4E);
                 game.render(berry4E);
                 game.render(berry5E);
-
 
                 break;
             case 1:
