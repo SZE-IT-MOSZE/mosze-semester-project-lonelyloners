@@ -55,7 +55,7 @@ RenderWindow glacies(RenderWindow game, TTF_Font* fnt)
 
 
     // LyRs összes animációját tartalmazó sprite sheet betöltése
-    SDL_Texture* lyrsAnim = game.loadTexture("res/gfx/Animations/lyrs_sprite_sheet.png");
+    SDL_Texture* lyrsAnim = game.loadTexture("res/gfx/Animations/LyRs/Lyrs_seta.png");
     Entity l(V2F(64, 96), lyrsAnim);
     l.setPosi(64, 96);
     // szöveg háttér betöltése

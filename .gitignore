@@ -14,3 +14,8 @@ pch/build/
 pch/googletest/
 pch/.vscode/
 .vscode/
+!game/build/res/*
+!game/build/story/*
+!game/build/SDL2_image.dll
+!game/build/SDL2_ttf.dll
+!game/build/SDL2.dll

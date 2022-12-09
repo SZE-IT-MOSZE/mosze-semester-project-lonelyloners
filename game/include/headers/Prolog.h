@@ -28,7 +28,7 @@ RenderWindow prolog(RenderWindow game, TTF_Font* fnt)
     SDL_Texture* inputTextBckGround = game.loadTexture("res/gfx/Objects/blck_bckgrnd.png");
     Entity inptxtbckground(V2F(0, 384), inputTextBckGround);
     // LyRs összes animációját tartalmazó sprite sheet betöltése
-    SDL_Texture* lyrsAnim = game.loadTexture("res/gfx/Animations/lyrs_sprite_sheet.png");
+    SDL_Texture* lyrsAnim = game.loadTexture("res/gfx/Animations/LyRs/Lyrs_seta.png");
     Entity l(V2F(64, 0), lyrsAnim);
     l.setPosi(64 * game.getRES(), 0);
 

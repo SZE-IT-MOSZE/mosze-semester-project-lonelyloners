@@ -65,7 +65,7 @@ RenderWindow dessert2(RenderWindow game, TTF_Font* fnt)
     latnokMoveL = { {160,   0}, {192,   0}, {224,   0}, {256,  0},  {288,  0} };
 
     // LyRs összes animációját tartalmazó sprite sheet betöltése
-    SDL_Texture* lyrsAnim = game.loadTexture("res/gfx/Animations/lyrs_sprite_sheet.png");
+    SDL_Texture* lyrsAnim = game.loadTexture("res/gfx/Animations/LyRs/Lyrs_seta.png");
     Entity l(V2F(288, 0), lyrsAnim);
     l.setPosi(288 * game.getRES(), 0);
     // szöveg háttér betöltése
