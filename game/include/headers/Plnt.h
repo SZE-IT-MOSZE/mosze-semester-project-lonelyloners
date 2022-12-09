@@ -24,7 +24,14 @@ public:
     void glacies();
     void planthea();
 
+    void ladaPlusz() { lada++; };
+    void sivatagiBogyoPlusz() { sivatagiBogyo++; };
+    void faRonkPlusz() { faRonk++; };
+    void nemSivatagiBogyoPlusz() { nemSivatagiBogyo++; };
+
 private:
+    int lada, sivatagiBogyo, faRonk, nemSivatagiBogyo;
+
     RenderWindow game;
     TTF_Font* fnt;
     // LyRs sprite sheet

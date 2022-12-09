@@ -142,13 +142,8 @@ beismerni, hogy jól jött a robot segítsége.
 Feladat: Segíts a Látnokondoknak 
 vissza pakolni az élelmiszeres ládákat 
 a raktárba! Ládák felvételéhez lépj 
-azok mellé és használd a FELVESZ parancsot! 
-A visszavitt láda-kupacnál használd az
-eszköztáradhoz kapcsolódó parancsot: 
-TARGYAK paranccsal kilistázod az 
-eszköztáradban tárolt tárgyakat. 
-Adott tárgy használatára a 
-következő parancsot alkalmazhatod: 
-HASZNAL ESZKOZNEVE
+azok mellé és használd a FELVESZ parancsot!
+Majd térj vissza Wollaris mesterhez és
+használd a BESZEL parancsot!
 *
 //dessert3a3.txt

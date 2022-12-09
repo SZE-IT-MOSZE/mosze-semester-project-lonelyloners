@@ -3,21 +3,21 @@ hogy eljut a kihalás szélére.
 Bátran folytatta környezetszennyező, 
 figyelmetlen életmódját.
 *
-// Az óceánok és a földek azonban 
-// csak-csak teltek szeméttel, csak-csak 
-// pusztultak időről időre, kiszorítva 
-// a Föld összes élőlényét.
-// *
-// Először a gyengébbek hullottak el.
-// Növények, melyek nem bírták a bolygó 
-// mocsoktól nehéz levegőjét.
-// *
-// Őket követték a növényevők, 
-// kisebbtől a nagyobb fele haladva.
-// Utánuk pedig nem sokkal tünedeztek 
-// el a ragadozók, napról-napra, 
-// szemmel látható ritmusban.
-// *
+Az óceánok és a földek azonban 
+csak-csak teltek szeméttel, csak-csak 
+pusztultak időről időre, kiszorítva 
+a Föld összes élőlényét.
+*
+Először a gyengébbek hullottak el.
+Növények, melyek nem bírták a bolygó 
+mocsoktól nehéz levegőjét.
+*
+Őket követték a növényevők, 
+kisebbtől a nagyobb fele haladva.
+Utánuk pedig nem sokkal tünedeztek 
+el a ragadozók, napról-napra, 
+szemmel látható ritmusban.
+*
 // Utoljára maradtak az emberek...
 // Föld alatti, hipermodern bunkereket 
 // építettek. Mesterséges módon elő-

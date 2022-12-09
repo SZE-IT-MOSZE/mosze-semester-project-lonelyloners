@@ -31,7 +31,7 @@ Plnt::Plnt(RenderWindow g, TTF_Font* f) : game(g), fnt(f)
                         { 0, 288}, {64, 288}, {128, 288}, {192, 288}, {256, 288} , 
                         { 0, 320}, {64, 320}, {128, 320}, {192, 320}, {256, 320} ,
                         { 0, 352}, {64, 352}, {128, 352}, {192, 352}, {256, 352} };
-
+    lada = sivatagiBogyo = faRonk = nemSivatagiBogyo = 0;
 }
 /**
  * \brief Menü megjelenítése.
@@ -947,7 +947,9 @@ void Plnt::dessert2()
     bool dontB = false;
     bool csakegyszer = false;
     bool kamraIndul = false;
-    bool d = false;
+    bool d = false; 
+    bool only1 = false;
+    bool e = false;
 
     // esemény létrehozása
     SDL_Event event;
@@ -1279,10 +1281,6 @@ void Plnt::dessert2()
                 attack = game.update(l, lyrsLaserL, lyrsLaserL.size(), 64, 32, 32, false);
             }
         }
-        if (l.getPos().getY() == 256 && l.getPos().getX() == 32 && belep) 
-        {
-            gameRunning = false;
-        }
         switch (game.getMap())  {
             case 0:
                 game.update(latnok5E, npcIdleL, npcIdleL.size(), 32, 32, 0, true);
@@ -1341,7 +1339,7 @@ void Plnt::dessert2()
                         }
                         if (game.getPage() == 7)
                         {
-                            kamraIndul = true;     
+                            kamraIndul = true;
                         }   
                     }
                     else if (dontB)
@@ -1355,7 +1353,6 @@ void Plnt::dessert2()
                         {
                             kamraIndul = true;     
                         }   
-
                     }
                 }
                 if (kamraIndul)   
@@ -1556,10 +1553,24 @@ void Plnt::dessert2()
                     game.nextTxt(false);
                     game.resetPage();
                     dontA = false;
+                    dontB = false;
                     d = true;
                 }
-                if (l.getPos().getY() == 256 && l.getPos().getX() == 224 && !d)
-
+                if (l.getPos().getY() == 256 && l.getPos().getX() == 224)
+                {
+                    if (dontA)
+                    {
+                        game.nextTxt(true);
+                        e = true;
+                        dontA = false;
+                    }
+                    if (dontB)
+                    {
+                        game.nextTxt(true);
+                        e = true;
+                        dontB = false;
+                    }
+                }
 
 
                 break;
@@ -1571,6 +1582,15 @@ void Plnt::dessert2()
                 game.update(antEI2, npcIdleR, npcIdleR.size(), 32, 32, 0, true);
                 game.update(antEI3, npcIdleL, npcIdleL.size(), 32, 32, 0, true);
                 
+                if (l.getPos().getY() == 96 && l.getPos().getX() == 160)
+                {
+                    if (!only1)
+                    {
+                        game.nextTxt(true);
+                        only1 = true;
+                    }
+                }
+
                 break;
             case 2:
                 game.render(wtrE);
@@ -1754,7 +1774,6 @@ void Plnt::glacies()
     bool jobbra = false;
     bool balra = false;
     bool flip = true;
-    bool crack = false;
     bool nxttxt = true;
     bool belep = false;
     // esemény létrehozása
@@ -2090,10 +2109,6 @@ void Plnt::glacies()
                 // LyRs balra támad animáció következő kockája
                 attack = game.update(l, lyrsLaserL, lyrsLaserL.size(), 64, 32, 32, false);
             }
-            if ((l.getPos().getY() == 352 && l.getPos().getX() == 288) || (l.getPos().getY() == 352 && l.getPos().getX() == 320))
-            {
-                crack = true;
-            }
         }
 
         switch (game.getMap())  {
@@ -2268,7 +2283,6 @@ void Plnt::planthea()
     bool jobbra = false;
     bool balra = false;
     bool flip = true;
-    bool crack = false;
     bool nxttxt = true;
     bool belep = false;
     // esemény létrehozása
@@ -2660,10 +2674,6 @@ void Plnt::planthea()
             {
                 // LyRs balra támad animáció következő kockája
                 attack = game.update(l, lyrsLaserL, lyrsLaserL.size(), 64, 32, 32, false);
-            }
-            if ((l.getPos().getY() == 352 && l.getPos().getX() == 288) || (l.getPos().getY() == 352 && l.getPos().getX() == 320))
-            {
-                crack = true;
             }
         }
 
