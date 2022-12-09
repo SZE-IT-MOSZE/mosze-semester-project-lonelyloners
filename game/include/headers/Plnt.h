@@ -31,7 +31,7 @@ public:
 
 private:
     int lada, sivatagiBogyo, faRonk, nemSivatagiBogyo;
-
+    bool kulcs;
     RenderWindow game;
     TTF_Font* fnt;
     // LyRs sprite sheet

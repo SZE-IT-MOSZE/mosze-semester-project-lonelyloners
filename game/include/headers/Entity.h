@@ -43,4 +43,3 @@ private:
     SDL_Texture* tex;
     int d, x, y;
 };
-

@@ -1,6 +1,7 @@
 //LyRs odaér az ellopott ételekhez.
 Változatos méretű járatokon át vezetett 
-az út, amerre az aprócska nyomok kanyarogtak.
+az út, amerre az aprócska nyomok
+kanyarogtak.
 *
 LyRs hol összehúzta magát, amennyire csak 
 lehetett, hol pedig kényelmesen átfért.
@@ -13,18 +14,20 @@ Biztos, ami biztos.
 Egy örökkévalóságnak tűnő idő 
 múltán a nyomokat zajok váltották fel. 
 Zajok, immáron jól látható forrásból: 
-egy sereg, furcsának tűnő lény masírozott 
-szorgosan hol hatalmas lapátokkal, 
-hol méretes ládákkal.
+egy sereg, furcsának tűnő lény
+masírozott szorgosan hol hatalmas
+lapátokkal, hol méretes ládákkal.
 *
 LyRs mondja: Az eltűnt ételes dobozok!
 *
 Egyszerre érezte magát büszkén, hogy ő 
 találta meg az eltűnt szajrét és riadtan, 
-ahogy tekintete a lapátos lényekre vándorolt.
+ahogy tekintete a lapátos lényekre
+vándorolt.
 *
-Egy hatalmas gödröt mélyítettek éppenséggel, 
-amelynek peremén pokrócok sorakoztak még 
+Egy hatalmas gödröt mélyítettek
+éppenséggel, amelynek peremén 
+pokrócok sorakoztak még 
 felgöngyölített állapotukban.
 *
 A gödör közepén meghagytak egy vékonyka 
@@ -69,15 +72,16 @@ az értékes tartalékokkal.
 LyRs ezt nem hagyhatta, az igazságérzete 
 teljes mértékben a Látnokondok mellett 
 állt, hiába nem szerette őt egyikük sem 
-a mesteren kívül. A robot rögvest felmérte 
-a terepet minden aprócska részletével együtt.
+a mesteren kívül. A robot rögvest
+felmérte a terepet minden aprócska
+részletével együtt.
 *
 Figyelmesen dolgozta fel az adatokat, 
 mérlegelve a lehetséges kimeneteleket is, 
 amelyekkel együtt hamar le tudta szűkíteni 
 a mindenhogyan legjobbnak számító tervre 
-tágas adatbázisát: a meglepetés erejével 
-fogja rájuk hozni a frászt.
+tágas adatbázisát: a meglepetés
+erejével fogja rájuk hozni a frászt.
 *
 Látva, hogy egy zsugorító lézerrel tudnak 
 csak olyan kicsivé válni, ki tudja úgy 
@@ -93,10 +97,11 @@ akciója rossz szándékú űrlények ellen.
 *
 Felizzott áramkörökkel, fegyvereit jól
 láthatóan elővéve lépett ki rejtekhelye 
-mögül a robot. Fúrójával hangosan kaszabolta 
-a levegőt, ahogy beindította a szemei mögé 
-beszerelet lámpákat, hogy még rémisztőbbnek 
-tűnjön: el is érte hatását.
+mögül a robot. Fúrójával hangosan
+kaszabolta a levegőt, ahogy beindította
+a szemei mögé beszerelet lámpákat, hogy
+még rémisztőbbnek tűnjön:
+el is érte hatását.
 *
 A hangya-lények teljesen lesokkolódtak, 
 sokuk még el is dobta az aktuálisan 
@@ -115,13 +120,15 @@ LyRs mondja: Dobjatok el azonnal
 mindent és feküdjetek le a földre, 
 hassal!
 *
-A lények gondolkodás nélkül engedelmeskedtek
-a robotnak, féltve saját életüket. Mindegyikük 
-elhajította az éppen nála lévő tárgyat, hasra 
-vetve magát LyRs előtt.
+A lények gondolkodás nélkül
+engedelmeskedtek a robotnak, 
+féltve saját életüket. Mindegyikük 
+elhajította az éppen nála lévő tárgyat,
+hasra vetve magát LyRs előtt.
 *
 A robot elégedetten suhant körbe, mindegyik
-hangya-lény összes lábát összekötve annak párjával.
+hangya-lény összes lábát összekötve
+annak párjával.
 *
 Pont időben végzett arra, mire a látnokondok 
 oda keveredtek, arra a látványra, ahogy a robot 
@@ -133,16 +140,19 @@ A meglepett látnokondok közül az a
 fiatalabbik egyed lépett elő, 
 dicsérte meg, amelyik előzőleg kigúnyolta.
 *
-Fiatal Látnokondok mondja: Szép volt, robot...
+Fiatal Látnokondok mondja: 
+Szép volt, robot...
 *
 Érezte a hangjában, hogy továbbra sem 
 szívleli LyRs-t, azonban kénytelen volt 
-beismerni, hogy jól jött a robot segítsége.
+beismerni, hogy jól jött a robot
+segítsége.
 *
 Feladat: Segíts a Látnokondoknak 
 vissza pakolni az élelmiszeres ládákat 
 a raktárba! Ládák felvételéhez lépj 
-azok mellé és használd a FELVESZ parancsot!
+azok mellé és használd a FELVESZ
+parancsot!
 Majd térj vissza Wollaris mesterhez és
 használd a BESZEL parancsot!
 *
