@@ -35,6 +35,8 @@ public:
     int getDirection()  { return d; }
     int getTargetX()    { return x; }
     int getTargetY()    { return y; }
+    
+    void setAttack();
 
 private:
 
@@ -42,4 +44,5 @@ private:
     SDL_Rect currentFrame;
     SDL_Texture* tex;
     int d, x, y;
+    bool attack = false;
 };
