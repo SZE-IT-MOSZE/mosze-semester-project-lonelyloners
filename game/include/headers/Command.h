@@ -3,6 +3,8 @@
 #include <string>
 #include <vector>
 
+#include "headers/RenderWindow.h"
+
 class Command {
     private:
         std::vector<std::string> commands;
@@ -21,7 +23,7 @@ class Command {
     
     public:
         Command();
-        void make(std::string input);
+        void make(std::string input, TTF_Font* fnt, RenderWindow w);
         std::string getCommand();
         std::string getItem();
         void reset();

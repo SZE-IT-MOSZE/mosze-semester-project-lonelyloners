@@ -421,6 +421,8 @@ void RenderWindow::renderInputText(std::string inputText, TTF_Font* Sans)
 void RenderWindow::renderInfoText(std::string inputText, TTF_Font* Sans)
 {  
     const char* c;
+    
+    SDL_RenderClear(renderer);
 
     SDL_Color wht = {255, 255, 255};
     inputText = ">> " + inputText;

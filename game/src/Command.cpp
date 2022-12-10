@@ -135,13 +135,13 @@ void Command::setCommand(std::string cm) {
     }
 }
 
-void Command::make(std::string input) {
+void Command::make(std::string input, TTF_Font* fnt, RenderWindow w) {
     if(this->check_input(input)) {
         this -> setCommand(input);
-        std::cout << "Jó parancs" << std::endl;
+        w.renderInfoText("Jó parancs", fnt);
     }
     else {
-        std::cout << "Hibás parancs" << std::endl;
+        w.renderInfoText("Hibás parancs", fnt);
     }
 }
 

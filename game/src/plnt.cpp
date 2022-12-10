@@ -368,7 +368,7 @@ void Plnt::prolog()
                                     {
                                         std::cout << " TARGET COORDINATE: " << l.getTargetY() << " \t " << l.getTargetX() << std::endl;
                                     }
-                                    c.make(command);
+                                    c.make(command, fnt, game);
                                     r.route(c.getCommand(), c.getItem(), l);
                                     c.reset();
 
@@ -521,7 +521,7 @@ void Plnt::dessert1()
                                 {
                                     gameRunning = false;
                                 }
-                                c.make(command);
+                                c.make(command, fnt, game);
                                 r.route(c.getCommand(), c.getItem(), l);
                                 c.reset();
                                 
@@ -1059,7 +1059,7 @@ void Plnt::dessert2()
                                 {
                                     beszel = true;
                                 }
-                                c.make(command);
+                                c.make(command, fnt, game);
                                 r.route(c.getCommand(), c.getItem(), l);
                                 c.reset();
 
@@ -1999,7 +1999,7 @@ void Plnt::glacies()
                                     {
                                         belep = true;
                                     }
-                                    c.make(command);
+                                    c.make(command, fnt, game);
                                     r.route(c.getCommand(), c.getItem(), l);
                                     c.reset();
 
@@ -2508,7 +2508,7 @@ void Plnt::planthea()
                                     {
                                         belep = true;
                                     }
-                                    c.make(command);
+                                    c.make(command, fnt, game);
                                     r.route(c.getCommand(), c.getItem(), l);
                                     c.reset();
 
