@@ -14,20 +14,13 @@
  * \param rw Egy RenderWindow objektum, amely a kiíró parancsok használatához kell.
  */
 
-void Router::route(std::string cm, std::string it, Entity& ent, RenderWindow& rw, Map& map) {
+void Router::route(std::string cm, std::string it, Entity& ent, Map& map) {
     if(cm == "FEL" || cm == "LE" || cm == "JOBBRA" || cm == "BALRA" || cm == "ELORE" || cm == "HATRA") {
-        this->move(cm, it, ent);
+        this->move(cm, it, ent, map);
     }
     else if(cm == "HELP" || cm == "SEGITSEG") {
         this->help();
     }
-    else if(cm == "LAPOZ" || mc == "LAPOZZ") {
-        this->nextPage(rw);
-    }
-    else if(cm == "TAMADAS") {
-        this->attack(ent);
-    }
-
 }
 /**
  * \brief Segítség kiírása.
@@ -51,43 +44,15 @@ void Router::move(std::string cm, std::string it, Entity& ent, Map& map) {
     int dist = std::stoi(it);
 
     if(cm == "FEL" || cm == "ELORE") {
-        if(map.matrix_pos(1, dist)) {
-            ent.setTarget(1, dist);
-        }
-        else {
-            std::cout << "Ide nem léphetsz";
-        }
+        ent.setTarget(1, dist);
     }
     else if(cm == "JOBBRA") {
-        if(map.matrix_pos(2, dist)) {
-            ent.setTarget(2, dist);
-        }
-        else {
-            std::cout << "Ide nem léphetsz";
-        }
+        ent.setTarget(2, dist);
     }
     else if(cm == "LE" || cm == "HATRA") {
-        if(map.matrix_pos(2, dist)) {
-            ent.setTarget(2, dist);
-        }
-        else {
-            std::cout << "Ide nem léphetsz";
-        }
+        ent.setTarget(3, dist);
     }
     else if(cm == "BALRA") {
-        if(map.matrix_pos(2, dist)) {
-            ent.setTarget(2, dist);
-        }
-        else {
-            std::cout << "Ide nem léphetsz";
-        }
+        ent.setTarget(4, dist);
     }
-}
-
-void Router::nextPage(RenderWindow& rw) {
-    rw.nextPage();
-}
-
-void Router::attack(Entity& e) {
-    e.setAttack();
 }

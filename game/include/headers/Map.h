@@ -1,3 +1,5 @@
+#pragma once
+
 #include <string>
 #include <vector>
 
@@ -10,7 +12,7 @@ private:
   Entity e;
 
 public:
-  Map(std::string path, Entity e);
+  Map(std::string pth, Entity ent);
   void csv2vector();
   bool matrix_pos(int dir, int dist);
 };

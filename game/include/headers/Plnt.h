@@ -1,9 +1,14 @@
+#pragma once
+
 #include <iostream>
 #include <string>
 #include <vector>
 #include <sdl/SDL.h>
 #include <sdl/SDL_image.h>
 #include <sdl/SDL_ttf.h>
+#include <sdl/SDL_ttf.h>
+
+#include "headers/Map.h"
 
 /**
  * \brief Bolygókat tartalmazó osztály.

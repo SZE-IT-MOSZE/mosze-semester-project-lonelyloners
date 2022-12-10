@@ -318,6 +318,7 @@ void Plnt::prolog()
 
     SDL_StartTextInput();
     Command c = Command();
+    Map mapMatrix("matrix/dessert1/dessert1.matrix", l);
 
     // prologus
     while(gameRunning)
@@ -369,7 +370,7 @@ void Plnt::prolog()
                                         std::cout << " TARGET COORDINATE: " << l.getTargetY() << " \t " << l.getTargetX() << std::endl;
                                     }
                                     c.make(command, fnt, game);
-                                    r.route(c.getCommand(), c.getItem(), l);
+                                    r.route(c.getCommand(), c.getItem(), l, mapMatrix);
                                     c.reset();
 
                                     command = "";
@@ -440,7 +441,6 @@ void Plnt::dessert1()
 
     // parancs választó deklarálása
     Router r = Router();
-
     // összes logikai változó a gombnyomásokhoz
     bool gameRunning = true;
     bool attack = false;
@@ -462,6 +462,7 @@ void Plnt::dessert1()
     std::string command;
     
     Command c = Command();
+    Map mapMatrix("matrix/dessert1/dessert1.matrix", l);
 
     gameRunning = true;
     // dessert1
@@ -522,7 +523,7 @@ void Plnt::dessert1()
                                     gameRunning = false;
                                 }
                                 c.make(command, fnt, game);
-                                r.route(c.getCommand(), c.getItem(), l);
+                                r.route(c.getCommand(), c.getItem(), l, mapMatrix);
                                 c.reset();
                                 
                                 command = "";
@@ -984,9 +985,10 @@ void Plnt::dessert2()
     game.nextTxt(next);
 
     Command c = Command();
+    Map mapMatrix("matrix/dessert1/dessert1.matrix", l);
 
     gameRunning = true;
-    // dessert1
+    // dessert2
     while(gameRunning)
     {
         // képkockák számolása
@@ -1060,7 +1062,7 @@ void Plnt::dessert2()
                                     beszel = true;
                                 }
                                 c.make(command, fnt, game);
-                                r.route(c.getCommand(), c.getItem(), l);
+                                r.route(c.getCommand(), c.getItem(), l, mapMatrix);
                                 c.reset();
 
                                 command = "";
@@ -1940,6 +1942,7 @@ void Plnt::glacies()
     // input text 
     std::string command;
     Command c = Command();
+    Map mapMatrix("matrix/dessert1/dessert1.matrix", l);
 
     gameRunning = true;
     // glacies
@@ -2000,7 +2003,7 @@ void Plnt::glacies()
                                         belep = true;
                                     }
                                     c.make(command, fnt, game);
-                                    r.route(c.getCommand(), c.getItem(), l);
+                                    r.route(c.getCommand(), c.getItem(), l, mapMatrix);
                                     c.reset();
 
                                     command = "";
@@ -2449,6 +2452,7 @@ void Plnt::planthea()
     // input text 
     std::string command;
     Command c = Command();
+    Map mapMatrix("matrix/dessert1/dessert1.matrix", l);
 
     gameRunning = true;
     // glacies
@@ -2509,7 +2513,7 @@ void Plnt::planthea()
                                         belep = true;
                                     }
                                     c.make(command, fnt, game);
-                                    r.route(c.getCommand(), c.getItem(), l);
+                                    r.route(c.getCommand(), c.getItem(), l, mapMatrix);
                                     c.reset();
 
                                     command = "";

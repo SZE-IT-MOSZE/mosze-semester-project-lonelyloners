@@ -3,6 +3,7 @@
 #include <string>
 
 #include "headers/RenderWindow.h"
+#include "headers/Map.h"
 
 class Router {
     private:
@@ -12,5 +13,5 @@ class Router {
         void attack(Entity& e);
 
     public:
-        void route(std::string command, std::string item, Entity& ent, RenderWindow& rw, Map& map);
+        void route(std::string cm, std::string it, Entity& ent, Map& map);
 };

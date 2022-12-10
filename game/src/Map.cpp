@@ -5,10 +5,7 @@
 
 #include "headers/Map.h"
 
-Map::Map(std::string path, Entity e) {
-    this->map = path;
-    this->e = e;
-}
+Map::Map(std::string pth, Entity ent) : map(pth), e(ent) {}
 
 void Map::csv2vector() {
   std::ifstream map_file(this->map);
@@ -33,10 +30,10 @@ void Map::csv2vector() {
   map_file.close();
 }
 
-bool matrix_pos(int dir, int dist) {
-    int x  = getPos().getX();
+bool Map::matrix_pos(int dir, int dist) {
+    int x  = e.getPos().getX();
     x = static_cast<int>(x) / 32 - 1;
-    int y  = getPos().getY();
+    int y  = e.getPos().getY();
     y = static_cast<int>(y) / 32 - 1;
   
     while (y >= 0 && x >= 0 && y < 12 && x < 12 && dist > 0) {
