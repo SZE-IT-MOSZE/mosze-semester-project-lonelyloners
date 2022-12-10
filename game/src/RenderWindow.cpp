@@ -413,6 +413,43 @@ void RenderWindow::renderInputText(std::string inputText, TTF_Font* Sans)
     SDL_DestroyTexture(Message);    
 }
 /**
+ * \brief A egyéb információ megjelenítése.
+ * 
+ * Parancs, interakció és egyéb információs üzenet
+ * 
+ */
+void RenderWindow::renderInfoText(std::string inputText, TTF_Font* Sans)
+{  
+    const char* c;
+
+    SDL_Color wht = {255, 255, 255};
+    inputText = ">> " + inputText;
+
+    c = inputText.c_str();
+
+    SDL_Surface* surfaceMessage = TTF_RenderUTF8_Blended(Sans, c, wht); 
+
+    SDL_Texture* Message = SDL_CreateTextureFromSurface(renderer, surfaceMessage);
+
+    // létrehoz egy téglalapot
+    SDL_Rect Message_rect;
+    // beállítja a téglalap x koordinátáját  
+    Message_rect.x = 434 * getRES();    
+    // beállítja a téglalap x koordinátáját
+    Message_rect.y = 416 * getRES();    
+    // beállítja a téglalap szélességét
+    Message_rect.w = 12 * inputText.length() * getRES();
+    // beállítja a téglalap magasságát
+    Message_rect.h = 36 * getRES();    
+
+    SDL_RenderCopy(renderer, Message, NULL, &Message_rect);
+
+    // memória felszabadítása
+    SDL_FreeSurface(surfaceMessage);
+    SDL_DestroyTexture(Message);    
+}
+
+/**
  * \brief A következő txt meghatározása.
  * 
  * Paraméterként kapott, játékos inputján

@@ -41,6 +41,7 @@ public:
     void right(Entity& p_entity);   
     
     void renderInputText(std::string inputText, TTF_Font* Sans);
+    void renderInfoText(std::string inputText, TTF_Font* Sans);
     void nextTxt(bool c);
     void nextPage() { pg++; };
     int getPage() { return pg; };

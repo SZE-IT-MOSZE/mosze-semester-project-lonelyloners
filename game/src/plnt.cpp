@@ -902,6 +902,16 @@ void Plnt::dessert2()
     Entity jujjEzNagyonKigyoE2(V2F(0,0), jujjEzNagyonKigyo2);
     jujjEzNagyonKigyoE2.setPosi(320, 288);
 
+    // aranykulcs betöltése
+    SDL_Texture* goldenKey = game.loadTexture("res/gfx/Objects/goldenkey.png");
+    Entity goldenKeyE(V2F(200, 112), goldenKey);
+    goldenKeyE.setSize(16,16);
+    
+    // ezüst kupa betöltése
+    SDL_Texture* silverstatue = game.loadTexture("res/gfx/Objects/silverstatue.png");
+    Entity silverstatueE(V2F(200, 112), silverstatue);
+    silverstatueE.setSize(16,16);
+
     // térbeli kövek
     SDL_Texture* rocks = game.loadTexture("res/gfx/Dessert_Map2/dessert_map2_rocks.png");
     Entity rocksEntity(V2F(0, 0), rocks);
@@ -958,6 +968,10 @@ void Plnt::dessert2()
     bool e = false;
     bool hangyaIndul = false;
     bool felvesz = false;
+    bool gk = false;
+    bool f = false;
+    bool nm = false;
+
     // esemény létrehozása
     SDL_Event event;
     // FPS limitációhoz szükséges változók
@@ -1355,6 +1369,7 @@ void Plnt::dessert2()
                         {
                             game.nextTxt(true);
                             csakegyszer = true;
+                            beszel = false;
                         }
                         if (game.getPage() == 7)
                         {
@@ -1367,10 +1382,7 @@ void Plnt::dessert2()
                         {
                             game.nextTxt(false);
                             csakegyszer = true;
-                        }
-                        if (game.getPage() == 7)
-                        {
-                            kamraIndul = true;     
+                            beszel = false;
                         }
                     }
                 }
@@ -1592,10 +1604,33 @@ void Plnt::dessert2()
                 }
                 if (l.getPos().getY() == 96 && l.getPos().getX() == 224 && beszel && lada == 1)
                 {
-                    game.nextTxt(false);
-                    game.resetPage();
-                    beszel = false;
-                    kulcs = true;
+                    if (!f)
+                    {
+                        game.nextTxt(false);
+                        game.resetPage();
+                        f = true;
+                    }    
+                    if (dontA)
+                    {
+                        gk = true;
+                        kulcs = true;
+                        game.nextTxt(true);
+                        game.resetPage();
+                        nm = true;
+                        dontA = false;
+                    }
+                    else if (dontB)
+                    {                        
+                        game.nextTxt(false);
+                        game.resetPage();
+                        nm = true;
+                        dontB = false;
+                    }
+                    if (gk) 
+                    {
+                        game.render(goldenKeyE);
+                    }
+
                 }
 
                 break;
@@ -1753,7 +1788,15 @@ void Plnt::dessert2()
         }
         // szöveg háttér
         game.render(txtbckground);
-        game.renderText(fnt);
+        
+        if (!nm)
+        {
+            game.renderText(fnt);
+        }
+        else
+        {
+            gameRunning = game.renderText(fnt);
+        }
         // input box
         game.render(inptxtbckground);
         game.renderInputText(command, fnt);
