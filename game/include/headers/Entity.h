@@ -36,8 +36,8 @@ public:
     int getTargetX()    { return x; }
     int getTargetY()    { return y; }
     
-    void setAttack();
-
+    void setAttack(bool a);
+    bool getAttack() { return attack; };
 private:
 
     V2F posi;

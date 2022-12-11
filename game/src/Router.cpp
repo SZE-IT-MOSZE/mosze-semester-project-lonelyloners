@@ -15,7 +15,7 @@
   * \param rw Egy RenderWindow objektum, amely a kiíró parancsok használatához kell.
   */
  
-void Router::route(std::string cm, std::string it, Entity& ent, RenderWindow& rw, Map& map, TTF_Font* fnt) {
+void Router::route(std::string cm, std::string it, Entity& ent, RenderWindow& rw, Map& map, TTF_Font* fnt, Plnt& p) {
      if(cm == "FEL" || cm == "LE" || cm == "JOBBRA" || cm == "BALRA" || cm == "ELORE" || cm == "HATRA") {
         this->move(cm, it, ent, rw, map, fnt);
      }
@@ -28,7 +28,12 @@ void Router::route(std::string cm, std::string it, Entity& ent, RenderWindow& rw
     else if(cm == "TAMADAS") {
         this->attack(ent);
     }
-
+    else if(cm == "BELEP") {
+        this->ent(p);
+    }
+    else if(cm == "BESZEL") {
+        this->speak(p);
+    }
  }
  /**
   * \brief Segítség kiírása.
@@ -90,5 +95,15 @@ void Router::nextPage(RenderWindow& rw) {
 }
 
 void Router::attack(Entity& e) {
-    e.setAttack();
+    e.setAttack(true);
+}
+
+void Router::ent(Plnt& e) {
+    std::cout << " asajt "  << std::endl;
+
+    e.enter();
+}
+
+void Router::speak(Plnt& e) {
+    e.talk();
 }

@@ -34,9 +34,12 @@ public:
     void faRonkPlusz() { faRonk++; };
     void nemSivatagiBogyoPlusz() { nemSivatagiBogyo++; };
 
+    void talk() { beszel = true; };
+    void enter() { belep = true; };
+
 private:
     int lada, sivatagiBogyo, faRonk, nemSivatagiBogyo;
-    bool kulcs;
+    bool kulcs, attack, beszel, belep;
     RenderWindow game;
     TTF_Font* fnt;
     // LyRs sprite sheet

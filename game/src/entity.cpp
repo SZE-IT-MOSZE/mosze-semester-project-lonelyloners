@@ -136,6 +136,6 @@ void Entity::setTarget(int dir, int dist)
     }
 }
 
-void Entity::setAttack() {
-    this->attack = true;
+void Entity::setAttack(bool a) {
+    this->attack = a;
 }

@@ -32,6 +32,7 @@ Plnt::Plnt(RenderWindow g, TTF_Font* f) : game(g), fnt(f)
                         { 0, 320}, {64, 320}, {128, 320}, {192, 320}, {256, 320} ,
                         { 0, 352}, {64, 352}, {128, 352}, {192, 352}, {256, 352} };
     lada = sivatagiBogyo = faRonk = nemSivatagiBogyo = 0;
+    attack = false;
 }
 /**
  * \brief Menü megjelenítése.
@@ -283,7 +284,6 @@ void Plnt::prolog()
 
     // összes logikai változó a gombnyomásokhoz
     bool gameRunning = true;
-    bool attack = false;
     bool fel = false;
     bool le = false;
     bool jobbra = false;
@@ -370,7 +370,7 @@ void Plnt::prolog()
                                         std::cout << " TARGET COORDINATE: " << l.getTargetY() << " \t " << l.getTargetX() << std::endl;
                                     }
                                     c.make(command, fnt, game);
-                                    r.route(c.getCommand(), c.getItem(), l, game, mapMatrix, fnt);
+                                    r.route(c.getCommand(), c.getItem(), l, game, mapMatrix, fnt, *this);
                                     c.reset();
 
                                     command = "";
@@ -443,7 +443,6 @@ void Plnt::dessert1()
     Router r = Router();
     // összes logikai változó a gombnyomásokhoz
     bool gameRunning = true;
-    bool attack = false;
     bool fel = false;
     bool le = false;
     bool jobbra = false;
@@ -502,14 +501,6 @@ void Plnt::dessert1()
                         case SDLK_RETURN:
                             if (!fel && !le && !balra && !jobbra && !attack)
                             {
-                                if (command == "LAPOZZ")
-                                {
-                                    game.nextPage();
-                                }
-                                if (command == "TAMADAS")
-                                {
-                                    attack = true;
-                                }
                                 if (command == "POSI")
                                 {
                                     std::cout << " CURRENT POSITION: " << l.getPos().getY() << " \t " << l.getPos().getX() << std::endl;
@@ -518,12 +509,12 @@ void Plnt::dessert1()
                                 {
                                     std::cout << " TARGET COORDINATE: " << l.getTargetY() << " \t " << l.getTargetX() << std::endl;
                                 }
-                                if (command == "BELEP" && crack)
+                                if (belep && crack)
                                 {
                                     gameRunning = false;
                                 }
                                 c.make(command, fnt, game);
-                                r.route(c.getCommand(), c.getItem(), l, game, mapMatrix, fnt);
+                                r.route(c.getCommand(), c.getItem(), l, game, mapMatrix, fnt, *this);
                                 c.reset();
                                 
                                 command = "";
@@ -558,7 +549,7 @@ void Plnt::dessert1()
             default:
                 break;
         }
-        
+        attack = l.getAttack();
         // először a háttér kirajzolása
         game.render(pl);
         // ajtó kirenderelése megfelelő állapot szerint
@@ -698,11 +689,14 @@ void Plnt::dessert1()
             {
                 // LyRs jobbra támad animáció következő kockája
                 attack = game.update(l, lyrsLaserR, lyrsLaserR.size(), 64, 32, 0, false);
+                l.setAttack(attack);
             }
             else
             {
                 // LyRs balra támad animáció következő kockája
                 attack = game.update(l, lyrsLaserL, lyrsLaserL.size(), 64, 32, 32, false);
+                l.setAttack(attack);
+
             }
             if ((l.getPos().getY() == 352 && l.getPos().getX() == 288) || (l.getPos().getY() == 352 && l.getPos().getX() == 320))
             {
@@ -948,14 +942,11 @@ void Plnt::dessert2()
 
     // összes logikai változó 
     bool gameRunning = true;
-    bool attack = false;
     bool fel = false;
     bool le = false;
     bool jobbra = false;
     bool balra = false;
     bool flip = false;
-    bool beszel = false;
-    bool belep = false;
     bool next = false;
     bool a = false;
     bool b = false;
@@ -1062,7 +1053,7 @@ void Plnt::dessert2()
                                     beszel = true;
                                 }
                                 c.make(command, fnt, game);
-                                r.route(c.getCommand(), c.getItem(), l, game, mapMatrix, fnt);
+                                r.route(c.getCommand(), c.getItem(), l, game, mapMatrix, fnt, *this);
                                 c.reset();
 
                                 command = "";
@@ -1301,11 +1292,13 @@ void Plnt::dessert2()
             {
                 // LyRs jobbra támad animáció következő kockája
                 attack = game.update(l, lyrsLaserR, lyrsLaserR.size(), 64, 32, 0, false);
+                l.setAttack(attack);
             }
             else
             {
                 // LyRs balra támad animáció következő kockája
                 attack = game.update(l, lyrsLaserL, lyrsLaserL.size(), 64, 32, 32, false);
+                l.setAttack(attack);
             }
         }
         switch (game.getMap())  {
@@ -1925,14 +1918,12 @@ void Plnt::glacies()
 
     // összes logikai változó a gombnyomásokhoz
     bool gameRunning = true;
-    bool attack = false;
     bool fel = false;
     bool le = false;
     bool jobbra = false;
     bool balra = false;
     bool flip = true;
     bool nxttxt = true;
-    bool belep = false;
     // esemény létrehozása
     SDL_Event event;
     // FPS limitációhoz szükséges változók
@@ -2003,7 +1994,7 @@ void Plnt::glacies()
                                         belep = true;
                                     }
                                     c.make(command, fnt, game);
-                                    r.route(c.getCommand(), c.getItem(), l, game, mapMatrix, fnt);
+                                    r.route(c.getCommand(), c.getItem(), l, game, mapMatrix, fnt, *this);
                                     c.reset();
 
                                     command = "";
@@ -2261,11 +2252,13 @@ void Plnt::glacies()
             {
                 // LyRs jobbra támad animáció következő kockája
                 attack = game.update(l, lyrsLaserR, lyrsLaserR.size(), 64, 32, 0, false);
+                l.setAttack(attack);
             }
             else
             {
                 // LyRs balra támad animáció következő kockája
                 attack = game.update(l, lyrsLaserL, lyrsLaserL.size(), 64, 32, 32, false);
+                l.setAttack(attack);
             }
         }
 
@@ -2435,14 +2428,12 @@ void Plnt::planthea()
 
     // összes logikai változó a gombnyomásokhoz
     bool gameRunning = true;
-    bool attack = false;
     bool fel = false;
     bool le = false;
     bool jobbra = false;
     bool balra = false;
     bool flip = true;
     bool nxttxt = true;
-    bool belep = false;
     // esemény létrehozása
     SDL_Event event;
     // FPS limitációhoz szükséges változók
@@ -2513,7 +2504,7 @@ void Plnt::planthea()
                                         belep = true;
                                     }
                                     c.make(command, fnt, game);
-                                    r.route(c.getCommand(), c.getItem(), l, game, mapMatrix, fnt);
+                                    r.route(c.getCommand(), c.getItem(), l, game, mapMatrix, fnt, *this);
                                     c.reset();
 
                                     command = "";
@@ -2828,11 +2819,13 @@ void Plnt::planthea()
             {
                 // LyRs jobbra támad animáció következő kockája
                 attack = game.update(l, lyrsLaserR, lyrsLaserR.size(), 64, 32, 0, false);
+                l.setAttack(attack);
             }
             else
             {
                 // LyRs balra támad animáció következő kockája
                 attack = game.update(l, lyrsLaserL, lyrsLaserL.size(), 64, 32, 32, false);
+                l.setAttack(attack);
             }
         }
 
