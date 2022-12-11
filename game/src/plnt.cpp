@@ -370,7 +370,7 @@ void Plnt::prolog()
                                         std::cout << " TARGET COORDINATE: " << l.getTargetY() << " \t " << l.getTargetX() << std::endl;
                                     }
                                     c.make(command, fnt, game);
-                                    r.route(c.getCommand(), c.getItem(), l, mapMatrix);
+                                    r.route(c.getCommand(), c.getItem(), l, game, mapMatrix, fnt);
                                     c.reset();
 
                                     command = "";
@@ -523,7 +523,7 @@ void Plnt::dessert1()
                                     gameRunning = false;
                                 }
                                 c.make(command, fnt, game);
-                                r.route(c.getCommand(), c.getItem(), l, mapMatrix);
+                                r.route(c.getCommand(), c.getItem(), l, game, mapMatrix, fnt);
                                 c.reset();
                                 
                                 command = "";
@@ -1062,7 +1062,7 @@ void Plnt::dessert2()
                                     beszel = true;
                                 }
                                 c.make(command, fnt, game);
-                                r.route(c.getCommand(), c.getItem(), l, mapMatrix);
+                                r.route(c.getCommand(), c.getItem(), l, game, mapMatrix, fnt);
                                 c.reset();
 
                                 command = "";
@@ -2003,7 +2003,7 @@ void Plnt::glacies()
                                         belep = true;
                                     }
                                     c.make(command, fnt, game);
-                                    r.route(c.getCommand(), c.getItem(), l, mapMatrix);
+                                    r.route(c.getCommand(), c.getItem(), l, game, mapMatrix, fnt);
                                     c.reset();
 
                                     command = "";
@@ -2513,7 +2513,7 @@ void Plnt::planthea()
                                         belep = true;
                                     }
                                     c.make(command, fnt, game);
-                                    r.route(c.getCommand(), c.getItem(), l, mapMatrix);
+                                    r.route(c.getCommand(), c.getItem(), l, game, mapMatrix, fnt);
                                     c.reset();
 
                                     command = "";
