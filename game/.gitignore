@@ -1,8 +1,10 @@
-*exe
-*dll
-*zip
+*.exe
+*.dll
+*.zip
+build/
 lib/
 include/sdl/
+include/sdl_FULLOS/
 .vscode/
 *ttf
 build/

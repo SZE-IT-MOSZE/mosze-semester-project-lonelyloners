@@ -9,8 +9,16 @@ Command::Command() {
     this->parse();
 }
 
+<<<<<<< HEAD
 void Command::parse() {
     std::string plain_text;
+=======
+bool Command::validate(std::string cm) {
+    bool check[2] = {false, false};
+    int space_pos = int(cm.find(" ", 0));
+    std::string cma = cm.substr(0, space_pos);
+    std::string it = cm.substr(space_pos+1, cm.length());
+>>>>>>> main
 
     std::fstream command_file;
     command_file.open("commands.csv");
@@ -88,6 +96,7 @@ bool Command::check_item(std::string it, int item_id) {
     return false;
 }
 
+<<<<<<< HEAD
 bool Command::check_input(std::string input) {
     input = to_upper(input);
     input += " ";
@@ -128,6 +137,13 @@ void Command::setCommand(std::string cm) {
         this->command = cm.substr(0, cm.find(" "));
 
         this->item = cm.substr(cm.find(" "), cm.length());
+=======
+void Command::make() {
+    if(this->validate(this->input)) {
+        int space_pos = int(this->input.find(" ", 0));
+        this->command = this->input.substr(0, space_pos);
+        this->item = this->input.substr(space_pos+1, this->input.length());
+>>>>>>> main
     }
     else {
         this->command = cm;
