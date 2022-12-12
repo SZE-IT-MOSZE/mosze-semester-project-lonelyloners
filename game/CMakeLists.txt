@@ -4,6 +4,19 @@ project(${THIS} LANGUAGES C CXX)
 set(CMAKE_C_STANDARD 99)
 set(CMAKE_CXX_STANDARD 11)
 set(SOURCES
+<<<<<<< HEAD
+./../src/Command.cpp
+./../src/commands.csv
+./../src/csv2vector.cpp
+./../src/entity.cpp
+./../src/main.cpp
+./../src/Map.cpp
+./../src/plnt.cpp
+./../src/RenderWindow.cpp
+./../src/Router.cpp
+)
+LIST(APPEND CMAKE_PROGRAM_PATH 
+=======
     ./../src/csv2vector.cpp
     "./../src/Command.cpp"
     ./../src/csv2vector.cpp
@@ -108,6 +121,7 @@ set(HEADERS
 LIST(APPEND CMAKE_PROGRAM_PATH 
     # ./../include
     # ./../include/sdl
+>>>>>>> main
     ${CMAKE_CURRENT_SOURCE_DIR}/include/sdl
     ${CMAKE_CURRENT_SOURCE_DIR}/include
     ./../src
@@ -118,6 +132,10 @@ LIST(APPEND CMAKE_PROGRAM_PATH
 add_executable(${THIS} ./../src/main.cpp ${SOURCES} ${HEADERS} ${LIBRARIES})
 target_include_directories(${THIS} PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/include
+<<<<<<< HEAD
+    ${CMAKE_CURRENT_SOURCE_DIR}/story
+    ./../res
+=======
     # ./../src
     # ./../story
     ${CMAKE_CURRENT_SOURCE_DIR}/story
@@ -145,6 +163,7 @@ target_include_directories(${THIS} PUBLIC
     # ./../res/gfx/Nosoria_map
     # ./../res/gfx/Objects
     # ./../res/gfx/Planthea_map 
+>>>>>>> main
     )
  target_link_libraries(${THIS}
         ${CMAKE_SOURCE_DIR}/lib/libSDL2_image.dll.a

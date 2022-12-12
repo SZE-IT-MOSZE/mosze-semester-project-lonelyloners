@@ -8,6 +8,10 @@
 #include <sdl/SDL_image.h>
 #include <sdl/SDL_ttf.h>  
 
+<<<<<<< HEAD
+#include "headers/RenderWindow.h"
+#include "headers/Plnt.h"
+=======
 #include "headers/Router.h"
 #include "headers/Command.h"
 #include "headers/RenderPlanets.h"
@@ -16,6 +20,7 @@
 #include "headers/Dessert1.h"
 #include "headers/Dessert2.h"
 #include "headers/Glacies.h"
+>>>>>>> main
 
 /**
  * \brief Fő függvény.
@@ -42,23 +47,28 @@ int main(int argc, char* argv[])
     RenderWindow game("LonelyLoners - LyRs kalandjai v0.2", 768 /* * getRRes() */, 484 /* * getRRes() */);
     // betűtípus betöltése
     TTF_Font* fnt = TTF_OpenFont("font/PatrickHand-Regular.ttf", 18);  
+    // játék létrehozása
+    Plnt g(game, fnt);
     // menü futtatása és menüpont számának elmentése
-    int choice = menu(game);
-    game.nextTxt(false);
+    int choice = 0;
+    choice = g.menu();
     // renderer "takarítása"
     game.clear();
     // megfelelő menüpont futtatása
     if (choice == 1)
     {
-        bool next;
 
-        game = prolog(game, fnt);
+        g.prolog();
 
-        game = dessert1(game, fnt);
+        g.dessert1();
 
-        game = dessert2(game, fnt);
+        g.dessert2();
 
-        game = glacies(game, fnt);
+        g.glacies();
+
+        g.planthea();
+        
+        g.nosoria();
 
         // ablak törlése
         game.cleanUp();

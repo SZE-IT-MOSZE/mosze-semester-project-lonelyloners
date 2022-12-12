@@ -8,6 +8,15 @@
 #include <sdl/SDL_ttf.h>
 
 #include "headers/Entity.h"
+/**
+ * \brief A megjelenítésért felelős függvényeket tartalmazó osztály.
+ *
+ * Ebben az osztályban találhatók az Entityben létrehozott
+ * elemek elhelyezéséér felelős függvények.
+ * Továbbá a képernyőn megjelenő szöveg ebolvasásáért felelős
+ * függvények.
+ * 
+ */
 
 class RenderWindow
 {
@@ -32,8 +41,11 @@ public:
     void right(Entity& p_entity);   
     
     void renderInputText(std::string inputText, TTF_Font* Sans);
+    void renderInfoText(std::string inputText, TTF_Font* Sans);
     void nextTxt(bool c);
     void nextPage() { pg++; };
+    int getPage() { return pg; };
+    void resetPage() { pg = 1; };
 
     int getRES();
     int getMap();
@@ -52,4 +64,5 @@ private:
     const char* p_title;
     std::string curr_txt;
     int p_w, p_h, pg, frms, map;
+    std::vector<std::string> storyTextToRender;
 };

@@ -22,7 +22,6 @@ a raktárak azon részéhez, ahol az
 sorakoztak.
 *
 //Látnokondok elmennek az élelmiszeres kamra fele (animáció?)
-Feladat: Kövesd a Látnokondokat. Mozgáshoz 
-használd az ELORE és a HATRA parancsokat!
+Feladat: Kövesd a Látnokondokat.
 *
 //dessert2a2.txt

@@ -46,6 +46,20 @@ void Entity::setSize(int w, int h)
     currentFrame.h = h;   
 }
 /**
+ * \brief Eltolja egy Entity pozícióját.
+ * 
+ * Egy betöltött kép megfelelő pozícióba helyezését teszi lehetővé. 
+ * 
+ * \param x Az eltolás az x tengelyen.
+ * \param y Az eltolás az y tengelyen.
+ */
+void Entity::setPosi(int x, int y)
+{
+    // Entity pozíciójának beállítása
+    posi.x = ( currentFrame.x += x );
+    posi.y = ( currentFrame.y += y );
+}
+/**
  * \brief Beállítja egy Entity pozícióját.
  * 
  * Egy betöltött kép megfelelő pozícióba helyezését teszi lehetővé. 
@@ -53,11 +67,11 @@ void Entity::setSize(int w, int h)
  * \param x A kívánt pozíció az x tengelyen.
  * \param y A kívánt pozíció az y tengelyen.
  */
-void Entity::setPosi(int x, int y)
+void Entity::setAbsPosi(int x, int y)
 {
     // Entity pozíciójának beállítása
-    posi.x = ( currentFrame.x += x );
-    posi.y = ( currentFrame.y += y );
+    posi.x = x;
+    posi.y = y;
 }
 /**
  * \brief Visszaadja az Entity textúráját.
@@ -122,4 +136,6 @@ void Entity::setTarget(int dir, int dist)
     }
 }
 
-
+void Entity::setAttack(bool a) {
+    this->attack = a;
+}

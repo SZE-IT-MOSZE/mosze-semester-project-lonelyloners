@@ -64,8 +64,6 @@ Elmész te a mesterért és magára hagyod a
 Látnokondokat vagy elküldöd őket
 és te maradsz itt? A mérgezett látnokond
 megtámadásához használd a TAMADAS parancsot!
-Harc közben az UTES parancs begépelésével
-tudsz támadni.
 *
 Ellenkező esetben pedig, ha nem
 kívánsz harcolni, keresd meg a mestert!

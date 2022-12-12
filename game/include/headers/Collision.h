@@ -1,5 +1,6 @@
 #pragma once
 
+#include <fstream>
 #include <stdio.h>
 
 #include "headers/Entity.h"
@@ -38,7 +39,6 @@ int getRES()
     // szorzó visszaadása
     return RES;
 }
-
 /**
  * \brief Ellenőrzi, hogy két entity ütközik-e.
  *

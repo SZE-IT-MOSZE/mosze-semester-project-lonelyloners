@@ -12,4 +12,29 @@ függően, hogyan alakítod LyRs útját.
 Az általános parancsok listáját a 
 segitseg szó begépelésével tudod előhozni.
 *
+Üdvözlünk játékunk súgójában!
+Irányítás: A játék során parancsok
+beírásával lehet különféle akciókat
+létrehajtani. A játék elején, minden
+parancs legelső használatánál 
+magyarázat lesz biztosítva arról,
+hogy az adott parancs mire lesz 
+képes. Ezek után a program várni
+fog arra, hogy a felhasználó
+megadjon neki a parancsot, itt
+viszont magyarázat nélkül.
+*
+Ezek a parancsok a következők:
+JOBBRA #/FEL #/BALRA #/LE # – adott
+irányba # kockányi mozgás.
+BELEP – Map következő részének
+betöltése. Ez a parancs használható
+például ajtóknál, ahol belépünk
+egy belső(bb) térbe.
+BESZEL – Interakció NPC-kel.
+FELVESZ – Tárgy eszköztárba
+való felvétele.
+TAMADAS – Támadás elindítása.
+LAPOZ – Következő bekezdés betöltése.
+*
 //prologus.txt
