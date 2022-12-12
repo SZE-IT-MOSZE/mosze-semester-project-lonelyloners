@@ -2256,6 +2256,11 @@ void Plnt::dessert2()
                     {
                         game.update(latnok1E, npcIdleL, npcIdleL.size(), 32, 32, 0, true);
                     }
+
+                    if (gyava)
+                    {
+                        
+                    }
                 }
                 else
                 {
