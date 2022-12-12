@@ -1339,11 +1339,11 @@ void Plnt::dessert2()
         }
         switch (game.getMap())  {
             case 0:
-                if (lada == 0 && gyava)
+                if (lada == 0 || gyava)
                 {
                     game.update(latnok5E, npcIdleL, npcIdleL.size(), 32, 32, 0, true);
                 }
-                else if (lada == 1 && gyava)
+                else if (lada == 1 || gyava)
                 {
                     game.update(latnok5E, npcIdleR, npcIdleR.size(), 32, 32, 0, true);
                 }
@@ -2495,7 +2495,7 @@ void Plnt::dessert2()
                 break;
             case 2:
                 // felhők renderelése és ütközések ellenőrzése és lekezelése
-                // planetR3 = renderPlanet(game, planet1, planetR3, l);
+                planetR3 = renderPlanet(game, planet1, planetR3, l);
 
                 break;
             case 3:
@@ -4060,37 +4060,6 @@ void Plnt::nosoria()
             }
         }
 
-        switch (game.getMap())  {
-            case 0:
-                game.render(wood1E);
-                game.render(wood2E);
-                game.render(wood3E);
-                game.render(wood4E);
-                game.render(berry4E);
-                game.render(berry5E);
-
-                break;
-            case 1:
-                game.render(wood5E);
-                game.render(berry1E);
-                game.render(berry2E);
-                game.render(berry3E);
-
-                break;
-            case 2:
-                game.update(prpE, prpA, prpA.size(), 79, 79, 0, true);
-
-                break;
-            case 3:
-                break;
-            case 4:
-                game.render(scroll1E);
-                game.render(scroll2E);
-                game.render(scroll3E);
-                game.render(scroll4E);
-
-                break;
-        }
         // szöveg háttér
         game.render(txtbckground);
         game.renderText(fnt);
