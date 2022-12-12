@@ -7,3 +7,4 @@ include/sdl/
 include/sdl_FULLOS/
 .vscode/
 *ttf
+build/

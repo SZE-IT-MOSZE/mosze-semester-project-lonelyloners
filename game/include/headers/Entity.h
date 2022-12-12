@@ -6,6 +6,16 @@
 
 #include "headers/Math.h"
 
+/**
+ * \brief A megjelenítendő elemeket tartalmazó osztály.
+ *
+ * Ebben az osztályban találhatók a képernyőn megjelenő
+ * elemek kezeléséért felelős függvények találhatók.
+ * Itt lehet megadni az egyes elemek pozícióit és különféle
+ * tulajdonságait.
+ * 
+ */
+
 class Entity
 {
 public:
@@ -18,19 +28,21 @@ public:
     
     void setSize(int w, int h);
     void setPosi(int x, int y);
-    
+    void setAbsPosi(int x, int y);
     void setTarget(int direct, int distance);
 
     void setDirZero()   { d = 0;    }
     int getDirection()  { return d; }
     int getTargetX()    { return x; }
     int getTargetY()    { return y; }
-
+    
+    void setAttack(bool a);
+    bool getAttack() { return attack; };
 private:
 
     V2F posi;
     SDL_Rect currentFrame;
     SDL_Texture* tex;
     int d, x, y;
+    bool attack = false;
 };
-
