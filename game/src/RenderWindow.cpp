@@ -530,7 +530,6 @@ void RenderWindow::nextTxt(bool c)
     }
 
     curr_txt = "story/" + curr_txt;
-    std::cout << "curr_txt " << curr_txt << std::endl;
     ttt.close();
     storyTextToRender.clear();
     // az új txt sorainak betöltése egy vektorba
