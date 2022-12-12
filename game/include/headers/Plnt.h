@@ -28,7 +28,7 @@ public:
     void dessert2();
     void glacies();
     void planthea();
-
+    void nosoria();
     void ladaPlusz() { lada++; };
     void sivatagiBogyoPlusz() { sivatagiBogyo++; };
     void faRonkPlusz() { faRonk++; };

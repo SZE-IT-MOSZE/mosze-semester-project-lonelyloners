@@ -57,6 +57,8 @@ int main(int argc, char* argv[])
 
         g.planthea();
         
+        g.nosoria();
+
         // ablak törlése
         game.cleanUp();
         game.clear();

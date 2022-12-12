@@ -1339,11 +1339,11 @@ void Plnt::dessert2()
         }
         switch (game.getMap())  {
             case 0:
-                if (lada == 0)
+                if (lada == 0 && gyava)
                 {
                     game.update(latnok5E, npcIdleL, npcIdleL.size(), 32, 32, 0, true);
                 }
-                else if (lada == 1)
+                else if (lada == 1 && gyava)
                 {
                     game.update(latnok5E, npcIdleR, npcIdleR.size(), 32, 32, 0, true);
                 }
@@ -2257,10 +2257,6 @@ void Plnt::dessert2()
                         game.update(latnok1E, npcIdleL, npcIdleL.size(), 32, 32, 0, true);
                     }
 
-                    if (gyava)
-                    {
-                        
-                    }
                 }
                 else
                 {
@@ -3270,6 +3266,507 @@ void Plnt::planthea()
         }
                
                
+        else if (game.getMap() == 3 && l.getPos().getY() == -32 && l.getPos().getX() <= 64)
+        {
+            // MAP 4 -> MAP 2
+            game.setMap(1);
+
+            l.setPosi(0, 416);
+
+            l.setTarget(1, 1);
+        }
+        else if (game.getMap() == 1 && l.getPos().getY() >= 384 && l.getPos().getX() == 64)
+        {
+            // MAP 2 -> MAP 4
+            game.setMap(3);
+
+            l.setPosi(0, -416);
+
+            l.setTarget(3, 1);
+        }
+
+        else if (game.getMap() == 2 && l.getPos().getY() <= 96 && l.getPos().getX() == 384)
+        {
+            // MAP 3 -> MAP 4
+            game.setMap(3);
+
+            l.setPosi(-416, 0);
+
+            l.setTarget(2, 1);
+        }
+        else if (game.getMap() == 3 && l.getPos().getY() == 96 && l.getPos().getX() <= -32)
+        {
+            // MAP 4 -> MAP 3
+            game.setMap(2);
+
+            l.setPosi(416, 0);
+
+            l.setTarget(4, 1);
+        }
+        else if (game.getMap() == 2 && l.getPos().getY() <= 256 && l.getPos().getX() == 384)
+        {
+            // MAP 3 -> MAP 4
+            game.setMap(3);
+
+            l.setPosi(-416, 0);
+
+            l.setTarget(2, 1);
+        }
+        else if (game.getMap() == 3 && l.getPos().getY() == 256 && l.getPos().getX() <= -32)
+        {
+            // MAP 4 -> MAP 3
+            game.setMap(2);
+
+            l.setPosi(416, 0);
+
+            l.setTarget(4, 1);
+        }
+        else if (game.getMap() == 2 && l.getPos().getY() <= 320 && l.getPos().getX() == 384)
+        {
+            // MAP 3 -> MAP 4
+            game.setMap(3);
+
+            l.setPosi(-416, 0);
+
+            l.setTarget(2, 1);
+        }
+        else if (game.getMap() == 3 && l.getPos().getY() == 320 && l.getPos().getX() <= -32)
+        {
+            // MAP 4 -> MAP 3
+            game.setMap(2);
+
+            l.setPosi(416, 0);
+
+            l.setTarget(4, 1);
+        }
+        else if (game.getMap() == 0 && l.getPos().getY() == 64 && l.getPos().getX() >= 384)
+        {
+            // MAP 1 -> MAP 2
+            game.setMap(1);
+
+            l.setPosi(-416, 0);
+
+            l.setTarget(2, 1);
+        }        
+        else if (game.getMap() == 1 && l.getPos().getY()  >= 64 && l.getPos().getX() == -32)
+        {
+            // MAP 2 -> MAP 1
+            game.setMap(0);
+
+            l.setPosi(416, 0);
+
+            l.setTarget(4, 1);
+        }
+        else if (game.getMap() == 0 && l.getPos().getY() == 128 && l.getPos().getX() >= 384)
+        {
+            // MAP 1 -> MAP 2
+            game.setMap(1);
+
+            l.setPosi(-416, 0);
+
+            l.setTarget(2, 1);
+        }        
+        else if (game.getMap() == 1 && l.getPos().getY()  >= 128 && l.getPos().getX() == -32)
+        {
+            // MAP 2 -> MAP 1
+            game.setMap(0);
+
+            l.setPosi(416, 0);
+
+            l.setTarget(4, 1);
+        }
+        else if (game.getMap() == 3 && l.getPos().getY() == 288 && l.getPos().getX() == 288 && belep)
+        {
+            // MAP 4 -> MAP 5
+            game.setMap(4);
+        
+            l.setPosi(-192, -96);
+        
+            belep = false;
+        }
+        else if (game.getMap() == 4 && l.getPos().getY() == 192 && l.getPos().getX() == 96 && belep)
+        {
+            // MAP 5 -> MAP 4
+            game.setMap(3);
+        
+            l.setPosi(192, 96);
+        
+            belep = false;
+        }
+
+        // irányok beállítása
+        switch (l.getDirection())
+        {
+        case 0:
+            break;
+        case 1:
+            // fel
+            fel = true;
+            break;
+        case 2:
+            // jobbra
+            jobbra = true;
+            break;     
+        case 3:
+            // le
+            le = true;
+            break;
+        case 4: 
+            // balra
+            balra = true;
+            break;
+        case 5:
+            attack = true;
+        default:
+            break;
+        }
+        
+        // először a háttér kirajzolása
+        game.updateMap(pl, map);
+
+        if (!fel && !le && !balra && !jobbra && !attack)
+        {
+            // jobbra gomb volt utoljára lenyomva?
+            if (flip)
+            {
+                // LyRs jobbra néző üresjárati animáció következő kockája
+                game.update(l, lyrsIdleR, lyrsIdleR.size(), 32, 32, 0, true);
+            }
+            else
+            {
+                // LyRs balra néző üresjárati animáció következő kockája
+                game.update(l, lyrsIdleL, lyrsIdleL.size(), 32, 32, 0, true);
+            }
+            // if (l.getPos().getX() != l.getTargetX() || l.getPos().getY() != l.getTargetY())
+            // {
+            //     l.setPosi(l.getPos().getX(), l.getPos().getY());
+            // } 
+        }
+        // felfele gomb megnyomva?
+        if (fel && !attack)
+        {                
+            if (l.getPos().getY() <= l.getTargetY())
+            {
+                fel = false;
+                if ((l.getPos().getY() != l.getTargetY()))
+                {
+                    l.setPosi(l.getPos().getX(), l.getTargetY());
+                }
+                // irány 0-ra állítása, hogy következő tick esetén ne állítsa megint az irányt
+                l.setDirZero();
+            }
+            else
+            {
+                // LyRs mozgatása fel
+                game.up(l);
+            }
+
+            // jobbra gomb volt utoljára lenyomva?
+            if (flip)
+            {
+                // LyRs jobbra mozog animáció következő kockája
+                game.update(l, lyrsMoveR, lyrsMoveR.size(), 32, 32, 0, true);
+            }
+            else
+            {
+                // LyRs balra mozog animáció következő kockája
+                game.update(l, lyrsMoveL, lyrsMoveL.size(), 32, 32, 0, true);
+            }
+        }
+        // lefele gomb megnyomva?
+        if (le && !attack)
+        {
+            if (l.getPos().getY() >= l.getTargetY())
+            {
+                le = false;
+                if ((l.getPos().getY() != l.getTargetY()))
+                {
+                    l.setPosi(l.getPos().getX(), l.getTargetY());
+                }
+                // irány 0-ra állítása, hogy következő tick esetén ne állítsa megint az irányt
+                l.setDirZero();
+            }
+            else
+            {
+                // LyRs mozgatása le
+                game.down(l);
+            }
+            // jobbra gomb volt utoljára lenyomva?
+            if (flip)
+            {
+                // LyRs jobbra mozog animáció következő kockája
+                game.update(l, lyrsMoveR, lyrsMoveR.size(), 32, 32, 0, true);
+            }
+            else
+            {
+                // LyRs balra mozog animáció következő kockája
+                game.update(l, lyrsMoveL, lyrsMoveL.size(), 32, 32, 0, true);
+            }
+        }
+        // balra gomb megnyomva?
+        if (balra && !attack)
+        {
+            if (l.getPos().getX() <= l.getTargetX())
+            {
+                balra = false;
+                // irány 0-ra állítása, hogy következő tick esetén ne állítsa megint az irányt
+                l.setDirZero();
+            }
+            else
+            {
+                // LyRs mozgatása balra
+                game.left(l);
+            }
+            // LyRs balra mozog animáció következő kockája
+            game.update(l, lyrsMoveL, lyrsMoveL.size(), 32, 32, 0, true);
+            // összes animáció balra néz
+            flip = false;
+        }
+        // jobbra gomb megnyomva?
+        if (jobbra && !attack)
+        {
+            if (l.getPos().getX() >= l.getTargetX())
+            {
+                jobbra = false;
+                // irány 0-ra állítása, hogy következő tick esetén ne állítsa megint az irányt
+                l.setDirZero();
+            }
+            else
+            {
+                // LyRs mozgatása jobbra
+                game.right(l);
+            }
+            // LyRs jobbra mozog animáció következő kockája
+            game.update(l, lyrsMoveR, lyrsMoveR.size(), 32, 32, 0, true);
+            // összes animáció jobbra néz
+            flip = true;
+        }
+        // szóköz gomb megnyomva?
+        if (attack)
+        {
+            // jobbra gomb volt utoljára lenyomva?
+            if (flip)
+            {
+                // LyRs jobbra támad animáció következő kockája
+                attack = game.update(l, lyrsLaserR, lyrsLaserR.size(), 64, 32, 0, false);
+                l.setAttack(attack);
+            }
+            else
+            {
+                // LyRs balra támad animáció következő kockája
+                attack = game.update(l, lyrsLaserL, lyrsLaserL.size(), 64, 32, 32, false);
+                l.setAttack(attack);
+            }
+        }
+
+        switch (game.getMap())  {
+            case 0:
+                game.render(wood1E);
+                game.render(wood2E);
+                game.render(wood3E);
+                game.render(wood4E);
+                game.render(berry4E);
+                game.render(berry5E);
+
+                break;
+            case 1:
+                game.render(wood5E);
+                game.render(berry1E);
+                game.render(berry2E);
+                game.render(berry3E);
+
+                break;
+            case 2:
+                game.update(prpE, prpA, prpA.size(), 79, 79, 0, true);
+
+                break;
+            case 3:
+                break;
+            case 4:
+                game.render(scroll1E);
+                game.render(scroll2E);
+                game.render(scroll3E);
+                game.render(scroll4E);
+
+                break;
+        }
+        // szöveg háttér
+        game.render(txtbckground);
+        game.renderText(fnt);
+        // input mező
+        game.render(inptxtbckground);
+        game.renderInputText(command, fnt);
+        // rendererbe tötött elemek képernyőre helyezése
+        game.display();
+        // TODO:
+        // delete c; 
+    }
+    game.mapReset();
+    game.clear();
+}
+/**
+ * \brief Nosoria pálya megjelenítése.
+ *
+ */
+void Plnt::nosoria()
+{  
+    int i = 0;
+
+    // első mapra állítás
+    game.setMap(0);
+    // egész számokból álló párokból álló vektorok definiálása
+    std::vector<std::pair<int, int>> map;
+    std::vector<std::pair<int, int>> npcIdleR;
+    std::vector<std::pair<int, int>> npcIdleL;
+    std::vector<std::pair<int, int>> csontiIdleR;
+    std::vector<std::pair<int, int>> csontiIdleL;
+    std::vector<std::pair<int, int>> prpA;
+
+    // obomar üresjárati
+    // jobb
+    npcIdleR = { { 0,   0}, {32,   0} };
+    // bal
+    npcIdleL = { { 64,   0}, {96,  0} };
+
+    // csonti üresjárati
+    // jobb
+    csontiIdleR = { {  0, 0}, { 64, 0} };
+    // bal
+    csontiIdleL = { {128, 0}, {192, 0} };
+
+    // map
+    map             = { {  0,   0}, {384,   0},
+                        {  0, 384}, {384, 384}, {768, 384} };
+    // propeller 
+    prpA =  { {  0, 0}, {79, 0} };
+
+    // LyRs összes animációját tartalmazó sprite sheet betöltése
+    SDL_Texture* lyrsAnim = game.loadTexture("res/gfx/Animations/LyRs/lyrs_sprite_sheet.png");
+    Entity l(V2F(96, 96), lyrsAnim);
+    l.setPosi(96, 96);
+    // szöveg háttér betöltése
+    SDL_Texture* textBckGround = game.loadTexture("res/gfx/Dessert_Map1/both.png");
+    Entity txtbckground(V2F(384, 0), textBckGround);
+    // beviteli mező háttere
+    SDL_Texture* inputTextBckGround = game.loadTexture("res/gfx/Objects/blck_bckgrnd.png");
+    Entity inptxtbckground(V2F(0, 384), inputTextBckGround);
+
+    // térkép hátterének betöltése
+    SDL_Texture* background = game.loadTexture("res/gfx/Nosoria_map/nosoria_map.png");
+    Entity pl(V2F(0, 0), background);
+
+
+    // parancs választó deklarálása
+    Router r = Router();
+
+    // összes logikai változó a gombnyomásokhoz
+    bool gameRunning = true;
+    bool fel = false;
+    bool le = false;
+    bool jobbra = false;
+    bool balra = false;
+    bool flip = true;
+    bool nxttxt = true;
+    // esemény létrehozása
+    SDL_Event event;
+    // FPS limitációhoz szükséges változók
+    const float timeStep = 0.01f;
+    float accum = 0.0f;
+    float cTime = utils::hireTimeInSeconds();
+    // input text 
+    std::string command;
+    Command c = Command();
+    Map mapMatrix("matrix/dessert1/dessert1.matrix", l);
+
+    gameRunning = true;
+    // glacies
+    while(gameRunning)
+    {
+        // képkockák számolása
+        int startTick = SDL_GetTicks();
+        
+        float nTime = utils::hireTimeInSeconds();
+        float fTime = nTime - cTime;
+        
+        cTime = nTime;
+        accum += fTime;
+        // fps limitálása
+        while(accum >= timeStep)
+        {   
+            // események vezérlése
+            while (SDL_PollEvent(&event))
+            {
+                switch(event.type)
+                {
+                    // kilépés gomb lekezelése 
+                    case SDL_QUIT:
+                        gameRunning = false;
+                        break;
+                    // szövegbevitel kezelése
+                    case SDL_TEXTINPUT:
+                        command += event.text.text;
+                        break;
+                    // gomb lenyomások kezelése                        
+                    case SDL_KEYDOWN:
+                        switch(event.key.keysym.sym)
+                        {
+                            case SDLK_BACKSPACE:
+                                command = command.substr(0, command.size()-1);
+                                break;
+                            case SDLK_RETURN:
+                                if (!fel && !le && !balra && !jobbra && !attack)
+                                {
+                                    if (command == "LAPOZZ")
+                                    {
+                                        game.nextPage();
+                                    }
+                                    if (command == "TAMADAS")
+                                    {
+                                        attack = true;
+                                    }
+                                    if (command == "POSI")
+                                    {
+                                        std::cout << " CURRENT POSITION: " << l.getPos().getY() << " \t " << l.getPos().getX() << std::endl;
+                                    }
+                                    if (command == "TARGET")
+                                    {
+                                        std::cout << " TARGET COORDINATE: " << l.getTargetY() << " \t " << l.getTargetX() << std::endl;
+                                    }
+                                    if (command == "BELEP")
+                                    {
+                                        belep = true;
+                                    }
+                                    c.make(command, fnt, game);
+                                    r.route(c.getCommand(), c.getItem(), l, game, mapMatrix, fnt, *this);
+                                    c.reset();
+
+                                    command = "";
+                                }
+                        }
+                }
+            }
+            accum -= timeStep;
+        }           
+        const float alpha = accum / timeStep;
+        // megfelelő map kirenderelése
+        if (game.getMap() == 2 && l.getPos().getY() == -32 && l.getPos().getX() <= 224)
+        {
+            // MAP 3 -> MAP 1
+            game.setMap(0);
+
+            l.setPosi(0, 416);
+
+            l.setTarget(1, 1);
+        }
+        else if (game.getMap() == 0 && l.getPos().getY() >= 384 && l.getPos().getX() == 224)
+        {
+            // MAP 1 -> MAP 3
+            game.setMap(2);
+
+            l.setPosi(0, -416);
+
+            l.setTarget(3, 1);
+        }
         else if (game.getMap() == 3 && l.getPos().getY() == -32 && l.getPos().getX() <= 64)
         {
             // MAP 4 -> MAP 2
