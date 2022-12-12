@@ -8,19 +8,9 @@
 #include <sdl/SDL_image.h>
 #include <sdl/SDL_ttf.h>  
 
-<<<<<<< HEAD
 #include "headers/RenderWindow.h"
 #include "headers/Plnt.h"
-=======
-#include "headers/Router.h"
-#include "headers/Command.h"
-#include "headers/RenderPlanets.h"
-#include "headers/Menu.h"
-#include "headers/Prolog.h"
-#include "headers/Dessert1.h"
-#include "headers/Dessert2.h"
-#include "headers/Glacies.h"
->>>>>>> main
+
 
 /**
  * \brief Fő függvény.
