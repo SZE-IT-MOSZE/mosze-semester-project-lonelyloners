@@ -509,7 +509,6 @@ void Plnt::dessert1()
                                 {
                                     std::cout << " TARGET COORDINATE: " << l.getTargetY() << " \t " << l.getTargetX() << std::endl;
                                 }
-                                mapMatrix.updateEntity(l);
                                 c.make(command, fnt, game);
                                 r.route(c.getCommand(), c.getItem(), l, game, mapMatrix, fnt, *this);
                                 c.reset();
@@ -847,13 +846,14 @@ void Plnt::dessert2()
     Entity latnok4Ea(V2F(0, 0), latnok4a);
     Entity latnok5Ea(V2F(192, 96), latnok5a);
     Entity latnok6Ea(V2F(96, 352), latnok6a);
-    Entity latnokMeregEa(V2F(160, 128), latnokMerega);
+    Entity latnokMeregEa(V2F(0, 0), latnokMerega);
 
     latnok1Ea.setPosi(-32, 96);
     latnok2Ea.setPosi(-64, 96);
     latnok3Ea.setPosi(-96, 96);
     latnok4Ea.setPosi(-32, 320);
     latnok6Ea.setPosi(96, 352);
+    latnokMeregEa.setPosi(224, 128);
     latnok1E.setPosi(64, 96);
     latnok2E.setPosi(96, 96);
     latnok3E.setPosi(128, 96);
@@ -969,6 +969,8 @@ void Plnt::dessert2()
     int lat3_3 = 0;
     int lat4_3 = 0;
 
+    int latMereg = 0; 
+
     int snke1 = 0;
     int snke2 = 0;
 
@@ -1010,7 +1012,8 @@ void Plnt::dessert2()
     bool nagymergezettrender = false;
     bool gyava = false;
     bool mergezettharc = false;
-
+    bool bbbb = false;
+    bool piciegyszer = false;
     // esemény létrehozása
     SDL_Event event;
     // FPS limitációhoz szükséges változók
@@ -2148,22 +2151,26 @@ void Plnt::dessert2()
                 {                    
                     game.update(latnok2E, npcIdleL, npcIdleL.size(), 32, 32, 0, true);
                     game.update(latnok3E, npcIdleL, npcIdleL.size(), 32, 32, 0, true);
-
-                    if (dontA)
+                    if (!bbbb)
                     {
-                        game.nextTxt(true);
-                        game.resetPage();
-                        nagymergezettrender = true;
-                        dontA = false;
+                        if (dontA)
+                        {
+                            game.nextTxt(true);
+                            game.resetPage();
+                            nagymergezettrender = true;
+                            dontA = false;
+                            bbbb = true;
+                        }
+                        else if (dontB)
+                        {                        
+                            game.nextTxt(false);
+                            game.resetPage();
+                            urgerender = true;
+                            dontB = false;
+                            bbbb = true;
+                        }
                     }
-                    else if (dontB)
-                    {                        
-                        game.nextTxt(false);
-                        game.resetPage();
-                        urgerender = true;
-                        dontB = false;
-                    }
-                    
+                        
                     if (urgerender)
                     {
                         game.update(urgeE1, urgeIdleL, urgeIdleL.size(), 32, 32, 0, true);
@@ -2173,7 +2180,10 @@ void Plnt::dessert2()
                     if (nagymergezettrender)
                     {
                         latnokMeregE.setAbsPosi(224, 128);
-                        game.update(latnokMeregE, npcIdleL, npcIdleL.size(), 32, 32, 0, true);
+                        if (!piciegyszer)
+                        {
+                            game.update(latnokMeregE, npcIdleL, npcIdleL.size(), 32, 32, 0, true);
+                        }
 
                         if (dontA)
                         {
@@ -2190,10 +2200,57 @@ void Plnt::dessert2()
                             dontB = false;
                         }
 
-
-                        
-
-
+                        if (mergezettharc)
+                        {
+                            piciegyszer = true;
+                            if (latnokMeregEa.getPos().getY() == 128 && latnokMeregEa.getPos().getX() == 352)
+                            {
+                                latMereg = 1;
+                            }
+                            if (latnokMeregEa.getPos().getY() == 192 && latnokMeregEa.getPos().getX() == 352)
+                            {
+                                latMereg = 2;
+                            }
+                            if (latnokMeregEa.getPos().getY() == 192 && latnokMeregEa.getPos().getX() == 32)
+                            {
+                                latMereg  = 3;
+                            }
+                            if (latnokMeregEa.getPos().getY() == 320 && latnokMeregEa.getPos().getX() == 32)
+                            {
+                                latMereg = 4;
+                            }
+                            if (latnokMeregEa.getPos().getY() == 320 && latnokMeregEa.getPos().getX() == 256)
+                            {
+                                latMereg = 5;
+                            }
+                            switch (latMereg)
+                            {
+                                case 0:
+                                    game.right(latnokMeregEa);
+                                    game.update(latnokMeregEa, latnokMoveR, latnokMoveR.size(), 32, 32, 0, true);
+                                    break;
+                                case 1:
+                                    game.down(latnokMeregEa);
+                                    game.update(latnokMeregEa, latnokMoveL, latnokMoveL.size(), 32, 32, 0, true);
+                                    break;
+                                case 2:
+                                    game.left(latnokMeregEa);
+                                    game.update(latnokMeregEa, latnokMoveL, latnokMoveL.size(), 32, 32, 0, true);
+                                    break;
+                                case 3:
+                                    game.down(latnokMeregEa);
+                                    game.update(latnokMeregEa, latnokMoveL, latnokMoveL.size(), 32, 32, 0, true);
+                                    break;
+                                case 4:
+                                    game.right(latnokMeregEa);
+                                    game.update(latnokMeregEa, latnokMoveR, latnokMoveR.size(), 32, 32, 0, true);
+                                    break;
+                                case 5:
+                                    latnokMeregE.setAbsPosi(256, 320);
+                                    game.update(latnokMeregE, npcIdleL, npcIdleL.size(), 32, 32, 0, true);
+                                    break;
+                                }
+                            }     
                     }
                     else
                     {
