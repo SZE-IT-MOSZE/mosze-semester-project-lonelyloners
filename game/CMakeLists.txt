@@ -16,135 +16,74 @@ set(SOURCES
     ./../bin/SDL2_ttf.dll
     ./../font/PatrickHand-Regular.ttf
 )
-set(HEADERS
-    # ./../include/headers/Collision.h
-    # "./../include/headers/Command.h"
-    # ./../include/headers/csv2vector.h
-    # ./../include/headers/Dessert1.h
-    # ./../include/headers/Dessert2.h
-    # ./../include/headers/Entity.h
-    # ./../include/headers/Glacies.h
-    # ./../include/headers/Math.h
-    # ./../include/headers/Menu.h
-    # ./../include/headers/Planet1.h
-    # ./../include/headers/Player.h
-    # ./../include/headers/Prolog.h
-    # ./../include/headers/RenderPlanets.h
-    # ./../include/headers/RenderWindow.h
-    # ./../include/headers/Router.h
-    # ./../include/headers/Utils.h
-    # ./../include/sdl/SDL.h
-)
-# set(LIBRARIES
-#     ./../story
-#     ./../res
-#     ./../res/gfx
-#     # ./../story/aeden1a1.txt
-#     # ./../story/aeden1b.txt
-#     # ./../story/bevezeto.txt
-#     # ./../story/dessert1.1.txt
-#     # ./../story/dessert1.2.txt
-#     # ./../story/dessert1.3.txt
-#     # ./../story/dessert1.4.txt
-#     # ./../story/dessert2a1.txt
-#     # ./../story/dessert2a2.txt
-#     # ./../story/dessert2b.txt
-#     # ./../story/dessert3a1.txt
-#     # ./../story/dessert3a2.txt
-#     # ./../story/dessert3a3.txt
-#     # ./../story/dessert3b.txt
-#     # ./../story/dessert3c.txt
-#     # ./../story/dessert3d.txt
-#     # ./../story/dessert4a.txt
-#     # ./../story/dessert4b.txt
-#     # ./../story/dessert4c.txt
-#     # ./../story/dessert4d.txt
-#     # ./../story/dessert4e.txt
-#     # ./../story/dessert5a.txt
-#     # ./../story/dessert5b.txt
-#     # ./../story/glacies1.txt
-#     # ./../story/glacies2.txt
-#     # ./../story/glacies3a.txt
-#     # ./../story/glacies3b.txt
-#     # ./../story/glacies3c.txt
-#     # ./../story/glacies3d.txt
-#     # ./../story/glacies4a.txt
-#     # ./../story/glacies4b.txt
-#     # ./../story/glacies4c.txt
-#     # ./../story/glacies4d.txt
-#     # ./../story/glacies4e.txt
-#     # ./../story/glacies4f.txt
-#     # ./../story/glacies5a.txt
-#     # ./../story/glacies5b.txt
-#     # ./../story/nosoria1.txt
-#     # ./../story/nosoria2b1.txt
-#     # ./../story/nosoria2b2.txt
-#     # ./../story/nosoria2b3.txt
-#     # ./../story/nosoria3a.txt
-#     # ./../story/nosoria3b.txt
-#     # ./../story/planthea1b.txt
-#     # ./../story/planthea1b1.txt
-#     # ./../story/planthea1b2.txt
-#     # ./../story/planthea1b3.txt
-#     # ./../story/planthea1b4.txt
-#     # ./../story/planthea2a1.txt
-#     # ./../story/planthea2a2.txt
-#     # ./../story/planthea2a3.txt
-#     # ./../story/planthea2b1.txt
-#     # ./../story/planthea2b2.txt
-#     # ./../story/planthea3a1.txt
-#     # ./../story/planthea3a2.txt
-#     # ./../story/planthea3a3.txt
-#     # ./../story/planthea3a4.txt
-#     # ./../story/planthea3b1.txt
-#     # ./../story/planthea3b2.txt
-#     # ./../story/planthea3b3.txt
-#     # ./../story/planthea3b4.txt
-#     # ./../story/planthea3b5.txt
-#     # ./../story/planthea3b6.txt
-#     # ./../story/prologus.txt
-#     # ./../story/segitseg.txt
-# )
 LIST(APPEND CMAKE_PROGRAM_PATH 
-    # ./../include
-    # ./../include/sdl
+    ./../
+    ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}/include/sdl
     ${CMAKE_CURRENT_SOURCE_DIR}/include
+    ${CMAKE_CURRENT_SOURCE_DIR}/src
+    ${CMAKE_CURRENT_SOURCE_DIR}/story
+    ${CMAKE_CURRENT_SOURCE_DIR}/res
+    ${CMAKE_CURRENT_SOURCE_DIR}/res/gfx
     ./../src
     ./../story
     ./../res
     ./../res/gfx
 )
-add_executable(${THIS} ./../src/main.cpp ${SOURCES} ${HEADERS} ${LIBRARIES})
+add_executable(${THIS} ./../src/main.cpp ${SOURCES})
 target_include_directories(${THIS} PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/include
-    # ./../src
-    # ./../story
     ${CMAKE_CURRENT_SOURCE_DIR}/story
+    ./../
+    ./../../
+    ${CMAKE_CURRENT_SOURCE_DIR}/res
+    ${CMAKE_CURRENT_SOURCE_DIR}/res/gfx
+    ${CMAKE_CURRENT_SOURCE_DIR}/res/gfx/Animations
+    ${CMAKE_CURRENT_SOURCE_DIR}/res/gfx/Characters
+    ${CMAKE_CURRENT_SOURCE_DIR}/res/gfx/Dessert_Map1
+    ${CMAKE_CURRENT_SOURCE_DIR}/res/gfx/Dessert_Map2
+    ${CMAKE_CURRENT_SOURCE_DIR}/res/gfx/Menu
+    ${CMAKE_CURRENT_SOURCE_DIR}/res/gfx/Objects
+    ${CMAKE_CURRENT_SOURCE_DIR}/res/gfx/Animations
+    ${CMAKE_CURRENT_SOURCE_DIR}/res/gfx/Animations/Dessert_bolygo
+    ${CMAKE_CURRENT_SOURCE_DIR}/res/gfx/Animations/Glacies_bolygo
+    ${CMAKE_CURRENT_SOURCE_DIR}/res/gfx/Animations/Keszitok
+    ${CMAKE_CURRENT_SOURCE_DIR}/res/gfx/Animations/LyRs
+    ${CMAKE_CURRENT_SOURCE_DIR}/res/gfx/Animations/Nosoria_bolygo
+    ${CMAKE_CURRENT_SOURCE_DIR}/res/gfx/Animations/Planthea_bolygo
+    ${CMAKE_CURRENT_SOURCE_DIR}/res/gfx/Characters
+    ${CMAKE_CURRENT_SOURCE_DIR}/res/gfx/Dessert Map2
+    ${CMAKE_CURRENT_SOURCE_DIR}/res/gfx/Dessert_Map1
+    ${CMAKE_CURRENT_SOURCE_DIR}/res/gfx/Dessert_Map2
+    ${CMAKE_CURRENT_SOURCE_DIR}/res/gfx/Glacies_map
+    ${CMAKE_CURRENT_SOURCE_DIR}/res/gfx/Menu
+    ${CMAKE_CURRENT_SOURCE_DIR}/res/gfx/Nosoria_map
+    ${CMAKE_CURRENT_SOURCE_DIR}/res/gfx/Objects
+    ${CMAKE_CURRENT_SOURCE_DIR}/res/gfx/Planthea_map 
     ./../res
-    # ./../res/gfx
-    # ./../res/gfx/Animations
-    # ./../res/gfx/Characters
-    # ./../res/gfx/Dessert_Map1
-    # ./../res/gfx/Dessert_Map2
-    # ./../res/gfx/Menu
-    # ./../res/gfx/Objects
-    # ./../res/gfx/Animations
-    # ./../res/gfx/Animations/Dessert_bolygo
-    # ./../res/gfx/Animations/Glacies_bolygo
-    # ./../res/gfx/Animations/Keszitok
-    # ./../res/gfx/Animations/LyRs
-    # ./../res/gfx/Animations/Nosoria_bolygo
-    # ./../res/gfx/Animations/Planthea_bolygo
-    # ./../res/gfx/Characters
-    # ./../res/gfx/Dessert Map2
-    # ./../res/gfx/Dessert_Map1
-    # ./../res/gfx/Dessert_Map2
-    # ./../res/gfx/Glacies_map
-    # ./../res/gfx/Menu
-    # ./../res/gfx/Nosoria_map
-    # ./../res/gfx/Objects
-    # ./../res/gfx/Planthea_map 
+    ./../res/gfx
+    ./../res/gfx/Animations
+    ./../res/gfx/Characters
+    ./../res/gfx/Dessert_Map1
+    ./../res/gfx/Dessert_Map2
+    ./../res/gfx/Menu
+    ./../res/gfx/Objects
+    ./../res/gfx/Animations
+    ./../res/gfx/Animations/Dessert
+    ./../res/gfx/Animations/Glacies
+    ./../res/gfx/Animations/Keszito
+    ./../res/gfx/Animations/LyRs
+    ./../res/gfx/Animations/Nosoria
+    ./../res/gfx/Animations/Planthe
+    ./../res/gfx/Characters
+    ./../res/gfx/Dessert Map2
+    ./../res/gfx/Dessert_Map1
+    ./../res/gfx/Dessert_Map2
+    ./../res/gfx/Glacies_map
+    ./../res/gfx/Menu
+    ./../res/gfx/Nosoria_map
+    ./../res/gfx/Objects
+    ./../res/gfx/Planthea_map 
     )
  target_link_libraries(${THIS}
         ${CMAKE_SOURCE_DIR}/lib/libSDL2_image.dll.a
