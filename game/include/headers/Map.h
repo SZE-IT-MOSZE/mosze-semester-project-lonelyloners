@@ -15,4 +15,5 @@ public:
   Map(std::string pth, Entity ent);
   void csv2vector();
   bool matrix_pos(int dir, int dist);
+  void updateEntity(Entity ent) { e = ent; };
 };

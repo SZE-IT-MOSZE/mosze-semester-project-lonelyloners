@@ -509,6 +509,7 @@ void Plnt::dessert1()
                                 {
                                     std::cout << " TARGET COORDINATE: " << l.getTargetY() << " \t " << l.getTargetX() << std::endl;
                                 }
+                                mapMatrix.updateEntity(l);
                                 c.make(command, fnt, game);
                                 r.route(c.getCommand(), c.getItem(), l, game, mapMatrix, fnt, *this);
                                 c.reset();
@@ -2189,7 +2190,7 @@ void Plnt::dessert2()
                             dontB = false;
                         }
 
-                        
+
                         
 
 

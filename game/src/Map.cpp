@@ -38,15 +38,14 @@ bool Map::matrix_pos(int dir, int dist) {
     int x  = e.getPos().getX();
     x = static_cast<int>(x) / 32 + 1;
 
-	std::cout << " x " << x << std::endl;
+	  std::cout << " x " << x << std::endl;
 
     int y  = e.getPos().getY();
     y = static_cast<int>(y) / 32 + 1;
   
-	std::cout << " y " << y << std::endl;
+	  std::cout << " y " << y << std::endl;
 
-
-    while (y >= 0 && x >= 0 && y < 12 && x < 12 && dist > 0) {
+    while (y >= 1 && x >= 1 && y < 13 && x < 13 && dist > 0) {
         if (this->map_matrix[y][x] == 0) {
           return false;
         } else if (dir == 1) {
