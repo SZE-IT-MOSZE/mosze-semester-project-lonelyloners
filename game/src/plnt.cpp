@@ -1004,7 +1004,6 @@ void Plnt::dessert2()
     bool d = false; 
     bool only1 = false;
     bool hangyaIndul = false;
-    bool felvesz = false;
     bool gk = false;
     bool f = false;
     bool nm = false;
@@ -3248,7 +3247,7 @@ void Plnt::planthea()
     Map mapMatrix4("matrix/planthea/Planthea_map1_4.matrix.matrix", l);
 
     gameRunning = true;
-    // glacies
+    // planthea
     while(gameRunning)
     {
         // képkockák számolása
@@ -3292,10 +3291,6 @@ void Plnt::planthea()
                                     if (command == "TARGET")
                                     {
                                         std::cout << " TARGET COORDINATE: " << l.getTargetY() << " \t " << l.getTargetX() << std::endl;
-                                    }
-                                    if (command == "BELEP")
-                                    {
-                                        belep = true;
                                     }
                                     mapMatrix0.updateEntity(l);
                                     mapMatrix1.updateEntity(l);
@@ -3350,8 +3345,6 @@ void Plnt::planthea()
 
             l.setTarget(3, 1);
         }
-               
-               
         else if (game.getMap() == 3 && l.getPos().getY() == -32 && l.getPos().getX() <= 64)
         {
             // MAP 4 -> MAP 2
@@ -3370,7 +3363,6 @@ void Plnt::planthea()
 
             l.setTarget(3, 1);
         }
-
         else if (game.getMap() == 2 && l.getPos().getY() <= 96 && l.getPos().getX() == 384)
         {
             // MAP 3 -> MAP 4
@@ -3501,8 +3493,6 @@ void Plnt::planthea()
             // balra
             balra = true;
             break;
-        case 5:
-            attack = true;
         default:
             break;
         }
