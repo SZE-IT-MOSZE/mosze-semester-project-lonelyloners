@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 3.25.0)
-set(THIS LyrsGame)
-project(${THIS} LANGUAGES C CXX)
+project(${CMAKE_PROJECT_NAME} LANGUAGES C CXX)
 set(CMAKE_C_STANDARD 99)
 set(CMAKE_CXX_STANDARD 11)
 set(SOURCES
@@ -22,18 +21,18 @@ LIST(APPEND CMAKE_PROGRAM_PATH
     ./../res
     ./../res/gfx
 )
-add_executable(${THIS} ./../src/main.cpp ${SOURCES} ${HEADERS} ${LIBRARIES})
-target_include_directories(${THIS} PUBLIC
+add_executable(${CMAKE_PROJECT_NAME} ./../src/main.cpp ${SOURCES} ${HEADERS} ${LIBRARIES})
+target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/include
     ${CMAKE_CURRENT_SOURCE_DIR}/story
     ./../res
     )
- target_link_libraries(${THIS}
-        ${CMAKE_SOURCE_DIR}/lib/libSDL2_image.dll.a
-        ${CMAKE_SOURCE_DIR}/lib/libSDL2_ttf.dll.a
-        ${CMAKE_SOURCE_DIR}/bin/SDL2_ttf.dll
+ target_link_libraries(${CMAKE_PROJECT_NAME}
+        ${CMAKE_SOURCE_DIR}/include/sdl/i686-w64-mingw32/lib/libSDL2_image.dll.a
+        ${CMAKE_SOURCE_DIR}/include/sdl/i686-w64-mingw32/lib/libSDL2_ttf.dll.a
+        ${CMAKE_SOURCE_DIR}/include/sdl/i686-w64-mingw32/bin/SDL2_ttf.dll
         ${CMAKE_SOURCE_DIR}/SDL2_ttf.dll
-        ${CMAKE_SOURCE_DIR}/lib/libSDL2.dll.a
+        ${CMAKE_SOURCE_DIR}/include/sdl/i686-w64-mingw32/lib/libSDL2.dll.a
        )
 set(SDL2_INCLUDE_DIRS "${CMAKE_CURRENT_LIST_DIR}/include")
  if (${CMAKE_SIZEOF_VOID_P} MATCHES 8)
@@ -131,7 +130,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
 find_package(SDL2 REQUIRED)
 find_package(SDL2_image REQUIRED)
 include_directories(${SDL2_INCLUDE_DIRS} ${SDL2_IMAGE_INCLUDE_DIRS})
-target_link_libraries(${THIS}  ${SDL2_IMAGE_LIBRARIES})#${SDL2_LIBRARIES}
+target_link_libraries(${CMAKE_PROJECT_NAME}  ${SDL2_IMAGE_LIBRARIES})#${SDL2_LIBRARIES}
 if(NOT SDL2_IMAGE_INCLUDE_DIR AND SDL2IMAGE_INCLUDE_DIR)
   set(SDL2_IMAGE_INCLUDE_DIR ${SDL2IMAGE_INCLUDE_DIR} CACHE PATH "directory cache entry initialized from old variable name")
 endif()
@@ -281,4 +280,4 @@ if(NOT EXISTS "${sdl2_ttf_config_path}")
     return()
 endif()
 include("${sdl2_ttf_config_path}")
-target_link_libraries(${THIS} PUBLIC SDL_ttf)
+target_link_libraries(${CMAKE_PROJECT_NAME} PUBLIC SDL_ttf)
