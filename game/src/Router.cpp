@@ -16,12 +16,14 @@
   */
  
 void Router::route(std::string cm, std::string it, Entity& ent, RenderWindow& rw, Map& map, TTF_Font* fnt, Plnt& p) {
-     if(cm == "FEL" || cm == "LE" || cm == "JOBBRA" || cm == "BALRA" || cm == "ELORE" || cm == "HATRA") {
-        this->move(cm, it, ent, rw, map, fnt);
-     }
-     else if(cm == "HELP" || cm == "SEGITSEG") {
-        this->help();
-     }
+    std::cout << "cm " << cm << " it " << it << std::endl;
+
+    if(cm == "FEL" || cm == "LE" || cm == "JOBBRA" || cm == "BALRA" || cm == "ELORE" || cm == "HATRA") {
+       this->move(cm, it, ent, rw, map, fnt);
+    }
+    else if(cm == "HELP" || cm == "SEGITSEG") {
+       this->help();
+    }
     else if(cm == "LAPOZ" || cm == "LAPOZZ") {
         this->nextPage(rw);
     }
@@ -34,6 +36,21 @@ void Router::route(std::string cm, std::string it, Entity& ent, RenderWindow& rw
     else if(cm == "BESZEL") {
         this->speak(p);
     }
+    else if(cm == "DONT") {
+        
+        if (it == " A")
+        {
+            p.sA();
+        }
+        if (it == " B")
+        {
+            p.sB();
+        }
+    }
+    else if(cm == "FELVESZ") {
+        p.pUp();
+    }
+
  }
  /**
   * \brief Segítség kiírása.
@@ -65,6 +82,7 @@ void Router::move(std::string cm, std::string it, Entity& ent, RenderWindow& rw,
         }
     }
     else if(cm == "JOBBRA") {
+        
         if(map.matrix_pos(2, dist)) {
             ent.setTarget(2, dist);
         }
