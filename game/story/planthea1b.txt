@@ -45,4 +45,4 @@ LyRs mondja: Rendben, köszönöm, Keiko!
 *
 Feladat: Kövesd Keiko-t!
 *
-//Feladat elvégzése után következik: planthea1b2.txt
+//planthea1b2.txt
