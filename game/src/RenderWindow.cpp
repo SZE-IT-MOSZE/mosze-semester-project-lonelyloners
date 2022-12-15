@@ -512,6 +512,11 @@ void RenderWindow::nextTxt(bool c)
     i = 0;
     while(std::getline(ttt, line))
     {
+        //if (i == alline && line.substr(2, line.length()) == "game_over.png")
+        //{
+        //    bEnd = true;
+        //}
+
         i++;
         if (c)
         {

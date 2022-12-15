@@ -22,26 +22,27 @@ void Map::csv2vector() {
         std::vector<int> temp_vector;
 
         while ((next = temp_text.find(";", last)) != std::string::npos) {
-          std::string token = temp_text.substr(last, next - last);
+            std::string token = temp_text.substr(last, next - last);
 
-          temp_vector.push_back(std::stoi(token));
-
-          last = next + 1;
+            temp_vector.push_back(std::stoi(token));
+            
+            last = next + 1;
         }
         this->map_matrix.push_back(temp_vector);
     }
 
     map_file.close();
 }
-
-bool Map::matrix_pos(int dir, int dist) {
+bool Map::matrix_pos(int dir, int dist)
+{
+    dist++;
     int x  = e.getPos().getX();
-    x = static_cast<int>(x) / 32;
-
-    int y  = e.getPos().getY();
-    y = static_cast<int>(y) / 32;
+    x = static_cast<int>(x) / 32 + 1;
   
-    while (y >= 0 && x >= 0 && y < 12 && x < 12 && dist > 0) {
+    int y  = e.getPos().getY();
+    y = static_cast<int>(y) / 32 + 1;
+
+    while (y >= 0 && x >= 0 && y < 15 && x < 15 && dist > 0) {
         if (this->map_matrix[y][x] == 0) {
           return false;
         } else if (dir == 1) {

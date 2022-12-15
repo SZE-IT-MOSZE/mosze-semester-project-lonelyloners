@@ -32,7 +32,7 @@ Plnt::Plnt(RenderWindow g, TTF_Font* f) : game(g), fnt(f)
                         { 0, 320}, {64, 320}, {128, 320}, {192, 320}, {256, 320} ,
                         { 0, 352}, {64, 352}, {128, 352}, {192, 352}, {256, 352} };
     lada = sivatagiBogyo = faRonk = nemSivatagiBogyo = 0;
-    attack = false;
+    kulcs = attack = beszel = belep = felvesz = dontA = dontB = attack = false;
 }
 /**
  * \brief Menü megjelenítése.
@@ -509,6 +509,7 @@ void Plnt::dessert1()
                                 {
                                     std::cout << " TARGET COORDINATE: " << l.getTargetY() << " \t " << l.getTargetX() << std::endl;
                                 }
+                                mapMatrix.updateEntity(l);
                                 c.make(command, fnt, game);
                                 r.route(c.getCommand(), c.getItem(), l, game, mapMatrix, fnt, *this);
                                 c.reset();
@@ -743,6 +744,7 @@ void Plnt::dessert2()
     std::vector<std::pair<int, int>> urgeAttackR;
     std::vector<std::pair<int, int>> nagyonIdleR;
     std::vector<std::pair<int, int>> nagyonIdleL;
+    std::vector<std::pair<int, int>> poison;
     std::vector<std::pair<int, int>> map;
 
     std::string tempInfoText;
@@ -783,6 +785,13 @@ void Plnt::dessert2()
     // bal
     nagyonIdleL = { {256,  0}, {288,  0}, {320,   0}, {352,  0}, {384,  0}, {416,  0},  {448,  0},  {480,  0} };
 
+    // mérgezett átalakulás
+    // bal
+    poison = {  {  0, 256}, { 64, 256},  {128, 256}, {192, 256},  {256, 256},  {320, 256},  {384, 256},  {448, 256}, 
+                {  0, 320}, { 64, 320},  {128, 320}, {192, 320},  {256, 320},  {320, 320},  {384, 320},  {448, 320},
+                {  0, 384}, { 64, 384},  {128, 384}, {192, 384},  {256, 384},  {320, 384},  {384, 384},  {448, 384},
+                {  0, 448}, { 64, 448},  {128, 448}, {192, 448},  {256, 448},  {320, 448},  {384, 448},  {448, 448}  };
+
     // map
     map             = { {  0,   0}, {384,   0},
                         {  0, 384}, {384, 384}};
@@ -819,6 +828,11 @@ void Plnt::dessert2()
     SDL_Texture* latnok5a       = game.loadTexture("res/gfx/Animations/Dessert_bolygo/dessert_latnokondok_wollaris_seta.png");
     SDL_Texture* latnok6a       = game.loadTexture("res/gfx/Animations/Dessert_bolygo/dessert_latnokondok_woman_pink_seta.png");
     SDL_Texture* latnokMerega   = game.loadTexture("res/gfx/Animations/Dessert_bolygo/dessert_latnokondok_mergezett_seta.png");
+
+    SDL_Texture* latnokMeregAtvaltoz = game.loadTexture("res/gfx/Animations/Dessert_bolygo/dessert_latnokondok_mergezett_nagy_atvaltozas.png");
+    Entity latnokMeregAtvaltozE(V2F(256, 320), latnokMeregAtvaltoz);
+    latnokMeregAtvaltozE.setPosi(256, 320);
+
 
     SDL_Texture* wtr = game.loadTexture("res/gfx/Dessert_Map2/dessert_map2_water.png");
     Entity wtrE(V2F(272, 305), wtr);
@@ -985,14 +999,11 @@ void Plnt::dessert2()
     bool a = false;
     bool b = false;
     bool start = false;
-    bool dontA = false;
-    bool dontB = false;
     bool csakegyszer = false;
     bool kamraIndul = false;
     bool d = false; 
     bool only1 = false;
     bool hangyaIndul = false;
-    bool felvesz = false;
     bool gk = false;
     bool f = false;
     bool nm = false;
@@ -1014,6 +1025,8 @@ void Plnt::dessert2()
     bool mergezettharc = false;
     bool bbbb = false;
     bool piciegyszer = false;
+    bool NAGY = false;
+    bool egyszernomeg = false;
     // esemény létrehozása
     SDL_Event event;
     // FPS limitációhoz szükséges változók
@@ -1026,7 +1039,10 @@ void Plnt::dessert2()
     game.nextTxt(next);
 
     Command c = Command();
-    Map mapMatrix("matrix/dessert1/dessert1.matrix", l);
+    Map mapMatrix0("matrix/dessert2/Dessert_map2_0.matrix", l);
+    Map mapMatrix1("matrix/dessert2/Dessert_map2_1.matrix", l);
+    Map mapMatrix2("matrix/dessert2/Dessert_map2_2.matrix", l);
+    Map mapMatrix3("matrix/dessert2/Dessert_map2_3.matrix", l);
 
     gameRunning = true;
     // dessert2
@@ -1066,18 +1082,6 @@ void Plnt::dessert2()
                         case SDLK_RETURN:
                             if (!fel && !le && !balra && !jobbra && !attack)
                             {
-                                if (command == "DONT A")
-                                {
-                                    dontA = true;
-                                }
-                                else if (command == "DONT B")
-                                {
-                                    dontB = true;
-                                }
-                                if (command == "FELVESZ")
-                                {
-                                    felvesz = true;
-                                }
                                 if (command == "POSI")
                                 {
                                     std::cout << " CURRENT POSITION: " << l.getPos().getY() << " \t " << l.getPos().getX() << std::endl;
@@ -1086,8 +1090,27 @@ void Plnt::dessert2()
                                 {
                                     std::cout << " TARGET COORDINATE: " << l.getTargetY() << " \t " << l.getTargetX() << std::endl;
                                 }
+                                mapMatrix0.updateEntity(l);
+                                mapMatrix1.updateEntity(l);
+                                mapMatrix2.updateEntity(l);
+                                mapMatrix3.updateEntity(l);
                                 c.make(command, fnt, game);
-                                r.route(c.getCommand(), c.getItem(), l, game, mapMatrix, fnt, *this);
+                                switch (game.getMap())
+                                {
+                                    case 0:
+                                        r.route(c.getCommand(), c.getItem(), l, game, mapMatrix0, fnt, *this);
+                                        break;
+                                    case 1:
+                                        r.route(c.getCommand(), c.getItem(), l, game, mapMatrix1, fnt, *this);
+                                        break;
+                                    case 2:
+                                        r.route(c.getCommand(), c.getItem(), l, game, mapMatrix2, fnt, *this);
+                                        break;
+                                    case 3:
+                                        r.route(c.getCommand(), c.getItem(), l, game, mapMatrix3, fnt, *this);
+                                        break;
+                                }
+
                                 c.reset();
 
                                 command = "";
@@ -2223,34 +2246,47 @@ void Plnt::dessert2()
                             {
                                 latMereg = 5;
                             }
-                            switch (latMereg)
+                                if (!NAGY)
+                                {
+                                    switch (latMereg)
+                                    {
+                                        case 0:
+                                            game.right(latnokMeregEa);
+                                            game.update(latnokMeregEa, latnokMoveR, latnokMoveR.size(), 32, 32, 0, true);
+                                            break;
+                                        case 1:
+                                            game.down(latnokMeregEa);
+                                            game.update(latnokMeregEa, latnokMoveL, latnokMoveL.size(), 32, 32, 0, true);
+                                            break;
+                                        case 2:
+                                            game.left(latnokMeregEa);
+                                            game.update(latnokMeregEa, latnokMoveL, latnokMoveL.size(), 32, 32, 0, true);
+                                            break;
+                                        case 3:
+                                            game.down(latnokMeregEa);
+                                            game.update(latnokMeregEa, latnokMoveL, latnokMoveL.size(), 32, 32, 0, true);
+                                            break;
+                                        case 4:
+                                            game.right(latnokMeregEa);
+                                            game.update(latnokMeregEa, latnokMoveR, latnokMoveR.size(), 32, 32, 0, true);
+                                            break;
+                                        case 5:
+                                            latnokMeregE.setAbsPosi(256, 320);
+                                            game.update(latnokMeregE, npcIdleL, npcIdleL.size(), 32, 32, 0, true);
+                                            break;
+                                        }
+                                }   
+                            }
+
+                            if (l.getPos().getY() == 320 && l.getPos().getX() == 224)
                             {
-                                case 0:
-                                    game.right(latnokMeregEa);
-                                    game.update(latnokMeregEa, latnokMoveR, latnokMoveR.size(), 32, 32, 0, true);
-                                    break;
-                                case 1:
-                                    game.down(latnokMeregEa);
-                                    game.update(latnokMeregEa, latnokMoveL, latnokMoveL.size(), 32, 32, 0, true);
-                                    break;
-                                case 2:
-                                    game.left(latnokMeregEa);
-                                    game.update(latnokMeregEa, latnokMoveL, latnokMoveL.size(), 32, 32, 0, true);
-                                    break;
-                                case 3:
-                                    game.down(latnokMeregEa);
-                                    game.update(latnokMeregEa, latnokMoveL, latnokMoveL.size(), 32, 32, 0, true);
-                                    break;
-                                case 4:
-                                    game.right(latnokMeregEa);
-                                    game.update(latnokMeregEa, latnokMoveR, latnokMoveR.size(), 32, 32, 0, true);
-                                    break;
-                                case 5:
-                                    latnokMeregE.setAbsPosi(256, 320);
-                                    game.update(latnokMeregE, npcIdleL, npcIdleL.size(), 32, 32, 0, true);
-                                    break;
-                                }
-                            }     
+                                NAGY = true;
+                            }
+
+                            if (NAGY)
+                            {
+                                game.update(latnokMeregAtvaltozE, poison, poison.size(), 64, 64, 0, true);
+                            }
                     }
                     else
                     {
@@ -2663,7 +2699,11 @@ void Plnt::glacies()
     // input text 
     std::string command;
     Command c = Command();
-    Map mapMatrix("matrix/dessert1/dessert1.matrix", l);
+    Map mapMatrix0("matrix/glacies/Glacies_map1_0.matrix", l);
+    Map mapMatrix1("matrix/glacies/Glacies_map1_1.matrix", l);
+    Map mapMatrix2("matrix/glacies/Glacies_map1_2.matrix", l);
+    Map mapMatrix3("matrix/glacies/Glacies_map1_3.matrix", l);
+    Map mapMatrix4("matrix/glacies/Glacies_map1_4.matrix", l);
 
     gameRunning = true;
     // glacies
@@ -2703,14 +2743,6 @@ void Plnt::glacies()
                             case SDLK_RETURN:
                                 if (!fel && !le && !balra && !jobbra && !attack)
                                 {
-                                    if (command == "LAPOZZ")
-                                    {
-                                        game.nextPage();
-                                    }
-                                    if (command == "TAMADAS")
-                                    {
-                                        attack = true;
-                                    }
                                     if (command == "POSI")
                                     {
                                         std::cout << " CURRENT POSITION: " << l.getPos().getY() << " \t " << l.getPos().getX() << std::endl;
@@ -2719,12 +2751,31 @@ void Plnt::glacies()
                                     {
                                         std::cout << " TARGET COORDINATE: " << l.getTargetY() << " \t " << l.getTargetX() << std::endl;
                                     }
-                                    if (command == "BELEP")
-                                    {
-                                        belep = true;
-                                    }
+                                    mapMatrix0.updateEntity(l);
+                                    mapMatrix1.updateEntity(l);
+                                    mapMatrix2.updateEntity(l);
+                                    mapMatrix3.updateEntity(l);
+                                    mapMatrix4.updateEntity(l);
                                     c.make(command, fnt, game);
-                                    r.route(c.getCommand(), c.getItem(), l, game, mapMatrix, fnt, *this);
+                                    switch (game.getMap())
+                                    {
+                                        case 0:
+                                            r.route(c.getCommand(), c.getItem(), l, game, mapMatrix0, fnt, *this);
+                                            break;
+                                        case 1:
+                                            r.route(c.getCommand(), c.getItem(), l, game, mapMatrix1, fnt, *this);
+                                            break;
+                                        case 2:
+                                            r.route(c.getCommand(), c.getItem(), l, game, mapMatrix2, fnt, *this);
+                                             break;
+                                       case 3:
+                                            r.route(c.getCommand(), c.getItem(), l, game, mapMatrix3, fnt, *this);
+                                            break;
+                                        case 4:
+                                            r.route(c.getCommand(), c.getItem(), l, game, mapMatrix4, fnt, *this);
+                                            break;
+                                    }
+
                                     c.reset();
 
                                     command = "";
@@ -2848,8 +2899,6 @@ void Plnt::glacies()
             // balra
             balra = true;
             break;
-        case 5:
-            attack = true;
         default:
             break;
         }
@@ -2990,6 +3039,24 @@ void Plnt::glacies()
                 attack = game.update(l, lyrsLaserL, lyrsLaserL.size(), 64, 32, 32, false);
                 l.setAttack(attack);
             }
+        }
+
+        if (dontA)
+        {
+            game.nextTxt(true);
+            game.resetPage();
+            dontA = false;
+        }
+        else if (dontB || attack)
+        {
+            game.nextTxt(false);
+            game.resetPage();
+            dontB = false;
+        }
+
+        if (game.getCurrTxt() == "story/planthea1b.txt")
+        {
+            gameRunning = false;
         }
 
         switch (game.getMap())  {
@@ -3173,10 +3240,14 @@ void Plnt::planthea()
     // input text 
     std::string command;
     Command c = Command();
-    Map mapMatrix("matrix/dessert1/dessert1.matrix", l);
+    Map mapMatrix0("matrix/planthea/Planthea_map1_0.matrix.matrix", l);
+    Map mapMatrix1("matrix/planthea/Planthea_map1_1.matrix.matrix", l);
+    Map mapMatrix2("matrix/planthea/Planthea_map1_2.matrix.matrix", l);
+    Map mapMatrix3("matrix/planthea/Planthea_map1_3.matrix.matrix", l);
+    Map mapMatrix4("matrix/planthea/Planthea_map1_4.matrix.matrix", l);
 
     gameRunning = true;
-    // glacies
+    // planthea
     while(gameRunning)
     {
         // képkockák számolása
@@ -3213,14 +3284,6 @@ void Plnt::planthea()
                             case SDLK_RETURN:
                                 if (!fel && !le && !balra && !jobbra && !attack)
                                 {
-                                    if (command == "LAPOZZ")
-                                    {
-                                        game.nextPage();
-                                    }
-                                    if (command == "TAMADAS")
-                                    {
-                                        attack = true;
-                                    }
                                     if (command == "POSI")
                                     {
                                         std::cout << " CURRENT POSITION: " << l.getPos().getY() << " \t " << l.getPos().getX() << std::endl;
@@ -3229,12 +3292,30 @@ void Plnt::planthea()
                                     {
                                         std::cout << " TARGET COORDINATE: " << l.getTargetY() << " \t " << l.getTargetX() << std::endl;
                                     }
-                                    if (command == "BELEP")
-                                    {
-                                        belep = true;
-                                    }
+                                    mapMatrix0.updateEntity(l);
+                                    mapMatrix1.updateEntity(l);
+                                    mapMatrix2.updateEntity(l);
+                                    mapMatrix3.updateEntity(l);
+                                    mapMatrix4.updateEntity(l);
                                     c.make(command, fnt, game);
-                                    r.route(c.getCommand(), c.getItem(), l, game, mapMatrix, fnt, *this);
+                                    switch (game.getMap())
+                                    {
+                                        case 0:
+                                            r.route(c.getCommand(), c.getItem(), l, game, mapMatrix0, fnt, *this);
+                                            break;
+                                        case 1:
+                                            r.route(c.getCommand(), c.getItem(), l, game, mapMatrix1, fnt, *this);
+                                            break;
+                                        case 2:
+                                            r.route(c.getCommand(), c.getItem(), l, game, mapMatrix2, fnt, *this);
+                                            break;
+                                        case 3:
+                                            r.route(c.getCommand(), c.getItem(), l, game, mapMatrix3, fnt, *this);
+                                            break;
+                                        case 4:
+                                            r.route(c.getCommand(), c.getItem(), l, game, mapMatrix4, fnt, *this);
+                                            break;
+                                    }       
                                     c.reset();
 
                                     command = "";
@@ -3264,8 +3345,6 @@ void Plnt::planthea()
 
             l.setTarget(3, 1);
         }
-               
-               
         else if (game.getMap() == 3 && l.getPos().getY() == -32 && l.getPos().getX() <= 64)
         {
             // MAP 4 -> MAP 2
@@ -3284,7 +3363,6 @@ void Plnt::planthea()
 
             l.setTarget(3, 1);
         }
-
         else if (game.getMap() == 2 && l.getPos().getY() <= 96 && l.getPos().getX() == 384)
         {
             // MAP 3 -> MAP 4
@@ -3415,8 +3493,6 @@ void Plnt::planthea()
             // balra
             balra = true;
             break;
-        case 5:
-            attack = true;
         default:
             break;
         }
@@ -3643,7 +3719,7 @@ void Plnt::nosoria()
     // LyRs összes animációját tartalmazó sprite sheet betöltése
     SDL_Texture* lyrsAnim = game.loadTexture("res/gfx/Animations/LyRs/lyrs_sprite_sheet.png");
     Entity l(V2F(96, 96), lyrsAnim);
-    l.setPosi(96, 96);
+    l.setPosi(32, 64);
     // szöveg háttér betöltése
     SDL_Texture* textBckGround = game.loadTexture("res/gfx/Dessert_Map1/both.png");
     Entity txtbckground(V2F(384, 0), textBckGround);
@@ -3676,7 +3752,9 @@ void Plnt::nosoria()
     // input text 
     std::string command;
     Command c = Command();
-    Map mapMatrix("matrix/dessert1/dessert1.matrix", l);
+    Map mapMatrix0("matrix/nosoria/Nosoria_map1_0.matrix", l);
+    Map mapMatrix1("matrix/nosoria/Nosoria_map1_1.matrix", l);
+    Map mapMatrix2("matrix/nosoria/Nosoria_map1_2.matrix", l);
 
     gameRunning = true;
     // glacies
@@ -3716,14 +3794,6 @@ void Plnt::nosoria()
                             case SDLK_RETURN:
                                 if (!fel && !le && !balra && !jobbra && !attack)
                                 {
-                                    if (command == "LAPOZZ")
-                                    {
-                                        game.nextPage();
-                                    }
-                                    if (command == "TAMADAS")
-                                    {
-                                        attack = true;
-                                    }
                                     if (command == "POSI")
                                     {
                                         std::cout << " CURRENT POSITION: " << l.getPos().getY() << " \t " << l.getPos().getX() << std::endl;
@@ -3732,14 +3802,23 @@ void Plnt::nosoria()
                                     {
                                         std::cout << " TARGET COORDINATE: " << l.getTargetY() << " \t " << l.getTargetX() << std::endl;
                                     }
-                                    if (command == "BELEP")
-                                    {
-                                        belep = true;
-                                    }
+                                    mapMatrix0.updateEntity(l);
+                                    mapMatrix1.updateEntity(l);
+                                    mapMatrix2.updateEntity(l);
                                     c.make(command, fnt, game);
-                                    r.route(c.getCommand(), c.getItem(), l, game, mapMatrix, fnt, *this);
+                                    switch (game.getMap())
+                                    {
+                                        case 0:
+                                            r.route(c.getCommand(), c.getItem(), l, game, mapMatrix0, fnt, *this);
+                                            break;
+                                        case 1:
+                                            r.route(c.getCommand(), c.getItem(), l, game, mapMatrix1, fnt, *this);
+                                            break;
+                                        case 2:
+                                            r.route(c.getCommand(), c.getItem(), l, game, mapMatrix2, fnt, *this);
+                                            break;
+                                    }                                      
                                     c.reset();
-
                                     command = "";
                                 }
                         }
@@ -3749,34 +3828,25 @@ void Plnt::nosoria()
         }           
         const float alpha = accum / timeStep;
         // megfelelő map kirenderelése
-        if (game.getMap() == 2 && l.getPos().getY() == -32 && l.getPos().getX() <= 224)
+        if (game.getMap() == 0 && l.getPos().getY() == 288 && l.getPos().getX() == 384)
         {
-            // MAP 3 -> MAP 1
-            game.setMap(0);
-
-            l.setPosi(0, 416);
-
-            l.setTarget(1, 1);
-        }
-        else if (game.getMap() == 0 && l.getPos().getY() >= 384 && l.getPos().getX() == 224)
-        {
-            // MAP 1 -> MAP 3
-            game.setMap(2);
-
-            l.setPosi(0, -416);
-
-            l.setTarget(3, 1);
-        }
-        else if (game.getMap() == 3 && l.getPos().getY() == -32 && l.getPos().getX() <= 64)
-        {
-            // MAP 4 -> MAP 2
+            // MAP 1 -> MAP 2
             game.setMap(1);
 
-            l.setPosi(0, 416);
+            l.setPosi(-416, 0);
 
-            l.setTarget(1, 1);
+            l.setTarget(2, 1);
         }
-        else if (game.getMap() == 1 && l.getPos().getY() >= 384 && l.getPos().getX() == 64)
+        else if (game.getMap() == 1 && l.getPos().getY() == 288 && l.getPos().getX() == -32)
+        {
+            // MAP 2 -> MAP 1
+            game.setMap(0);
+
+            l.setPosi(416, 0);
+
+            l.setTarget(4, 1);
+        }
+        else if (game.getMap() == 1 && l.getPos().getY() == 384 && l.getPos().getX() == 224)
         {
             // MAP 2 -> MAP 4
             game.setMap(3);
@@ -3785,114 +3855,14 @@ void Plnt::nosoria()
 
             l.setTarget(3, 1);
         }
-
-        else if (game.getMap() == 2 && l.getPos().getY() <= 96 && l.getPos().getX() == 384)
+        else if (game.getMap() == 3 && l.getPos().getY() == -32 && l.getPos().getX() == 224)
         {
-            // MAP 3 -> MAP 4
-            game.setMap(3);
-
-            l.setPosi(-416, 0);
-
-            l.setTarget(2, 1);
-        }
-        else if (game.getMap() == 3 && l.getPos().getY() == 96 && l.getPos().getX() <= -32)
-        {
-            // MAP 4 -> MAP 3
-            game.setMap(2);
-
-            l.setPosi(416, 0);
-
-            l.setTarget(4, 1);
-        }
-        else if (game.getMap() == 2 && l.getPos().getY() <= 256 && l.getPos().getX() == 384)
-        {
-            // MAP 3 -> MAP 4
-            game.setMap(3);
-
-            l.setPosi(-416, 0);
-
-            l.setTarget(2, 1);
-        }
-        else if (game.getMap() == 3 && l.getPos().getY() == 256 && l.getPos().getX() <= -32)
-        {
-            // MAP 4 -> MAP 3
-            game.setMap(2);
-
-            l.setPosi(416, 0);
-
-            l.setTarget(4, 1);
-        }
-        else if (game.getMap() == 2 && l.getPos().getY() <= 320 && l.getPos().getX() == 384)
-        {
-            // MAP 3 -> MAP 4
-            game.setMap(3);
-
-            l.setPosi(-416, 0);
-
-            l.setTarget(2, 1);
-        }
-        else if (game.getMap() == 3 && l.getPos().getY() == 320 && l.getPos().getX() <= -32)
-        {
-            // MAP 4 -> MAP 3
-            game.setMap(2);
-
-            l.setPosi(416, 0);
-
-            l.setTarget(4, 1);
-        }
-        else if (game.getMap() == 0 && l.getPos().getY() == 64 && l.getPos().getX() >= 384)
-        {
-            // MAP 1 -> MAP 2
+            // MAP 4 -> MAP 2
             game.setMap(1);
 
-            l.setPosi(-416, 0);
+            l.setPosi(0, 416);
 
-            l.setTarget(2, 1);
-        }        
-        else if (game.getMap() == 1 && l.getPos().getY()  >= 64 && l.getPos().getX() == -32)
-        {
-            // MAP 2 -> MAP 1
-            game.setMap(0);
-
-            l.setPosi(416, 0);
-
-            l.setTarget(4, 1);
-        }
-        else if (game.getMap() == 0 && l.getPos().getY() == 128 && l.getPos().getX() >= 384)
-        {
-            // MAP 1 -> MAP 2
-            game.setMap(1);
-
-            l.setPosi(-416, 0);
-
-            l.setTarget(2, 1);
-        }        
-        else if (game.getMap() == 1 && l.getPos().getY()  >= 128 && l.getPos().getX() == -32)
-        {
-            // MAP 2 -> MAP 1
-            game.setMap(0);
-
-            l.setPosi(416, 0);
-
-            l.setTarget(4, 1);
-        }
-        else if (game.getMap() == 3 && l.getPos().getY() == 288 && l.getPos().getX() == 288 && belep)
-        {
-            // MAP 4 -> MAP 5
-            game.setMap(4);
-        
-            l.setPosi(-192, -96);
-        
-            belep = false;
-        }
-        else if (game.getMap() == 4 && l.getPos().getY() == 192 && l.getPos().getX() == 96 && belep)
-        {
-            // MAP 5 -> MAP 4
-            game.setMap(3);
-        
-            l.setPosi(192, 96);
-        
-            belep = false;
+            l.setTarget(1, 1);
         }
 
         // irányok beállítása

@@ -53,6 +53,8 @@ public:
     void mapReset();
     void updateMap(Entity& p_entity, std::vector<std::pair<int, int>> spritepos);
     
+    std::string getCurrTxt() { return curr_txt; }
+
     SDL_Renderer* getRenderer();
     SDL_Window* getWindow();
 
@@ -64,5 +66,6 @@ private:
     const char* p_title;
     std::string curr_txt;
     int p_w, p_h, pg, frms, map;
+    bool bEnd, gEnd;
     std::vector<std::string> storyTextToRender;
 };

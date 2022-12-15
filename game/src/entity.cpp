@@ -135,7 +135,10 @@ void Entity::setTarget(int dir, int dist)
         break;
     }
 }
-
+/**
+ * \brief Támadás indításáért felelős.
+ * 
+ */
 void Entity::setAttack(bool a) {
     this->attack = a;
 }

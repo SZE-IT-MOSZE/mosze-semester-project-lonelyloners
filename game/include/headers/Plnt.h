@@ -36,10 +36,12 @@ public:
 
     void talk() { beszel = true; };
     void enter() { belep = true; };
-
+    void sA() { dontA = true;  };
+    void sB() { dontA = false; };
+    void pUp() { felvesz = true; };
 private:
     int lada, sivatagiBogyo, faRonk, nemSivatagiBogyo;
-    bool kulcs, attack, beszel, belep;
+    bool kulcs, attack, beszel, belep, felvesz, dontA, dontB;
     RenderWindow game;
     TTF_Font* fnt;
     // LyRs sprite sheet
