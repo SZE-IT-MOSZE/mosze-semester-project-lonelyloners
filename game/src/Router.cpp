@@ -117,8 +117,6 @@ void Router::attack(Entity& e) {
 }
 
 void Router::ent(Plnt& e) {
-    std::cout << " asajt "  << std::endl;
-
     e.enter();
 }
 
