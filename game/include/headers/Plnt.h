@@ -29,6 +29,8 @@ public:
     void glacies();
     void planthea();
     void nosoria();
+    void aeden();
+
     void ladaPlusz() { lada++; };
     void sivatagiBogyoPlusz() { sivatagiBogyo++; };
     void faRonkPlusz() { faRonk++; };
@@ -37,7 +39,7 @@ public:
     void talk() { beszel = true; };
     void enter() { belep = true; };
     void sA() { dontA = true;  };
-    void sB() { dontA = false; };
+    void sB() { dontB = true; };
     void pUp() { felvesz = true; };
 private:
     int lada, sivatagiBogyo, faRonk, nemSivatagiBogyo;

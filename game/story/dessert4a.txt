@@ -21,8 +21,9 @@ kietlen vidéken.
 *
 Pillanatokkal később LyRs már az egyre
 ritkuló levegőt szelte, rakétáinak erős
-tüze felforrósítva maga körül az egyébként
-is izzó légréteget, majd az azt követő
-atmoszférát – legvégül pedig az űr végtelen sötétjét.
+tüze felforrósítva maga körül az
+egyébként is izzó légréteget, majd
+az azt követő atmoszférát – legvégül
+pedig az űr végtelen sötétjét.
 *
 //glacies1.txt

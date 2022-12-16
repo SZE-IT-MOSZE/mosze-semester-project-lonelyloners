@@ -53,12 +53,20 @@ int main(int argc, char* argv[])
         g.dessert1();
 
         g.dessert2();
-
-        g.glacies();
-
-        g.planthea();
         
-        g.nosoria();
+        g.glacies();
+        if (game.getCurrTxt() == "story/planthea1b.txt")
+        {
+            g.planthea();
+        }
+        if (game.getCurrTxt() == "story/nosoria1.txt")
+        {
+            g.nosoria();
+        }
+        if ((game.getCurrTxt() == "story/aeden1a1.txt") && (game.getCurrTxt() == "story/aeden1b.txt")) 
+        {
+            g.aeden();
+        }
 
         // ablak törlése
         game.cleanUp();
